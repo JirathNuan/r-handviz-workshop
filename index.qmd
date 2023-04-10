@@ -1,0 +1,33 @@
+---
+format:
+  html:
+    toc: false
+---
+
+::: column-page
+::: {style="padding-left: 50px; padding-right: 50px; display: inline-block;"}
+::: {layout-ncol="2"}
+::: {style="text-align: left;"}
+# Omics Data Handling and Visualization in R
+
+17 May 2023
+
+Faculty of Science, Prince of Songkla University
+
+-   Basic R programming for intermediate learner
+
+-   Exploratory data analysis
+
+-   Omics data handling with Tidyverse bundle
+
+-   Learn graphical requirements for publications
+
+-   Generating publication-quality plots
+:::
+
+::: {style="text-align: left;"}
+![Figure adapted from [\@storyset](https://www.freepik.com/author/stories). Designed by Freepik. Find more R hex stickers at [RStudio hex stickers](https://github.com/rstudio/hex-stickers).](/img/web_homepage.png){style="align: right;" width="500"}
+:::
+:::
+:::
+:::

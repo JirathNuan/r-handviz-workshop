@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R Workshop 2023",
+    "section": "",
+    "text": "Omics Data Handling and Visualization in R\n17 May 2023\nFaculty of Science, Prince of Songkla University\n\nBasic R programming for intermediate learner\nExploratory data analysis\nOmics data handling with Tidyverse bundle\nLearn graphical requirements for publications\nGenerating publication-quality plots\n\n\n\n\n\n\nFigure adapted from @storyset. Designed by Freepik. Find more R hex stickers at RStudio hex stickers."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\n\n\n\n\n\n\nTime\nTopic\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n9:00 - 9:45\nWelcome, Introduction, and Graphical Requirement for Article Submission\nPS\n\n\n\n9:45 - 10:00\nMorning Break\n\n\n\n\n10:00 - 11:00\nBasic R Programming & Exploratory Data Analysis\nJN\nPY, KC\n\n\n11:00 - 12:00\nOmics Data Handling & Graphic Grammars\nJN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\nJN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\nJN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\nJN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1"
+  }
+]

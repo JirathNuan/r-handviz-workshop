@@ -1,0 +1,14 @@
+{
+  "hash": "b79b2dcce5eb9b29d3a04ada12f9e113",
+  "result": {
+    "markdown": "---\ntitle: \"r-handviz-workshop\"\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

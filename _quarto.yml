@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - schedule.qmd
+    # - exercise.qmd
+    - prerequisite.qmd
+    - about.qmd
+
+website:
+  page-navigation: true
+  title: "R Workshop 2023"
+  description: "Official site for workshop Omics Data Handling and Visualization in R 2023, Faculty of Science, Prince of Songkla, University"
+  reader-mode: true
+  favicon: "img/fav_abbl_logo.png"
+  open-graph: true
+  
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2023, Jiratchaya Nuanpirom"
+    background: "#E5E7E9"
+  
+  navbar:
+    search: true
+    background: "#117A65"
+    logo: "img/fav_abbl_logo.png"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      # - href: exercise.qmd
+      #   text: Exercises
+      - href: prerequisite.qmd
+        text: Prerequisites
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/JirathNuan
+      - icon: facebook
+        href: https://www.facebook.com/pslabpsu
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    eval: false
+    theme:
+      light: cosmo
+      dark: cyborg
+
+editor: visual
+
