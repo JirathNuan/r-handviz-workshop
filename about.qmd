@@ -2,8 +2,24 @@
 title: "About"
 ---
 
-About this site
+This workshop organized by division of biological science, on behalf of faculty of science, Prince of Songkla University, Hat Yai, Thailand.
 
-```{r}
-1 + 1
+### 📍 Venue
+
+The workshop will be at the room Bsc0303, Basic Science (BSc) Building (อาคารเรียนและปฏิบัติการพื้นฐานทางวิทยาศาสตร์)
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, eval=TRUE}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=100.49948057047378, 
+             lat=7.0064145091641885)
 ```
+
+### 📧 Contact
+
+Please contact us if you have any questions about this workshop. We are more than happy to help you. Our team is available to provide assistance and answer any queries you may have. Please don't hesitate to reach out.
+
+To get in touch on the course, please email to `jirath.nuan@gmail.com`, or you can get in touch directly to our supervisor at `ponsit.sat@gmail.com`.
+
+We're looking forward to see you !

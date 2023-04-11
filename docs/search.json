@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R Workshop 2023",
     "section": "",
-    "text": "Omics Data Handling and Visualization in R\n17 May 2023\nFaculty of Science, Prince of Songkla University\n\nBasic R programming for intermediate learner\nExploratory data analysis\nOmics data handling with Tidyverse bundle\nLearn graphical requirements for publications\nGenerating publication-quality plots\n\n\n\n\n\n\nFigure adapted from @storyset. Designed by Freepik. Find more R hex stickers at RStudio hex stickers."
+    "text": "Omics Data Handling and Visualization in R\n17 May 2023\nFaculty of Science, Prince of Songkla University\n\nBasic R programming for intermediate learner\nExploratory data analysis\nOmics data handling with Tidyverse bundle\nLearn graphical requirements for publications\nGenerating publication-quality plots\n\n\n\n\n\n\nFigure modified from @storyset. Designed by Freepik. Find more R hex stickers at RStudio hex stickers."
   },
   {
     "objectID": "schedule.html",
@@ -14,10 +14,24 @@
     "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\n\n\n\n\n\n\nTime\nTopic\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n9:00 - 9:45\nWelcome, Introduction, and Graphical Requirement for Article Submission\nPS\n\n\n\n9:45 - 10:00\nMorning Break\n\n\n\n\n10:00 - 11:00\nBasic R Programming & Exploratory Data Analysis\nJN\nPY, KC\n\n\n11:00 - 12:00\nOmics Data Handling & Graphic Grammars\nJN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\nJN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\nJN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\nJN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
   },
   {
+    "objectID": "prerequisite.html",
+    "href": "prerequisite.html",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "WindowsmacOS\n\n\n\nOS: Windows 10/11\nMemory: > 8 GB RAM\nROM: storage using Solid-state drive (SSD) is preferable. (Here’s how to check)\n\n\n\n\nOS: macOS 11 (Big Sur) or higher\nMemory: > 8 GB RAM"
+  },
+  {
+    "objectID": "prerequisite.html#software-requirements",
+    "href": "prerequisite.html#software-requirements",
+    "title": "Prerequisites",
+    "section": "Software Requirements",
+    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version (in May 2023) is 4.2.3 (2023-03-15 ucrt) -- \"Shortstop Beagle\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.2, which is compatible with version R 4.2.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is 2023.03.0+386 | Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nTBW"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1"
+    "text": "This workshop organized by division of biological science, on behalf of faculty of science, Prince of Songkla University, Hat Yai, Thailand.\n\n📍 Venue\nThe workshop will be at the room Bsc0303, Basic Science (BSc) Building (อาคารเรียนและปฏิบัติการพื้นฐานทางวิทยาศาสตร์)\n\n\n\n\n\n\n\n\n📧 Contact\nPlease contact us if you have any questions about this workshop. We are more than happy to help you. Our team is available to provide assistance and answer any queries you may have. Please don’t hesitate to reach out.\nTo get in touch on the course, please email to jirath.nuan@gmail.com, or you can get in touch directly to our supervisor at ponsit.sat@gmail.com.\nWe’re looking forward to see you !"
   }
 ]

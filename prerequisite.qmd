@@ -1,3 +1,51 @@
 ---
-title: "prerequisite"
+title: "Prerequisites"
 ---
+
+## Minimum System Requirements
+
+::: panel-tabset
+## Windows
+
+-   **OS:** Windows 10/11
+
+-   **Memory:** \> 8 GB RAM
+
+-   **ROM:** storage using Solid-state drive (SSD) is preferable. ([Here's how to check](https://www.lifewire.com/is-my-storage-ssd-or-hdd-5191369))
+
+## macOS
+
+-   **OS:** macOS 11 (Big Sur) or higher
+
+-   **Memory:** \> 8 GB RAM
+:::
+
+## Software Requirements
+
+Before the workshop day, users are asked to install the following software in advance.
+
+### 1. Install R
+
+R is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.
+
+Users can download R installer from the Comprehensive R Archive Network (CRAN): [https://cran.rstudio.com](https://cran.rstudio.com/).
+
+> The latest R version (in May 2023) is `4.2.3 (2023-03-15 ucrt) -- "Shortstop Beagle"`.
+
+### 2. Install Rtools (Windows users only)
+
+Rtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.
+
+Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html>
+
+> The current Rtools for Windows users is `Rtools 4.2`, which is compatible with version R 4.2.x.
+
+### 3. Install Rstudio Desktop
+
+Rstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website <https://posit.co/download/rstudio-desktop>.
+
+> Current Rstudio Desktop version is `2023.03.0+386 | Released: 2023-03-16`.
+
+### 4. Install necessary R packages
+
+TBW

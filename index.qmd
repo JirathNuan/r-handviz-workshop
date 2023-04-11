@@ -26,7 +26,7 @@ Faculty of Science, Prince of Songkla University
 :::
 
 ::: {style="text-align: left;"}
-![Figure adapted from [\@storyset](https://www.freepik.com/author/stories). Designed by Freepik. Find more R hex stickers at [RStudio hex stickers](https://github.com/rstudio/hex-stickers).](/img/web_homepage.png){style="align: right;" width="500"}
+![Figure modified from [\@storyset](https://www.freepik.com/author/stories). Designed by Freepik. Find more R hex stickers at [RStudio hex stickers](https://github.com/rstudio/hex-stickers).](/img/web_homepage.png){style="align: right;" width="500"}
 :::
 :::
 :::

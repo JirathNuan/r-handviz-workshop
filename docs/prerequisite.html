@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R Workshop 2023 - prerequisite</title>
+<title>R Workshop 2023 - Prerequisites</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="R Workshop 2023 - prerequisite">
+<meta property="og:title" content="R Workshop 2023 - Prerequisites">
+<meta property="og:description" content="Before the workshop day, users are asked to install the following software in advance.">
 <meta property="og:site-name" content="R Workshop 2023">
 </head>
 
@@ -134,14 +135,27 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#minimum-system-requirements" id="toc-minimum-system-requirements" class="nav-link active" data-scroll-target="#minimum-system-requirements">Minimum System Requirements</a></li>
+  <li><a href="#software-requirements" id="toc-software-requirements" class="nav-link" data-scroll-target="#software-requirements">Software Requirements</a>
+  <ul class="collapse">
+  <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">1. Install R</a></li>
+  <li><a href="#install-rtools-windows-users-only" id="toc-install-rtools-windows-users-only" class="nav-link" data-scroll-target="#install-rtools-windows-users-only">2. Install Rtools (Windows users only)</a></li>
+  <li><a href="#install-rstudio-desktop" id="toc-install-rstudio-desktop" class="nav-link" data-scroll-target="#install-rstudio-desktop">3. Install Rstudio Desktop</a></li>
+  <li><a href="#install-necessary-r-packages" id="toc-install-necessary-r-packages" class="nav-link" data-scroll-target="#install-necessary-r-packages">4. Install necessary R packages</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">prerequisite</h1>
+<h1 class="title">Prerequisites</h1>
 </div>
 
 
@@ -156,8 +170,60 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="minimum-system-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-system-requirements">Minimum System Requirements</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li><p><strong>OS:</strong> Windows 10/11</p></li>
+<li><p><strong>Memory:</strong> &gt; 8 GB RAM</p></li>
+<li><p><strong>ROM:</strong> storage using Solid-state drive (SSD) is preferable. (<a href="https://www.lifewire.com/is-my-storage-ssd-or-hdd-5191369">Here’s how to check</a>)</p></li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li><p><strong>OS:</strong> macOS 11 (Big Sur) or higher</p></li>
+<li><p><strong>Memory:</strong> &gt; 8 GB RAM</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="software-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="software-requirements">Software Requirements</h2>
+<p>Before the workshop day, users are asked to install the following software in advance.</p>
+<section id="install-r" class="level3">
+<h3 class="anchored" data-anchor-id="install-r">1. Install R</h3>
+<p>R is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.</p>
+<p>Users can download R installer from the Comprehensive R Archive Network (CRAN): <a href="https://cran.rstudio.com/">https://cran.rstudio.com</a>.</p>
+<blockquote class="blockquote">
+<p>The latest R version (in May 2023) is <code>4.2.3 (2023-03-15 ucrt) -- "Shortstop Beagle"</code>.</p>
+</blockquote>
+</section>
+<section id="install-rtools-windows-users-only" class="level3">
+<h3 class="anchored" data-anchor-id="install-rtools-windows-users-only">2. Install Rtools (Windows users only)</h3>
+<p>Rtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.</p>
+<p>Users can install Rtools from CRAN: <a href="https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html" class="uri">https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html</a></p>
+<blockquote class="blockquote">
+<p>The current Rtools for Windows users is <code>Rtools 4.2</code>, which is compatible with version R 4.2.x.</p>
+</blockquote>
+</section>
+<section id="install-rstudio-desktop" class="level3">
+<h3 class="anchored" data-anchor-id="install-rstudio-desktop">3. Install Rstudio Desktop</h3>
+<p>Rstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website <a href="https://posit.co/download/rstudio-desktop" class="uri">https://posit.co/download/rstudio-desktop</a>.</p>
+<blockquote class="blockquote">
+<p>Current Rstudio Desktop version is <code>2023.03.0+386 | Released: 2023-03-16</code>.</p>
+</blockquote>
+</section>
+<section id="install-necessary-r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-necessary-r-packages">4. Install necessary R packages</h3>
+<p>TBW</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
