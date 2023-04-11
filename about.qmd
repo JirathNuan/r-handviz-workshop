@@ -1,8 +1,14 @@
 ---
-title: "About"
+title: ""
 ---
 
-This workshop organized by division of biological science, on behalf of faculty of science, Prince of Songkla University, Hat Yai, Thailand.
+ 
+
+![](img/abbl_logo.png){fig-align="center" width="500"}
+
+ 
+
+This workshop organized by [Agricultural Biotech & Bioinformatics Lab](https://molbioshrimp.wordpress.com), Division of Biological Science, on behalf of faculty of science, Prince of Songkla University, Hat Yai, Thailand.
 
 ### 📍 Venue
 
