@@ -49,3 +49,12 @@ Rstudio is an integrated development environment (IDE) for computing in R langua
 ### 4. Install necessary R packages
 
 TBW
+
+::: callout-tip
+
+In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
+
+-   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
+
+-   [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) from Datacamp
+:::
