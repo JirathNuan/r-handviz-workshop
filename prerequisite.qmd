@@ -20,6 +20,17 @@ title: "Prerequisites"
 -   **Memory:** \> 8 GB RAM
 :::
 
+::: callout-tip
+In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
+
+-   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
+
+-   [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) from Datacamp
+
+-   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
+:::
+
+
 ## Software Requirements
 
 Before the workshop day, users are asked to install the following software in advance.
@@ -50,11 +61,4 @@ Rstudio is an integrated development environment (IDE) for computing in R langua
 
 TBW
 
-::: callout-tip
 
-In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
-
--   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
-
--   [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) from Datacamp
-:::
