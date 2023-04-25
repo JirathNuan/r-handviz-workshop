@@ -1,0 +1,246 @@
+---
+title: "Basic R Programming"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 18pt
+editor: visual
+---
+
+## R vs RStudio (1)
+
+::: columns
+::: {.column width="50%"}
+![](img/R_logo.png){fig-align="center" width="200"}
+
+-   is a language and environment for statistical computing and graphics.
+
+-   Provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, etc.) and publication-quality graphical techniques. And many more!
+
+-   FREE (under GNU-GPL license).
+:::
+
+::: {.column width="50%"}
+![](img/RStudio-Logo-Flat.png){fig-align="center" width="443"}
+
+-   Rstudio is an integrated development environment (IDE) of R
+
+-   Provides extensible environments for compiling other languages (e.g. Python, Shell, LaTeX, etc.) and engines (e.g. knitr, Jupyter, quarto, etc.)
+
+-   FREE.
+:::
+:::
+
+## R vs RStudio (2)
+
+::: columns
+::: {.column width="50%"}
+![Normal R GUI](img/r_gui.png){width="1000"}
+:::
+
+::: {.column width="50%"}
+![RStudio user interface and its components](img/rstudio_ui.png){width="1010"}
+:::
+:::
+
+## R: *versatility*
+
+![](img/r_versatility.png)
+
+## Accessing Help & Documentation in RStudio
+
+::: columns
+::: {.column width="50%"}
+RStudio provides built-in documentation of all functions you have installed from libraries. For example, you would like to access documentation page of function `aov`, simply type in the console as follows:
+
+```{r}
+#| echo: true
+#| eval: false
+help(aov)
+# or 
+?aov
+```
+
+You can access this documentation from the Help pane. The documentation includes an explanation of the arguments, background theorem, and references for the function `aov`.
+
+::: callout-tip
+There are 2 recommended repositories allow you to access all documentation online, [RDocumentation.org](https://www.rdocumentation.org) and [rdrr.io](https://rdrr.io). These repositories contain all the documentation for all the functions available in R, even if you have never installed it!
+:::
+:::
+
+::: {.column width="50%"}
+![](img/aov_doc.png){width="700"}
+:::
+:::
+
+## Data types
+
+R has 5 data types:
+
+::: columns
+::: {.column width="50%"}
+-   **Character**
+
+```{r}
+#| echo: true
+a <- c("May", "June", "July")
+class(a)
+```
+
+-   **Numeric**
+
+    ```{r}
+    #| echo: true
+    b <- c(-2.25, -1.5, 0, 1.0, 2.75, 3/4)
+    class(b)
+    ```
+
+-   **Integer**
+
+```{r}
+#| echo: true
+c <- as.integer(b)
+c
+class(c)
+
+```
+:::
+
+::: {.column width="50%"}
+-   **Logical**
+
+    ```{r}
+    #| echo: true
+    d <- c(TRUE, FALSE, TRUE, FALSE)
+    class(d)
+    ```
+
+-   **Complex**
+
+```{r}
+#| echo: true
+
+e <- 1+4i
+class(e)
+```
+
+::: callout-note
+## Info
+
+R provides many functions to examine features of vectors and other objects, for example
+
+-   `class()` - what kind of object is it?
+
+-   `length()` - how long is it? What about two dimensional objects?
+:::
+:::
+:::
+
+## Data structure (1)
+
+::: columns
+::: {.column width="50%"}
+-   **Vectors**
+
+    is a row of strings (can be numbers, characters, logicals , or mix of it), and also known as a 1-dimensional array. R uses function `c` to declare vectors:
+
+    ```{r}
+    #| echo: true
+    #| eval: true
+    x <- c(1, 4, 6, 8, 10)
+    # Inspect vector
+    x
+    # Access element in vector
+    x[2]
+    # Calculating vector
+    sum(x)
+    # Add another vector
+    y <- c(2, -2, 4, 9, 0.5)
+    y
+    # Calculating vector
+    z <- x + y
+    z
+    ```
+:::
+
+::: {.column width="50%"}
+-   **Matrices**
+
+    is a 2-dimensional array, we use the function `matrix` to declare matrix in R as follow.
+
+    ```{r}
+    #| echo: true
+    #| eval: true
+    mat <- matrix(data = c(9, 2, 3, 4, 5, 6), nrow = 3)
+    # Inspecting matrix
+    mat
+    # Accessing element in 1st row, 2nd column of the matrix
+    mat[1,2]
+    # Multiply matrix by 10
+    mat*10
+    # Replace value in 3rd row, 1st column of the matrix to 20
+    mat[3,1] <- 20
+    mat
+
+    ```
+:::
+:::
+
+## Data structures (2)
+
+::: columns
+::: {.column width="50%"}
+-   **Data frames**
+
+    A data frame is a matrix in which rows and columns are named. A data frame is more flexible and compatible for further data manipulation and export as a spreadsheet. Also, data frame can be calculated like matrix.
+
+    ```{r}
+    #| echo: true
+    #| eval: true
+    # Create a data frame
+    t <- data.frame(
+      name = c("gene1", "gene2", "gene3", "gene4"),
+      cond_1 = c(20, 18, 0, 0),
+      cond_2 = c(1, 2, 100, 120)
+    )
+    # Access element in data frame
+    t[4, 3]
+    # See how many rows and columns in the data frame
+    dim(t)
+    # See what type of data format in each column
+    str(t)
+    ```
+:::
+
+::: {.column width="50%"}
+-   **Lists**
+
+    List is a complex object that can store all data types and structures, even list within list!
+
+    ```{r}
+    #| echo: true
+    #| eval: true
+    L1 <- list(one = 1,
+               two = c(1, 2),
+               five = seq(0, 1, length = 5))
+    # Inspect the list
+    L1
+    # Access the 3rd structure in a list
+    L1[3]
+    ## Access the 2nd child element of the 3rd structure of the list
+    L1[[3]][2]
+    # Calculating the list
+    L1$five * 10
+    ```
+:::
+:::
+
+
+
+## References
+
+-   Data Types and Structures from [swcarpentry.github.io](https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/index.html)
+-   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
