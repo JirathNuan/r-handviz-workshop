@@ -1,0 +1,32 @@
+---
+title: "Exploratory Data Analysis"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 18pt
+editor: visual
+bibliography: references.bib
+---
+
+## EDA: *Why?*
+
+Exploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, aims of EDA[^1] are:
+
+[^1]: [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+
+-   Generate questions about your data
+
+-   Search for answers by visualizing, transforming, and modelling your data
+
+-   Use what you learn to refine your questions and/or generate new questions.
+
+EDA is an important part of any data analysis, even if you already have assumptions or primary research questions in mind. Because we always need to investigate whether the pattern or quality meets our expectations or not. And therefore need to consider data cleaning and further analysis, by leveraging any R libraries for visualization, transformation, and modelling.
+
+## References
+
+-   [Exploratory Data Analysis Course](https://www.coursera.org/learn/exploratory-data-analysis): by Prof. Roger D. Peng, PhD, in Coursera.
+
+-   

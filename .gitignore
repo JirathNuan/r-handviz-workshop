@@ -3,4 +3,6 @@
 .Rhistory
 
 /.quarto/
-/lectures/
+/lectures/.Rproj.user
+/lectures/.Rhistory
+/lectures/01_intro.pptx

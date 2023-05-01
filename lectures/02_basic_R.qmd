@@ -7,6 +7,8 @@ format:
     logo: img/sci_abbl_logo.png
     footer: "17 May 2023"
     fontsize: 18pt
+    slide-number: true
+    dpi: 300
 editor: visual
 ---
 
@@ -92,11 +94,11 @@ class(a)
 
 -   **Numeric**
 
-    ```{r}
-    #| echo: true
-    b <- c(-2.25, -1.5, 0, 1.0, 2.75, 3/4)
-    class(b)
-    ```
+```{r}
+#| echo: true
+b <- c(-2.25, -1.5, 0, 1.0, 2.75, 3/4)
+class(b)
+```
 
 -   **Integer**
 
@@ -238,9 +240,295 @@ R provides many functions to examine features of vectors and other objects, for 
 :::
 :::
 
+## Data frames (1)
 
+Data frame is a key data structure in R and statistics.
+
+-   Each row represents observation (genes, protein, taxon, name)
+
+-   Each column represents variable (measures, treatments, characteristics) of the observation
+
+-   Each value in a cell represents each data point.
+
+![Structure of data frame. Redraw from R for Data Science 2nd edition (Hadley Wickham & Garrett Grolemund).](img/data_frames.png)
+
+## Data frames (2)
+
+We'll show structure of the data frames in 2 formats; wide and long formats, using `airquality` dataset.
+
+```{r}
+#| echo: false
+#| eval: true
+suppressPackageStartupMessages(library(kableExtra))
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+::: columns
+::: {.column width="50%"}
+**Wide format**
+
+```{r}
+#| echo: true
+#| eval: false
+dt_wide <- datasets::airquality
+# Show how the data looks like
+head(dt_wide)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+head(datasets::airquality) %>% kbl() %>%
+  kable_styling(bootstrap_options = "striped", font_size = 15)
+```
+
+-   Human-readable data frame
+
+-   Elegance
+
+-   Easy to see all values in each observation
+
+-   One observation is one row
+
+-   May incompatible for some plots in ggplot2
+:::
+
+::: {.column width="50%"}
+**Long format**
+
+```{r}
+#| echo: true
+#| eval: false
+dt_long <- datasets::airquality %>%
+  pivot_longer(!c(Day, Month))
+# Show how the data looks like
+head(dt_long)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+dt_long <- datasets::airquality %>%
+  pivot_longer(!c(Day, Month))
+head(dt_long) %>% kbl() %>% 
+  kable_styling(bootstrap_options = "striped", font_size = 15)
+```
+
+-   Machine-readable data frame
+
+-   Simple
+
+-   Each observation can be more than one row
+
+-   Compatible to include with metadata table (if any)
+
+-   ggplot2 ❤️long-format data frame
+:::
+:::
+
+## Managing data frames with `dplyr`
+
+We can handle data frames with base R, but when you are working with a large data set, speed matters. The `dplyr` package provides a "**grammar**" (especially verbs) for data manipulation and for editing data frames.
+
+Frequently used `dplyr` verbs:
+
+-   `glimpse`: skim structure of the data, see every columns in a data frame.
+
+-   `select`: return a subset of the columns of a data frame, using a flexible notation.
+
+-   `filter`: extract a subset of rows from a data frame based on logical conditions.
+
+-   `arrange`: reorder rows of a data frame.
+
+-   `rename`: rename variables in a data frame.
+
+-   `mutate`: add new variables/columns or transform existing variables.
+
+-   `summarise` / `summarize`: generate summary statistics of different variables in the data frame, possibly within strata.
+
+-   `%>%`: the "pipe" operator, from `magrittr`, is used to connect multiple verb actions together into a pipeline.
+
+## Common `dplyr` Function Properties
+
+1.  The first argument must be a data frame to process.
+
+2.  The subsequent arguments describe what to do with the data frame specified in the first argument, and you can refer to columns in the data frame directly without using the `$` operator (just use the column names).
+
+3.  The return result of a function is a new data frame
+
+For example:
+
+```{r}
+#| echo: true
+#| eval: true
+#| message: false
+# Load dplyr library
+library(dplyr)
+# Load airquality dataset
+dt <- datasets::airquality
+dt_filtered <- filter(dt, Solar.R > 300)
+# Show how the data looks like
+head(dt_filtered)
+```
+
+## dplyr::`glimpse`
+
+-   Create new variable `dt_iris` that stored the data set "iris".
+
+```{r}
+#| echo: true
+#| eval: false
+# Load dataset 'iris'
+dt_iris <- datasets::iris
+```
+
+-   Glimpse the data set in `dt_iris`
+
+```{r}
+#| echo: true
+#| eval: false
+# glimpse data
+glimpse(dt_iris)
+```
+
+## dplyr::`select`
+
+-   We already have data frame `dt_iris` from earlier practice. Now we will select columns name `Species`, and `Petal.Width` from `dt` and store in new variable: `dt_sel`
+
+    ```{r}
+    #| echo: true
+    #| eval: false
+    # Select columns Petal.Width and Species from dt, keep in dt_sel
+    dt_sel <- select(dt_iris, Species, Petal.Width)
+
+    # Check the result by glimpse
+    glimpse(dt_sel)
+    ```
+
+## dplyr::`filter`
+
+`filter()` is used to subset a data frame, retaining all rows that satisfy your conditions.
+
+From the data set iris stored in data frame `dt_iris`,
+
+-   Now we will filter Species 'versicolor'.
+
+```{r}
+#| echo: true
+#| eval: false
+# Filter versicolor species in dt_iris
+dt_versicolor <- filter(dt_iris, Species == "versicolor")
+# Glimpse the result
+glimpse(dt_versicolor)
+```
+
+-   From `dt_versicolor`, filter the flowers that the `Sepal.Length` longer than or equal to 6
+
+```{r}
+#| echo: true
+#| eval: false
+# Filter the versicolor iris that the sepal length longer than or equal to 6
+dt_vsc_filt <- filter(dt_versicolor, Sepal.Length >= 6)
+# Glimpse the result
+glimpse(dt_vsc_filt)
+```
+
+## dplyr::`arrange`
+
+`arrange()` orders the rows of a data frame by the values of selected columns.
+
+-   In our filtered data frame `dt_vsc_filt`, sort the `Sepal.Length` column.
+
+```{r}
+#| echo: true
+#| eval: false
+# Sort data frame dt_vsc_filt by sepal length column (ascendingly)
+dt_vsc_filt_srt <- arrange(dt_vsc_filt, Sepal.Length)
+# Glimpse the result
+glimpse(dt_vsc_filt_srt)
+```
+
+-   Then, sort the `Petal.Length` descendingly.
+
+```{r}
+#| echo: true
+#| eval: false
+# Sort data frame dt_vsc_filt descendingly by petal length column
+dt_vsc_filt_srt <- arrange(dt_vsc_filt, desc(Petal.Length))
+```
+
+## dplyr::`rename`
+
+`rename()` changes the names of individual variables using `new_name = old_name` syntax.
+
+-   From sorted and filtered data frame `dt_vsc_filt_srt`, we will rename 2 columns, from `Sepal.Length` and `Petal.Length`, to `SL` and `PL`, respectively. Then save to the new data frame `dt_vsc_renamed`.
+
+```{r}
+#| echo: true
+#| eval: false
+dt_vsc_renamed <- rename(dt_vsc_filt_srt, 
+                         SL = Sepal.Length,
+                         PL = Petal.Length)
+```
+
+## dplyr::`mutate`
+
+`mutate()` creates new columns that are functions of existing variables, as well as modify and delete columns.
+
+From the previous data frame `dt_vsc_renamed`, we'll calculate the difference between sepal length `SL` and petal length `PL` to the new column `Len_Diff`. This can be done with the `mutate()` function as follow.
+
+## dplyr::`summarize`
+
+## magrittr::`%>%`
+
+## Graphics in R (1)
+
+Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.
+
+Using library `graphics`, plain and simple plot functions in R is usually called **R base plot**. The syntax is shown as follow:
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+plot(rnorm(100), type = "p", col = "red")
+```
+
+This is a scatter plot showing 100 random numbers. Each red point indicates a data point.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+hist(rnorm(100))
+```
+
+Another simple plot to show the pattern of the data is histogram.
+:::
+:::
+
+## Graphics in R (2)
+
+The following lines create a plot from data frame `t`.
+
+```{r}
+#| echo: true
+# Creating a data frame
+t <- data.frame(x = c(11,12,14), 
+                y = c(19,20,21), 
+                z = c(10,9,7))
+# Creating a new plot
+plot(t$x, type = "b", ylim = range(t), col = "red")
+# Adding new graphic to the plot
+lines(t$y, type = "s", col = "blue")
+# Adding another graphic to the plot
+points(t$z, pch = 20, cex = 2, col = "green")
+```
 
 ## References
 
--   Data Types and Structures from [swcarpentry.github.io](https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/index.html)
--   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
+-   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.
+-   [Workshop on Data Visualization in R](https://nbisweden.github.io/workshop-data-visualization-r/2304/index.html): by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.
+-   [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.

@@ -382,6 +382,9 @@
       margin-right: 0; 
     }
   </style>
+  
+  <script src="02_basic_R_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="02_basic_R_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -496,15 +499,17 @@ Jiratchaya Nuanpirom
 </div>
 </div>
 <ul>
-<li><p><strong>Numeric</strong></p>
+<li><strong>Numeric</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.25</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="dv">0</span>, <span class="fl">1.0</span>, <span class="fl">2.75</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="fu">class</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-</div></li>
-<li><p><strong>Integer</strong></p></li>
+</div>
+<ul>
+<li><strong>Integer</strong></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>c <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(b)</span>
@@ -710,11 +715,354 @@ $five
 </div>
 </div>
 </section>
+<section id="data-frames-1" class="slide level2">
+<h2>Data frames (1)</h2>
+<p>Data frame is a key data structure in R and statistics.</p>
+<ul>
+<li><p>Each row represents observation (genes, protein, taxon, name)</p></li>
+<li><p>Each column represents variable (measures, treatments, characteristics) of the observation</p></li>
+<li><p>Each value in a cell represents each data point.</p></li>
+</ul>
+
+<img data-src="img/data_frames.png" class="r-stretch quarto-figure-center"><p class="caption">Structure of data frame. Redraw from R for Data Science 2nd edition (Hadley Wickham &amp; Garrett Grolemund).</p></section>
+<section id="data-frames-2" class="slide level2">
+<h2>Data frames (2)</h2>
+<p>We’ll show structure of the data frames in 2 formats; wide and long formats, using <code>airquality</code> dataset.</p>
+<div class="cell">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Wide format</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>dt_wide <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">head</span>(dt_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table table-striped" style="font-size: 15px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Ozone </th>
+   <th style="text-align:right;"> Solar.R </th>
+   <th style="text-align:right;"> Wind </th>
+   <th style="text-align:right;"> Temp </th>
+   <th style="text-align:right;"> Month </th>
+   <th style="text-align:right;"> Day </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 41 </td>
+   <td style="text-align:right;"> 190 </td>
+   <td style="text-align:right;"> 7.4 </td>
+   <td style="text-align:right;"> 67 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:right;"> 118 </td>
+   <td style="text-align:right;"> 8.0 </td>
+   <td style="text-align:right;"> 72 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 149 </td>
+   <td style="text-align:right;"> 12.6 </td>
+   <td style="text-align:right;"> 74 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 313 </td>
+   <td style="text-align:right;"> 11.5 </td>
+   <td style="text-align:right;"> 62 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 14.3 </td>
+   <td style="text-align:right;"> 56 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 14.9 </td>
+   <td style="text-align:right;"> 66 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<ul>
+<li><p>Human-readable data frame</p></li>
+<li><p>Elegance</p></li>
+<li><p>Easy to see all values in each observation</p></li>
+<li><p>One observation is one row</p></li>
+<li><p>May incompatible for some plots in ggplot2</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Long format</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>dt_long <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(Day, Month))</span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a><span class="fu">head</span>(dt_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table table-striped" style="font-size: 15px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Month </th>
+   <th style="text-align:right;"> Day </th>
+   <th style="text-align:left;"> name </th>
+   <th style="text-align:right;"> value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Ozone </td>
+   <td style="text-align:right;"> 41.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Solar.R </td>
+   <td style="text-align:right;"> 190.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Wind </td>
+   <td style="text-align:right;"> 7.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Temp </td>
+   <td style="text-align:right;"> 67.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Ozone </td>
+   <td style="text-align:right;"> 36.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Solar.R </td>
+   <td style="text-align:right;"> 118.0 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<ul>
+<li><p>Machine-readable data frame</p></li>
+<li><p>Simple</p></li>
+<li><p>Each observation can be more than one row</p></li>
+<li><p>Compatible to include with metadata table (if any)</p></li>
+<li><p>ggplot2 ❤️long-format data frame</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="managing-data-frames-with-dplyr" class="slide level2">
+<h2>Managing data frames with <code>dplyr</code></h2>
+<p>We can handle data frames with base R, but when you are working with a large data set, speed matters. The <code>dplyr</code> package provides a “<strong>grammar</strong>” (especially verbs) for data manipulation and for editing data frames.</p>
+<p>Frequently used <code>dplyr</code> verbs:</p>
+<ul>
+<li><p><code>glimpse</code>: skim structure of the data, see every columns in a data frame.</p></li>
+<li><p><code>select</code>: return a subset of the columns of a data frame, using a flexible notation.</p></li>
+<li><p><code>filter</code>: extract a subset of rows from a data frame based on logical conditions.</p></li>
+<li><p><code>arrange</code>: reorder rows of a data frame.</p></li>
+<li><p><code>rename</code>: rename variables in a data frame.</p></li>
+<li><p><code>mutate</code>: add new variables/columns or transform existing variables.</p></li>
+<li><p><code>summarise</code> / <code>summarize</code>: generate summary statistics of different variables in the data frame, possibly within strata.</p></li>
+<li><p><code>%&gt;%</code>: the “pipe” operator, from <code>magrittr</code>, is used to connect multiple verb actions together into a pipeline.</p></li>
+</ul>
+</section>
+<section id="common-dplyr-function-properties" class="slide level2">
+<h2>Common <code>dplyr</code> Function Properties</h2>
+<ol type="1">
+<li><p>The first argument must be a data frame to process.</p></li>
+<li><p>The subsequent arguments describe what to do with the data frame specified in the first argument, and you can refer to columns in the data frame directly without using the <code>$</code> operator (just use the column names).</p></li>
+<li><p>The return result of a function is a new data frame</p></li>
+</ol>
+<p>For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Load dplyr library</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="co"># Load airquality dataset</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
+<span id="cb48-5"><a href="#cb48-5"></a>dt_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt, Solar.R <span class="sc">&gt;</span> <span class="dv">300</span>)</span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="fu">head</span>(dt_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Ozone Solar.R Wind Temp Month Day
+1    18     313 11.5   62     5   4
+2    14     334 11.5   64     5  16
+3    34     307 12.0   66     5  17
+4    30     322 11.5   68     5  19
+5    11     320 16.6   73     5  22
+6    39     323 11.5   87     6  10</code></pre>
+</div>
+</div>
+</section>
+<section id="dplyrglimpse" class="slide level2">
+<h2>dplyr::<code>glimpse</code></h2>
+<ul>
+<li>Create new variable <code>dt_iris</code> that stored the data set “iris”.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Load dataset 'iris'</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>dt_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Glimpse the data set in <code>dt_iris</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># glimpse data</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">glimpse</span>(dt_iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dplyrselect" class="slide level2">
+<h2>dplyr::<code>select</code></h2>
+<ul>
+<li><p>We already have data frame <code>dt_iris</code> from earlier practice. Now we will select columns name <code>Species</code>, and <code>Petal.Width</code> from <code>dt</code> and store in new variable: <code>dt_sel</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Select columns Petal.Width and Species from dt, keep in dt_sel</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>dt_sel <span class="ot">&lt;-</span> <span class="fu">select</span>(dt_iris, Species, Petal.Width)</span>
+<span id="cb52-3"><a href="#cb52-3"></a></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="co"># Check the result by glimpse</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="fu">glimpse</span>(dt_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+</section>
+<section id="dplyrfilter" class="slide level2">
+<h2>dplyr::<code>filter</code></h2>
+<p><code>filter()</code> is used to subset a data frame, retaining all rows that satisfy your conditions.</p>
+<p>From the data set iris stored in data frame <code>dt_iris</code>,</p>
+<ul>
+<li>Now we will filter Species ‘versicolor’.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Filter versicolor species in dt_iris</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>dt_versicolor <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_iris, Species <span class="sc">==</span> <span class="st">"versicolor"</span>)</span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="co"># Glimpse the result</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="fu">glimpse</span>(dt_versicolor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>From <code>dt_versicolor</code>, filter the flowers that the <code>Sepal.Length</code> longer than or equal to 6</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Filter the versicolor iris that the sepal length longer than or equal to 6</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>dt_vsc_filt <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_versicolor, Sepal.Length <span class="sc">&gt;=</span> <span class="dv">6</span>)</span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="co"># Glimpse the result</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="fu">glimpse</span>(dt_vsc_filt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dplyrarrange" class="slide level2">
+<h2>dplyr::<code>arrange</code></h2>
+<p><code>arrange()</code> orders the rows of a data frame by the values of selected columns.</p>
+<p>In our filtered data frame <code>dt_vsc_filt</code>, sort the <code>Sepal.Length</code> column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Sort data frame dt_vsc_filt by sepal length column (ascendingly)</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, sort the <code>Petal.Length</code> descendingly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Sort data frame dt_vsc_filt descendingly by petal length column</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, <span class="fu">desc</span>(Petal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dplyrrename" class="slide level2">
+<h2>dplyr::<code>rename</code></h2>
+<p><code>rename()</code> changes the names of individual variables using <code>new_name = old_name</code> syntax.</p>
+<p>From sorted and filtered data frame <code>dt_vsc_filt_srt</code>, we will rename 2 columns, from <code>Sepal.Length</code> and <code>Petal.Length</code>, to <code>SL</code> and <code>PL</code>, respectively. Then save to the new data frame <code>dt_vsc_renamed</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>dt_vsc_renamed <span class="ot">&lt;-</span> <span class="fu">rename</span>(dt_vsc_filt_srt, </span>
+<span id="cb57-2"><a href="#cb57-2"></a>                         <span class="at">SL =</span> Sepal.Length,</span>
+<span id="cb57-3"><a href="#cb57-3"></a>                         <span class="at">PL =</span> Petal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dplyrmutate" class="slide level2">
+<h2>dplyr::<code>mutate</code></h2>
+<p><code>mutate()</code> creates new columns that are functions of existing variables, as well as modify and delete columns.</p>
+<p>From the previous data frame <code>dt_vsc_renamed</code>, we’ll calculate the difference between sepal length <code>SL</code> and petal length <code>PL</code> to the new column <code>Len_Diff</code>. This can be done with the <code>mutate()</code> function as follow.</p>
+</section>
+<section id="dplyrsummarize" class="slide level2">
+<h2>dplyr::<code>summarize</code></h2>
+</section>
+<section id="magrittr" class="slide level2">
+<h2>magrittr::<code>%&gt;%</code></h2>
+</section>
+<section id="graphics-in-r-1" class="slide level2">
+<h2>Graphics in R (1)</h2>
+<p>Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.</p>
+<p>Using library <code>graphics</code>, plain and simple plot functions in R is usually called <strong>R base plot</strong>. The syntax is shown as follow:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</div>
+</div>
+<p>This is a scatter plot showing 100 random numbers. Each red point indicates a data point.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</div>
+</div>
+<p>Another simple plot to show the pattern of the data is histogram.</p>
+</div>
+</div>
+</section>
+<section id="graphics-in-r-2" class="slide level2">
+<h2>Graphics in R (2)</h2>
+<p>The following lines create a plot from data frame <code>t</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># Creating a data frame</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a>t <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">14</span>), </span>
+<span id="cb60-3"><a href="#cb60-3"></a>                <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">21</span>), </span>
+<span id="cb60-4"><a href="#cb60-4"></a>                <span class="at">z =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">7</span>))</span>
+<span id="cb60-5"><a href="#cb60-5"></a><span class="co"># Creating a new plot</span></span>
+<span id="cb60-6"><a href="#cb60-6"></a><span class="fu">plot</span>(t<span class="sc">$</span>x, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">ylim =</span> <span class="fu">range</span>(t), <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb60-7"><a href="#cb60-7"></a><span class="co"># Adding new graphic to the plot</span></span>
+<span id="cb60-8"><a href="#cb60-8"></a><span class="fu">lines</span>(t<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">"s"</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb60-9"><a href="#cb60-9"></a><span class="co"># Adding another graphic to the plot</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a><span class="fu">points</span>(t<span class="sc">$</span>z, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <ul>
-<li>Data Types and Structures from <a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/index.html">swcarpentry.github.io</a></li>
-<li><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: The 10-page document by Torfs &amp; Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).</li>
+<li><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: by Torfs &amp; Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.</li>
+<li><a href="https://nbisweden.github.io/workshop-data-visualization-r/2304/index.html">Workshop on Data Visualization in R</a>: by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.</li>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science (2nd Edition)</a>: written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.</li>
 </ul>
 
 <img src="img/sci_abbl_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -773,7 +1121,7 @@ $five
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
