@@ -332,21 +332,21 @@ We can handle data frames with base R, but when you are working with a large dat
 
 Frequently used `dplyr` verbs:
 
--   `glimpse`: skim structure of the data, see every columns in a data frame.
+1.  `glimpse`: skim structure of the data, see every columns in a data frame.
 
--   `select`: return a subset of the columns of a data frame, using a flexible notation.
+2.  `select`: return a subset of the columns of a data frame, using a flexible notation.
 
--   `filter`: extract a subset of rows from a data frame based on logical conditions.
+3.  `filter`: extract a subset of rows from a data frame based on logical conditions.
 
--   `arrange`: reorder rows of a data frame.
+4.  `arrange`: reorder rows of a data frame.
 
--   `rename`: rename variables in a data frame.
+5.  `rename`: rename variables in a data frame.
 
--   `mutate`: add new variables/columns or transform existing variables.
+6.  `mutate`: add new variables/columns or transform existing variables.
 
--   `summarise` / `summarize`: generate summary statistics of different variables in the data frame, possibly within strata.
+7.  `summarise` / `summarize`: generate summary statistics of different variables in the data frame, possibly within strata.
 
--   `%>%`: the "pipe" operator, from `magrittr`, is used to connect multiple verb actions together into a pipeline.
+8.  `%>%`: the "pipe" operator, from `magrittr`, is used to connect multiple verb actions together into a pipeline.
 
 ## Common `dplyr` Function Properties
 
@@ -391,19 +391,27 @@ dt_iris <- datasets::iris
 glimpse(dt_iris)
 ```
 
+![Three species of iris flowers in this data set: setosa, versicolor, and virginica. Figure from [https://www.embedded-robotics.com/iris-dataset-classification](https://www.embedded-robotics.com/iris-dataset-classificationhttps://www.embedded-robotics.com/iris-dataset-classification/).](https://www.embedded-robotics.com/wp-content/uploads/2022/01/Iris-Dataset-Classification.png){fig-align="center" width="80%"}
+
 ## dplyr::`select`
 
 -   We already have data frame `dt_iris` from earlier practice. Now we will select columns name `Species`, and `Petal.Width` from `dt` and store in new variable: `dt_sel`
 
-    ```{r}
-    #| echo: true
-    #| eval: false
-    # Select columns Petal.Width and Species from dt, keep in dt_sel
-    dt_sel <- select(dt_iris, Species, Petal.Width)
+```{r}
+#| echo: true
+#| eval: false
+# Select columns Petal.Width and Species from dt, keep in dt_sel
+dt_sel <- select(dt_iris, Species, Petal.Width)
+```
 
-    # Check the result by glimpse
-    glimpse(dt_sel)
-    ```
+-   The glimpse the result.
+
+```{r}
+#| echo: true
+#| eval: false
+# Check the result by glimpse
+glimpse(dt_sel)
+```
 
 ## dplyr::`filter`
 
@@ -429,6 +437,13 @@ glimpse(dt_versicolor)
 #| eval: false
 # Filter the versicolor iris that the sepal length longer than or equal to 6
 dt_vsc_filt <- filter(dt_versicolor, Sepal.Length >= 6)
+```
+
+-   Then glimpse the result
+
+```{r}
+#| echo: true
+#| eval: false
 # Glimpse the result
 glimpse(dt_vsc_filt)
 ```
@@ -444,8 +459,6 @@ glimpse(dt_vsc_filt)
 #| eval: false
 # Sort data frame dt_vsc_filt by sepal length column (ascendingly)
 dt_vsc_filt_srt <- arrange(dt_vsc_filt, Sepal.Length)
-# Glimpse the result
-glimpse(dt_vsc_filt_srt)
 ```
 
 -   Then, sort the `Petal.Length` descendingly.
@@ -457,6 +470,14 @@ glimpse(dt_vsc_filt_srt)
 dt_vsc_filt_srt <- arrange(dt_vsc_filt, desc(Petal.Length))
 ```
 
+-   Glimpse the result
+
+```{r}
+#| echo: true
+#| eval: false
+glimpse(dt_vsc_filt_srt)
+```
+
 ## dplyr::`rename`
 
 `rename()` changes the names of individual variables using `new_name = old_name` syntax.
@@ -466,6 +487,7 @@ dt_vsc_filt_srt <- arrange(dt_vsc_filt, desc(Petal.Length))
 ```{r}
 #| echo: true
 #| eval: false
+# Rename column from Sepal.Length to SL, and Petal.Length to PL, then save to the new data frame dt_vsc_renamed
 dt_vsc_renamed <- rename(dt_vsc_filt_srt, 
                          SL = Sepal.Length,
                          PL = Petal.Length)
@@ -475,11 +497,123 @@ dt_vsc_renamed <- rename(dt_vsc_filt_srt,
 
 `mutate()` creates new columns that are functions of existing variables, as well as modify and delete columns.
 
-From the previous data frame `dt_vsc_renamed`, we'll calculate the difference between sepal length `SL` and petal length `PL` to the new column `Len_Diff`. This can be done with the `mutate()` function as follow.
+-   From the previous data frame `dt_vsc_renamed`, we'll calculate the difference between sepal length `SL` and petal length `PL` to the new column `Len_Diff`. This can be done with the `mutate()` function as follow.
+
+```{r}
+#| echo: true
+#| eval: false
+# Calculate difference of sepal length and petal length, add to the new column Len_Diff
+dt_vsc_renamed <- mutate(dt_vsc_renamed,
+                         Len_Diff = SL - PL)
+```
+
+-   Then, use function `summary()` to see the distribution of the values using the column \_\_\_\_\_\_\_\_\_\_\_.
+
+```{r}
+#| echo: true
+#| eval: false
+# Rough summarize the difference of sepal length and petal length 
+summary(dt_vsc_renamed$________)
+```
+
+Expected result:
+
+```{r}
+#| echo: false
+#| eval: true
+dt_vsc_renamed2 <- datasets::iris %>% 
+  filter(Species == "versicolor") %>% 
+  filter(Sepal.Length >= 6) %>% 
+  rename(SL = Sepal.Length, PL = Petal.Length) %>% 
+  mutate(Len_Diff = SL - PL)
+summary(dt_vsc_renamed2$Len_Diff)
+```
+
+## dplyr::`%>%`
+
+The pipeline operator `%>%` (pronounce: pipe) is very handy for bundling dplyr verbs and creating complex syntax for processing data. For example:
+
+-   Instead of using `dplyr` verbs and storing the new variables line by line, we can bundle them and use `%>%`. All operations associated with `%>%` are stored in one variable.
+
+```{r}
+#| echo: true
+#| eval: false
+iris_df <- datasets::iris %>% 
+  rename(SL = Sepal.Length,
+         SW = Sepal.Width,
+         PL = Petal.Length,
+         PW = Petal.Width) %>% 
+  mutate(Len_Diff = SL - PL) %>% 
+  filter(Len_Diff > 1)
+```
+
+From the syntax above:
+
+1.  We loaded the iris data set to the variable `iris_df`.
+
+2.  Then rename the column name with `rename()` function.
+
+3.  Then calculate the difference of sepal length and petal length using `mutate()` function.
+
+4.  And keep the difference that are greater than 1 using `filter()` function.
+
+5.  All of these verbs are operated and store in one variable, `iris_df`.
 
 ## dplyr::`summarize`
 
-## magrittr::`%>%`
+`summarise()` returns one row for each combination of grouping variables. It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified.
+
+-   We'll load original `datasets::iris` to the new data frame `dt2_iris`.
+
+```{r}
+#| echo: true
+#| eval: false
+# Load iris dataset
+dt2_iris <- datasets::iris
+# glimpse data
+glimpse(dt2_iris)
+```
+
+-   Of these 3 species, calculate mean and standard deviation of petal length using `mean()` and `sd()`, respectively. Then calculate the standard deviation of mean (SEM) of the petal length.
+
+$$
+SEM = \frac{SD}{\sqrt{n}}
+$$
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: false
+dt2_iris <- datasets::iris %>%
+  group_by(Species) %>%
+  summarise(
+    num_flowers = n(),
+    Mean_PL = ______________,
+    SD_PL = ______________) %>% 
+  mutate(SEM_PL = ______________)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| eval: true
+dt2_iris <- datasets::iris %>%
+  group_by(Species) %>%
+  summarise(
+    num_flowers = n(),
+    Mean_PL = mean(Petal.Length),
+    SD_PL = sd(Petal.Length)) %>% 
+  mutate(SEM_PL = SD_PL/sqrt(num_flowers))
+
+
+kableExtra::kbl(dt2_iris) %>%
+kableExtra::kable_styling(bootstrap_options = "striped", 
+                         font_size = 18)
+```
+:::
+:::
 
 ## Graphics in R (1)
 
@@ -527,8 +661,17 @@ lines(t$y, type = "s", col = "blue")
 points(t$z, pch = 20, cex = 2, col = "green")
 ```
 
+## Graphics in `ggplot2`
+
+The `ggplot2` package is an R package for creating graphs or plots of statistical data. With `ggplot2`, you can compose graphs by combining independent components based on the **Grammar of Graphics**.
+
+![GIF from https://education.arcus.chop.edu/r-4-beginners-chapter-3](https://education.arcus.chop.edu/images/displ-v-hwy-scatter-blue.gif)
+
+We'll mainly use ggplot2 and other graphic libraries in this workshop 🙂
+
 ## References
 
--   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.
+-   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): written by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.
 -   [Workshop on Data Visualization in R](https://nbisweden.github.io/workshop-data-visualization-r/2304/index.html): by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.
 -   [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+-   [Exploratory Data Analysis with R](https://bookdown.org/rdpeng/exdata/): written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020
