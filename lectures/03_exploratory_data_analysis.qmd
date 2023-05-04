@@ -7,15 +7,15 @@ format:
     logo: img/sci_abbl_logo.png
     footer: "17 May 2023"
     fontsize: 18pt
+    slide-number: true
+    dpi: 300
 editor: visual
 bibliography: references.bib
 ---
 
 ## EDA: *Why?*
 
-Exploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, aims of EDA[^1] are:
-
-[^1]: [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+Exploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, as of @wickham2023b, aims of EDA are:
 
 -   Generate questions about your data
 
@@ -23,10 +23,228 @@ Exploratory Data Analysis (EDA) is the way to observe your data, and can be an i
 
 -   Use what you learn to refine your questions and/or generate new questions.
 
-EDA is an important part of any data analysis, even if you already have assumptions or primary research questions in mind. Because we always need to investigate whether the pattern or quality meets our expectations or not. And therefore need to consider data cleaning and further analysis, by leveraging any R libraries for visualization, transformation, and modelling.
+-   This is important even if you already have research questions in mind.
+
+-   To choose the suitable means for data cleaning.
+
+## 10 Simple Steps for EDA in R
+
+Referred from @peng2020, here's a quick steps to do for exploratory data analysis in R.
+
+1.  Formulate your question
+
+2.  Read in your data
+
+3.  Check the packaging
+
+4.  Glimpse
+
+5.  Look at the top and the bottom of the data
+
+6.  Check for the *n*
+
+7.  Validate with at least one external data source
+
+8.  Try the easy solution first
+
+9.  Challenge your solution
+
+10. Follow up
+
+## Activity
+
+For today's exercise on EDA, we will adapt 10 simple steps to study the dataset of Arabidopsis thaliana gene expression in the wild-type and At*pp7* mutant line.
+
+-   The study conducted by @xu2019. The goal of this study is to characterize the role of serine/threonine-protein phosphatase 7 (AtPP7) in chloroplast development using RNA-Seq.
+
+-   The data set is publicly available at EBI Expression Atlas accession: [E-GEOD-122495](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-122495/Results).
+
+## Step 1: **Formulate your question**
+
+A good and sharp question or hypothesis could lead to clearing up more possible ways to answer the questions in the EDA process.
+
+> The data set is adopted from the study by @xu2019, The goal is to study the transcriptome change of serine/threonine-protein phosphatase 7 (PP7) wildtype and recessive mutant line in chloroplast of *A. thaliana* leaves. The data set already retrieved from the database and normalized using in-house DESeq2 analysis script.
+
+ 
+
+❓ **Can you formulate the questions that you attempt to find the answer from this data?**
+
+ 
+
+::: {.callout-tip icon="false"}
+The most important questions you can answer with the EDA process is "*Do I have the right data to answer this question?*". Though the question is difficult to answer at the beginning, the it is a good start to do EDA!
+:::
+
+## Step 2: Load your data
+
+Now we will load the public data set from EBI Expression Atlas into R environment. We will load the data set using `read_delim()` function in `readr` library within the tidyverse suite.
+
+ 
+
+```{r}
+#| echo: true
+#| eval: false
+#| message: false
+# Load libraries
+library(tidyverse)
+# Retrieve data set
+exp_dat <- read_csv("../datasets/E-GEOD-122495-normalized_count.csv")
+```
+
+ 
+
+What we may have found:
+
+-   Is there a data frame object called `exp_dat` in your R environment ?
+
+-   Are there any errors/warnings during data retrieval ?
+
+-   From Rstudio, how many objects and variables observed in this data set ?
+
+## Step 3: Check the data dimension
+
+-   We can check the number of rows and columns of the data frame using `dim()` as follows.
+
+```{r}
+#| echo: true
+#| eval: false
+# See how many rows and columns in the data
+dim(exp_dat)
+```
+
+ 
+
+-   Then see the column names with `colnames()`
+
+```{r}
+#| echo: true
+#| eval: false
+# see column names
+colnames(exp_dat)
+```
+
+## Step 4: Glimpse the data
+
+As mentioned in the R Basic Programming lecture, we can use the `glimpse()` function to see each column in the data frame as well as the column types and some values in that column.
+
+ 
+
+```{r}
+#| echo: true
+#| eval: false
+# Glimpse data frame
+glimpse(exp_dat)
+```
+
+ 
+
+As we can see from the output, `glimpse()` can show how many rows and columns there are, just like the `dim()` function. You can also check the classes of each column to make sure they are specified correctly.
+
+## Step 5: Look at the top and the bottom of the data
+
+Other useful functions to look at the beginning and end of the data frame are the head() and tail() functions, respectively.
+
+ 
+
+```{r}
+#| echo: true
+#| eval: false
+# Show the first 10 lines of the data frame
+head(exp_dat, n = 10)
+# Show the last 10 lines of the data frame
+tail(exp_dat, n = 10)
+```
+
+ 
+
+With these functions:
+
+-   We can determine if the data was loaded correctly or not.
+
+-   Were the column names defined correctly?
+
+-   Were there no column names at all in the beginning ?
+
+-   Was the data loaded completely from the first to the last line of the file ?
+
+## Step 6: Check for the "n"
+
+-   This step is counting you want to check their number (*n*).
+
+-   In general, counting things is a good way to find out if something is going wrong after you load the data. Whether or not duplicate values or NA are observed.
+
+-   We can use many functions to explore how many values observed under the condition of interest. For example,
+
+```{r}
+#| echo: true
+#| eval: false
+# How many genes observed from Gene ID column
+count_geneID <- table(exp_dat$`Gene ID`)
+# Number of unique gene ID
+length(count_geneID)
+
+# How many genes observed from Gene Name column
+count_geneName <- table(exp_dat$`Gene Name`)
+# Number of gene names 
+length(count_geneName)
+```
+
+Is the number of the gene ID and gene name the same? why?
+
+::: incremental
+We can check and count for the NAs by
+
+```{r}
+#| echo: true
+#| eval: false
+# check NAs in the Gene Name column
+is.na(exp_dat$`Gene Name`)
+
+# Summary of how many NAs are there
+summary(is.na(exp_dat$`Gene Name`))
+```
+:::
+
+## Step 7: Validate with at least one external data source
+
+-   It is very important to make sure that your data matches something outside the data set. This way you can make sure that the measurements are about what they should be, and it serves as a check to see what other things in your data set might be wrong.
+
+-   From this gene expression data, we can easily check the distribution of values with many functions, such as `quantile()` and `summary()` to distribute the data.
+
+```{r}
+#| echo: true
+#| eval: false
+# Summarize the trend of gene expression in the sample 'Col.0_1'
+summary(exp_dat$Col.0_1)
+# Distribute to quantile rank
+quantile(exp_dat$Col.0_1)
+```
+
+-   With `summary()`, you can even summarize every columns in the data frame at once as follow.
+
+```{r}
+#| echo: true
+#| eval: false
+# Summarize data frame
+summary(exp_dat)
+```
+
+-   You can validate the gene expression data by observing the pattern of overall gene expression using the above functions or individually as follows:
+
+```{r}
+#| echo: true
+#| eval: false
+# Examining expression of gene ID 'AT5G27150'
+exp_dat[exp_dat$`Gene ID` == "AT2G43010", ]
+```
+
+## Step 8: Try the easy solution first
+
+## Step 9: Challenge your solution
+
+## Step 10: Follow up
 
 ## References
 
--   [Exploratory Data Analysis Course](https://www.coursera.org/learn/exploratory-data-analysis): by Prof. Roger D. Peng, PhD, in Coursera.
-
--   
+::: {#refs}
+:::

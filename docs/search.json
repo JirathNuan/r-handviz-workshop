@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\nTime\nTopic\nSlide\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n\n9:00 - 9:45\nWelcome, Introduction, and Graphical Requirement for Article Submission\n\nPS\n\n\n\n9:45 - 10:00\nMorning Break\n\n\n\n\n\n10:00 - 11:00\nBasic R Programming & Exploratory Data Analysis\n📖\nJN\nPY, KC\n\n\n11:00 - 12:00\nOmics Data Handling & Graphic Grammars\n\nJN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\n\nJN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\n\nJN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\n\nJN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\n\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\n\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
+    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\nTime\nTopic\nSlide\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n\n9:00 - 9:45\nWelcome, Introduction, and Graphical Requirement for Article Submission\n\nPS\n\n\n\n9:45 - 10:15\nBasic R Programming\n📖\nPS, JN\nPY, KC\n\n\n10:15 - 11:00\nExploratory Data Analysis\n\nPS, JN\nPY, KC\n\n\n11:00 - 12:00\nOmics Data Handling & Graphic Grammars\n\nPS, JN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\n\nPS, JN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\n\nPS, JN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\n\nPS, JN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\n\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\n\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
   },
   {
     "objectID": "prerequisite.html",
@@ -25,7 +25,7 @@
     "href": "prerequisite.html#software-requirements",
     "title": "Prerequisites",
     "section": "Software Requirements",
-    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version (in May 2023) is 4.2.3 (2023-03-15 ucrt) -- \"Shortstop Beagle\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.2, which is compatible with version R 4.2.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is 2023.03.0+386 | Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nTBW"
+    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nTBW"
   },
   {
     "objectID": "about.html",
@@ -33,5 +33,166 @@
     "title": "R Workshop 2023",
     "section": "",
     "text": "This workshop organized by Agricultural Biotech & Bioinformatics Lab, Division of Biological Science, on behalf of faculty of science, Prince of Songkla University, Hat Yai, Thailand.\n\n📍 Venue\nThe workshop will be at the room Bsc0303, Basic Science (BSc) Building (อาคารเรียนและปฏิบัติการพื้นฐานทางวิทยาศาสตร์)\n\n\n\n\n\n\n\n\n📧 Contact\nPlease contact us if you have any questions about this workshop. We are more than happy to help you. Our team is available to provide assistance and answer any queries you may have. Please don’t hesitate to reach out.\nTo get in touch on the course, please email to jirath.nuan@gmail.com, or you can get in touch directly to our supervisor at ponsit.sat@gmail.com.\nWe’re looking forward to see you !"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#r-vs-rstudio-1",
+    "href": "lectures/02_basic_R.html#r-vs-rstudio-1",
+    "title": "Basic R Programming",
+    "section": "R vs RStudio (1)",
+    "text": "R vs RStudio (1)\n\n\n\n\n\n\n\n\nis a language and environment for statistical computing and graphics.\nProvides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, etc.) and publication-quality graphical techniques. And many more!\nFREE (under GNU-GPL license).\n\n\n\n\n\n\n\n\nRstudio is an integrated development environment (IDE) of R\nProvides extensible environments for compiling other languages (e.g. Python, Shell, LaTeX, etc.) and engines (e.g. knitr, Jupyter, quarto, etc.)\nFREE."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#r-vs-rstudio-2",
+    "href": "lectures/02_basic_R.html#r-vs-rstudio-2",
+    "title": "Basic R Programming",
+    "section": "R vs RStudio (2)",
+    "text": "R vs RStudio (2)\n\n\n\n\n\nNormal R GUI\n\n\n\n\n\n\nRStudio user interface and its components"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#r-versatility",
+    "href": "lectures/02_basic_R.html#r-versatility",
+    "title": "Basic R Programming",
+    "section": "R: versatility",
+    "text": "R: versatility"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#accessing-help-documentation-in-rstudio",
+    "href": "lectures/02_basic_R.html#accessing-help-documentation-in-rstudio",
+    "title": "Basic R Programming",
+    "section": "Accessing Help & Documentation in RStudio",
+    "text": "Accessing Help & Documentation in RStudio\n\n\nRStudio provides built-in documentation of all functions you have installed from libraries. For example, you would like to access documentation page of function aov, simply type in the console as follows:\n\nhelp(aov)\n# or \n?aov\n\nYou can access this documentation from the Help pane. The documentation includes an explanation of the arguments, background theorem, and references for the function aov.\n\n\n\n\n\n\nTip\n\n\nThere are 2 recommended repositories allow you to access all documentation online, RDocumentation.org and rdrr.io. These repositories contain all the documentation for all the functions available in R, even if you have never installed it!"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#data-types",
+    "href": "lectures/02_basic_R.html#data-types",
+    "title": "Basic R Programming",
+    "section": "Data types",
+    "text": "Data types\nR has 5 data types:\n\n\n\nCharacter\n\n\na <- c(\"May\", \"June\", \"July\")\nclass(a)\n\n[1] \"character\"\n\n\n\nNumeric\n\n\nb <- c(-2.25, -1.5, 0, 1.0, 2.75, 3/4)\nclass(b)\n\n[1] \"numeric\"\n\n\n\nInteger\n\n\nc <- as.integer(b)\nc\n\n[1] -2 -1  0  1  2  0\n\nclass(c)\n\n[1] \"integer\"\n\n\n\n\nLogical\n\nd <- c(TRUE, FALSE, TRUE, FALSE)\nclass(d)\n\n[1] \"logical\"\n\n\nComplex\n\n\ne <- 1+4i\nclass(e)\n\n[1] \"complex\"\n\n\n\n\n\n\n\n\nInfo\n\n\nR provides many functions to examine features of vectors and other objects, for example\n\nclass() - what kind of object is it?\nlength() - how long is it? What about two dimensional objects?"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#data-structure-1",
+    "href": "lectures/02_basic_R.html#data-structure-1",
+    "title": "Basic R Programming",
+    "section": "Data structure (1)",
+    "text": "Data structure (1)\n\n\n\nVectors\nis a row of strings (can be numbers, characters, logicals , or mix of it), and also known as a 1-dimensional array. R uses function c to declare vectors:\n\nx <- c(1, 4, 6, 8, 10)\n# Inspect vector\nx\n\n[1]  1  4  6  8 10\n\n# Access element in vector\nx[2]\n\n[1] 4\n\n# Calculating vector\nsum(x)\n\n[1] 29\n\n# Add another vector\ny <- c(2, -2, 4, 9, 0.5)\ny\n\n[1]  2.0 -2.0  4.0  9.0  0.5\n\n# Calculating vector\nz <- x + y\nz\n\n[1]  3.0  2.0 10.0 17.0 10.5\n\n\n\n\n\nMatrices\nis a 2-dimensional array, we use the function matrix to declare matrix in R as follow.\n\nmat <- matrix(data = c(9, 2, 3, 4, 5, 6), nrow = 3)\n# Inspecting matrix\nmat\n\n     [,1] [,2]\n[1,]    9    4\n[2,]    2    5\n[3,]    3    6\n\n# Accessing element in 1st row, 2nd column of the matrix\nmat[1,2]\n\n[1] 4\n\n# Multiply matrix by 10\nmat*10\n\n     [,1] [,2]\n[1,]   90   40\n[2,]   20   50\n[3,]   30   60\n\n# Replace value in 3rd row, 1st column of the matrix to 20\nmat[3,1] <- 20\nmat\n\n     [,1] [,2]\n[1,]    9    4\n[2,]    2    5\n[3,]   20    6"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#data-structures-2",
+    "href": "lectures/02_basic_R.html#data-structures-2",
+    "title": "Basic R Programming",
+    "section": "Data structures (2)",
+    "text": "Data structures (2)\n\n\n\nData frames\nA data frame is a matrix in which rows and columns are named. A data frame is more flexible and compatible for further data manipulation and export as a spreadsheet. Also, data frame can be calculated like matrix.\n\n# Create a data frame\nt <- data.frame(\n  name = c(\"gene1\", \"gene2\", \"gene3\", \"gene4\"),\n  cond_1 = c(20, 18, 0, 0),\n  cond_2 = c(1, 2, 100, 120)\n)\n# Access element in data frame\nt[4, 3]\n\n[1] 120\n\n# See how many rows and columns in the data frame\ndim(t)\n\n[1] 4 3\n\n# See what type of data format in each column\nstr(t)\n\n'data.frame':   4 obs. of  3 variables:\n $ name  : chr  \"gene1\" \"gene2\" \"gene3\" \"gene4\"\n $ cond_1: num  20 18 0 0\n $ cond_2: num  1 2 100 120\n\n\n\n\n\nLists\nList is a complex object that can store all data types and structures, even list within list!\n\nL1 <- list(one = 1,\n           two = c(1, 2),\n           five = seq(0, 1, length = 5))\n# Inspect the list\nL1\n\n$one\n[1] 1\n\n$two\n[1] 1 2\n\n$five\n[1] 0.00 0.25 0.50 0.75 1.00\n\n# Access the 3rd structure in a list\nL1[3]\n\n$five\n[1] 0.00 0.25 0.50 0.75 1.00\n\n## Access the 2nd child element of the 3rd structure of the list\nL1[[3]][2]\n\n[1] 0.25\n\n# Calculating the list\nL1$five * 10\n\n[1]  0.0  2.5  5.0  7.5 10.0"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#data-frames-1",
+    "href": "lectures/02_basic_R.html#data-frames-1",
+    "title": "Basic R Programming",
+    "section": "Data frames (1)",
+    "text": "Data frames (1)\nData frame is a key data structure in R and statistics.\n\nEach row represents observation (genes, protein, taxon, name)\nEach column represents variable (measures, treatments, characteristics) of the observation\nEach value in a cell represents each data point.\n\n\nStructure of data frame. Redraw from R for Data Science 2nd edition (Hadley Wickham & Garrett Grolemund)."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#data-frames-2",
+    "href": "lectures/02_basic_R.html#data-frames-2",
+    "title": "Basic R Programming",
+    "section": "Data frames (2)",
+    "text": "Data frames (2)\nWe’ll show structure of the data frames in 2 formats; wide and long formats, using airquality dataset.\n\n\n\n\n\nWide format\n\ndt_wide <- datasets::airquality\n# Show how the data looks like\nhead(dt_wide)\n\n\n\n\n\n \n  \n    Ozone \n    Solar.R \n    Wind \n    Temp \n    Month \n    Day \n  \n \n\n  \n    41 \n    190 \n    7.4 \n    67 \n    5 \n    1 \n  \n  \n    36 \n    118 \n    8.0 \n    72 \n    5 \n    2 \n  \n  \n    12 \n    149 \n    12.6 \n    74 \n    5 \n    3 \n  \n  \n    18 \n    313 \n    11.5 \n    62 \n    5 \n    4 \n  \n  \n    NA \n    NA \n    14.3 \n    56 \n    5 \n    5 \n  \n  \n    28 \n    NA \n    14.9 \n    66 \n    5 \n    6 \n  \n\n\n\n\n\n\nHuman-readable data frame\nElegance\nEasy to see all values in each observation\nOne observation is one row\nMay incompatible for some plots in ggplot2\n\n\nLong format\n\ndt_long <- datasets::airquality %>%\n  pivot_longer(!c(Day, Month))\n# Show how the data looks like\nhead(dt_long)\n\n\n\n\n\n \n  \n    Month \n    Day \n    name \n    value \n  \n \n\n  \n    5 \n    1 \n    Ozone \n    41.0 \n  \n  \n    5 \n    1 \n    Solar.R \n    190.0 \n  \n  \n    5 \n    1 \n    Wind \n    7.4 \n  \n  \n    5 \n    1 \n    Temp \n    67.0 \n  \n  \n    5 \n    2 \n    Ozone \n    36.0 \n  \n  \n    5 \n    2 \n    Solar.R \n    118.0 \n  \n\n\n\n\n\n\nMachine-readable data frame\nSimple\nEach observation can be more than one row\nCompatible to include with metadata table (if any)\nggplot2 ❤️long-format data frame"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#managing-data-frames-with-dplyr",
+    "href": "lectures/02_basic_R.html#managing-data-frames-with-dplyr",
+    "title": "Basic R Programming",
+    "section": "Managing data frames with dplyr",
+    "text": "Managing data frames with dplyr\nWe can handle data frames with base R, but when you are working with a large data set, speed matters. The dplyr package provides a “grammar” (especially verbs) for data manipulation and for editing data frames.\nFrequently used dplyr verbs:\n\nglimpse: skim structure of the data, see every columns in a data frame.\nselect: return a subset of the columns of a data frame, using a flexible notation.\nfilter: extract a subset of rows from a data frame based on logical conditions.\narrange: reorder rows of a data frame.\nrename: rename variables in a data frame.\nmutate: add new variables/columns or transform existing variables.\nsummarise / summarize: generate summary statistics of different variables in the data frame, possibly within strata.\n%>%: the “pipe” operator, from magrittr, is used to connect multiple verb actions together into a pipeline."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#common-dplyr-function-properties",
+    "href": "lectures/02_basic_R.html#common-dplyr-function-properties",
+    "title": "Basic R Programming",
+    "section": "Common dplyr Function Properties",
+    "text": "Common dplyr Function Properties\n\nThe first argument must be a data frame to process.\nThe subsequent arguments describe what to do with the data frame specified in the first argument, and you can refer to columns in the data frame directly without using the $ operator (just use the column names).\nThe return result of a function is a new data frame\n\nFor example:\n\n# Load dplyr library\nlibrary(dplyr)\n# Load airquality dataset\ndt <- datasets::airquality\ndt_filtered <- filter(dt, Solar.R > 300)\n# Show how the data looks like\nhead(dt_filtered)\n\n  Ozone Solar.R Wind Temp Month Day\n1    18     313 11.5   62     5   4\n2    14     334 11.5   64     5  16\n3    34     307 12.0   66     5  17\n4    30     322 11.5   68     5  19\n5    11     320 16.6   73     5  22\n6    39     323 11.5   87     6  10"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrglimpse",
+    "href": "lectures/02_basic_R.html#dplyrglimpse",
+    "title": "Basic R Programming",
+    "section": "dplyr::glimpse",
+    "text": "dplyr::glimpse\n\nCreate new variable dt_iris that stored the data set “iris”.\n\n\n# Load dataset 'iris'\ndt_iris <- datasets::iris\n\n\nGlimpse the data set in dt_iris\n\n\n# glimpse data\nglimpse(dt_iris)\n\n\nThree species of iris flowers in this data set: setosa, versicolor, and virginica. Figure from https://www.embedded-robotics.com/iris-dataset-classification."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrselect",
+    "href": "lectures/02_basic_R.html#dplyrselect",
+    "title": "Basic R Programming",
+    "section": "dplyr::select",
+    "text": "dplyr::select\n\nWe already have data frame dt_iris from earlier practice. Now we will select columns name Species, and Petal.Width from dt and store in new variable: dt_sel\n\n\n# Select columns Petal.Width and Species from dt, keep in dt_sel\ndt_sel <- select(dt_iris, Species, Petal.Width)\n\n\nThe glimpse the result.\n\n\n# Check the result by glimpse\nglimpse(dt_sel)"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrfilter",
+    "href": "lectures/02_basic_R.html#dplyrfilter",
+    "title": "Basic R Programming",
+    "section": "dplyr::filter",
+    "text": "dplyr::filter\nfilter() is used to subset a data frame, retaining all rows that satisfy your conditions.\nFrom the data set iris stored in data frame dt_iris,\n\nNow we will filter Species ‘versicolor’.\n\n\n# Filter versicolor species in dt_iris\ndt_versicolor <- filter(dt_iris, Species == \"versicolor\")\n# Glimpse the result\nglimpse(dt_versicolor)\n\n\nFrom dt_versicolor, filter the flowers that the Sepal.Length longer than or equal to 6\n\n\n# Filter the versicolor iris that the sepal length longer than or equal to 6\ndt_vsc_filt <- filter(dt_versicolor, Sepal.Length >= 6)\n\n\nThen glimpse the result\n\n\n# Glimpse the result\nglimpse(dt_vsc_filt)"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrarrange",
+    "href": "lectures/02_basic_R.html#dplyrarrange",
+    "title": "Basic R Programming",
+    "section": "dplyr::arrange",
+    "text": "dplyr::arrange\narrange() orders the rows of a data frame by the values of selected columns.\n\nIn our filtered data frame dt_vsc_filt, sort the Sepal.Length column.\n\n\n# Sort data frame dt_vsc_filt by sepal length column (ascendingly)\ndt_vsc_filt_srt <- arrange(dt_vsc_filt, Sepal.Length)\n\n\nThen, sort the Petal.Length descendingly.\n\n\n# Sort data frame dt_vsc_filt descendingly by petal length column\ndt_vsc_filt_srt <- arrange(dt_vsc_filt, desc(Petal.Length))\n\n\nGlimpse the result\n\n\nglimpse(dt_vsc_filt_srt)"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrrename",
+    "href": "lectures/02_basic_R.html#dplyrrename",
+    "title": "Basic R Programming",
+    "section": "dplyr::rename",
+    "text": "dplyr::rename\nrename() changes the names of individual variables using new_name = old_name syntax.\n\nFrom sorted and filtered data frame dt_vsc_filt_srt, we will rename 2 columns, from Sepal.Length and Petal.Length, to SL and PL, respectively. Then save to the new data frame dt_vsc_renamed.\n\n\n# Rename column from Sepal.Length to SL, and Petal.Length to PL, then save to the new data frame dt_vsc_renamed\ndt_vsc_renamed <- rename(dt_vsc_filt_srt, \n                         SL = Sepal.Length,\n                         PL = Petal.Length)"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrmutate",
+    "href": "lectures/02_basic_R.html#dplyrmutate",
+    "title": "Basic R Programming",
+    "section": "dplyr::mutate",
+    "text": "dplyr::mutate\nmutate() creates new columns that are functions of existing variables, as well as modify and delete columns.\n\nFrom the previous data frame dt_vsc_renamed, we’ll calculate the difference between sepal length SL and petal length PL to the new column Len_Diff. This can be done with the mutate() function as follow.\n\n\n# Calculate difference of sepal length and petal length, add to the new column Len_Diff\ndt_vsc_renamed <- mutate(dt_vsc_renamed,\n                         Len_Diff = SL - PL)\n\n\nThen, use function summary() to see the distribution of the values using the column ___________.\n\n\n# Rough summarize the difference of sepal length and petal length \nsummary(dt_vsc_renamed$________)\n\nExpected result:\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    0.9     1.5     1.9     1.8     2.0     2.3"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyr",
+    "href": "lectures/02_basic_R.html#dplyr",
+    "title": "Basic R Programming",
+    "section": "dplyr::%>%",
+    "text": "dplyr::%>%\nThe pipeline operator %>% (pronounce: pipe) is very handy for bundling dplyr verbs and creating complex syntax for processing data. For example:\n\nInstead of using dplyr verbs and storing the new variables line by line, we can bundle them and use %>%. All operations associated with %>% are stored in one variable.\n\n\niris_df <- datasets::iris %>% \n  rename(SL = Sepal.Length,\n         SW = Sepal.Width,\n         PL = Petal.Length,\n         PW = Petal.Width) %>% \n  mutate(Len_Diff = SL - PL) %>% \n  filter(Len_Diff > 1)\n\nFrom the syntax above:\n\nWe loaded the iris data set to the variable iris_df.\nThen rename the column name with rename() function.\nThen calculate the difference of sepal length and petal length using mutate() function.\nAnd keep the difference that are greater than 1 using filter() function.\nAll of these verbs are operated and store in one variable, iris_df."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#dplyrsummarize",
+    "href": "lectures/02_basic_R.html#dplyrsummarize",
+    "title": "Basic R Programming",
+    "section": "dplyr::summarize",
+    "text": "dplyr::summarize\nsummarise() returns one row for each combination of grouping variables. It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified.\n\nWe’ll load original datasets::iris to the new data frame dt2_iris.\n\n\n# Load iris dataset\ndt2_iris <- datasets::iris\n# glimpse data\nglimpse(dt2_iris)\n\n\nOf these 3 species, calculate mean and standard deviation of petal length using mean() and sd(), respectively. Then calculate the standard deviation of mean (SEM) of the petal length.\n\n\\[\nSEM = \\frac{SD}{\\sqrt{n}}\n\\]\n\n\n\ndt2_iris <- datasets::iris %>%\n  group_by(Species) %>%\n  summarise(\n    num_flowers = n(),\n    Mean_PL = ______________,\n    SD_PL = ______________) %>% \n  mutate(SEM_PL = ______________)\n\n\n\n\n\n\n \n  \n    Species \n    num_flowers \n    Mean_PL \n    SD_PL \n    SEM_PL \n  \n \n\n  \n    setosa \n    50 \n    1.462 \n    0.1736640 \n    0.0245598 \n  \n  \n    versicolor \n    50 \n    4.260 \n    0.4699110 \n    0.0664554 \n  \n  \n    virginica \n    50 \n    5.552 \n    0.5518947 \n    0.0780497"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#graphics-in-r-1",
+    "href": "lectures/02_basic_R.html#graphics-in-r-1",
+    "title": "Basic R Programming",
+    "section": "Graphics in R (1)",
+    "text": "Graphics in R (1)\nPlotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.\nUsing library graphics, plain and simple plot functions in R is usually called R base plot. The syntax is shown as follow:\n\n\n\nplot(rnorm(100), type = \"p\", col = \"red\")\n\n\n\n\nThis is a scatter plot showing 100 random numbers. Each red point indicates a data point.\n\n\nhist(rnorm(100))\n\n\n\n\nAnother simple plot to show the pattern of the data is histogram."
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#graphics-in-r-2",
+    "href": "lectures/02_basic_R.html#graphics-in-r-2",
+    "title": "Basic R Programming",
+    "section": "Graphics in R (2)",
+    "text": "Graphics in R (2)\nThe following lines create a plot from data frame t.\n\n# Creating a data frame\nt <- data.frame(x = c(11,12,14), \n                y = c(19,20,21), \n                z = c(10,9,7))\n# Creating a new plot\nplot(t$x, type = \"b\", ylim = range(t), col = \"red\")\n# Adding new graphic to the plot\nlines(t$y, type = \"s\", col = \"blue\")\n# Adding another graphic to the plot\npoints(t$z, pch = 20, cex = 2, col = \"green\")"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#graphics-in-ggplot2",
+    "href": "lectures/02_basic_R.html#graphics-in-ggplot2",
+    "title": "Basic R Programming",
+    "section": "Graphics in ggplot2",
+    "text": "Graphics in ggplot2\nThe ggplot2 package is an R package for creating graphs or plots of statistical data. With ggplot2, you can compose graphs by combining independent components based on the Grammar of Graphics.\n\nGIF from https://education.arcus.chop.edu/r-4-beginners-chapter-3We’ll mainly use ggplot2 and other graphic libraries in this workshop 🙂"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#references",
+    "href": "lectures/02_basic_R.html#references",
+    "title": "Basic R Programming",
+    "section": "References",
+    "text": "References\n\nA (very) short introduction to R: written by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.\nWorkshop on Data Visualization in R: by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.\nR for Data Science (2nd Edition): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nExploratory Data Analysis with R: written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020\n\n\n\n\n17 May 2023"
   }
 ]

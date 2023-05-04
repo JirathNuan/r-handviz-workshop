@@ -28,6 +28,89 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="03_exploratory_data_analysis_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="03_exploratory_data_analysis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -335,28 +418,187 @@ Jiratchaya Nuanpirom
 </div>
 
 </section>
-<section id="exploratory-data-analysis-why" class="slide level2">
-<h2>Exploratory Data Analysis: <em>Why?</em></h2>
-<p>Exploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, aims of EDA<sup>1</sup> is:</p>
+<section id="eda-why" class="slide level2">
+<h2>EDA: <em>Why?</em></h2>
+<p>Exploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, as of <span class="citation" data-cites="wickham2023b">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>, aims of EDA are:</p>
 <ul>
 <li><p>Generate questions about your data</p></li>
 <li><p>Search for answers by visualizing, transforming, and modelling your data</p></li>
 <li><p>Use what you learn to refine your questions and/or generate new questions.</p></li>
+<li><p>This is important even if you already have research questions in mind.</p></li>
+<li><p>To choose the suitable means for data cleaning.</p></li>
 </ul>
-<p>EDA is an important part of any data analysis, even if you already have assumptions or primary research questions in mind. Because we always need to investigate whether the pattern or quality meets our expectations or not. And therefore need to consider data cleaning and further analysis, by leveraging any R libraries for visualization, transformation, and modelling.</p>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://r4ds.hadley.nz/">R for Data Science (2nd Edition)</a>: written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.</p></li></ol></aside></section>
-<section id="references" class="slide level2">
-<h2>References</h2>
+</section>
+<section id="simple-steps-for-eda-in-r" class="slide level2">
+<h2>10 Simple Steps for EDA in R</h2>
+<p>Referred from <span class="citation" data-cites="peng2020">Peng (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>, here’s a quick steps to do for exploratory data analysis in R.</p>
+<ol type="1">
+<li><p>Formulate your question</p></li>
+<li><p>Read in your data</p></li>
+<li><p>Check the packaging</p></li>
+<li><p>Glimpse</p></li>
+<li><p>Look at the top and the bottom of the data</p></li>
+<li><p>Check for the <em>n</em></p></li>
+<li><p>Validate with at least one external data source</p></li>
+<li><p>Try the easy solution first</p></li>
+<li><p>Challenge your solution</p></li>
+<li><p>Follow up</p></li>
+</ol>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>For today’s exercise on EDA, we will adapt 10 simple steps to study the dataset of Arabidopsis thaliana gene expression in the wild-type and At<em>pp7</em> mutant line.</p>
 <ul>
-<li><p><a href="https://www.coursera.org/learn/exploratory-data-analysis">Exploratory Data Analysis Course</a>: by Prof.&nbsp;Roger D. Peng, PhD, in Coursera.</p></li>
-<li></li>
+<li><p>The study conducted by <span class="citation" data-cites="xu2019">Xu et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>. The goal of this study is to characterize the role of serine/threonine-protein phosphatase 7 (AtPP7) in chloroplast development using RNA-Seq.</p></li>
+<li><p>The data set is publicly available at EBI Expression Atlas accession: <a href="https://www.ebi.ac.uk/gxa/experiments/E-GEOD-122495/Results">E-GEOD-122495</a>.</p></li>
 </ul>
+</section>
+<section id="step-1-formulate-your-question" class="slide level2">
+<h2>Step 1: <strong>Formulate your question</strong></h2>
+<p>A good and sharp question or hypothesis could lead to clearing up more possible ways to answer the questions in the EDA process.</p>
+<blockquote>
+<p>The data set is adopted from the study by <span class="citation" data-cites="xu2019">Xu et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>, The goal is to study the transcriptome change of serine/threonine-protein phosphatase 7 (PP7) wildtype and recessive mutant line in chloroplast of <em>A. thaliana</em> leaves.</p>
+</blockquote>
+<p>&nbsp;</p>
+<p>❓ <strong>Can you formulate the questions that you attempt to find the answer from this data?</strong></p>
+<p>&nbsp;</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>The most important questions you can answer with the EDA process is “<em>Do I have the right data to answer this question?</em>”. Though the question is difficult to answer at the beginning, the it is a good start to do EDA!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-load-your-data" class="slide level2">
+<h2>Step 2: Load your data</h2>
+<p>Now we will load the public data set from EBI Expression Atlas into R environment. We will load the data set using <code>read_delim()</code> function in <code>readr</code> library within the tidyverse suite.</p>
+<p>&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Retrieve data set</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>exp_dat <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-122495/resources/DifferentialSecondaryDataFiles.RnaSeq/raw-counts"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<p>What we may have found:</p>
+<ul>
+<li><p>Is there a data frame object called <code>exp_dat</code> in your R environment ?</p></li>
+<li><p>Are there any errors/warnings during data retrieval ?</p></li>
+<li><p>From Rstudio, how many objects and variables observed in this data set ?</p></li>
+</ul>
+</section>
+<section id="step-3-check-the-data-dimension" class="slide level2">
+<h2>Step 3: Check the data dimension</h2>
+<ul>
+<li>We can check the number of rows and columns of the data frame using <code>dim()</code> as follows.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># See how many rows and columns in the data</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">dim</span>(exp_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<ul>
+<li>Then see the column names with <code>colnames()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># see column names</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">colnames</span>(exp_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-4-glimpse-the-data" class="slide level2">
+<h2>Step 4: Glimpse the data</h2>
+<p>As mentioned in the R Basic Programming lecture, we can use the <code>glimpse()</code> function to see each column in the data frame as well as the column types and some values in that column.</p>
+<p>&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Glimpse data frame</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">glimpse</span>(exp_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<p>As we can see from the output, <code>glimpse()</code> can show how many rows and columns there are, just like the <code>dim()</code> function. You can also check the classes of each column to make sure they are specified correctly.</p>
+</section>
+<section id="step-5-look-at-the-top-and-the-bottom-of-the-data" class="slide level2">
+<h2>Step 5: Look at the top and the bottom of the data</h2>
+<p>Other useful functions to look at the beginning and end of the data frame are the head() and tail() functions, respectively.</p>
+<p>&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Show the first 10 lines of the data frame</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">head</span>(exp_dat, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Show the last 10 lines of the data frame</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">tail</span>(exp_dat, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<p>With these functions:</p>
+<ul>
+<li><p>We can determine if the data was loaded correctly or not.</p></li>
+<li><p>Were the column names defined correctly?</p></li>
+<li><p>Were there no column names at all in the beginning ?</p></li>
+<li><p>Was the data loaded completely from the first to the last line of the file ?</p></li>
+</ul>
+</section>
+<section id="step-6-check-for-the-n" class="slide level2">
+<h2>Step 6: Check for the “n”</h2>
+<ul>
+<li><p>This step is counting you want to check their number (<em>n</em>).</p></li>
+<li><p>In general, counting things is a good way to find out if something is going wrong after you load the data. Whether or not duplicate values or NA are observed.</p></li>
+<li><p>We can use many functions to explore how many values observed under the condition of interest. For example,</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># How many genes observed from Gene ID column</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>count_geneID <span class="ot">&lt;-</span> <span class="fu">table</span>(exp_dat<span class="sc">$</span><span class="st">`</span><span class="at">Gene ID</span><span class="st">`</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Number of unique gene ID</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">length</span>(count_geneID)</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># How many genes observed from Gene Name column</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>count_geneName <span class="ot">&lt;-</span> <span class="fu">table</span>(exp_dat<span class="sc">$</span><span class="st">`</span><span class="at">Gene Name</span><span class="st">`</span>)</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># Number of gene names </span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">length</span>(count_geneName)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Is the number of the gene ID and gene name the same? why?</p>
+<div>
+<p>We can check and count for the NAs by</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># check NAs in the Gene Name column</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">is.na</span>(exp_dat<span class="sc">$</span><span class="st">`</span><span class="at">Gene Name</span><span class="st">`</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Summary of how many NAs are there</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="fu">summary</span>(<span class="fu">is.na</span>(exp_dat<span class="sc">$</span><span class="st">`</span><span class="at">Gene Name</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="step-7-validate-with-at-least-one-external-data-source" class="slide level2">
+<h2>Step 7: Validate with at least one external data source</h2>
+</section>
+<section id="step-8-try-the-easy-solution-first" class="slide level2">
+<h2>Step 8: Try the easy solution first</h2>
+</section>
+<section id="step-9-challenge-your-solution" class="slide level2">
+<h2>Step 9: Challenge your solution</h2>
+</section>
+<section id="step-10-follow-up" class="slide level2">
+<h2>Step 10: Follow up</h2>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-peng2020" class="csl-entry" role="doc-biblioentry">
+Peng, Roger D. 2020. <em>Exploratory Data Analysis with r</em>. <a href="https://bookdown.org/rdpeng/exdata/">https://bookdown.org/rdpeng/exdata/</a>.
+</div>
+<div id="ref-wickham2023b" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science</em>. 2nd ed. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+</div>
+<div id="ref-xu2019" class="csl-entry" role="doc-biblioentry">
+Xu, Duorong, Giada Marino, Andreas Klingl, Beatrix Enderle, Elena Monte, Joachim Kurth, Andreas Hiltbrunner, Dario Leister, and Tatjana Kleine. 2019. <span>“Extrachloroplastic PP7L Functions in Chloroplast Development and Abiotic Stress Tolerance.”</span> <em>Plant Physiology</em> 180 (1): 323–41. <a href="https://doi.org/10.1104/pp.19.00070">https://doi.org/10.1104/pp.19.00070</a>.
+</div>
+</div>
 
 <img src="img/sci_abbl_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>17 May 2023</p>
 </div>
 </section>
-
     </div>
   </div>
 
@@ -409,7 +651,7 @@ Jiratchaya Nuanpirom
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -568,6 +810,44 @@ Jiratchaya Nuanpirom
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

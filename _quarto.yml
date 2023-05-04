@@ -7,6 +7,7 @@ project:
     # - exercise.qmd
     - prerequisite.qmd
     - about.qmd
+    - lectures/02_basic_R.qmd
 
 website:
   page-navigation: true

@@ -39,11 +39,11 @@ editor: visual
 ## R vs RStudio (2)
 
 ::: columns
-::: {.column width="50%"}
+::: column
 ![Normal R GUI](img/r_gui.png){width="1000"}
 :::
 
-::: {.column width="50%"}
+::: column
 ![RStudio user interface and its components](img/rstudio_ui.png){width="1010"}
 :::
 :::

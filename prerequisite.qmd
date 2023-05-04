@@ -30,7 +30,6 @@ In addition, users with some experience with R are beneficial. This workshop foc
 -   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
 :::
 
-
 ## Software Requirements
 
 Before the workshop day, users are asked to install the following software in advance.
@@ -41,24 +40,22 @@ R is programming language for statistical computing and graphical visualization,
 
 Users can download R installer from the Comprehensive R Archive Network (CRAN): [https://cran.rstudio.com](https://cran.rstudio.com/).
 
-> The latest R version (in May 2023) is `4.2.3 (2023-03-15 ucrt) -- "Shortstop Beagle"`.
+> The latest R version is `4.3.0 (2023-04-21) -- "Already Tomorrow"`.
 
 ### 2. Install Rtools (Windows users only)
 
 Rtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.
 
-Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools/rtools42/rtools.html>
+Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html>
 
-> The current Rtools for Windows users is `Rtools 4.2`, which is compatible with version R 4.2.x.
+> The current Rtools for Windows users is `Rtools 4.3`, which is compatible with version R 4.3.x.
 
 ### 3. Install Rstudio Desktop
 
 Rstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website <https://posit.co/download/rstudio-desktop>.
 
-> Current Rstudio Desktop version is `2023.03.0+386 | Released: 2023-03-16`.
+> Current Rstudio Desktop version is `Released: 2023-03-16`.
 
 ### 4. Install necessary R packages
 
 TBW
-
-
