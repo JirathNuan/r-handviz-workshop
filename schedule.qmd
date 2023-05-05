@@ -6,20 +6,21 @@ This page contains an updated agenda for the Data Handling and Visualization in 
 
 📅 **May 17th, 2023** 📍**BSc0303, BSc bldg., Faculty of Science, PSU**
 
-| Time          | Topic                                                                   | Slide                           | Speaker  | TA       |
-|----------------|----------------------|--------|-------------|-------------|
-| 8:30 - 9:00   | Registration                                                            |                                 |          |          |
-| 9:00 - 9:45   | Welcome, Introduction, and Graphical Requirement for Article Submission |                                 | PS       |          |
-| 9:45 - 10:15  | Basic R Programming                                                     | [📖](/lectures/02_basic_R.html) | PS, JN   | PY, KC   |
-| 10:15 - 11:00 | Exploratory Data Analysis                                               |                                 | PS, JN   | PY, KC   |
-| 11:00 - 12:00 | Omics Data Handling & Graphic Grammars                                  |                                 | PS, JN   | PY, KC   |
-| 12:00 - 13:00 | Lunch                                                                   |                                 |          |          |
-| 13:00 - 14:15 | Plotting Omics Data (1)                                                 |                                 | PS, JN   | PY, KC   |
-| 14:15 - 14:30 | Afternoon Break                                                         |                                 |          |          |
-| 14:30 - 15:30 | Plotting Omics Data (2)                                                 |                                 | PS, JN   | PY, KC   |
-| 15:30 - 16:00 | Arranging Multiple Plots and Figures                                    |                                 | PS, JN   | PY, KC   |
-| 16:00 - 16:15 | Q & A                                                                   |                                 | Everyone | Everyone |
-| 16:15 - 16:30 | Closing and Feedback Session                                            |                                 | Everyone | Everyone |
+| Time          | Topic                                                                   | Speaker  | TA       |
+|-----------------|---------------------|-----------------|-----------------|
+| 8:30 - 9:00   | Registration                                                            |          |          |
+| 9:00 - 9:45   | Welcome, Introduction, and Graphical Requirement for Article Submission | PS       |          |
+| 9:45 - 10:00  | Morning Break                                                           |          |          |
+| 10:00 - 10:40 | Basic R Programming                                                     | PS, JN   | PY, KC   |
+| 10:40 - 11:20 | Exploratory Data Analysis with R                                        | PS, JN   | PY, KC   |
+| 11:20 - 12:00 | Graphic Grammars                                                        | PS, JN   | PY, KC   |
+| 12:00 - 13:00 | Lunch                                                                   |          |          |
+| 13:00 - 14:15 | Plotting Omics Data (1)                                                 | PS, JN   | PY, KC   |
+| 14:15 - 14:30 | Afternoon Break                                                         |          |          |
+| 14:30 - 15:30 | Plotting Omics Data (2)                                                 | PS, JN   | PY, KC   |
+| 15:30 - 16:00 | Arranging Multiple Plots and Figures                                    | PS, JN   | PY, KC   |
+| 16:00 - 16:15 | Q & A                                                                   | Everyone | Everyone |
+| 16:15 - 16:30 | Closing and Feedback Session                                            | Everyone | Everyone |
 
 📢 Speakers & TA team
 
