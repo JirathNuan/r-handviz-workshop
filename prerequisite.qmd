@@ -20,18 +20,6 @@ title: "Prerequisites"
 -   **Memory:** \> 8 GB RAM
 :::
 
-::: {.callout-tip collapse="true"}
-## Optional 📖
-
-In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
-
--   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
-
--   [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) from Datacamp
-
--   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
-:::
-
 ## Software Requirements
 
 Before the workshop day, users are asked to install the following software in advance.
@@ -60,9 +48,11 @@ Rstudio is an integrated development environment (IDE) for computing in R langua
 
 ### 4. Install necessary R packages
 
-Participants are required to install the following R packages before the workshop day.
+Participants are required to install the following R packages from 2 sources, CRAN and Bioconductor, before the workshop day. All packages can be installed by **copy and paste the following commands to RStudio console panel** (in the *bottom left panel* of the RStudio screen), and hit the Enter key.
 
--   Install packages from CRAN
+![Copy and paste the installation commands to the console.](img/install-in-console_CRAN.gif){fig-align="center" width="80%"}
+
+4.1 Install packages from CRAN:
 
 ```{r}
 if (!require("pacman"))
@@ -92,10 +82,11 @@ pacman::p_load(
   plotly,
   agricolae
 )
-
 ```
 
--   Install packages from Bioconductor
+![Copy and paste the installation commands to the console.](img/install-in-console_bioconductor.gif){fig-align="center" width="80%"}
+
+4.2 Install packages from Bioconductor:
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -104,3 +95,17 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install(c("ComplexHeatmap", "DESeq2", 
                        "pcaExplorer", "EnhancedVolcano"))
 ```
+
+📧 For technical issues regarding R packages installation, please email the issues to Prasert Yodsawat (**prasert.y\@outlook.com**).
+
+::: callout-tip
+## Optional 📖
+
+In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
+
+-   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
+
+-   [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) from Datacamp
+
+-   [A (very) short introduction to R](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf): The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).
+:::

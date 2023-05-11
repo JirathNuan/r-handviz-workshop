@@ -253,27 +253,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Optional 📖
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:</p>
-<ul>
-<li><p><a href="https://youtu.be/_V8eKsto3Ug">R Programming Tutorial - Learn the Basics of Statistical Computing</a> from freecodecamp.org</p></li>
-<li><p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Introduction to R</a> from Datacamp</p></li>
-<li><p><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: The 10-page document by Torfs &amp; Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).</p></li>
-</ul>
-</div>
-</div>
-</div>
 </section>
 <section id="software-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="software-requirements">Software Requirements</h2>
@@ -303,10 +282,14 @@ Optional 📖
 </section>
 <section id="install-necessary-r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="install-necessary-r-packages">4. Install necessary R packages</h3>
-<p>Participants are required to install the following R packages before the workshop day.</p>
-<ul>
-<li>Install packages from CRAN</li>
-</ul>
+<p>Participants are required to install the following R packages from 2 sources, CRAN and Bioconductor, before the workshop day. All packages can be installed by <strong>copy and paste the following commands to RStudio console panel</strong> (in the <em>bottom left panel</em> of the RStudio screen), and hit the Enter key.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/install-in-console_CRAN.gif" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Copy and paste the installation commands to the console.</figcaption><p></p>
+</figure>
+</div>
+<p>4.1 Install packages from CRAN:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span></span>
@@ -336,15 +319,38 @@ Optional 📖
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  agricolae</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Install packages from Bioconductor</li>
-</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/install-in-console_bioconductor.gif" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Copy and paste the installation commands to the console.</figcaption><p></p>
+</figure>
+</div>
+<p>4.2 Install packages from Bioconductor:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">"ComplexHeatmap"</span>, <span class="st">"DESeq2"</span>, </span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"pcaExplorer"</span>, <span class="st">"EnhancedVolcano"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>📧 For technical issues regarding R packages installation, please email the issues to Prasert Yodsawat (<strong>prasert.y@outlook.com</strong>).</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Optional 📖
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:</p>
+<ul>
+<li><p><a href="https://youtu.be/_V8eKsto3Ug">R Programming Tutorial - Learn the Basics of Statistical Computing</a> from freecodecamp.org</p></li>
+<li><p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Introduction to R</a> from Datacamp</p></li>
+<li><p><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: The 10-page document by Torfs &amp; Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).</p></li>
+</ul>
+</div>
 </div>
 
 
