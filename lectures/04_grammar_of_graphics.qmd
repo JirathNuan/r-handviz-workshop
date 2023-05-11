@@ -1,0 +1,212 @@
+---
+title: "Grammar of Graphics and Directory of Visualizations"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 18pt
+    slide-number: true
+    dpi: 300
+editor: visual
+bibliography: references.bib
+---
+
+## What is Grammar of Graphics
+
+::: columns
+::: {.column width="40%"}
+![](img/graphic_grammars.png.png){fig-align="center" width="781"}
+:::
+
+::: {.column width="60%"}
+ 
+
+-   **Data:** Your input data (in long format)
+
+-   **Aesthetics:** what makes your data visible, e.g., size, line color, variables to plot, fill color, line type, transparency, etc.
+
+-   **Geometry:** determines the type of plot.
+
+-   **Statistics:** statistical transformation of continuous data
+
+-   **Facets:** for splitting plot into subplots.
+
+-   **Coordinates:** Numeric systems to limit, breakdown, transform position of geometry.
+
+-   **Themes:** Overall visual of plots and customization.
+:::
+:::
+
+## Building a plot layer-by-layer {.smaller}
+
+1.  Load data with `ggplot()`
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds)
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+2.  Add aesthetics by `aes()`
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Plot diamonds
+ggplot(diamonds, aes(x = carat, y = price, color = cut))
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+3.  Add geometry by `geom()`
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.8)
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+4.  Add statistics
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.8) +
+  stat_smooth(color = "black", linewidth = 0.8)
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+5.  Add facets
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.8) +
+  stat_smooth(color = "black", linewidth = 0.8) +
+  facet_grid(cut ~ color)
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+6.  Adding coordinates
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.8) +
+  stat_smooth(color = "black", linewidth = 0.8) +
+  facet_grid(cut ~ color) +
+  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000))
+  
+```
+
+## Building a plot layer-by-layer {.smaller}
+
+7.  Adding theme
+
+```{r}
+#| echo: true
+#| eval: true
+# Load library
+library(ggplot2)
+# Define data and global aesthetics
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.8) +
+  stat_smooth(color = "black", linewidth = 0.8) +
+  facet_grid(cut ~ color) +
+  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000)) +
+  theme_bw()
+  
+```
+
+## Aesthetics
+
+-   Aesthetics `aes()` describe how variables map to visual properties or aesthetics.
+
+-   The position of data points are described by values from `x` and `y`
+
+-   *shape*, *size*, or *color styles* can also be specified in `aes()`.
+
+![Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from @wilke2019](https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png){fig-align="center" width="73%"}
+
+## Types of Variables Used in Aesthetics
+
+::: columns
+::: {.column width="50%"}
+#### Continuous variables
+
+-   A variable or a set of value you can **measure**.
+
+-   Continuous data values are values you can arbitrarily fine intermediates.
+
+-   Age, height, BMI, date, assignment score, etc.
+
+-   Sometimes, series of continuous variable can be a discrete variable.
+
+```{r}
+#| echo: true
+#| eval: true
+my_seq <- seq(from = 0, to = 10, by = 1)
+(my_seq)
+
+my_seq2 <- as.character(my_seq)
+```
+:::
+
+::: {.column width="50%"}
+#### Discrete variables
+:::
+:::
+
+#### Continuous variables
+
+-   A variable or a set of value you can **measure**.
+
+-   Continuous data values are values you can arbitrarily fine intermediates.
+
+-   Age, height, BMI, date, assignment score, etc.
+
+-   Sometimes, series of continuous variable can be a discrete variable.
+
+#### Discrete variables
+
+-   A variable or a set of value you can **count**.
+
+-   Grade (A B C D), Name, Type, number of person in a room, etc.
+
+-   Sometimes
+
+## Directory of Visualizations
+
+## References
+
+::: {#refs}
+:::

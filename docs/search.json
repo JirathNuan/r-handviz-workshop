@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\n\n\n\n\n\n\nTime\nTopic\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n9:00 - 9:45\nWelcome, Introduction, and Graphical Requirement for Article Submission\nPS\n\n\n\n9:45 - 10:00\nMorning Break\n\n\n\n\n10:00 - 10:40\nBasic R Programming\nPS, JN\nPY, KC\n\n\n10:40 - 11:20\nExploratory Data Analysis with R\nPS, JN\nPY, KC\n\n\n11:20 - 12:00\nGraphic Grammars\nPS, JN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\nPS, JN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\nPS, JN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\nPS, JN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
+    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\nTime\nTopic\nMaterials\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n\n9:00 - 9:30\nWelcome, Introduction, and Graphical Requirement for Article Submission\n📖\nPS\n\n\n\n9:30 - 10:20\nBasic R Programming\n📖\nPS, JN\nPY, KC\n\n\n10:20 - 10:30\nMorning Break\n\n\n\n\n\n10:30 - 11:15\nExploratory Data Analysis with R\n📖\nPS, JN\nPY, KC\n\n\n11:15 - 12:00\nGrammar of Graphics\n📖\nPS, JN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\n📖\nPS, JN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\n📖\nPS, JN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\n📖\nPS, JN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\n\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\n\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
   },
   {
     "objectID": "prerequisite.html",
@@ -25,7 +25,7 @@
     "href": "prerequisite.html#software-requirements",
     "title": "Prerequisites",
     "section": "Software Requirements",
-    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nTBW"
+    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nParticipants are required to install the following R packages before the workshop day.\n\ninstall.packages(\n  c(\n    \"ggplot2\",\n    \"tidyverse\",\n    \"ggmap\",\n    \"pheatmap\",\n    \"devtools\",\n    \"cowplot\",\n    \"reshape2\",\n    \"dplyr\",\n    \"wesanderson\",\n    \"scales\",\n    \"ggthemes\",\n    \"ggrepel\",\n    \"ggpubr\",\n    \"gridExtra\",\n    \"gganimate\",\n    \"shiny\",\n    \"rsconnect\",\n    \"grid\",\n    \"shinythemes\",\n    \"colourpicker\"\n  ),\n  dependencies = TRUE\n)\n\nif (!requireNamespace(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nBiocManager::install(c(\"ggtree\", \"treeio\"))"
   },
   {
     "objectID": "about.html",
@@ -102,7 +102,7 @@
     "href": "lectures/02_basic_R.html#managing-data-frames-with-dplyr",
     "title": "Basic R Programming",
     "section": "Managing data frames with dplyr",
-    "text": "Managing data frames with dplyr\nWe can handle data frames with base R, but when you are working with a large data set, speed matters. The dplyr package provides a “grammar” (especially verbs) for data manipulation and for editing data frames.\nFrequently used dplyr verbs:\n\nglimpse: skim structure of the data, see every columns in a data frame.\nselect: return a subset of the columns of a data frame, using a flexible notation.\nfilter: extract a subset of rows from a data frame based on logical conditions.\narrange: reorder rows of a data frame.\nrename: rename variables in a data frame.\nmutate: add new variables/columns or transform existing variables.\nsummarise / summarize: generate summary statistics of different variables in the data frame, possibly within strata.\n%>%: the “pipe” operator, from magrittr, is used to connect multiple verb actions together into a pipeline."
+    "text": "Managing data frames with dplyr\nWe can handle data frames with base R, but when you are working with a large data set, speed matters. The dplyr package provides a “grammar” (especially verbs) for data manipulation and for editing data frames.\nFrequently used dplyr verbs:\n\nglimpse: skim structure of the data, see every columns in a data frame.\nselect: return a subset of the columns of a data frame, using a flexible notation.\nfilter: extract a subset of rows from a data frame based on logical conditions.\narrange: reorder rows of a data frame.\nrename: rename variables in a data frame.\nmutate: add new variables/columns or transform existing variables.\nsummarise / summarize: generate summary statistics of different variables in the data frame, possibly within strata.\n%>%: the “pipe” operator, is used to connect multiple verb actions together into a pipeline."
   },
   {
     "objectID": "lectures/02_basic_R.html#common-dplyr-function-properties",
@@ -168,31 +168,402 @@
     "text": "dplyr::summarize\nsummarise() returns one row for each combination of grouping variables. It will contain one column for each grouping variable and one column for each of the summary statistics that you have specified.\n\nWe’ll load original datasets::iris to the new data frame dt2_iris.\n\n\n# Load iris dataset\ndt2_iris <- datasets::iris\n# glimpse data\nglimpse(dt2_iris)\n\n\nOf these 3 species, calculate mean and standard deviation of petal length using mean() and sd(), respectively. Then calculate the standard deviation of mean (SEM) of the petal length.\n\n\\[\nSEM = \\frac{SD}{\\sqrt{n}}\n\\]\n\n\n\ndt2_iris <- datasets::iris %>%\n  group_by(Species) %>%\n  summarise(\n    num_flowers = n(),\n    Mean_PL = ______________,\n    SD_PL = ______________) %>% \n  mutate(SEM_PL = ______________)\n\n\n\n\n\n\n \n  \n    Species \n    num_flowers \n    Mean_PL \n    SD_PL \n    SEM_PL \n  \n \n\n  \n    setosa \n    50 \n    1.462 \n    0.1736640 \n    0.0245598 \n  \n  \n    versicolor \n    50 \n    4.260 \n    0.4699110 \n    0.0664554 \n  \n  \n    virginica \n    50 \n    5.552 \n    0.5518947 \n    0.0780497"
   },
   {
-    "objectID": "lectures/02_basic_R.html#graphics-in-r-1",
-    "href": "lectures/02_basic_R.html#graphics-in-r-1",
+    "objectID": "lectures/02_basic_R.html#plotting-systems-in-r",
+    "href": "lectures/02_basic_R.html#plotting-systems-in-r",
     "title": "Basic R Programming",
-    "section": "Graphics in R (1)",
-    "text": "Graphics in R (1)\nPlotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.\nUsing library graphics, plain and simple plot functions in R is usually called R base plot. The syntax is shown as follow:\n\n\n\nplot(rnorm(100), type = \"p\", col = \"red\")\n\n\n\n\nThis is a scatter plot showing 100 random numbers. Each red point indicates a data point.\n\n\nhist(rnorm(100))\n\n\n\n\nAnother simple plot to show the pattern of the data is histogram."
+    "section": "Plotting systems in R",
+    "text": "Plotting systems in R\nPlotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data. Many plotting systems available in R such as:\n\nBase graphic conventional way, same as implementing graphical visualizations in the S language. You can only draw on the plot, and append another plot to it.\nGrid graphic or Grobs (graphical objects), not used to create statistical graphs per se, but are insanely useful in combining and laying out multiple graphic devices.\nLattice Plots uses lattice graphics to implement the Trellis graphics system. Also known as an improved version of Base Plot.\nggplot2 improves base and lattice graphics. The graphics are drawn using grids, which allows you to manipulate their appearance at many levels.\nhtmlwidgets provides a common framework for accessing web visualization tools from R. Userful for creating interactive plots for publishing on websites.\nplotly is a popular javascript visualization toolkit with an R interface. It is a great tool if you want to create interactive graphics for HTML documents or websites.\n\nAnother graphic systems, ComplexHeatmap (Gu 2022), will be used in this workshop as well."
   },
   {
-    "objectID": "lectures/02_basic_R.html#graphics-in-r-2",
-    "href": "lectures/02_basic_R.html#graphics-in-r-2",
+    "objectID": "lectures/02_basic_R.html#base-graphics-1",
+    "href": "lectures/02_basic_R.html#base-graphics-1",
     "title": "Basic R Programming",
-    "section": "Graphics in R (2)",
-    "text": "Graphics in R (2)\nThe following lines create a plot from data frame t.\n\n# Creating a data frame\nt <- data.frame(x = c(11,12,14), \n                y = c(19,20,21), \n                z = c(10,9,7))\n# Creating a new plot\nplot(t$x, type = \"b\", ylim = range(t), col = \"red\")\n# Adding new graphic to the plot\nlines(t$y, type = \"s\", col = \"blue\")\n# Adding another graphic to the plot\npoints(t$z, pch = 20, cex = 2, col = \"green\")"
+    "section": "Base graphics (1)",
+    "text": "Base graphics (1)\nUsing library graphics, plain and simple plot functions in R is usually called R base plot. The syntax is shown as follow:\n\n\n\nplot(rnorm(100), type = \"p\", col = \"red\")\n\n\n\n\nThis is a scatter plot showing 100 random numbers. Each red point indicates a data point.\n\n\nhist(rnorm(100))\n\n\n\n\nAnother simple plot to show the pattern of the data is histogram."
   },
   {
-    "objectID": "lectures/02_basic_R.html#graphics-in-ggplot2",
-    "href": "lectures/02_basic_R.html#graphics-in-ggplot2",
+    "objectID": "lectures/02_basic_R.html#base-graphics-2",
+    "href": "lectures/02_basic_R.html#base-graphics-2",
     "title": "Basic R Programming",
-    "section": "Graphics in ggplot2",
-    "text": "Graphics in ggplot2\nThe ggplot2 package is an R package for creating graphs or plots of statistical data. With ggplot2, you can compose graphs by combining independent components based on the Grammar of Graphics.\n\nGIF from https://education.arcus.chop.edu/r-4-beginners-chapter-3We’ll mainly use ggplot2 and other graphic libraries in this workshop 🙂"
+    "section": "Base graphics (2)",
+    "text": "Base graphics (2)\nThe following lines create a plot from data frame t.\n\n# Creating a data frame\nt <- data.frame(x = c(11,12,14), \n                y = c(19,20,21), \n                z = c(10,9,7))\n# Creating a new plot\nplot(t$x, type = \"b\", ylim = range(t), col = \"red\")\n# Adding new graphic to the plot\nlines(t$y, type = \"s\", col = \"blue\")\n# Adding another graphic to the plot\npoints(t$z, pch = 20, cex = 2, col = \"green\")"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#lattice-graphic",
+    "href": "lectures/02_basic_R.html#lattice-graphic",
+    "title": "Basic R Programming",
+    "section": "Lattice graphic",
+    "text": "Lattice graphic\nAttempts to improve R’s basic graphs by providing better presets and the ability to display multivariate relationships. In particular, the package supports the creation of grid graphs - graphs that show a variable or the relationship between variables as a function of one or more other variables.\n\n\n\n# Load package\nlibrary(lattice)\n\n# Load Toothgrowth data set\nToothGrowth <- datasets::ToothGrowth\n# Density plot\ndensityplot(~ len, groups = dose, data = ToothGrowth,\n            plot.points = FALSE, auto.key = TRUE)\n\n\n\n\n\n\n# Load iris data set\ndt <- datasets::iris\n# Plot scatter plot\nxyplot(Sepal.Length ~ Petal.Length | Species,\n       group = Species,\n       data = dt,\n       type = c(\"p\", \"smooth\"),\n       scales = \"free\")"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#ggplot2",
+    "href": "lectures/02_basic_R.html#ggplot2",
+    "title": "Basic R Programming",
+    "section": "ggplot2",
+    "text": "ggplot2\nThe ggplot2 package is an R package for creating graphs or plots of statistical data. With ggplot2, you can compose graphs by combining independent components based on the Grammar of Graphics.\n\n\n\n# Load package\nlibrary(ggplot2)\n# create scatterplot of carat vs. price, \n# using cut as color variable\nggplot(data = diamonds, \n       aes(x = carat, y = price, color = cut)) +\n  geom_point()\n\n\n\n\n\n\n# Create scatterplot of price, grouped by cut\nggplot(data = diamonds, \n       aes(x = cut, y = price)) + \n  geom_boxplot(fill = \"firebrick\") +\n  theme_bw()\n\n\n\n\n\n\nWe’ll mainly use ggplot2 and other graphic libraries in this workshop 🙂"
+  },
+  {
+    "objectID": "lectures/02_basic_R.html#tidyverse",
+    "href": "lectures/02_basic_R.html#tidyverse",
+    "title": "Basic R Programming",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\nTidyverse is a collection of R packages for data science. All Tidyverse packages share the same design philosophy, grammar, and data structures. The core of Tidyverse includes packages that you will use in your daily data analysis.\n \n\n# Load tidyverse\nlibrary(tidyverse)\n\n\n\n\n\nCore packages in Tidyverse."
   },
   {
     "objectID": "lectures/02_basic_R.html#references",
     "href": "lectures/02_basic_R.html#references",
     "title": "Basic R Programming",
     "section": "References",
-    "text": "References\n\nA (very) short introduction to R: written by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.\nWorkshop on Data Visualization in R: by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.\nR for Data Science (2nd Edition): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nExploratory Data Analysis with R: written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020\n\n\n\n\n17 May 2023"
+    "text": "References\n\nA (very) short introduction to R: written by Torfs & Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.\nWorkshop on Data Visualization in R: by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.\nR for Data Science (2nd Edition): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nExploratory Data Analysis with R: written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020\nggplot2: Elegant Graphics for Data Analysis (3e): written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).\n\n\n\n\n17 May 2023\n\n\n\nGu, Zuguang. 2022. “Complex Heatmap Visualization.” iMeta 1 (3). https://doi.org/10.1002/imt2.43."
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#eda-why",
+    "href": "lectures/03_exploratory_data_analysis.html#eda-why",
+    "title": "Exploratory Data Analysis",
+    "section": "EDA: Why?",
+    "text": "EDA: Why?\nExploratory Data Analysis (EDA) is the way to observe your data, and can be an iterative cycle since you have cleaned the data. Generally, as of Wickham, Çetinkaya-Rundel, and Grolemund (2023), aims of EDA are:\n\nGenerate questions about your data\nSearch for answers by visualizing, transforming, and modelling your data\nUse what you learn to refine your questions and/or generate new questions.\nThis is important even if you already have research questions in mind.\nTo choose the suitable means for data cleaning."
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#simple-steps-for-eda-in-r",
+    "href": "lectures/03_exploratory_data_analysis.html#simple-steps-for-eda-in-r",
+    "title": "Exploratory Data Analysis",
+    "section": "10 Simple Steps for EDA in R",
+    "text": "10 Simple Steps for EDA in R\nReferred from Peng (2020), here’s a quick steps to do for exploratory data analysis in R.\n\nFormulate your question\nRead in your data\nCheck the packaging\nGlimpse\nLook at the top and the bottom of the data\nCheck for the n\nValidate with at least one external data source\nTry the easy solution first\nChallenge your solution\nFollow up"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#activity",
+    "href": "lectures/03_exploratory_data_analysis.html#activity",
+    "title": "Exploratory Data Analysis",
+    "section": "Activity",
+    "text": "Activity\nFor today’s EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is produced by the World Health Organization (WHO) in WHO Mortality Database. The data was collected from 1950 to 2021."
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-1-formulate-your-question",
+    "href": "lectures/03_exploratory_data_analysis.html#step-1-formulate-your-question",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 1: Formulate your question",
+    "text": "Step 1: Formulate your question\nA good and sharp question or hypothesis could lead to clearing up more possible ways to answer the questions in the EDA process.\n \n❓Can you formulate the questions that you attempt to find the answer from this data?\n \n\n\n\nTip\n\n\nThe most important questions you can answer with the EDA process is “Do I have the right data to answer this question?”. Though the question is difficult to answer at the beginning, the it is a good start to do EDA!"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-2-load-your-data",
+    "href": "lectures/03_exploratory_data_analysis.html#step-2-load-your-data",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 2: Load your data",
+    "text": "Step 2: Load your data\nNow we will load the data set in CSV format into R environment using read_csv() function as follows.\n \n\n# Load libraries\nlibrary(tidyverse)\n# Retrieve data set\nmortality_rate <- read_csv(file = \"../datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv\", comment = \"#\")\n\n \nWhat we may have found:\n\nWas the data frame object loaded mortality_rate correctly ?\nAre there any errors/warnings during loading ?\nFrom Rstudio, how many objects and variables in data set observed from environment panel ?"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-3-check-the-data-dimension",
+    "href": "lectures/03_exploratory_data_analysis.html#step-3-check-the-data-dimension",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 3: Check the data dimension",
+    "text": "Step 3: Check the data dimension\n\nWe can check the number of rows and columns of the data frame using dim() as follows.\n\n\n# See how many rows and columns in the data\ndim(mortality_rate)\n\n \nThen see the column names with colnames()\n\n# see column names\ncolnames(mortality_rate)"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-4-glimpse-the-data",
+    "href": "lectures/03_exploratory_data_analysis.html#step-4-glimpse-the-data",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 4: Glimpse the data",
+    "text": "Step 4: Glimpse the data\nAs mentioned in the R Basic Programming lecture, we can use the glimpse() function to see each column in the data frame as well as the column types and some values in that column as follow.\n \n\n# Glimpse data frame\nglimpse(mortality_rate)\n\n \nAs we can see from the output, glimpse() can show how many rows and columns there are, just like the dim() function. In addition, glimpse() also examine the class of each column to make sure they are specified correctly during loading."
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-5-look-at-the-top-and-the-bottom-of-the-data",
+    "href": "lectures/03_exploratory_data_analysis.html#step-5-look-at-the-top-and-the-bottom-of-the-data",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 5: Look at the top and the bottom of the data",
+    "text": "Step 5: Look at the top and the bottom of the data\nOther useful functions to look at the beginning and end of the data frame are head() and tail() functions, respectively.\n \n\n# Show the first 10 lines of the data frame\nhead(mortality_rate, n = 10)\n# Show the last 10 lines of the data frame\ntail(mortality_rate, n = 10)\n\n \nWith these functions:\n\nWe can determine if the data was loaded correctly or not.\nWere the column names defined correctly?\nWere there no column names at all in the beginning ?\nWas the data loaded completely from the first to the last line of the file ?"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-6-check-for-the-n",
+    "href": "lectures/03_exploratory_data_analysis.html#step-6-check-for-the-n",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 6: Check for the n",
+    "text": "Step 6: Check for the n\n\nThis step is counting what you want to examine their number (n).\nIn general, counting things is a good way to find out if something is going wrong after you load the data. Whether or not duplicate values or NA are observed.\n\n\n# Counting number of countries in the data set\ncount_countries <- length(unique(mortality_rate$country_name))\n\n# For each country, how many data points \ntbl_countries <- table(mortality_rate$country_name)\n\n# How many countries in Asia \nmortality_rate %>% \n  filter(region_name == \"Asia\") %>% \n  distinct(country_name) %>% \n  count()\n\n# From 2000 to 2021, how many countries in Asia, where the mortality rate is available in these years. \nmortality_rate %>% \n  filter(region_name == \"Asia\" &\n           year >= 2000 & \n           year <= 2021) %>% \n  group_by(year) %>% \n  count()\n\n# From the above examination, we can see in which year the mortality rate is the highest by adding arrange()\nmortality_rate %>% \n  filter(region_name == \"Asia\" &\n           year >= 2000 & \n           year <= 2021) %>% \n  group_by(year) %>% \n  count() %>% \n  arrange(desc(n))"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-7-validate-with-at-least-one-external-data-source",
+    "href": "lectures/03_exploratory_data_analysis.html#step-7-validate-with-at-least-one-external-data-source",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 7: Validate with at least one external data source",
+    "text": "Step 7: Validate with at least one external data source\n\nIt is very important to make sure that your data matches something outside the data set. For example, you can cross-check with mortality database from health agencies in the desired countries. This way you can make sure that the measurements are about what they should be, and it serves as a check to see what other things in your data set might be wrong.\nBased on our data, we can easily check the distribution of values with many functions, such as quantile() and summary() as follow.\n\n\n# Summarize the distribution of death rate per 100,000 populations\nsummary(mortality_rate$death_rate_per_100k)\n# Distribute to quantile rank\nquantile(mortality_rate$death_rate_per_100k, na.rm = TRUE)\n\n\nWith summary(), you can even summarize every columns in the data frame at once as follow.\n\n\n# Summarize data frame\nsummary(mortality_rate)"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-8-try-the-easy-solution-first",
+    "href": "lectures/03_exploratory_data_analysis.html#step-8-try-the-easy-solution-first",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 8: Try the easy solution first",
+    "text": "Step 8: Try the easy solution first\n\nSuppose the question we want to answer is\n\n\nSince the data collected from 1950 - 2021, which region contains the highest number of deaths in all ages ?\n\nTo answer the question, we need to filter the data by age_group using “[All]”, then group the data by region and examine what the region in has highest number of deaths.\n\n# Examining the number of deaths by region in all ages\nmortality_rate %>% \n  filter(age_group == \"[All]\") %>% \n  group_by(region_name) %>% \n  summarise(total_death_per_region = sum(number)) %>% \n  ggplot(aes(x = region_name, y = total_death_per_region)) +\n  geom_col()\n\n\nIs it different number of death between sex in each region ?\n\n\n# Examine the number of deaths by region and sex in all ages\nmortality_rate %>% \n  filter(age_group == \"[All]\" &\n           sex != \"All\") %>% \n  group_by(region_name, sex) %>% \n  summarise(total_death_per_region = sum(number)) %>% \n  ggplot(aes(x = region_name, y = total_death_per_region, fill = sex)) +\n  geom_col(position = position_dodge(0.9, preserve = \"single\"))"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-9-challenge-your-solution",
+    "href": "lectures/03_exploratory_data_analysis.html#step-9-challenge-your-solution",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 9: Challenge your solution",
+    "text": "Step 9: Challenge your solution\n\nTrying easy solution is good, because it fast and easy to answer the questions. But it is always better idea to challenge the results, especially if they fit with your expectations.\nEven if our simple solutions work well, but surely there are some obstacles challenge you to treat it. For example\n\nWas the data collected every year in each countries ?\nWith the past solution, how can we handle NA, or data with unknown sex ? Should it be excluded?\nDo you observe any unusual values in your data? Why did this happen?\n\n\nWe will show an example to examine the unusual values (outliers) of number of deaths.\n\n# Examining overall number of deaths by region in 10 years backward (2012 - 2021)\nmortality_rate %>% \n  filter(year >= 2012) %>% \n  ggplot(aes(x = as.character(year), \n             y = number)) +\n  geom_boxplot() +\n  facet_wrap(. ~ region_name, scales = \"free_y\")\n\n \n❓Are there any unusual values in the box plot ? If so, how can we examine them more closely ?"
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#step-10-follow-up-questions",
+    "href": "lectures/03_exploratory_data_analysis.html#step-10-follow-up-questions",
+    "title": "Exploratory Data Analysis",
+    "section": "Step 10: Follow up questions",
+    "text": "Step 10: Follow up questions\nWe are able to formulate questions in our data and try to solve the problems in a simple and challenging way.\n \nAt this point, it makes sense to ask a few follow-up questions:\n\nDo you have the right data?\nDo you need other data?\nDo you have the right question?\n\n \nExploratory data analysis is designed to get you thinking about your data and your question. At this point, we can refine our question or collect relevant data, over and over to get to the truth."
+  },
+  {
+    "objectID": "lectures/03_exploratory_data_analysis.html#references",
+    "href": "lectures/03_exploratory_data_analysis.html#references",
+    "title": "Exploratory Data Analysis",
+    "section": "References",
+    "text": "References\n\n\nPeng, Roger D. 2020. Exploratory Data Analysis with r. https://bookdown.org/rdpeng/exdata/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. https://r4ds.hadley.nz/.\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#ggplot2",
+    "href": "lectures/04_grammar_of_graphics.html#ggplot2",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "ggplot2",
+    "text": "ggplot2"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
+    "href": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "What is Grammar of Graphics",
+    "text": "What is Grammar of Graphics\n\n\n\n\n\n\n\n\n \n\nData: Your input data (in long format)\nAesthetics: what makes your data visible, e.g., size, line color, variables to plot, fill color, line type, transparency, etc.\nGeometry: determines the type of plot.\nStatistics: statistical transformation of continuous data\nFacets: for splitting plot into subplots.\nCoordinates: Numeric systems to limit, breakdown, transform position of geometry.\nThemes: Overall visual of plots and customization."
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
+    "href": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Directory of Visualizations",
+    "text": "Directory of Visualizations"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#references",
+    "href": "lectures/04_grammar_of_graphics.html#references",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "References",
+    "text": "References\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/.\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#principal-component-analysis",
+    "href": "lectures/05_plotting_omics_data_1.html#principal-component-analysis",
+    "title": "Plotting Omics Data",
+    "section": "Principal Component Analysis",
+    "text": "Principal Component Analysis"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#hierarchical-clustering-analysis",
+    "href": "lectures/05_plotting_omics_data_1.html#hierarchical-clustering-analysis",
+    "title": "Plotting Omics Data",
+    "section": "Hierarchical Clustering Analysis",
+    "text": "Hierarchical Clustering Analysis"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#volcano-plot",
+    "href": "lectures/05_plotting_omics_data_1.html#volcano-plot",
+    "title": "Plotting Omics Data",
+    "section": "Volcano Plot",
+    "text": "Volcano Plot"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#venn-diagram",
+    "href": "lectures/05_plotting_omics_data_1.html#venn-diagram",
+    "title": "Plotting Omics Data",
+    "section": "Venn Diagram",
+    "text": "Venn Diagram"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#upset-plot",
+    "href": "lectures/05_plotting_omics_data_1.html#upset-plot",
+    "title": "Plotting Omics Data",
+    "section": "Upset Plot",
+    "text": "Upset Plot"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#plotting-abundance-of-features",
+    "href": "lectures/05_plotting_omics_data_1.html#plotting-abundance-of-features",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Abundance of Features",
+    "text": "Plotting Abundance of Features\nAbundance of Representative Terms\nRelative abundance"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data_1.html#references",
+    "href": "lectures/05_plotting_omics_data_1.html#references",
+    "title": "Plotting Omics Data",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-diversity-indices",
+    "href": "lectures/06_plotting_omics_data_2.html#plotting-diversity-indices",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Diversity Indices",
+    "text": "Plotting Diversity Indices"
+  },
+  {
+    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-individual-gene-expression",
+    "href": "lectures/06_plotting_omics_data_2.html#plotting-individual-gene-expression",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Individual Gene Expression",
+    "text": "Plotting Individual Gene Expression"
+  },
+  {
+    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-circular-genome",
+    "href": "lectures/06_plotting_omics_data_2.html#plotting-circular-genome",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Circular genome",
+    "text": "Plotting Circular genome"
+  },
+  {
+    "objectID": "lectures/06_plotting_omics_data_2.html#references",
+    "href": "lectures/06_plotting_omics_data_2.html#references",
+    "title": "Plotting Omics Data",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#principal-component-analysis",
+    "href": "lectures/07_arranging_plots.html#principal-component-analysis",
+    "title": "Plotting Omics Data",
+    "section": "Principal Component Analysis",
+    "text": "Principal Component Analysis"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#hierarchical-clustering-analysis",
+    "href": "lectures/07_arranging_plots.html#hierarchical-clustering-analysis",
+    "title": "Plotting Omics Data",
+    "section": "Hierarchical Clustering Analysis",
+    "text": "Hierarchical Clustering Analysis"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#volcano-plot",
+    "href": "lectures/07_arranging_plots.html#volcano-plot",
+    "title": "Plotting Omics Data",
+    "section": "Volcano Plot",
+    "text": "Volcano Plot"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#venn-diagram",
+    "href": "lectures/07_arranging_plots.html#venn-diagram",
+    "title": "Plotting Omics Data",
+    "section": "Venn Diagram",
+    "text": "Venn Diagram"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#upset-plot",
+    "href": "lectures/07_arranging_plots.html#upset-plot",
+    "title": "Plotting Omics Data",
+    "section": "Upset Plot",
+    "text": "Upset Plot"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#plotting-abundance-of-features",
+    "href": "lectures/07_arranging_plots.html#plotting-abundance-of-features",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Abundance of Features",
+    "text": "Plotting Abundance of Features\nAbundance of Representative Terms\nRelative abundance"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#plotting-individual-gene-expression",
+    "href": "lectures/07_arranging_plots.html#plotting-individual-gene-expression",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Individual Gene Expression",
+    "text": "Plotting Individual Gene Expression"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#plotting-manhattan-plot",
+    "href": "lectures/07_arranging_plots.html#plotting-manhattan-plot",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Manhattan Plot",
+    "text": "Plotting Manhattan Plot"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#plotting-diversity-indices",
+    "href": "lectures/07_arranging_plots.html#plotting-diversity-indices",
+    "title": "Plotting Omics Data",
+    "section": "Plotting Diversity Indices",
+    "text": "Plotting Diversity Indices"
+  },
+  {
+    "objectID": "lectures/07_arranging_plots.html#references",
+    "href": "lectures/07_arranging_plots.html#references",
+    "title": "Plotting Omics Data",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-1",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-1",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdd aesthetics by aes()\n\n\n# Load library\nlibrary(ggplot2)\n# Plot diamonds\nggplot(diamonds, aes(x = carat, y = price, color = cut))"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-2",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-2",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdd geometry by geom()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-3",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-3",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdd statistics\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-4",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-4",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdd facets\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#section",
+    "href": "lectures/04_grammar_of_graphics.html#section",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "",
+    "text": "4. Statistics5. Facets6. Coordinates7. Themes\n\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds,\n       aes(x = carat, y = price, color = color)) +\n  geom_point() +\n  stat_smooth()\n\n\n\n\n\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds,\n       aes(x = carat, y = price, color = color)) +\n  geom_point() +\n  stat_smooth(color = \"black\") +\n  facet_wrap(. ~ cut) +\n  scale_y_continuous(breaks = seq(from = 0, tp = 20000, by = ))"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nLoad data with ggplot()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdding coordinates\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color) +\n  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000))"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-6",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-6",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nAdding theme\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color) +\n  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000)) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#aesthetics-and-types-of-data",
+    "href": "lectures/04_grammar_of_graphics.html#aesthetics-and-types-of-data",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Aesthetics and Types of Data",
+    "text": "Aesthetics and Types of Data\n\nAesthetics aes() describe how variables map to visual properties or aesthetics.\nThe position of data points are described by values from x and y\nshape, size, or color styles can also be specified in aes().\n\n\nCommonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from Wilke (2019)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#aesthetics",
+    "href": "lectures/04_grammar_of_graphics.html#aesthetics",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\nAesthetics aes() describe how variables map to visual properties or aesthetics.\nThe position of data points are described by values from x and y\nshape, size, or color styles can also be specified in aes().\n\n\nCommonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from Wilke (2019)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#types-of-data",
+    "href": "lectures/04_grammar_of_graphics.html#types-of-data",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Types of Data",
+    "text": "Types of Data"
   }
 ]

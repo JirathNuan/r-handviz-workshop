@@ -10,6 +10,7 @@ format:
     slide-number: true
     dpi: 300
 editor: visual
+bibliography: references.bib
 ---
 
 ## R vs RStudio (1)
@@ -346,7 +347,7 @@ Frequently used `dplyr` verbs:
 
 7.  `summarise` / `summarize`: generate summary statistics of different variables in the data frame, possibly within strata.
 
-8.  `%>%`: the "pipe" operator, from `magrittr`, is used to connect multiple verb actions together into a pipeline.
+8.  `%>%`: the "pipe" operator, is used to connect multiple verb actions together into a pipeline.
 
 ## Common `dplyr` Function Properties
 
@@ -615,9 +616,25 @@ kableExtra::kable_styling(bootstrap_options = "striped",
 :::
 :::
 
-## Graphics in R (1)
+## Plotting systems in R
 
-Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.
+Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data. Many plotting systems available in R such as:
+
+-   **Base graphic** conventional way, same as implementing graphical visualizations in the S language. You can only draw on the plot, and append another plot to it.
+
+-   **Grid graphic** or Grobs (graphical objects), not used to create statistical graphs *per se*, but are insanely useful in combining and laying out multiple graphic devices.
+
+-   **Lattice Plots** uses lattice graphics to implement the Trellis graphics system. Also known as an improved version of Base Plot.
+
+-   **ggplot2** improves base and lattice graphics. The graphics are drawn using grids, which allows you to manipulate their appearance at many levels.
+
+-   **htmlwidgets** provides a common framework for accessing web visualization tools from R. Userful for creating interactive plots for publishing on websites.
+
+-   **plotly** is a popular javascript visualization toolkit with an R interface. It is a great tool if you want to create interactive graphics for HTML documents or websites.
+
+Another graphic systems, ComplexHeatmap [@gu2022], will be used in this workshop as well.
+
+## Base graphics (1)
 
 Using library `graphics`, plain and simple plot functions in R is usually called **R base plot**. The syntax is shown as follow:
 
@@ -643,7 +660,7 @@ Another simple plot to show the pattern of the data is histogram.
 :::
 :::
 
-## Graphics in R (2)
+## Base graphics (2)
 
 The following lines create a plot from data frame `t`.
 
@@ -661,13 +678,102 @@ lines(t$y, type = "s", col = "blue")
 points(t$z, pch = 20, cex = 2, col = "green")
 ```
 
-## Graphics in `ggplot2`
+## Lattice graphic
+
+Attempts to improve R's basic graphs by providing better presets and the ability to display multivariate relationships. In particular, the package supports the creation of grid graphs - graphs that show a variable or the relationship between variables as a function of one or more other variables.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+# Load package
+library(lattice)
+
+# Load Toothgrowth data set
+ToothGrowth <- datasets::ToothGrowth
+# Density plot
+densityplot(~ len, groups = dose, data = ToothGrowth,
+            plot.points = FALSE, auto.key = TRUE)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+
+# Load iris data set
+dt <- datasets::iris
+# Plot scatter plot
+xyplot(Sepal.Length ~ Petal.Length | Species,
+       group = Species,
+       data = dt,
+       type = c("p", "smooth"),
+       scales = "free")
+```
+:::
+:::
+
+## ggplot2
 
 The `ggplot2` package is an R package for creating graphs or plots of statistical data. With `ggplot2`, you can compose graphs by combining independent components based on the **Grammar of Graphics**.
 
-![GIF from https://education.arcus.chop.edu/r-4-beginners-chapter-3](https://education.arcus.chop.edu/images/displ-v-hwy-scatter-blue.gif)
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+# Load package
+library(ggplot2)
+# create scatterplot of carat vs. price, 
+# using cut as color variable
+ggplot(data = diamonds, 
+       aes(x = carat, y = price, color = cut)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+# Create scatterplot of price, grouped by cut
+ggplot(data = diamonds, 
+       aes(x = cut, y = price)) + 
+  geom_boxplot(fill = "firebrick") +
+  theme_bw()
+```
+:::
+:::
 
 We'll mainly use ggplot2 and other graphic libraries in this workshop 🙂
+
+## Tidyverse
+
+::: columns
+::: {.column width="50%"}
+Tidyverse is a collection of R packages for data science. All Tidyverse packages share the same design philosophy, grammar, and data structures. The core of Tidyverse includes packages that you will use in your daily data analysis.
+
+ 
+
+```{r}
+#| echo: true
+#| eval: true
+#| message: true
+#| output: true
+# Load tidyverse
+library(tidyverse)
+```
+:::
+
+::: {.column width="50%"}
+![Core packages in Tidyverse.](img/tidyverse-Q1-2023.png)
+:::
+:::
 
 ## References
 
@@ -675,3 +781,4 @@ We'll mainly use ggplot2 and other graphic libraries in this workshop 🙂
 -   [Workshop on Data Visualization in R](https://nbisweden.github.io/workshop-data-visualization-r/2304/index.html): by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.
 -   [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/): written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
 -   [Exploratory Data Analysis with R](https://bookdown.org/rdpeng/exdata/): written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020
+-   [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/index.html): written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).

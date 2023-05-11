@@ -53,21 +53,15 @@ Referred from @peng2020, here's a quick steps to do for exploratory data analysi
 
 ## Activity
 
-For today's exercise on EDA, we will adapt 10 simple steps to study the dataset of Arabidopsis thaliana gene expression in the wild-type and At*pp7* mutant line.
-
--   The study conducted by @xu2019. The goal of this study is to characterize the role of serine/threonine-protein phosphatase 7 (AtPP7) in chloroplast development using RNA-Seq.
-
--   The data set is publicly available at EBI Expression Atlas accession: [E-GEOD-122495](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-122495/Results).
+For today's EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is produced by the World Health Organization (WHO) in [WHO Mortality Database](https://platform.who.int/mortality). The data was collected from 1950 to 2021.
 
 ## Step 1: **Formulate your question**
 
 A good and sharp question or hypothesis could lead to clearing up more possible ways to answer the questions in the EDA process.
 
-> The data set is adopted from the study by @xu2019, The goal is to study the transcriptome change of serine/threonine-protein phosphatase 7 (PP7) wildtype and recessive mutant line in chloroplast of *A. thaliana* leaves. The data set already retrieved from the database and normalized using in-house DESeq2 analysis script.
-
  
 
-❓ **Can you formulate the questions that you attempt to find the answer from this data?**
+❓**Can you formulate the questions that you attempt to find the answer from this data?**
 
  
 
@@ -77,29 +71,29 @@ The most important questions you can answer with the EDA process is "*Do I have 
 
 ## Step 2: Load your data
 
-Now we will load the public data set from EBI Expression Atlas into R environment. We will load the data set using `read_delim()` function in `readr` library within the tidyverse suite.
+Now we will load the data set in CSV format into R environment using `read_csv()` function as follows.
 
  
 
 ```{r}
 #| echo: true
-#| eval: false
+#| eval: true
 #| message: false
 # Load libraries
 library(tidyverse)
 # Retrieve data set
-exp_dat <- read_csv("../datasets/E-GEOD-122495-normalized_count.csv")
+mortality_rate <- read_csv(file = "../datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv", comment = "#")
 ```
 
  
 
 What we may have found:
 
--   Is there a data frame object called `exp_dat` in your R environment ?
+-   Was the data frame object loaded `mortality_rate` correctly ?
 
--   Are there any errors/warnings during data retrieval ?
+-   Are there any errors/warnings during loading ?
 
--   From Rstudio, how many objects and variables observed in this data set ?
+-   From Rstudio, how many objects and variables in data set observed from environment panel ?
 
 ## Step 3: Check the data dimension
 
@@ -109,23 +103,23 @@ What we may have found:
 #| echo: true
 #| eval: false
 # See how many rows and columns in the data
-dim(exp_dat)
+dim(mortality_rate)
 ```
 
  
 
--   Then see the column names with `colnames()`
+Then see the column names with `colnames()`
 
 ```{r}
 #| echo: true
 #| eval: false
 # see column names
-colnames(exp_dat)
+colnames(mortality_rate)
 ```
 
 ## Step 4: Glimpse the data
 
-As mentioned in the R Basic Programming lecture, we can use the `glimpse()` function to see each column in the data frame as well as the column types and some values in that column.
+As mentioned in the R Basic Programming lecture, we can use the `glimpse()` function to see each column in the data frame as well as the column types and some values in that column as follow.
 
  
 
@@ -133,16 +127,16 @@ As mentioned in the R Basic Programming lecture, we can use the `glimpse()` func
 #| echo: true
 #| eval: false
 # Glimpse data frame
-glimpse(exp_dat)
+glimpse(mortality_rate)
 ```
 
  
 
-As we can see from the output, `glimpse()` can show how many rows and columns there are, just like the `dim()` function. You can also check the classes of each column to make sure they are specified correctly.
+As we can see from the output, `glimpse()` can show how many rows and columns there are, just like the `dim()` function. In addition, `glimpse()` also examine the class of each column to make sure they are specified correctly during loading.
 
 ## Step 5: Look at the top and the bottom of the data
 
-Other useful functions to look at the beginning and end of the data frame are the head() and tail() functions, respectively.
+Other useful functions to look at the beginning and end of the data frame are `head()` and `tail()` functions, respectively.
 
  
 
@@ -150,9 +144,9 @@ Other useful functions to look at the beginning and end of the data frame are th
 #| echo: true
 #| eval: false
 # Show the first 10 lines of the data frame
-head(exp_dat, n = 10)
+head(mortality_rate, n = 10)
 # Show the last 10 lines of the data frame
-tail(exp_dat, n = 10)
+tail(mortality_rate, n = 10)
 ```
 
  
@@ -167,57 +161,59 @@ With these functions:
 
 -   Was the data loaded completely from the first to the last line of the file ?
 
-## Step 6: Check for the "n"
+## Step 6: Check for the *n*
 
--   This step is counting you want to check their number (*n*).
+-   This step is counting what you want to examine their number (*n*).
 
 -   In general, counting things is a good way to find out if something is going wrong after you load the data. Whether or not duplicate values or NA are observed.
 
--   We can use many functions to explore how many values observed under the condition of interest. For example,
-
 ```{r}
 #| echo: true
 #| eval: false
-# How many genes observed from Gene ID column
-count_geneID <- table(exp_dat$`Gene ID`)
-# Number of unique gene ID
-length(count_geneID)
+# Counting number of countries in the data set
+count_countries <- length(unique(mortality_rate$country_name))
 
-# How many genes observed from Gene Name column
-count_geneName <- table(exp_dat$`Gene Name`)
-# Number of gene names 
-length(count_geneName)
+# For each country, how many data points 
+tbl_countries <- table(mortality_rate$country_name)
+
+# How many countries in Asia 
+mortality_rate %>% 
+  filter(region_name == "Asia") %>% 
+  distinct(country_name) %>% 
+  count()
+
+# From 2000 to 2021, how many countries in Asia, where the mortality rate is available in these years. 
+mortality_rate %>% 
+  filter(region_name == "Asia" &
+           year >= 2000 & 
+           year <= 2021) %>% 
+  group_by(year) %>% 
+  count()
+
+# From the above examination, we can see in which year the mortality rate is the highest by adding arrange()
+mortality_rate %>% 
+  filter(region_name == "Asia" &
+           year >= 2000 & 
+           year <= 2021) %>% 
+  group_by(year) %>% 
+  count() %>% 
+  arrange(desc(n))
+  
 ```
-
-Is the number of the gene ID and gene name the same? why?
-
-::: incremental
-We can check and count for the NAs by
-
-```{r}
-#| echo: true
-#| eval: false
-# check NAs in the Gene Name column
-is.na(exp_dat$`Gene Name`)
-
-# Summary of how many NAs are there
-summary(is.na(exp_dat$`Gene Name`))
-```
-:::
 
 ## Step 7: Validate with at least one external data source
 
--   It is very important to make sure that your data matches something outside the data set. This way you can make sure that the measurements are about what they should be, and it serves as a check to see what other things in your data set might be wrong.
+-   It is very important to make sure that your data matches something outside the data set. For example, you can cross-check with mortality database from health agencies in the desired countries. This way you can make sure that the measurements are about what they should be, and it serves as a check to see what other things in your data set might be wrong.
 
--   From this gene expression data, we can easily check the distribution of values with many functions, such as `quantile()` and `summary()` to distribute the data.
+-   Based on our data, we can easily check the distribution of values with many functions, such as `quantile()` and `summary()` as follow.
 
 ```{r}
 #| echo: true
 #| eval: false
-# Summarize the trend of gene expression in the sample 'Col.0_1'
-summary(exp_dat$Col.0_1)
+# Summarize the distribution of death rate per 100,000 populations
+summary(mortality_rate$death_rate_per_100k)
 # Distribute to quantile rank
-quantile(exp_dat$Col.0_1)
+quantile(mortality_rate$death_rate_per_100k, na.rm = TRUE)
 ```
 
 -   With `summary()`, you can even summarize every columns in the data frame at once as follow.
@@ -226,23 +222,91 @@ quantile(exp_dat$Col.0_1)
 #| echo: true
 #| eval: false
 # Summarize data frame
-summary(exp_dat)
-```
-
--   You can validate the gene expression data by observing the pattern of overall gene expression using the above functions or individually as follows:
-
-```{r}
-#| echo: true
-#| eval: false
-# Examining expression of gene ID 'AT5G27150'
-exp_dat[exp_dat$`Gene ID` == "AT2G43010", ]
+summary(mortality_rate)
 ```
 
 ## Step 8: Try the easy solution first
 
+-   Suppose the question we want to answer is
+
+> Since the data collected from 1950 - 2021, which region contains the highest number of deaths in all ages ?
+
+To answer the question, we need to filter the data by `age_group` using "\[All\]", then group the data by region and examine what the region in has highest number of deaths.
+
+```{r}
+#| echo: true
+#| eval: false
+# Examining the number of deaths by region in all ages
+mortality_rate %>% 
+  filter(age_group == "[All]") %>% 
+  group_by(region_name) %>% 
+  summarise(total_death_per_region = sum(number)) %>% 
+  ggplot(aes(x = region_name, y = total_death_per_region)) +
+  geom_col()
+```
+
+> Is it different number of death between sex in each region ?
+
+```{r}
+#| echo: true
+#| eval: false
+# Examine the number of deaths by region and sex in all ages
+mortality_rate %>% 
+  filter(age_group == "[All]" &
+           sex != "All") %>% 
+  group_by(region_name, sex) %>% 
+  summarise(total_death_per_region = sum(number)) %>% 
+  ggplot(aes(x = region_name, y = total_death_per_region, fill = sex)) +
+  geom_col(position = position_dodge(0.9, preserve = "single"))
+```
+
 ## Step 9: Challenge your solution
 
-## Step 10: Follow up
+-   Trying easy solution is good, because it fast and easy to answer the questions. But it is always better idea to challenge the results, especially if they fit with your expectations.
+
+-   Even if our simple solutions work well, but surely there are some obstacles challenge you to treat it. For example
+
+    -   Was the data collected every year in each countries ?
+
+    -   With the past solution, how can we handle `NA`, or data with unknown sex ? Should it be excluded?
+
+    -   Do you observe any unusual values in your data? Why did this happen?
+
+We will show an example to examine the unusual values (outliers) of number of deaths.
+
+```{r}
+#| echo: true
+#| eval: false
+# Examining overall number of deaths by region in 10 years backward (2012 - 2021)
+mortality_rate %>% 
+  filter(year >= 2012) %>% 
+  ggplot(aes(x = as.character(year), 
+             y = number)) +
+  geom_boxplot() +
+  facet_wrap(. ~ region_name, scales = "free_y")
+```
+
+ 
+
+**❓Are there any unusual values in the box plot ? If so, how can we examine them more closely ?**
+
+## Step 10: Follow up questions
+
+We are able to formulate questions in our data and try to solve the problems in a simple and challenging way.
+
+ 
+
+At this point, it makes sense to ask a few follow-up questions:
+
+-   Do you have the right data?
+
+-   Do you need other data?
+
+-   Do you have the right question?
+
+ 
+
+Exploratory data analysis is designed to get you thinking about your data and your question. At this point, we can refine our question or collect relevant data, over and over to get to the truth.
 
 ## References
 

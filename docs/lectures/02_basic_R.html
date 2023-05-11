@@ -93,6 +93,25 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -901,7 +920,7 @@ $five
 <li><p><code>rename</code>: rename variables in a data frame.</p></li>
 <li><p><code>mutate</code>: add new variables/columns or transform existing variables.</p></li>
 <li><p><code>summarise</code> / <code>summarize</code>: generate summary statistics of different variables in the data frame, possibly within strata.</p></li>
-<li><p><code>%&gt;%</code>: the “pipe” operator, from <code>magrittr</code>, is used to connect multiple verb actions together into a pipeline.</p></li>
+<li><p><code>%&gt;%</code>: the “pipe” operator, is used to connect multiple verb actions together into a pipeline.</p></li>
 </ol>
 </section>
 <section id="common-dplyr-function-properties" class="slide level2">
@@ -1154,9 +1173,21 @@ SEM = \frac{SD}{\sqrt{n}}
 </div>
 </div>
 </section>
-<section id="graphics-in-r-1" class="slide level2">
-<h2>Graphics in R (1)</h2>
-<p>Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data.</p>
+<section id="plotting-systems-in-r" class="slide level2">
+<h2>Plotting systems in R</h2>
+<p>Plotting is an important tool for understanding data properties, finding patterns in the data, suggesting modeling strategies for our data, and communicating what we have found in our data. Many plotting systems available in R such as:</p>
+<ul>
+<li><p><strong>Base graphic</strong> conventional way, same as implementing graphical visualizations in the S language. You can only draw on the plot, and append another plot to it.</p></li>
+<li><p><strong>Grid graphic</strong> or Grobs (graphical objects), not used to create statistical graphs <em>per se</em>, but are insanely useful in combining and laying out multiple graphic devices.</p></li>
+<li><p><strong>Lattice Plots</strong> uses lattice graphics to implement the Trellis graphics system. Also known as an improved version of Base Plot.</p></li>
+<li><p><strong>ggplot2</strong> improves base and lattice graphics. The graphics are drawn using grids, which allows you to manipulate their appearance at many levels.</p></li>
+<li><p><strong>htmlwidgets</strong> provides a common framework for accessing web visualization tools from R. Userful for creating interactive plots for publishing on websites.</p></li>
+<li><p><strong>plotly</strong> is a popular javascript visualization toolkit with an R interface. It is a great tool if you want to create interactive graphics for HTML documents or websites.</p></li>
+</ul>
+<p>Another graphic systems, ComplexHeatmap <span class="citation" data-cites="gu2022">(<a href="#/references" role="doc-biblioref" onclick="">Gu 2022</a>)</span>, will be used in this workshop as well.</p>
+</section>
+<section id="base-graphics-1" class="slide level2">
+<h2>Base graphics (1)</h2>
 <p>Using library <code>graphics</code>, plain and simple plot functions in R is usually called <strong>R base plot</strong>. The syntax is shown as follow:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1178,8 +1209,8 @@ SEM = \frac{SD}{\sqrt{n}}
 </div>
 </div>
 </section>
-<section id="graphics-in-r-2" class="slide level2">
-<h2>Graphics in R (2)</h2>
+<section id="base-graphics-2" class="slide level2">
+<h2>Base graphics (2)</h2>
 <p>The following lines create a plot from data frame <code>t</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Creating a data frame</span></span>
@@ -1195,24 +1226,111 @@ SEM = \frac{SD}{\sqrt{n}}
 
 </div>
 <img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
-<section id="graphics-in-ggplot2" class="slide level2">
-<h2>Graphics in <code>ggplot2</code></h2>
-<p>The <code>ggplot2</code> package is an R package for creating graphs or plots of statistical data. With <code>ggplot2</code>, you can compose graphs by combining independent components based on the <strong>Grammar of Graphics</strong>.</p>
-
-<img data-src="https://education.arcus.chop.edu/images/displ-v-hwy-scatter-blue.gif" class="r-stretch quarto-figure-center"><p class="caption">GIF from https://education.arcus.chop.edu/r-4-beginners-chapter-3</p><p>We’ll mainly use ggplot2 and other graphic libraries in this workshop 🙂</p>
+<section id="lattice-graphic" class="slide level2">
+<h2>Lattice graphic</h2>
+<p>Attempts to improve R’s basic graphs by providing better presets and the ability to display multivariate relationships. In particular, the package supports the creation of grid graphs - graphs that show a variable or the relationship between variables as a function of one or more other variables.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Load package</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb70-3"><a href="#cb70-3"></a></span>
+<span id="cb70-4"><a href="#cb70-4"></a><span class="co"># Load Toothgrowth data set</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>ToothGrowth <span class="ot">&lt;-</span> datasets<span class="sc">::</span>ToothGrowth</span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="co"># Density plot</span></span>
+<span id="cb70-7"><a href="#cb70-7"></a><span class="fu">densityplot</span>(<span class="sc">~</span> len, <span class="at">groups =</span> dose, <span class="at">data =</span> ToothGrowth,</span>
+<span id="cb70-8"><a href="#cb70-8"></a>            <span class="at">plot.points =</span> <span class="cn">FALSE</span>, <span class="at">auto.key =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Load iris data set</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span>
+<span id="cb71-3"><a href="#cb71-3"></a><span class="co"># Plot scatter plot</span></span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="fu">xyplot</span>(Sepal.Length <span class="sc">~</span> Petal.Length <span class="sc">|</span> Species,</span>
+<span id="cb71-5"><a href="#cb71-5"></a>       <span class="at">group =</span> Species,</span>
+<span id="cb71-6"><a href="#cb71-6"></a>       <span class="at">data =</span> dt,</span>
+<span id="cb71-7"><a href="#cb71-7"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"smooth"</span>),</span>
+<span id="cb71-8"><a href="#cb71-8"></a>       <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="references" class="slide level2">
+<section id="ggplot2" class="slide level2">
+<h2>ggplot2</h2>
+<p>The <code>ggplot2</code> package is an R package for creating graphs or plots of statistical data. With <code>ggplot2</code>, you can compose graphs by combining independent components based on the <strong>Grammar of Graphics</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># Load package</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb72-3"><a href="#cb72-3"></a><span class="co"># create scatterplot of carat vs. price, </span></span>
+<span id="cb72-4"><a href="#cb72-4"></a><span class="co"># using cut as color variable</span></span>
+<span id="cb72-5"><a href="#cb72-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
+<span id="cb72-6"><a href="#cb72-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
+<span id="cb72-7"><a href="#cb72-7"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># Create scatterplot of price, grouped by cut</span></span>
+<span id="cb73-2"><a href="#cb73-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
+<span id="cb73-3"><a href="#cb73-3"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span> </span>
+<span id="cb73-4"><a href="#cb73-4"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"firebrick"</span>) <span class="sc">+</span></span>
+<span id="cb73-5"><a href="#cb73-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="02_basic_R_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<p>We’ll mainly use ggplot2 and other graphic libraries in this workshop 🙂</p>
+</section>
+<section id="tidyverse" class="slide level2">
+<h2>Tidyverse</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Tidyverse is a collection of R packages for data science. All Tidyverse packages share the same design philosophy, grammar, and data structures. The core of Tidyverse includes packages that you will use in your daily data analysis.</p>
+<p>&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># Load tidyverse</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/tidyverse-Q1-2023.png"></p>
+<p></p><figcaption>Core packages in Tidyverse.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <ul>
 <li><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: written by Torfs &amp; Brauer, Hydrology and Quantitative Water Management Group, Wageningen University.</li>
 <li><a href="https://nbisweden.github.io/workshop-data-visualization-r/2304/index.html">Workshop on Data Visualization in R</a>: by National Bioinformatics Infrastructure Sweden (NBIS), on behalf of SciLifeLab.</li>
 <li><a href="https://r4ds.hadley.nz/">R for Data Science (2nd Edition)</a>: written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.</li>
 <li><a href="https://bookdown.org/rdpeng/exdata/">Exploratory Data Analysis with R</a>: written by Roger D. Peng, Johns Hopkins Bloomberg School of Public Health. 2020</li>
+<li><a href="https://ggplot2-book.org/index.html">ggplot2: Elegant Graphics for Data Analysis (3e)</a>: written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).</li>
 </ul>
 
 
 <img src="img/sci_abbl_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>17 May 2023</p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-gu2022" class="csl-entry" role="doc-biblioentry">
+Gu, Zuguang. 2022. <span>“Complex Heatmap Visualization.”</span> <em>iMeta</em> 1 (3). <a href="https://doi.org/10.1002/imt2.43">https://doi.org/10.1002/imt2.43</a>.
+</div>
 </div>
 </section>
     </div>

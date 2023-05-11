@@ -1,0 +1,27 @@
+---
+title: "Plotting Omics Data"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 18pt
+    slide-number: true
+    dpi: 300
+editor: visual
+bibliography: references.bib
+---
+
+## Plotting Diversity Indices
+
+## Plotting Individual Gene Expression
+
+## Plotting Circular genome
+
+## 
+
+## References
+
+::: {#refs}
+:::

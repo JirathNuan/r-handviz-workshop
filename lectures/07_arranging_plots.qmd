@@ -1,0 +1,41 @@
+---
+title: "Plotting Omics Data"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 18pt
+    slide-number: true
+    dpi: 300
+editor: visual
+bibliography: references.bib
+---
+
+## Principal Component Analysis
+
+## Hierarchical Clustering Analysis
+
+## Volcano Plot
+
+## Venn Diagram
+
+## Upset Plot
+
+## Plotting Abundance of Features
+
+### Abundance of Representative Terms
+
+### Relative abundance
+
+## Plotting Individual Gene Expression
+
+## Plotting Manhattan Plot
+
+## Plotting Diversity Indices
+
+## References
+
+::: {#refs}
+:::

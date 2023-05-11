@@ -4,11 +4,17 @@ project:
   render:
     - index.qmd
     - schedule.qmd
-    # - exercise.qmd
     - prerequisite.qmd
     - about.qmd
     - lectures/02_basic_R.qmd
-
+    - lectures/03_exploratory_data_analysis.qmd
+    # - lectures/04_grammar_of_graphics.qmd
+    # - lectures/05_plotting_omics_data_1.qmd
+    # - lectures/06_plotting_omics_data_2.qmd
+    # - lectures/07_arranging_plots.qmd
+    
+    
+    
 website:
   page-navigation: true
   title: "R Workshop 2023"
@@ -31,8 +37,6 @@ website:
         text: Home
       - href: schedule.qmd
         text: Schedule
-      # - href: exercise.qmd
-      #   text: Exercises
       - href: prerequisite.qmd
         text: Prerequisites
       - href: about.qmd

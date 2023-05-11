@@ -58,4 +58,37 @@ Rstudio is an integrated development environment (IDE) for computing in R langua
 
 ### 4. Install necessary R packages
 
-TBW
+Participants are required to install the following R packages before the workshop day.
+
+```{r}
+install.packages(
+  c(
+    "ggplot2",
+    "tidyverse",
+    "ggmap",
+    "pheatmap",
+    "devtools",
+    "cowplot",
+    "reshape2",
+    "dplyr",
+    "wesanderson",
+    "scales",
+    "ggthemes",
+    "ggrepel",
+    "ggpubr",
+    "gridExtra",
+    "gganimate",
+    "shiny",
+    "rsconnect",
+    "grid",
+    "shinythemes",
+    "colourpicker"
+  ),
+  dependencies = TRUE
+)
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install(c("ggtree", "treeio"))
+```
