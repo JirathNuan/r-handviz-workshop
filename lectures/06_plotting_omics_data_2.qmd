@@ -1,5 +1,5 @@
 ---
-title: "Plotting Omics Data"
+title: "Plotting Omics Data (2)"
 author: "Jiratchaya Nuanpirom"
 format:
   revealjs:
@@ -12,16 +12,3 @@ format:
 editor: visual
 bibliography: references.bib
 ---
-
-## Plotting Diversity Indices
-
-## Plotting Individual Gene Expression
-
-## Plotting Circular genome
-
-## 
-
-## References
-
-::: {#refs}
-:::

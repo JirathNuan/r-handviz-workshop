@@ -315,13 +315,6 @@
     "text": "References\n\n\nPeng, Roger D. 2020. Exploratory Data Analysis with r. https://bookdown.org/rdpeng/exdata/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. https://r4ds.hadley.nz/.\n\n\n\n\n\n17 May 2023"
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#ggplot2",
-    "href": "lectures/04_grammar_of_graphics.html#ggplot2",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "ggplot2",
-    "text": "ggplot2"
-  },
-  {
     "objectID": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
     "href": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
     "title": "Grammar of Graphics and Directory of Visualizations",
@@ -329,165 +322,11 @@
     "text": "What is Grammar of Graphics\n\n\n\n\n\n\n\n\n \n\nData: Your input data (in long format)\nAesthetics: what makes your data visible, e.g., size, line color, variables to plot, fill color, line type, transparency, etc.\nGeometry: determines the type of plot.\nStatistics: statistical transformation of continuous data\nFacets: for splitting plot into subplots.\nCoordinates: Numeric systems to limit, breakdown, transform position of geometry.\nThemes: Overall visual of plots and customization."
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
-    "href": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
+    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
+    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
     "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "Directory of Visualizations",
-    "text": "Directory of Visualizations"
-  },
-  {
-    "objectID": "lectures/04_grammar_of_graphics.html#references",
-    "href": "lectures/04_grammar_of_graphics.html#references",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "References",
-    "text": "References\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/.\n\n\n\n\n\n17 May 2023"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#principal-component-analysis",
-    "href": "lectures/05_plotting_omics_data_1.html#principal-component-analysis",
-    "title": "Plotting Omics Data",
-    "section": "Principal Component Analysis",
-    "text": "Principal Component Analysis"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#hierarchical-clustering-analysis",
-    "href": "lectures/05_plotting_omics_data_1.html#hierarchical-clustering-analysis",
-    "title": "Plotting Omics Data",
-    "section": "Hierarchical Clustering Analysis",
-    "text": "Hierarchical Clustering Analysis"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#volcano-plot",
-    "href": "lectures/05_plotting_omics_data_1.html#volcano-plot",
-    "title": "Plotting Omics Data",
-    "section": "Volcano Plot",
-    "text": "Volcano Plot"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#venn-diagram",
-    "href": "lectures/05_plotting_omics_data_1.html#venn-diagram",
-    "title": "Plotting Omics Data",
-    "section": "Venn Diagram",
-    "text": "Venn Diagram"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#upset-plot",
-    "href": "lectures/05_plotting_omics_data_1.html#upset-plot",
-    "title": "Plotting Omics Data",
-    "section": "Upset Plot",
-    "text": "Upset Plot"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#plotting-abundance-of-features",
-    "href": "lectures/05_plotting_omics_data_1.html#plotting-abundance-of-features",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Abundance of Features",
-    "text": "Plotting Abundance of Features\nAbundance of Representative Terms\nRelative abundance"
-  },
-  {
-    "objectID": "lectures/05_plotting_omics_data_1.html#references",
-    "href": "lectures/05_plotting_omics_data_1.html#references",
-    "title": "Plotting Omics Data",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n17 May 2023"
-  },
-  {
-    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-diversity-indices",
-    "href": "lectures/06_plotting_omics_data_2.html#plotting-diversity-indices",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Diversity Indices",
-    "text": "Plotting Diversity Indices"
-  },
-  {
-    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-individual-gene-expression",
-    "href": "lectures/06_plotting_omics_data_2.html#plotting-individual-gene-expression",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Individual Gene Expression",
-    "text": "Plotting Individual Gene Expression"
-  },
-  {
-    "objectID": "lectures/06_plotting_omics_data_2.html#plotting-circular-genome",
-    "href": "lectures/06_plotting_omics_data_2.html#plotting-circular-genome",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Circular genome",
-    "text": "Plotting Circular genome"
-  },
-  {
-    "objectID": "lectures/06_plotting_omics_data_2.html#references",
-    "href": "lectures/06_plotting_omics_data_2.html#references",
-    "title": "Plotting Omics Data",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n17 May 2023"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#principal-component-analysis",
-    "href": "lectures/07_arranging_plots.html#principal-component-analysis",
-    "title": "Plotting Omics Data",
-    "section": "Principal Component Analysis",
-    "text": "Principal Component Analysis"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#hierarchical-clustering-analysis",
-    "href": "lectures/07_arranging_plots.html#hierarchical-clustering-analysis",
-    "title": "Plotting Omics Data",
-    "section": "Hierarchical Clustering Analysis",
-    "text": "Hierarchical Clustering Analysis"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#volcano-plot",
-    "href": "lectures/07_arranging_plots.html#volcano-plot",
-    "title": "Plotting Omics Data",
-    "section": "Volcano Plot",
-    "text": "Volcano Plot"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#venn-diagram",
-    "href": "lectures/07_arranging_plots.html#venn-diagram",
-    "title": "Plotting Omics Data",
-    "section": "Venn Diagram",
-    "text": "Venn Diagram"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#upset-plot",
-    "href": "lectures/07_arranging_plots.html#upset-plot",
-    "title": "Plotting Omics Data",
-    "section": "Upset Plot",
-    "text": "Upset Plot"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#plotting-abundance-of-features",
-    "href": "lectures/07_arranging_plots.html#plotting-abundance-of-features",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Abundance of Features",
-    "text": "Plotting Abundance of Features\nAbundance of Representative Terms\nRelative abundance"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#plotting-individual-gene-expression",
-    "href": "lectures/07_arranging_plots.html#plotting-individual-gene-expression",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Individual Gene Expression",
-    "text": "Plotting Individual Gene Expression"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#plotting-manhattan-plot",
-    "href": "lectures/07_arranging_plots.html#plotting-manhattan-plot",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Manhattan Plot",
-    "text": "Plotting Manhattan Plot"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#plotting-diversity-indices",
-    "href": "lectures/07_arranging_plots.html#plotting-diversity-indices",
-    "title": "Plotting Omics Data",
-    "section": "Plotting Diversity Indices",
-    "text": "Plotting Diversity Indices"
-  },
-  {
-    "objectID": "lectures/07_arranging_plots.html#references",
-    "href": "lectures/07_arranging_plots.html#references",
-    "title": "Plotting Omics Data",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\n17 May 2023"
+    "section": "Building a plot layer-by-layer",
+    "text": "Building a plot layer-by-layer\n\nLoad data with ggplot()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-1",
@@ -518,20 +357,6 @@
     "text": "Building a plot layer-by-layer\n\nAdd facets\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color)"
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#section",
-    "href": "lectures/04_grammar_of_graphics.html#section",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "",
-    "text": "4. Statistics5. Facets6. Coordinates7. Themes\n\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds,\n       aes(x = carat, y = price, color = color)) +\n  geom_point() +\n  stat_smooth()\n\n\n\n\n\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds,\n       aes(x = carat, y = price, color = color)) +\n  geom_point() +\n  stat_smooth(color = \"black\") +\n  facet_wrap(. ~ cut) +\n  scale_y_continuous(breaks = seq(from = 0, tp = 20000, by = ))"
-  },
-  {
-    "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
-    "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "Building a plot layer-by-layer",
-    "text": "Building a plot layer-by-layer\n\nLoad data with ggplot()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds)"
-  },
-  {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
     "title": "Grammar of Graphics and Directory of Visualizations",
@@ -546,13 +371,6 @@
     "text": "Building a plot layer-by-layer\n\nAdding theme\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color) +\n  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000)) +\n  theme_bw()"
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#aesthetics-and-types-of-data",
-    "href": "lectures/04_grammar_of_graphics.html#aesthetics-and-types-of-data",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "Aesthetics and Types of Data",
-    "text": "Aesthetics and Types of Data\n\nAesthetics aes() describe how variables map to visual properties or aesthetics.\nThe position of data points are described by values from x and y\nshape, size, or color styles can also be specified in aes().\n\n\nCommonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from Wilke (2019)"
-  },
-  {
     "objectID": "lectures/04_grammar_of_graphics.html#aesthetics",
     "href": "lectures/04_grammar_of_graphics.html#aesthetics",
     "title": "Grammar of Graphics and Directory of Visualizations",
@@ -560,10 +378,24 @@
     "text": "Aesthetics\n\nAesthetics aes() describe how variables map to visual properties or aesthetics.\nThe position of data points are described by values from x and y\nshape, size, or color styles can also be specified in aes().\n\n\nCommonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from Wilke (2019)"
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#types-of-data",
-    "href": "lectures/04_grammar_of_graphics.html#types-of-data",
+    "objectID": "lectures/04_grammar_of_graphics.html#types-of-variables-used-in-aesthetics",
+    "href": "lectures/04_grammar_of_graphics.html#types-of-variables-used-in-aesthetics",
     "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "Types of Data",
-    "text": "Types of Data"
+    "section": "Types of Variables Used in Aesthetics",
+    "text": "Types of Variables Used in Aesthetics\n\n\nContinuous variables\n\nA variable or a set of value you can measure.\nContinuous data values are values you can arbitrarily fine intermediates.\nAge, height, BMI, date, assignment score, etc.\nSometimes, series of continuous variable can be a discrete variable.\n\n\nmy_seq <- seq(from = 0, to = 10, by = 1)\n(my_seq)\n\n [1]  0  1  2  3  4  5  6  7  8  9 10\n\nmy_seq2 <- as.character(my_seq)\n\n\nDiscrete variables\n\n\nContinuous variables\n\nA variable or a set of value you can measure.\nContinuous data values are values you can arbitrarily fine intermediates.\nAge, height, BMI, date, assignment score, etc.\nSometimes, series of continuous variable can be a discrete variable.\n\nDiscrete variables\n\nA variable or a set of value you can count.\nGrade (A B C D), Name, Type, number of person in a room, etc.\nSometimes,"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
+    "href": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "Directory of Visualizations",
+    "text": "Directory of Visualizations"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#references",
+    "href": "lectures/04_grammar_of_graphics.html#references",
+    "title": "Grammar of Graphics and Directory of Visualizations",
+    "section": "References",
+    "text": "References\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/.\n\n\n\n\n\n17 May 2023"
   }
 ]

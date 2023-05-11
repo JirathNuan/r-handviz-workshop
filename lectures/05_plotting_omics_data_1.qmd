@@ -1,5 +1,5 @@
 ---
-title: "Plotting Omics Data"
+title: "Plotting Omics Data (1)"
 author: "Jiratchaya Nuanpirom"
 format:
   revealjs:
@@ -12,24 +12,3 @@ format:
 editor: visual
 bibliography: references.bib
 ---
-
-## Principal Component Analysis
-
-## Hierarchical Clustering Analysis
-
-## Volcano Plot
-
-## Venn Diagram
-
-## Upset Plot
-
-## Plotting Abundance of Features
-
-### Abundance of Representative Terms
-
-### Relative abundance
-
-## References
-
-::: {#refs}
-:::

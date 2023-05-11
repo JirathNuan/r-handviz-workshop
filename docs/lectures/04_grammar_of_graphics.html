@@ -559,8 +559,42 @@ Jiratchaya Nuanpirom
 </ul>
 
 <img data-src="https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png" style="width:73.0%" class="r-stretch quarto-figure-center"><p class="caption">Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from <span class="citation" data-cites="wilke2019">Wilke (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span></p></section>
-<section id="types-of-data" class="slide level2">
-<h2>Types of Data</h2>
+<section id="types-of-variables-used-in-aesthetics" class="slide level2">
+<h2>Types of Variables Used in Aesthetics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="continuous-variables">Continuous variables</h4>
+<ul>
+<li><p>A variable or a set of value you can <strong>measure</strong>.</p></li>
+<li><p>Continuous data values are values you can arbitrarily fine intermediates.</p></li>
+<li><p>Age, height, BMI, date, assignment score, etc.</p></li>
+<li><p>Sometimes, series of continuous variable can be a discrete variable.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>my_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>(my_seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>my_seq2 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(my_seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<h4 id="discrete-variables">Discrete variables</h4>
+</div>
+</div>
+<h4 id="continuous-variables-1">Continuous variables</h4>
+<ul>
+<li><p>A variable or a set of value you can <strong>measure</strong>.</p></li>
+<li><p>Continuous data values are values you can arbitrarily fine intermediates.</p></li>
+<li><p>Age, height, BMI, date, assignment score, etc.</p></li>
+<li><p>Sometimes, series of continuous variable can be a discrete variable.</p></li>
+</ul>
+<h4 id="discrete-variables-1">Discrete variables</h4>
+<ul>
+<li><p>A variable or a set of value you can <strong>count</strong>.</p></li>
+<li><p>Grade (A B C D), Name, Type, number of person in a room, etc.</p></li>
+<li><p>Sometimes,</p></li>
+</ul>
 </section>
 <section id="directory-of-visualizations" class="slide level2">
 <h2>Directory of Visualizations</h2>

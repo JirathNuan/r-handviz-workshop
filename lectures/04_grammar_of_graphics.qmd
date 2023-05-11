@@ -202,7 +202,7 @@ my_seq2 <- as.character(my_seq)
 
 -   Grade (A B C D), Name, Type, number of person in a room, etc.
 
--   Sometimes
+-   Sometimes,
 
 ## Directory of Visualizations
 
