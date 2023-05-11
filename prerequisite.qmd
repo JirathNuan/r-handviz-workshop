@@ -20,7 +20,9 @@ title: "Prerequisites"
 -   **Memory:** \> 8 GB RAM
 :::
 
-::: callout-tip
+::: {.callout-tip collapse="true"}
+## Optional 📖
+
 In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:
 
 -   [R Programming Tutorial - Learn the Basics of Statistical Computing](https://youtu.be/_V8eKsto3Ug) from freecodecamp.org
@@ -46,7 +48,7 @@ Users can download R installer from the Comprehensive R Archive Network (CRAN): 
 
 Rtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.
 
-Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html>
+Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools/rtools43/files/rtools43-5550-5548.exe>
 
 > The current Rtools for Windows users is `Rtools 4.3`, which is compatible with version R 4.3.x.
 

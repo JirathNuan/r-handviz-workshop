@@ -254,14 +254,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip
+Optional 📖
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:</p>
 <ul>
@@ -269,6 +271,7 @@ Tip
 <li><p><a href="https://www.datacamp.com/courses/free-introduction-to-r">Introduction to R</a> from Datacamp</p></li>
 <li><p><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/master/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R</a>: The 10-page document by Torfs &amp; Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge).</p></li>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -286,7 +289,7 @@ Tip
 <section id="install-rtools-windows-users-only" class="level3">
 <h3 class="anchored" data-anchor-id="install-rtools-windows-users-only">2. Install Rtools (Windows users only)</h3>
 <p>Rtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.</p>
-<p>Users can install Rtools from CRAN: <a href="https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html" class="uri">https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html</a></p>
+<p>Users can install Rtools from CRAN: <a href="https://cran.rstudio.com/bin/windows/Rtools/rtools43/files/rtools43-5550-5548.exe" class="uri">https://cran.rstudio.com/bin/windows/Rtools/rtools43/files/rtools43-5550-5548.exe</a></p>
 <blockquote class="blockquote">
 <p>The current Rtools for Windows users is <code>Rtools 4.3</code>, which is compatible with version R 4.3.x.</p>
 </blockquote>
