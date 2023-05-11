@@ -60,35 +60,45 @@ Rstudio is an integrated development environment (IDE) for computing in R langua
 
 Participants are required to install the following R packages before the workshop day.
 
+-   Install packages from CRAN
+
 ```{r}
-install.packages(
-  c(
-    "ggplot2",
-    "tidyverse",
-    "ggmap",
-    "pheatmap",
-    "devtools",
-    "cowplot",
-    "reshape2",
-    "dplyr",
-    "wesanderson",
-    "scales",
-    "ggthemes",
-    "ggrepel",
-    "ggpubr",
-    "gridExtra",
-    "gganimate",
-    "shiny",
-    "rsconnect",
-    "grid",
-    "shinythemes",
-    "colourpicker"
-  ),
-  dependencies = TRUE
+if (!require("pacman"))
+  install.packages("pacman"
+  )
+pacman::p_load(
+  tidyverse,
+  paletteer,
+  scales,
+  RColorBrewer,
+  ggpubr,
+  VennDiagram,
+  circlize,
+  viridis,
+  png,
+  GGally,
+  cowplot,
+  openxlsx,
+  gridExtra,
+  gtable,
+  egg,
+  ggfortify,
+  FactoMineR,
+  factoextra,
+  gridGraphics,
+  corrplot,
+  plotly,
+  agricolae
 )
 
+```
+
+-   Install packages from Bioconductor
+
+```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
-BiocManager::install(c("ggtree", "treeio"))
+BiocManager::install(c("ComplexHeatmap", "DESeq2", 
+                       "pcaExplorer", "EnhancedVolcano"))
 ```

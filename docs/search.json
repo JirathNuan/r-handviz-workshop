@@ -25,7 +25,7 @@
     "href": "prerequisite.html#software-requirements",
     "title": "Prerequisites",
     "section": "Software Requirements",
-    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nParticipants are required to install the following R packages before the workshop day.\n\ninstall.packages(\n  c(\n    \"ggplot2\",\n    \"tidyverse\",\n    \"ggmap\",\n    \"pheatmap\",\n    \"devtools\",\n    \"cowplot\",\n    \"reshape2\",\n    \"dplyr\",\n    \"wesanderson\",\n    \"scales\",\n    \"ggthemes\",\n    \"ggrepel\",\n    \"ggpubr\",\n    \"gridExtra\",\n    \"gganimate\",\n    \"shiny\",\n    \"rsconnect\",\n    \"grid\",\n    \"shinythemes\",\n    \"colourpicker\"\n  ),\n  dependencies = TRUE\n)\n\nif (!requireNamespace(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nBiocManager::install(c(\"ggtree\", \"treeio\"))"
+    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/rtools.html\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nParticipants are required to install the following R packages before the workshop day.\n\nInstall packages from CRAN\n\n\nif (!require(\"pacman\"))\n  install.packages(\"pacman\"\n  )\npacman::p_load(\n  tidyverse,\n  paletteer,\n  scales,\n  RColorBrewer,\n  ggpubr,\n  VennDiagram,\n  circlize,\n  viridis,\n  png,\n  GGally,\n  cowplot,\n  openxlsx,\n  gridExtra,\n  gtable,\n  egg,\n  ggfortify,\n  FactoMineR,\n  factoextra,\n  gridGraphics,\n  corrplot,\n  plotly,\n  agricolae\n)\n\n\nInstall packages from Bioconductor\n\n\nif (!requireNamespace(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nBiocManager::install(c(\"ComplexHeatmap\", \"DESeq2\", \n                       \"pcaExplorer\", \"EnhancedVolcano\"))"
   },
   {
     "objectID": "about.html",
@@ -249,7 +249,7 @@
     "href": "lectures/03_exploratory_data_analysis.html#step-2-load-your-data",
     "title": "Exploratory Data Analysis",
     "section": "Step 2: Load your data",
-    "text": "Step 2: Load your data\nNow we will load the data set in CSV format into R environment using read_csv() function as follows.\n \n\n# Load libraries\nlibrary(tidyverse)\n# Retrieve data set\nmortality_rate <- read_csv(file = \"../datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv\", comment = \"#\")\n\n \nWhat we may have found:\n\nWas the data frame object loaded mortality_rate correctly ?\nAre there any errors/warnings during loading ?\nFrom Rstudio, how many objects and variables in data set observed from environment panel ?"
+    "text": "Step 2: Load your data\nNow we will load the data set in CSV format into R environment using read_csv() function as follows.\n \n\n# Load libraries\nlibrary(tidyverse)\n# Retrieve data set\nmortality_rate <- read_csv(file = \"https://raw.githubusercontent.com/JirathNuan/r-handviz-workshop/main/datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv\", comment = \"#\")\n\n \nWhat we may have found:\n\nWas the data frame object loaded mortality_rate correctly ?\nAre there any errors/warnings during loading ?\nFrom Rstudio, how many objects and variables in data set observed from environment panel ?"
   },
   {
     "objectID": "lectures/03_exploratory_data_analysis.html#step-3-check-the-data-dimension",
@@ -397,5 +397,82 @@
     "title": "Grammar of Graphics and Directory of Visualizations",
     "section": "References",
     "text": "References\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/.\n\n\n\n\n\n17 May 2023"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html",
+    "href": "lectures/05_plotting_omics_data.html",
+    "title": "Plotting Omics Data",
+    "section": "",
+    "text": "Load R pakcages"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#plotting-abundance-of-features",
+    "href": "lectures/05_plotting_omics_data.html#plotting-abundance-of-features",
+    "title": "Plotting Omics Data",
+    "section": "1 Plotting Abundance of Features",
+    "text": "1 Plotting Abundance of Features\n\n1.1 Abundance of Representative Terms\n\n\n1.2 Relative abundance"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#principal-component-analysis",
+    "href": "lectures/05_plotting_omics_data.html#principal-component-analysis",
+    "title": "Plotting Omics Data",
+    "section": "2 Principal Component Analysis",
+    "text": "2 Principal Component Analysis\nWay 1: prcomp & normal scatter plot\nWay 2: rlogtransform & pcaexplorer"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#hierarchical-clustering-analysis-heatmap",
+    "href": "lectures/05_plotting_omics_data.html#hierarchical-clustering-analysis-heatmap",
+    "title": "Plotting Omics Data",
+    "section": "3 Hierarchical Clustering Analysis (Heatmap)",
+    "text": "3 Hierarchical Clustering Analysis (Heatmap)\n\nset.seed(123)\nnr1 = 4; nr2 = 8; nr3 = 6; nr = nr1 + nr2 + nr3\nnc1 = 6; nc2 = 8; nc3 = 10; nc = nc1 + nc2 + nc3\nmat = cbind(rbind(matrix(rnorm(nr1*nc1, mean = 1,   sd = 0.5), nr = nr1),\n          matrix(rnorm(nr2*nc1, mean = 0,   sd = 0.5), nr = nr2),\n          matrix(rnorm(nr3*nc1, mean = 0,   sd = 0.5), nr = nr3)),\n    rbind(matrix(rnorm(nr1*nc2, mean = 0,   sd = 0.5), nr = nr1),\n          matrix(rnorm(nr2*nc2, mean = 1,   sd = 0.5), nr = nr2),\n          matrix(rnorm(nr3*nc2, mean = 0,   sd = 0.5), nr = nr3)),\n    rbind(matrix(rnorm(nr1*nc3, mean = 0.5, sd = 0.5), nr = nr1),\n          matrix(rnorm(nr2*nc3, mean = 0.5, sd = 0.5), nr = nr2),\n          matrix(rnorm(nr3*nc3, mean = 1,   sd = 0.5), nr = nr3))\n   )\nmat = mat[sample(nr, nr), sample(nc, nc)] # random shuffle rows and columns\nrownames(mat) = paste0(\"row\", seq_len(nr))\ncolnames(mat) = paste0(\"column\", seq_len(nc))\n\nlibrary(circlize)\ncol_fun = colorRamp2(c(-2, 0, 2), c(\"green\", \"white\", \"red\"))\ncol_fun(seq(-3, 3))\n\n[1] \"#00FF00FF\" \"#00FF00FF\" \"#B1FF9AFF\" \"#FFFFFFFF\" \"#FF9E81FF\" \"#FF0000FF\"\n[7] \"#FF0000FF\"\n\nHeatmap(mat, name = \"mat\", col = col_fun)"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#volcano-plot",
+    "href": "lectures/05_plotting_omics_data.html#volcano-plot",
+    "title": "Plotting Omics Data",
+    "section": "4 Volcano Plot",
+    "text": "4 Volcano Plot\nEnhancedvolcano"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#venn-diagram-and-upset-plot",
+    "href": "lectures/05_plotting_omics_data.html#venn-diagram-and-upset-plot",
+    "title": "Plotting Omics Data",
+    "section": "5 Venn Diagram and Upset Plot",
+    "text": "5 Venn Diagram and Upset Plot\nVenn: venndiagram\n\n# Load library\nlibrary(VennDiagram)\n \n# Generate 3 sets of 200 words\nset1 <- paste(rep(\"word_\" , 200) , \n              sample(c(1:1000) , 200 , replace=F) , \n              sep=\"\")\nset2 <- paste(rep(\"word_\" , 200) , \n              sample(c(1:1000) , 200 , replace=F) , \n              sep=\"\")\nset3 <- paste(rep(\"word_\" , 200) , \n              sample(c(1:1000) , 200 , replace=F) , \n              sep=\"\")\n\n# Prepare a palette of 3 colors with R colorbrewer:\nlibrary(RColorBrewer)\nmyCol <- brewer.pal(3, \"Pastel2\")\n\n# Chart\nvenn.diagram(\n        x = list(set1, set2, set3),\n        category.names = c(\"Set 1\" , \"Set 2 \" , \"Set 3\"),\n        filename = '#14_venn_diagramm.png',\n        output=TRUE,\n        \n        # Output features\n        imagetype=\"png\" ,\n        height = 480 , \n        width = 480 , \n        resolution = 300,\n        compression = \"lzw\",\n        \n        # Circles\n        lwd = 2,\n        lty = 'blank',\n        fill = myCol,\n        \n        # Numbers\n        cex = .6,\n        fontface = \"bold\",\n        fontfamily = \"sans\",\n        \n        # Set names\n        cat.cex = 0.6,\n        cat.fontface = \"bold\",\n        cat.default.pos = \"outer\",\n        cat.pos = c(-27, 27, 135),\n        cat.dist = c(0.055, 0.055, 0.085),\n        cat.fontfamily = \"sans\",\n        rotation = 1\n)\n\n[1] 1\n\n\nupset: complexheatmap\n\nlibrary(ComplexHeatmap)\nset.seed(123)\nlt = list(a = sample(letters, 5),\n          b = sample(letters, 10),\n          c = sample(letters, 15))\nm1 = make_comb_mat(lt)\nUpSet(m1)"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#plotting-diversity-indices",
+    "href": "lectures/05_plotting_omics_data.html#plotting-diversity-indices",
+    "title": "Plotting Omics Data",
+    "section": "6 Plotting Diversity Indices",
+    "text": "6 Plotting Diversity Indices\nggpubr"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#plotting-individual-gene-expression",
+    "href": "lectures/05_plotting_omics_data.html#plotting-individual-gene-expression",
+    "title": "Plotting Omics Data",
+    "section": "7 Plotting Individual Gene Expression",
+    "text": "7 Plotting Individual Gene Expression\nggpubr"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#circos-plot",
+    "href": "lectures/05_plotting_omics_data.html#circos-plot",
+    "title": "Plotting Omics Data",
+    "section": "8 Circos plot",
+    "text": "8 Circos plot"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#section",
+    "href": "lectures/05_plotting_omics_data.html#section",
+    "title": "Plotting Omics Data",
+    "section": "9 ",
+    "text": "9"
+  },
+  {
+    "objectID": "lectures/05_plotting_omics_data.html#session-info",
+    "href": "lectures/05_plotting_omics_data.html#session-info",
+    "title": "Plotting Omics Data",
+    "section": "10 Session info",
+    "text": "10 Session info\n\nsessionInfo()\n\nR version 4.3.0 (2023-04-21 ucrt)\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\nRunning under: Windows 11 x64 (build 22621)\n\nMatrix products: default\n\n\nlocale:\n[1] LC_COLLATE=English_United States.utf8 \n[2] LC_CTYPE=English_United States.utf8   \n[3] LC_MONETARY=English_United States.utf8\n[4] LC_NUMERIC=C                          \n[5] LC_TIME=English_United States.utf8    \n\ntime zone: Asia/Bangkok\ntzcode source: internal\n\nattached base packages:\n[1] stats4    grid      stats     graphics  grDevices utils     datasets \n[8] methods   base     \n\nother attached packages:\n [1] EnhancedVolcano_1.18.0      ggrepel_0.9.3              \n [3] pcaExplorer_2.26.1          DESeq2_1.40.1              \n [5] SummarizedExperiment_1.30.1 Biobase_2.60.0             \n [7] MatrixGenerics_1.12.0       matrixStats_0.63.0         \n [9] GenomicRanges_1.52.0        GenomeInfoDb_1.36.0        \n[11] IRanges_2.34.0              S4Vectors_0.38.1           \n[13] BiocGenerics_0.46.0         ComplexHeatmap_2.16.0      \n[15] agricolae_1.3-5             plotly_4.10.1              \n[17] corrplot_0.92               gridGraphics_0.5-1         \n[19] factoextra_1.0.7            FactoMineR_2.8             \n[21] ggfortify_0.4.16            egg_0.4.5                  \n[23] gtable_0.3.3                gridExtra_2.3              \n[25] openxlsx_4.2.5.2            cowplot_1.1.1              \n[27] GGally_2.1.2                png_0.1-8                  \n[29] viridis_0.6.3               viridisLite_0.4.2          \n[31] circlize_0.4.15             VennDiagram_1.7.3          \n[33] futile.logger_1.4.3         ggpubr_0.6.0               \n[35] RColorBrewer_1.1-3          scales_1.2.1               \n[37] paletteer_1.5.0             lubridate_1.9.2            \n[39] forcats_1.0.0               stringr_1.5.0              \n[41] dplyr_1.1.2                 purrr_1.0.1                \n[43] readr_2.1.4                 tidyr_1.3.0                \n[45] tibble_3.2.1                ggplot2_3.4.2              \n[47] tidyverse_2.0.0            \n\nloaded via a namespace (and not attached):\n  [1] bitops_1.0-7            httr_1.4.6              webshot_0.5.4          \n  [4] doParallel_1.0.17       Rgraphviz_2.44.0        tools_4.3.0            \n  [7] backports_1.4.1         utf8_1.2.3              R6_2.5.1               \n [10] DT_0.27                 lazyeval_0.2.2          questionr_0.7.8        \n [13] GetoptLong_1.0.5        withr_2.5.0             prettyunits_1.1.1      \n [16] klaR_1.7-2              cli_3.6.1               formatR_1.14           \n [19] TSP_1.2-4               flashClust_1.01-2       topGO_2.52.0           \n [22] mvtnorm_1.1-3           genefilter_1.82.1       AnnotationForge_1.42.0 \n [25] labelled_2.11.0         limma_3.56.1            rstudioapi_0.14        \n [28] RSQLite_2.3.1           GOstats_2.66.0          generics_0.1.3         \n [31] shape_1.4.6             combinat_0.0-8          crosstalk_1.2.0        \n [34] car_3.1-2               zip_2.3.0               dendextend_1.17.1      \n [37] GO.db_3.17.0            leaps_3.1               Matrix_1.5-4           \n [40] fansi_1.0.4             abind_1.4-5             lifecycle_1.0.3        \n [43] scatterplot3d_0.3-44    yaml_2.3.7              carData_3.0-5          \n [46] BiocFileCache_2.8.0     blob_1.2.4              promises_1.2.0.1       \n [49] crayon_1.5.2            shinydashboard_0.7.2    miniUI_0.1.1.1         \n [52] lattice_0.21-8          haven_2.5.2             annotate_1.78.0        \n [55] KEGGREST_1.40.0         pillar_1.9.0            knitr_1.42             \n [58] rjson_0.2.21            estimability_1.4.1      codetools_0.2-19       \n [61] glue_1.6.2              data.table_1.14.8       vctrs_0.6.2            \n [64] assertthat_0.2.1        rematch2_2.1.2          cachem_1.0.8           \n [67] xfun_0.39               S4Arrays_1.0.1          mime_0.12              \n [70] survival_3.5-5          pheatmap_1.0.12         seriation_1.4.2        \n [73] iterators_1.0.14        ellipsis_0.3.2          Category_2.66.0        \n [76] nlme_3.1-162            bit64_4.0.5             threejs_0.3.3          \n [79] progress_1.2.2          filelock_1.0.2          AlgDesign_1.2.1        \n [82] colorspace_2.1-0        DBI_1.1.3               tidyselect_1.2.0       \n [85] emmeans_1.8.5           bit_4.0.5               compiler_4.3.0         \n [88] curl_5.0.0              graph_1.78.0            SparseM_1.81           \n [91] xml2_1.3.4              DelayedArray_0.26.2     RBGL_1.76.0            \n [94] NMF_0.26                multcompView_0.1-9      rappdirs_0.3.3         \n [97] digest_0.6.31           shinyBS_0.61.1          rmarkdown_2.21         \n[100] ca_0.71.1               XVector_0.40.0          htmltools_0.5.5        \n[103] pkgconfig_2.0.3         base64enc_0.1-3         highr_0.10             \n[106] dbplyr_2.3.2            fastmap_1.1.1           rlang_1.1.1            \n[109] GlobalOptions_0.1.2     htmlwidgets_1.6.2       shiny_1.7.4            \n[112] jsonlite_1.8.4          BiocParallel_1.34.1     RCurl_1.98-1.12        \n[115] magrittr_2.0.3          GenomeInfoDbData_1.2.10 munsell_0.5.0          \n[118] Rcpp_1.0.10             stringi_1.7.12          zlibbioc_1.46.0        \n[121] MASS_7.3-58.4           plyr_1.8.8              parallel_4.3.0         \n[124] Biostrings_2.68.0       splines_4.3.0           hms_1.1.3              \n[127] locfit_1.5-9.7          igraph_1.4.2            ggsignif_0.6.4         \n[130] rngtools_1.5.2          reshape2_1.4.4          biomaRt_2.56.0         \n[133] futile.options_1.0.1    XML_3.99-0.14           evaluate_0.21          \n[136] lambda.r_1.2.4          BiocManager_1.30.20     tzdb_0.3.0             \n[139] foreach_1.5.2           httpuv_1.6.10           heatmaply_1.4.2        \n[142] reshape_0.8.9           clue_0.3-64             gridBase_0.4-7         \n[145] broom_1.0.4             xtable_1.8-4            rstatix_0.7.2          \n[148] later_1.3.1             memoise_2.0.1           AnnotationDbi_1.62.1   \n[151] registry_0.5-1          cluster_2.1.4           timechange_0.2.0       \n[154] GSEABase_1.62.0         shinyAce_0.4.2"
   }
 ]

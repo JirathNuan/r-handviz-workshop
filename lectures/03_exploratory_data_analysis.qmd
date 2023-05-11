@@ -82,7 +82,7 @@ Now we will load the data set in CSV format into R environment using `read_csv()
 # Load libraries
 library(tidyverse)
 # Retrieve data set
-mortality_rate <- read_csv(file = "../datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv", comment = "#")
+mortality_rate <- read_csv(file = "https://raw.githubusercontent.com/JirathNuan/r-handviz-workshop/main/datasets/WHOMortalityDatabase_Infectious-and-parasitic-diseases_2023-05-03.csv", comment = "#")
 ```
 
  

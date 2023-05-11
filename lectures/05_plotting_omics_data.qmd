@@ -1,0 +1,176 @@
+---
+title: "Plotting Omics Data"
+author: "Jiratchaya Nuanpirom"
+date: "17 May 2023"
+format:
+  html:
+    toc: true
+    number-sections: true
+    number-depth: 3
+execute: 
+  eval: true
+  echo: true
+  warning: false
+---
+
+Load R pakcages
+
+```{r}
+library(tidyverse)
+library(paletteer)
+library(scales)
+library(RColorBrewer)
+library(ggpubr)
+library(VennDiagram)
+library(circlize)
+library(viridis)
+library(png)
+library(GGally)
+library(cowplot)
+library(openxlsx)
+library(gridExtra)
+library(gtable)
+library(egg)
+library(ggfortify)
+library(FactoMineR)
+library(factoextra)
+library(gridGraphics)
+library(corrplot)
+library(plotly)
+library(agricolae)
+library(ComplexHeatmap)
+library(DESeq2)
+library(pcaExplorer)
+library(EnhancedVolcano)
+```
+
+## Plotting Abundance of Features
+
+### Abundance of Representative Terms
+
+### Relative abundance
+
+## Principal Component Analysis
+
+Way 1: prcomp & normal scatter plot
+
+Way 2: rlogtransform & pcaexplorer
+
+## Hierarchical Clustering Analysis (Heatmap)
+
+```{r}
+set.seed(123)
+nr1 = 4; nr2 = 8; nr3 = 6; nr = nr1 + nr2 + nr3
+nc1 = 6; nc2 = 8; nc3 = 10; nc = nc1 + nc2 + nc3
+mat = cbind(rbind(matrix(rnorm(nr1*nc1, mean = 1,   sd = 0.5), nr = nr1),
+          matrix(rnorm(nr2*nc1, mean = 0,   sd = 0.5), nr = nr2),
+          matrix(rnorm(nr3*nc1, mean = 0,   sd = 0.5), nr = nr3)),
+    rbind(matrix(rnorm(nr1*nc2, mean = 0,   sd = 0.5), nr = nr1),
+          matrix(rnorm(nr2*nc2, mean = 1,   sd = 0.5), nr = nr2),
+          matrix(rnorm(nr3*nc2, mean = 0,   sd = 0.5), nr = nr3)),
+    rbind(matrix(rnorm(nr1*nc3, mean = 0.5, sd = 0.5), nr = nr1),
+          matrix(rnorm(nr2*nc3, mean = 0.5, sd = 0.5), nr = nr2),
+          matrix(rnorm(nr3*nc3, mean = 1,   sd = 0.5), nr = nr3))
+   )
+mat = mat[sample(nr, nr), sample(nc, nc)] # random shuffle rows and columns
+rownames(mat) = paste0("row", seq_len(nr))
+colnames(mat) = paste0("column", seq_len(nc))
+
+library(circlize)
+col_fun = colorRamp2(c(-2, 0, 2), c("green", "white", "red"))
+col_fun(seq(-3, 3))
+
+Heatmap(mat, name = "mat", col = col_fun)
+```
+
+## Volcano Plot
+
+Enhancedvolcano
+
+## Venn Diagram and Upset Plot
+
+Venn: venndiagram
+
+```{r}
+# Load library
+library(VennDiagram)
+ 
+# Generate 3 sets of 200 words
+set1 <- paste(rep("word_" , 200) , 
+              sample(c(1:1000) , 200 , replace=F) , 
+              sep="")
+set2 <- paste(rep("word_" , 200) , 
+              sample(c(1:1000) , 200 , replace=F) , 
+              sep="")
+set3 <- paste(rep("word_" , 200) , 
+              sample(c(1:1000) , 200 , replace=F) , 
+              sep="")
+
+# Prepare a palette of 3 colors with R colorbrewer:
+library(RColorBrewer)
+myCol <- brewer.pal(3, "Pastel2")
+
+# Chart
+venn.diagram(
+        x = list(set1, set2, set3),
+        category.names = c("Set 1" , "Set 2 " , "Set 3"),
+        filename = '#14_venn_diagramm.png',
+        output=TRUE,
+        
+        # Output features
+        imagetype="png" ,
+        height = 480 , 
+        width = 480 , 
+        resolution = 300,
+        compression = "lzw",
+        
+        # Circles
+        lwd = 2,
+        lty = 'blank',
+        fill = myCol,
+        
+        # Numbers
+        cex = .6,
+        fontface = "bold",
+        fontfamily = "sans",
+        
+        # Set names
+        cat.cex = 0.6,
+        cat.fontface = "bold",
+        cat.default.pos = "outer",
+        cat.pos = c(-27, 27, 135),
+        cat.dist = c(0.055, 0.055, 0.085),
+        cat.fontfamily = "sans",
+        rotation = 1
+)
+```
+
+upset: complexheatmap
+
+```{r}
+library(ComplexHeatmap)
+set.seed(123)
+lt = list(a = sample(letters, 5),
+          b = sample(letters, 10),
+          c = sample(letters, 15))
+m1 = make_comb_mat(lt)
+UpSet(m1)
+```
+
+## Plotting Diversity Indices
+
+ggpubr
+
+## Plotting Individual Gene Expression
+
+ggpubr
+
+## Circos plot
+
+## 
+
+## Session info
+
+```{r}
+sessionInfo()
+```
