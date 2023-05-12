@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Jiratchaya Nuanpirom">
-  <title>R Workshop 2023 - Grammar of Graphics and Directory of Visualizations</title>
+  <title>R Workshop 2023 - Arranging Multiple Plots</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,89 +28,6 @@
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
-    }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
     }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
@@ -402,7 +319,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="R Workshop 2023 - Grammar of Graphics and Directory of Visualizations">
+<meta property="og:title" content="R Workshop 2023 - Arranging Multiple Plots">
 <meta property="og:site-name" content="R Workshop 2023">
 </head>
 <body class="quarto-light">
@@ -410,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Grammar of Graphics and Directory of Visualizations</h1>
+  <h1 class="title">Arranging Multiple Plots</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -421,285 +338,14 @@ Jiratchaya Nuanpirom
 </div>
 
 </section>
-<section id="what-is-grammar-of-graphics" class="slide level2">
-<h2>What is Grammar of Graphics</h2>
-<div class="cell">
+<section class="slide level2">
 
-</div>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/graphic_grammars.png.png" width="781"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p>&nbsp;</p>
-<ul>
-<li><p><strong>Data:</strong> Your input data (in long format)</p></li>
-<li><p><strong>Aesthetics:</strong> what makes your data visible, e.g., size, line color, variables to plot, fill color, line type, transparency, etc.</p></li>
-<li><p><strong>Geometry:</strong> determines the type of plot.</p></li>
-<li><p><strong>Statistics:</strong> statistical transformation of continuous data</p></li>
-<li><p><strong>Facets:</strong> for splitting plot into subplots.</p></li>
-<li><p><strong>Coordinates:</strong> Numeric systems to limit, breakdown, transform position of geometry.</p></li>
-<li><p><strong>Themes:</strong> Overall visual of plots and customization.</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="building-a-plot-layer-by-layer" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol type="1">
-<li>Load data with <code>ggplot()</code></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load library</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-1" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="2" type="1">
-<li>Add aesthetics by <code>aes()</code></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Load library</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Plot diamonds</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-2" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="3" type="1">
-<li>Add geometry by <code>geom()</code></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load library</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-3" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="4" type="1">
-<li>Add statistics</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Load library</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">stat_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-4" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="5" type="1">
-<li>Add facets</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Load library</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">stat_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-5" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="6" type="1">
-<li>Adding coordinates</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Load library</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">stat_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">10000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-6" class="slide level2 smaller">
-<h2>Building a plot layer-by-layer</h2>
-<ol start="7" type="1">
-<li>Adding theme</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Load library</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># Define data and global aesthetics</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">stat_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">facet_grid</span>(cut <span class="sc">~</span> color) <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">10000</span>)) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section id="aesthetics" class="slide level2">
-<h2>Aesthetics</h2>
-<ul>
-<li><p>Aesthetics <code>aes()</code> describe how variables map to visual properties or aesthetics.</p></li>
-<li><p>The position of data points are described by values from <code>x</code> and <code>y</code></p></li>
-<li><p><em>shape</em>, <em>size</em>, or <em>color styles</em> can also be specified in <code>aes()</code>.</p></li>
-</ul>
-
-<img data-src="https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png" style="width:50.0%" class="r-stretch quarto-figure-center"><p class="caption">Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from <span class="citation" data-cites="wilke2019">Wilke (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span></p></section>
-<section id="types-of-variables-used-in-aesthetics" class="slide level2">
-<h2>Types of Variables Used in Aesthetics</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h4 id="continuous-variables">Continuous variables</h4>
-<ul>
-<li><p>A variable or a set of value you can <strong>measure</strong>.</p></li>
-<li><p>Continuous data values are values you can arbitrarily fine intermediates.</p></li>
-<li><p>Age, height, BMI, date, assignment score, etc.</p></li>
-<li><p>Sometimes, series of continuous variable can be a discrete variable.</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>my_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">class</span>(my_seq)</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">sum</span>(my_seq)</span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">count</span>(my_seq)</span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a>my_seq2 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(my_seq)</span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="fu">class</span>(my_seq2)</span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="fu">sum</span>(my_seq2)</span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="fu">count</span>(my_seq2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<h4 id="discrete-variables">Discrete variables</h4>
-<ul>
-<li><p>A variable or a set of value you can <strong>count</strong>.</p></li>
-<li><p>Grade (A B C D), Name, Type, number of person in a room, etc.</p></li>
-<li><p>Sometimes a vector of a discrete variable can be classified into a kind of ordinal number. That may required before time-series plotting.</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"0_hpi"</span>, <span class="st">"12hpi"</span>, <span class="st">"Control"</span>, <span class="st">"48_hpi"</span>, <span class="st">"24_hpi"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>my_var</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>my_var_2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(my_var, </span>
-<span id="cb9-5"><a href="#cb9-5"></a>                   <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"0_hpi"</span>, <span class="st">"12hpi"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>                              <span class="st">"24_hpi"</span>, <span class="st">"48_hpi"</span>))</span>
-<span id="cb9-7"><a href="#cb9-7"></a>my_var_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="geoms" class="slide level2 smaller">
-<h2>Geoms</h2>
-<p>Frequently used geoms<sup>1</sup></p>
-<div class="columns">
-<div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
-<p></p><figcaption>geom_histogram()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
-<p></p><figcaption>geom_boxplot() with geom_jitter()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
-<p></p><figcaption>geom_bar()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-<p></p><figcaption>geom_violin()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
-<p></p><figcaption>geom_point() with geom_smooth()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
-<p></p><figcaption>geom_tile()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-
-</div><div class="column" style="width:25%;">
-
-</div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Explore more plot in R Graph Gallery: <a href="https://r-graph-gallery.com/">https://r-graph-gallery.com</a></p></li></ol></aside></section>
-<section id="directory-of-visualizations" class="slide level2">
-<h2>Directory of Visualizations</h2>
-</section>
-<section id="references" class="slide level2 smaller scrollable">
-<h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-wilke2019" class="csl-entry" role="doc-biblioentry">
-Wilke, Claus O. 2019. <em>Fundamentals of Data Visualization</em>. <a href="https://clauswilke.com/dataviz/">https://clauswilke.com/dataviz/</a>.
-</div>
-</div>
 
 
 <img src="img/sci_abbl_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>17 May 2023</p>
 </div>
 </section>
-
     </div>
   </div>
 
@@ -911,44 +557,6 @@ Wilke, Claus O. 2019. <em>Fundamentals of Data Visualization</em>. <a href="http
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

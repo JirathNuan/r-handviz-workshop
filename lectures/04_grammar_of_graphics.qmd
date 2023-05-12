@@ -15,6 +15,13 @@ bibliography: references.bib
 
 ## What is Grammar of Graphics
 
+```{r}
+#| echo: false
+#| eval: true
+library(tidyverse)
+library(paletteer)
+```
+
 ::: columns
 ::: {.column width="40%"}
 ![](img/graphic_grammars.png.png){fig-align="center" width="781"}
@@ -155,7 +162,7 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
 
 -   *shape*, *size*, or *color styles* can also be specified in `aes()`.
 
-![Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from @wilke2019](https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png){fig-align="center" width="73%"}
+![Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from @wilke2019](https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png){fig-align="center" width="50%"}
 
 ## Types of Variables Used in Aesthetics
 
@@ -173,36 +180,143 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
 
 ```{r}
 #| echo: true
-#| eval: true
+#| eval: false
+#| error: true
 my_seq <- seq(from = 0, to = 10, by = 1)
-(my_seq)
+class(my_seq)
+sum(my_seq)
+count(my_seq)
 
 my_seq2 <- as.character(my_seq)
+class(my_seq2)
+sum(my_seq2)
+count(my_seq2)
+
 ```
 :::
 
 ::: {.column width="50%"}
-#### Discrete variables
-:::
-:::
-
-#### Continuous variables
-
--   A variable or a set of value you can **measure**.
-
--   Continuous data values are values you can arbitrarily fine intermediates.
-
--   Age, height, BMI, date, assignment score, etc.
-
--   Sometimes, series of continuous variable can be a discrete variable.
-
 #### Discrete variables
 
 -   A variable or a set of value you can **count**.
 
 -   Grade (A B C D), Name, Type, number of person in a room, etc.
 
--   Sometimes,
+-   Sometimes a vector of a discrete variable can be classified into a kind of ordinal number. That may required before time-series plotting.
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+my_var <- c("0_hpi", "12hpi", "Control", "48_hpi", "24_hpi")
+my_var
+
+my_var_2 <- factor(my_var, 
+                   levels = c("Control", "0_hpi", "12hpi",
+                              "24_hpi", "48_hpi"))
+my_var_2
+```
+:::
+:::
+
+## Geoms {.smaller}
+
+Frequently used geoms[^1]
+
+[^1]: Explore more plot in R Graph Gallery: [https://r-graph-gallery.com](https://r-graph-gallery.com/)
+
+::: columns
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_histogram()"
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth = 3,
+                 fill = "salmon",
+                 color = "black")
+```
+:::
+
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_boxplot() with geom_jitter()"
+ggplot(mtcars, aes(x=as.character(cyl), 
+                   y=disp, 
+                   fill=as.character(cyl))) +
+    geom_boxplot() +
+  geom_jitter(color="grey20", size=2.5, alpha=0.5, width = 0.2) +
+  labs(x = "cyl", fill = "cyl") +
+  theme(legend.position = "none")
+```
+:::
+
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_bar()"
+ggplot(mtcars, aes(x = as.factor(cyl), fill = as.factor(cyl))) +
+  geom_bar() +
+  theme(legend.position = "none") +
+  labs(x = "cyl")
+```
+:::
+
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_violin()"
+ggplot(mtcars, aes(x=as.character(cyl), 
+                   y=disp, 
+                   fill=as.character(cyl))) +
+  geom_violin() +
+  labs(x = "cyl") +
+  theme(legend.position = "none")
+  
+```
+:::
+:::
+
+::: columns
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_point() with geom_smooth()"
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red")
+```
+:::
+
+::: {.column width="25%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-cap: "geom_tile()"
+dt2 <- data.frame(scale(mtcars, center = TRUE, scale = TRUE))
+dt2 %>% 
+  rownames_to_column(var = "car") %>% 
+  pivot_longer(!car) %>% 
+  ggplot(aes(x=name, y=car, fill = value)) +
+  geom_tile() +
+  scale_fill_paletteer_c(`"ggthemes::Classic Area Red-Green"`)
+
+
+  
+```
+:::
+
+::: {.column width="25%"}
+:::
+
+::: {.column width="25%"}
+:::
+:::
 
 ## Directory of Visualizations
 

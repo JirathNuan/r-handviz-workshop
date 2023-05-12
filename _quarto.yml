@@ -10,6 +10,7 @@ project:
     - lectures/03_exploratory_data_analysis.qmd
     - lectures/04_grammar_of_graphics.qmd
     - lectures/05_plotting_omics_data.qmd
+    - lectures/06_arranging_plots.qmd
     
     
     

@@ -450,7 +450,7 @@ Jiratchaya Nuanpirom
 </section>
 <section id="activity" class="slide level2">
 <h2>Activity</h2>
-<p>For today’s EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is produced by the World Health Organization (WHO) in <a href="https://platform.who.int/mortality">WHO Mortality Database</a>. The data was collected from 1950 to 2021.</p>
+<p>For today’s EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is adopted from the World Health Organization <a href="https://platform.who.int/mortality">WHO Mortality Database</a>. The data was collected from 1950 to 2021 in many countries around the world.</p>
 </section>
 <section id="step-1-formulate-your-question" class="slide level2">
 <h2>Step 1: <strong>Formulate your question</strong></h2>
@@ -542,32 +542,34 @@ Jiratchaya Nuanpirom
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Counting number of countries in the data set</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>count_countries <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(mortality_rate<span class="sc">$</span>country_name))</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># For each country, how many data points </span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>tbl_countries <span class="ot">&lt;-</span> <span class="fu">table</span>(mortality_rate<span class="sc">$</span>country_name)</span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># How many countries in Asia </span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">distinct</span>(country_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">count</span>()</span>
-<span id="cb6-12"><a href="#cb6-12"></a></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="co"># From 2000 to 2021, how many countries in Asia, where the mortality rate is available in these years. </span></span>
-<span id="cb6-14"><a href="#cb6-14"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
-<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a>           year <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-17"><a href="#cb6-17"></a>           year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-18"><a href="#cb6-18"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-19"><a href="#cb6-19"></a>  <span class="fu">count</span>()</span>
-<span id="cb6-20"><a href="#cb6-20"></a></span>
-<span id="cb6-21"><a href="#cb6-21"></a><span class="co"># From the above examination, we can see in which year the mortality rate is the highest by adding arrange()</span></span>
-<span id="cb6-22"><a href="#cb6-22"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
-<span id="cb6-23"><a href="#cb6-23"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span></span>
-<span id="cb6-24"><a href="#cb6-24"></a>           year <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-25"><a href="#cb6-25"></a>           year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-26"><a href="#cb6-26"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-27"><a href="#cb6-27"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb6-28"><a href="#cb6-28"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a>count_countries</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># For each country, how many data points </span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>tbl_countries <span class="ot">&lt;-</span> <span class="fu">table</span>(mortality_rate<span class="sc">$</span>country_name)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>tbl_countries</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># How many countries in Asia </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">distinct</span>(country_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a href="#cb6-13"></a>  <span class="fu">count</span>()</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co"># From 2000 to 2021, how many countries in Asia, where the mortality rate is available in these years. </span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
+<span id="cb6-17"><a href="#cb6-17"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>           year <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> </span>
+<span id="cb6-19"><a href="#cb6-19"></a>           year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-20"><a href="#cb6-20"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-21"><a href="#cb6-21"></a>  <span class="fu">count</span>()</span>
+<span id="cb6-22"><a href="#cb6-22"></a></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="co"># From the above examination, we can see in which year the mortality rate is the highest by adding arrange()</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
+<span id="cb6-25"><a href="#cb6-25"></a>  <span class="fu">filter</span>(region_name <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span></span>
+<span id="cb6-26"><a href="#cb6-26"></a>           year <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> </span>
+<span id="cb6-27"><a href="#cb6-27"></a>           year <span class="sc">&lt;=</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-28"><a href="#cb6-28"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-29"><a href="#cb6-29"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-30"><a href="#cb6-30"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-7-validate-with-at-least-one-external-data-source" class="slide level2">
@@ -596,13 +598,13 @@ Jiratchaya Nuanpirom
 <li>Suppose the question we want to answer is</li>
 </ul>
 <blockquote>
-<p>Since the data collected from 1950 - 2021, which region contains the highest number of deaths in all ages ?</p>
+<p>Since the data collected from 1950 - 2021, which region contains the highest number of deaths ?</p>
 </blockquote>
-<p>To answer the question, we need to filter the data by <code>age_group</code> using “[All]”, then group the data by region and examine what the region in has highest number of deaths.</p>
+<p>To answer the question, we need to group the data by region and examine what the region has the highest number of deaths.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Examining the number of deaths by region in all ages</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Examining the number of deaths by region</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(age_group <span class="sc">==</span> <span class="st">"[All]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(number)) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">group_by</span>(region_name) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">summarise</span>(<span class="at">total_death_per_region =</span> <span class="fu">sum</span>(number)) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> total_death_per_region)) <span class="sc">+</span></span>
@@ -612,14 +614,13 @@ Jiratchaya Nuanpirom
 <p>Is it different number of death between sex in each region ?</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Examine the number of deaths by region and sex in all ages</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>mortality_rate <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(age_group <span class="sc">==</span> <span class="st">"[All]"</span> <span class="sc">&amp;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>           sex <span class="sc">!=</span> <span class="st">"All"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">group_by</span>(region_name, sex) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">summarise</span>(<span class="at">total_death_per_region =</span> <span class="fu">sum</span>(number)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> total_death_per_region, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>, <span class="at">preserve =</span> <span class="st">"single"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Examine the number of deaths by region and sex</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>mortality_rate <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(number)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">group_by</span>(region_name, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">summarise</span>(<span class="at">total_death_per_region =</span> <span class="fu">sum</span>(number)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> total_death_per_region, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>, <span class="at">preserve =</span> <span class="st">"single"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-9-challenge-your-solution" class="slide level2">
@@ -659,6 +660,34 @@ Jiratchaya Nuanpirom
 <p>&nbsp;</p>
 <p>Exploratory data analysis is designed to get you thinking about your data and your question. At this point, we can refine our question or collect relevant data, over and over to get to the truth.</p>
 </section>
+<section id="wicked-fast-and-convenient-eda-package-ggally" class="slide level2">
+<h2>Wicked fast and convenient EDA package: <code>GGally</code></h2>
+<p>We can use the <code>ggpairs()</code> function from the GGally package<sup>1</sup> (pronounced: <em>g-g-ally</em>) to get a general overview of our data. Instead of plotting relationship variables pair by pair in one plot, with <code>ggpairs()</code>, we can explore initial relationships or each variable in more detail.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Load GGally package </span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># We asked the participants to install before the workshop</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># remove some columns and tidy data</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>mortality_rate_2 <span class="ot">&lt;-</span> mortality_rate <span class="sc">%&gt;%</span> </span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(country_name, age_std_death_rate_per_100k,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>            age_group, number)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2012</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>mortality_rate_2<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.character</span>(mortality_rate_2<span class="sc">$</span>year)</span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># Explore relationship in our data, colored by region name</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>p_mortality_overview <span class="ot">&lt;-</span> <span class="fu">ggpairs</span>(mortality_rate_2, </span>
+<span id="cb12-12"><a href="#cb12-12"></a>                                <span class="fu">aes</span>(<span class="at">colour =</span> region_name),</span>
+<span id="cb12-13"><a href="#cb12-13"></a>                                <span class="at">progress =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-14"><a href="#cb12-14"></a>                                <span class="at">cardinality_threshold =</span> <span class="dv">20</span>)</span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="co"># Export plot to file</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="fu">ggsave</span>(<span class="st">"mortality_rate_overview.png"</span>, p_mortality_overview,</span>
+<span id="cb12-17"><a href="#cb12-17"></a>       <span class="at">width =</span> <span class="dv">20</span>, <span class="at">height =</span> <span class="dv">10</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">scale =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>GGally: Extension to ggplot2 (<a href="https://ggobi.github.io/ggally" class="uri">https://ggobi.github.io/ggally</a>)</p></li></ol></aside></section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>Perform EDA on BLASTN result.</p>
+<p>Jump to qmd html.</p>
+</section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
@@ -675,6 +704,7 @@ Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for 
 <p>17 May 2023</p>
 </div>
 </section>
+
     </div>
   </div>
 

@@ -53,7 +53,7 @@ Referred from @peng2020, here's a quick steps to do for exploratory data analysi
 
 ## Activity
 
-For today's EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is produced by the World Health Organization (WHO) in [WHO Mortality Database](https://platform.who.int/mortality). The data was collected from 1950 to 2021.
+For today's EDA exercise, we will examine mortality rates by infectious and parasitic diseases. The data is adopted from the World Health Organization [WHO Mortality Database](https://platform.who.int/mortality). The data was collected from 1950 to 2021 in many countries around the world.
 
 ## Step 1: **Formulate your question**
 
@@ -172,9 +172,11 @@ With these functions:
 #| eval: false
 # Counting number of countries in the data set
 count_countries <- length(unique(mortality_rate$country_name))
+count_countries
 
 # For each country, how many data points 
 tbl_countries <- table(mortality_rate$country_name)
+tbl_countries
 
 # How many countries in Asia 
 mortality_rate %>% 
@@ -229,16 +231,16 @@ summary(mortality_rate)
 
 -   Suppose the question we want to answer is
 
-> Since the data collected from 1950 - 2021, which region contains the highest number of deaths in all ages ?
+> Since the data collected from 1950 - 2021, which region contains the highest number of deaths ?
 
-To answer the question, we need to filter the data by `age_group` using "\[All\]", then group the data by region and examine what the region in has highest number of deaths.
+To answer the question, we need to group the data by region and examine what the region has the highest number of deaths.
 
 ```{r}
 #| echo: true
 #| eval: false
-# Examining the number of deaths by region in all ages
+# Examining the number of deaths by region
 mortality_rate %>% 
-  filter(age_group == "[All]") %>% 
+  filter(!is.na(number)) %>% 
   group_by(region_name) %>% 
   summarise(total_death_per_region = sum(number)) %>% 
   ggplot(aes(x = region_name, y = total_death_per_region)) +
@@ -250,11 +252,10 @@ mortality_rate %>%
 ```{r}
 #| echo: true
 #| eval: false
-# Examine the number of deaths by region and sex in all ages
-mortality_rate %>% 
-  filter(age_group == "[All]" &
-           sex != "All") %>% 
-  group_by(region_name, sex) %>% 
+# Examine the number of deaths by region and sex
+mortality_rate %>%
+  filter(!is.na(number)) %>% 
+  group_by(region_name, sex) %>%
   summarise(total_death_per_region = sum(number)) %>% 
   ggplot(aes(x = region_name, y = total_death_per_region, fill = sex)) +
   geom_col(position = position_dodge(0.9, preserve = "single"))
@@ -307,6 +308,40 @@ At this point, it makes sense to ask a few follow-up questions:
  
 
 Exploratory data analysis is designed to get you thinking about your data and your question. At this point, we can refine our question or collect relevant data, over and over to get to the truth.
+
+## Wicked fast and convenient EDA package: `GGally`
+
+We can use the `ggpairs()` function from the GGally package[^1] (pronounced: *g-g-ally*) to get a general overview of our data. Instead of plotting relationship variables pair by pair in one plot, with `ggpairs()`, we can explore initial relationships or each variable in more detail.
+
+[^1]: GGally: Extension to ggplot2 (<https://ggobi.github.io/ggally>)
+
+```{r}
+#| echo: true
+#| eval: false
+# Load GGally package 
+# We asked the participants to install before the workshop
+library(GGally)
+# remove some columns and tidy data
+mortality_rate_2 <- mortality_rate %>% 
+  select(-c(country_name, age_std_death_rate_per_100k,
+            age_group, number)) %>% 
+  filter(year >= 2012)
+mortality_rate_2$year <- as.character(mortality_rate_2$year)
+# Explore relationship in our data, colored by region name
+p_mortality_overview <- ggpairs(mortality_rate_2, 
+                                aes(colour = region_name),
+                                progress = TRUE,
+                                cardinality_threshold = 20)
+# Export plot to file
+ggsave("mortality_rate_overview.png", p_mortality_overview,
+       width = 20, height = 10, units = "in", dpi = 300, scale = 0.8)
+```
+
+## Practice
+
+Perform EDA on BLASTN result.
+
+Jump to qmd html.
 
 ## References
 

@@ -80,7 +80,8 @@ pacman::p_load(
   gridGraphics,
   corrplot,
   plotly,
-  agricolae
+  agricolae,
+  ggsci
 )
 ```
 
