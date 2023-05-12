@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Jiratchaya Nuanpirom">
-  <title>R Workshop 2023 - Grammar of Graphics and Directory of Visualizations</title>
+  <title>R Workshop 2023 - Grammar of Graphics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,6 +326,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -402,7 +403,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="R Workshop 2023 - Grammar of Graphics and Directory of Visualizations">
+<meta property="og:title" content="R Workshop 2023 - Grammar of Graphics">
 <meta property="og:site-name" content="R Workshop 2023">
 </head>
 <body class="quarto-light">
@@ -410,7 +411,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Grammar of Graphics and Directory of Visualizations</h1>
+  <h1 class="title">Grammar of Graphics</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -447,7 +448,7 @@ Jiratchaya Nuanpirom
 </div>
 </div>
 </section>
-<section id="building-a-plot-layer-by-layer" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol type="1">
 <li>Load data with <code>ggplot()</code></li>
@@ -460,26 +461,26 @@ Jiratchaya Nuanpirom
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-1" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-1" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="2" type="1">
 <li>Add aesthetics by <code>aes()</code></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Load library</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Plot diamonds</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-2" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-2" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="3" type="1">
 <li>Add geometry by <code>geom()</code></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load library</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Define data and global aesthetics</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
@@ -487,13 +488,13 @@ Jiratchaya Nuanpirom
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-3" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-3" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="4" type="1">
 <li>Add statistics</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Load library</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co"># Define data and global aesthetics</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
@@ -502,13 +503,13 @@ Jiratchaya Nuanpirom
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-4" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-4" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="5" type="1">
 <li>Add facets</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Load library</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Define data and global aesthetics</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
@@ -518,13 +519,13 @@ Jiratchaya Nuanpirom
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-5" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-5" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="6" type="1">
 <li>Adding coordinates</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Load library</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Define data and global aesthetics</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
@@ -535,13 +536,13 @@ Jiratchaya Nuanpirom
 
 </div>
 <img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="building-a-plot-layer-by-layer-6" class="slide level2 smaller">
+<section id="building-a-plot-layer-by-layer-6" class="slide level2">
 <h2>Building a plot layer-by-layer</h2>
 <ol start="7" type="1">
 <li>Adding theme</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Load library</span></span>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Load library</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="co"># Define data and global aesthetics</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> color)) <span class="sc">+</span></span>
@@ -603,103 +604,722 @@ Jiratchaya Nuanpirom
 </div>
 </div>
 </section>
-<section id="geoms" class="slide level2 smaller">
+<section id="geoms" class="slide level2">
 <h2>Geoms</h2>
-<p>Frequently used geoms<sup>1</sup></p>
+<p>Frequently used geoms (Explore more plot in R Graph Gallery: <a href="https://r-graph-gallery.com" class="uri">https://r-graph-gallery.com</a>)</p>
+<div class="cell">
+
+</div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-1" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-1.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;1: geom_histogram()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-2" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-2.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;2: geom_bar()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-3" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-3.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;3: geom_line() with geom_point()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-4" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-4.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;4: geom_boxplot() with geom_jitter()</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-5" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-5.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;5: geom_violin()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-6" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-6.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;6: geom_density()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-7" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-7.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;7: geom_point() with geom_smooth()</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div id="fig-charts-8" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/fig-charts-8.png" width="960"></p>
+<p></p><figcaption>Figure&nbsp;8: geom_tile()</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="position-scales-and-axes" class="slide level2">
+<h2>Position scales and axes</h2>
+<h3 id="numeric-position-scales">Numeric position scales</h3>
 <div class="columns">
-<div class="column" style="width:25%;">
+<div class="column" style="width:50%;">
+<ul>
+<li>Limit</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x =</span> Wind, <span class="at">y =</span> Temp)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">80</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
-<p></p><figcaption>geom_histogram()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
-<p></p><figcaption>geom_boxplot() with geom_jitter()</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
-<p></p><figcaption>geom_bar()</figcaption><p></p>
-</figure>
 </div>
 </div>
-</div>
-</div><div class="column" style="width:25%;">
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Breaks</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(airquality,<span class="fu">aes</span>(<span class="at">x =</span> Wind, <span class="at">y =</span> Temp)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-<p></p><figcaption>geom_violin()</figcaption><p></p>
-</figure>
 </div>
 </div>
 </div>
 </div>
-</div>
+</section>
+<section id="position-scales-and-axes-1" class="slide level2">
+<h2>Position scales and axes</h2>
+<h3 id="numeric-position-scales-2">Numeric position scales (2)</h3>
 <div class="columns">
-<div class="column" style="width:25%;">
+<div class="column" style="width:50%;">
+<ul>
+<li>Expand</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(airquality,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Temp, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>           <span class="at">group =</span> <span class="fu">as.factor</span>(Month), </span>
+<span id="cb12-4"><a href="#cb12-4"></a>           <span class="at">fill =</span> <span class="fu">as.factor</span>(Month))) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
-<p></p><figcaption>geom_point() with geom_smooth()</figcaption><p></p>
-</figure>
 </div>
 </div>
-</div>
-</div><div class="column" style="width:25%;">
+</div><div class="column" style="width:50%;">
+<ul>
+<li>log transformation</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(diamonds,</span>
+<span id="cb13-2"><a href="#cb13-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">scale_y_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="position-scales-and-axes-2" class="slide level2">
+<h2>Position scales and axes</h2>
+<h3 id="date-time-position-scale">Date-time position scale</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(economics, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> psavert)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_line</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"15 years"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>lim <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2004-01-01"</span>, <span class="st">"2005-01-01"</span>))</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">ggplot</span>(economics, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> psavert)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">geom_line</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">scale_x_date</span>(<span class="at">limits =</span> lim, <span class="at">date_labels =</span> <span class="st">"%B</span><span class="sc">\n</span><span class="st">%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Date scales behave like numeric scales, it’s ordinal, but is often more convenient to use the <code>date_labels</code> argument with the predefined formats. More available formatting strings: <a href="https://ggplot2-book.org/scales-position.html#sec-date-labels" class="uri">https://ggplot2-book.org/scales-position.html#sec-date-labels</a>.</p>
+</section>
+<section id="position-scales-and-axes-3" class="slide level2">
+<h2>Position scales and axes</h2>
+<h3 id="binned-position-scales">Binned position scales</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Ozone, <span class="at">color =</span> Ozone)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_count</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">scale_y_binned</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<section id="color-scales-and-legends" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="color-blindness">Color blindness</h3>
+<p>Available color palettes from package <code>colorBlindness</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Load package</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">library</span>(colorBlindness)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">displayAvailablePalette</span>(<span class="at">color=</span><span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><p>More information on R colorBlindness package: <a href="https://cran.r-project.org/web/packages/colorBlindness/vignettes/colorBlindness.html" class="uri">https://cran.r-project.org/web/packages/colorBlindness/vignettes/colorBlindness.html</a></p>
+</section>
+<section id="color-scales-and-legends-1" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 class="smaller" id="continuous-color-scales-viridis-color-palettes">Continuous color scales: <code>viridis</code> color palettes</h3>
+<div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>erupt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="cn">NULL</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="cn">NULL</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># Plot</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>erupt</span>
+<span id="cb18-5"><a href="#cb18-5"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"plasma"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"rocket"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"turbo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
-<p></p><figcaption>geom_tile()</figcaption><p></p>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+<p></p><figcaption>default continuous palette</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-2.png" width="960"></p>
+<p></p><figcaption>viridis - viridis</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-3.png" width="960"></p>
+<p></p><figcaption>viridis - magma</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:25%;">
-
-</div><div class="column" style="width:25%;">
-
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-4.png" width="960"></p>
+<p></p><figcaption>viridis - plasma</figcaption><p></p>
+</figure>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Explore more plot in R Graph Gallery: <a href="https://r-graph-gallery.com/">https://r-graph-gallery.com</a></p></li></ol></aside></section>
-<section id="directory-of-visualizations" class="slide level2">
-<h2>Directory of Visualizations</h2>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-5.png" width="960"></p>
+<p></p><figcaption>viridis - rocket</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-21-6.png" width="960"></p>
+<p></p><figcaption>viridis - turbo</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-scales-and-legends-2" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="continuous-color-scales-distiller-color-palettes">Continuous color scales: <code>distiller</code> color palettes</h3>
+<div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdBu"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"Pastel1"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"OrRd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+<p></p><figcaption>distiller - Diverging</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-22-2.png" width="960"></p>
+<p></p><figcaption>distiller - Qualitative</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-22-3.png" width="960"></p>
+<p></p><figcaption>distiller - Sequential</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The distiller scales applied brewer color palettes by by smoothly interpolating 7 colors from any palette to a continuous scale. For more brewer color palettes, see <a href="https://colorbrewer2.org" class="uri">https://colorbrewer2.org</a>.</p>
+</section>
+<section id="color-scales-and-legends-3" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="continuous-color-scales-ggsci-color-palettes">Continuous color scales: <code>ggsci</code> color palettes</h3>
+<div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(ggsci)</span>
+<span id="cb20-2"><a href="#cb20-2"></a>dt_hm <span class="ot">&lt;-</span> <span class="fu">scale</span>(<span class="fu">as.matrix</span>(mtcars)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ], <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>p_hm <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dt_hm) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"cars"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>cars) <span class="sc">%&gt;%</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> cars, <span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb20-11"><a href="#cb20-11"></a></span>
+<span id="cb20-12"><a href="#cb20-12"></a>p_hm</span>
+<span id="cb20-13"><a href="#cb20-13"></a>p_hm <span class="sc">+</span> <span class="fu">scale_fill_gsea</span>()</span>
+<span id="cb20-14"><a href="#cb20-14"></a>p_hm <span class="sc">+</span> <span class="fu">scale_fill_material</span>(<span class="st">"yellow"</span>)</span>
+<span id="cb20-15"><a href="#cb20-15"></a>p_hm <span class="sc">+</span> <span class="fu">scale_fill_material</span>(<span class="st">"grey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+<p></p><figcaption>Default heatmap color</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-23-2.png" width="960"></p>
+<p></p><figcaption>ggsci - GSEA</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-23-3.png" width="960"></p>
+<p></p><figcaption>ggsci - material (red)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-23-4.png" width="960"></p>
+<p></p><figcaption>ggsci - material (grey)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Discover more continuous ggsci color palette: <a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html" class="uri">https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html</a></p>
+</section>
+<section id="color-scales-and-legends-4" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="more-continuous-color-scales-paletteer-color-palettes">More Continuous color scales: <code>paletteer</code> color palettes</h3>
+<div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"ggthemes::Green-Blue Diverging"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"ggthemes::Red-Blue-White Diverging"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"ggthemes::Temperature Diverging"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"grDevices::rainbow"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"grDevices::heat.colors"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6"></a>erupt <span class="sc">+</span> <span class="fu">scale_fill_paletteer_c</span>(<span class="st">"grDevices::Viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+<p></p><figcaption>ggthemes::Green-Blue Diverging</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-2.png" width="960"></p>
+<p></p><figcaption>ggthemes::Red-Blue-White Diverging</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-3.png" width="960"></p>
+<p></p><figcaption>ggthemes::Temperature Diverging</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-4.png" width="960"></p>
+<p></p><figcaption>grDevices::rainbow</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-5.png" width="960"></p>
+<p></p><figcaption>grDevices::heat.colors</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-24-6.png" width="960"></p>
+<p></p><figcaption>grDevices::Viridis</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>More continuous paletteer color palettes can be found at: <a href="https://pmassicotte.github.io/paletteer_gallery" class="uri">https://pmassicotte.github.io/paletteer_gallery</a>.</p>
+</section>
+<section id="color-scales-and-legends-5" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="discrete-color-scales-default-palette">Discrete color scales: default palette</h3>
+<div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>,<span class="st">"e"</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>,<span class="dv">5</span>))</span>
+<span id="cb22-2"><a href="#cb22-2"></a>bars <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y, <span class="at">fill =</span> x)) <span class="sc">+</span> </span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> </span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6"></a></span>
+<span id="cb22-7"><a href="#cb22-7"></a>bars</span>
+<span id="cb22-8"><a href="#cb22-8"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_hue</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-25-2.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-scales-and-legends-6" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="discrete-color-scales-rcolorbrewer-palettes">Discrete color scales: <code>RColorBrewer</code> palettes</h3>
+<div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"BrBG"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"RdYlGn"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+<p></p><figcaption>Diverging - BrBG</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-26-2.png" width="960"></p>
+<p></p><figcaption>Diverging - RdYlGn</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-26-3.png" width="960"></p>
+<p></p><figcaption>Sequential - Dark2</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Interactive RColorBrewer picker: <a href="https://colorbrewer2.org/">https://colorbrewer2.org</a></p>
+</section>
+<section id="color-scales-and-legends-7" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="discrete-color-scales-ggsci-palettes">Discrete color scales: <code>ggsci</code> palettes</h3>
+<p><code>ggsci</code> offers high-quality color palettes based on color schemes used in scientific journals, data visualization libraries, and science fiction movies.</p>
+<div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_aaas</span>()</span>
+<span id="cb24-2"><a href="#cb24-2"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_npg</span>()</span>
+<span id="cb24-3"><a href="#cb24-3"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_nejm</span>()</span>
+<span id="cb24-4"><a href="#cb24-4"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_frontiers</span>()</span>
+<span id="cb24-5"><a href="#cb24-5"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_rickandmorty</span>()</span>
+<span id="cb24-6"><a href="#cb24-6"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_flatui</span>()</span>
+<span id="cb24-7"><a href="#cb24-7"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_startrek</span>()</span>
+<span id="cb24-8"><a href="#cb24-8"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_simpsons</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+<p></p><figcaption>Inspired by Science</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-2.png" width="960"></p>
+<p></p><figcaption>Inspired by Nature</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-3.png" width="960"></p>
+<p></p><figcaption>Inspired by NEJM</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-4.png" width="960"></p>
+<p></p><figcaption>Inspired by Frontiers</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-5.png" width="960"></p>
+<p></p><figcaption>Inspired by Rick &amp; Morty</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-6.png" width="960"></p>
+<p></p><figcaption>Inspired by Flat UI design</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-7.png" width="960"></p>
+<p></p><figcaption>Inspired by Startrek</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-27-8.png" width="960"></p>
+<p></p><figcaption>Inspired by The Simpsons</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-scales-and-legends-8" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="more-discrete-color-scales-from-paletteer">More discrete color scales from <code>paletteer</code></h3>
+<div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"awtools::bpalette"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"basetheme::ink"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"calecopal::kelp1"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"fishualize::Centropyge_loricula"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+<p></p><figcaption>awtools::bpalette</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-28-2.png" width="960"></p>
+<p></p><figcaption>basetheme::ink</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-28-3.png" width="960"></p>
+<p></p><figcaption>calecopal::kelp1</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-28-4.png" width="960"></p>
+<p></p><figcaption>fishualize::Centropyge_loricula</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Interactive discrete paletteer color palette: <a href="https://emilhvitfeldt.github.io/r-color-palettes/discrete.html" class="uri">https://emilhvitfeldt.github.io/r-color-palettes/discrete.html</a></p>
+</section>
+<section id="color-scales-and-legends-9" class="slide level2">
+<h2>Color scales and legends</h2>
+<h4 id="manual-discrete-color-scale">Manual discrete color scale</h4>
+<div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>bars <span class="sc">+</span> </span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"sienna1"</span>, <span class="st">"sienna4"</span>, </span>
+<span id="cb26-3"><a href="#cb26-3"></a>                               <span class="st">"hotpink1"</span>, <span class="st">"hotpink4"</span>, <span class="st">"salmon"</span>))</span>
+<span id="cb26-4"><a href="#cb26-4"></a>bars <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="st">"#C62828"</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="st">"#9C27B0"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5"></a>                                    <span class="st">"c"</span> <span class="ot">=</span> <span class="st">"#2196F3"</span>, <span class="st">"d"</span> <span class="ot">=</span> <span class="st">"#4CAF50"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6"></a>                                    <span class="st">"e"</span> <span class="ot">=</span> <span class="st">"#FF9800"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-29-2.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-scales-and-legends-10" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="alpha">Alpha</h3>
+<p>The alpha scale maps shade transparency to a numerical value.</p>
+<div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(faithfuld, <span class="fu">aes</span>(waiting, eruptions, <span class="at">alpha =</span> density)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_raster</span>(<span class="at">fill =</span> <span class="st">"maroon"</span>) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span> </span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-30-2.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-scales-and-legends-11" class="slide level2">
+<h2>Color scales and legends</h2>
+<h3 id="legend-positions">Legend positions</h3>
+<div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>bars <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"left"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>bars <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3"></a>bars <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4"></a>bars <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a>bars <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-31-2.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-31-3.png" width="960"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-31-4.png" width="960"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="04_grammar_of_graphics_files/figure-revealjs/unnamed-chunk-31-5.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-wilke2019" class="csl-entry" role="doc-biblioentry">
-Wilke, Claus O. 2019. <em>Fundamentals of Data Visualization</em>. <a href="https://clauswilke.com/dataviz/">https://clauswilke.com/dataviz/</a>.
-</div>
-</div>
+<ul>
+<li><p><a href="https://ggplot2-book.org/index.html">ggplot2: Elegant Graphics for Data Analysis (3e)</a>: written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).</p></li>
+<li><p><a href="https://r.qcbs.ca/workshop03/book-en/">Introduction to data visualisation with ggplot2 Workshop</a>: by QCBS R Workshop Series, 2023-04-24</p></li>
+<li><p><a href="https://clauswilke.com/dataviz/index.html">Fundamentals of Data Visualization</a>: by Claus O. Wilke, 2019</p></li>
+</ul>
 
 
 <img src="img/sci_abbl_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>17 May 2023</p>
 </div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-wilke2019" class="csl-entry" role="doc-biblioentry">
+Wilke, Claus O. 2019. <em>Fundamentals of Data Visualization</em>. <a href="https://clauswilke.com/dataviz/">https://clauswilke.com/dataviz/</a>.
+</div>
+</div>
 </section>
-
     </div>
   </div>
 

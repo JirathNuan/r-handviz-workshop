@@ -1,0 +1,17 @@
+---
+title: "Directory of Visualizations"
+author: "Jiratchaya Nuanpirom"
+format:
+  revealjs:
+    theme: default
+    logo: img/sci_abbl_logo.png
+    footer: "17 May 2023"
+    fontsize: 15pt
+    slide-number: true
+    scrollable: true
+execute: 
+  eval: true
+  echo: true
+editor: visual
+bibliography: references.bib
+---

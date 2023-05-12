@@ -1,14 +1,17 @@
 ---
-title: "Grammar of Graphics and Directory of Visualizations"
+title: "Grammar of Graphics"
 author: "Jiratchaya Nuanpirom"
 format:
   revealjs:
     theme: default
     logo: img/sci_abbl_logo.png
     footer: "17 May 2023"
-    fontsize: 18pt
+    fontsize: 15pt
     slide-number: true
-    dpi: 300
+    scrollable: true
+execute: 
+  eval: true
+  echo: true
 editor: visual
 bibliography: references.bib
 ---
@@ -19,6 +22,7 @@ bibliography: references.bib
 #| echo: false
 #| eval: true
 library(tidyverse)
+library(viridis)
 library(paletteer)
 ```
 
@@ -46,7 +50,7 @@ library(paletteer)
 :::
 :::
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 1.  Load data with `ggplot()`
 
@@ -59,26 +63,28 @@ library(ggplot2)
 ggplot(diamonds)
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 2.  Add aesthetics by `aes()`
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "4"
 # Load library
 library(ggplot2)
 # Plot diamonds
 ggplot(diamonds, aes(x = carat, y = price, color = cut))
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 3.  Add geometry by `geom()`
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "5"
 # Load library
 library(ggplot2)
 # Define data and global aesthetics
@@ -86,13 +92,14 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
   geom_point(alpha = 0.8)
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 4.  Add statistics
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "6"
 # Load library
 library(ggplot2)
 # Define data and global aesthetics
@@ -101,13 +108,14 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
   stat_smooth(color = "black", linewidth = 0.8)
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 5.  Add facets
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "7"
 # Load library
 library(ggplot2)
 # Define data and global aesthetics
@@ -117,13 +125,14 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
   facet_grid(cut ~ color)
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 6.  Adding coordinates
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "8"
 # Load library
 library(ggplot2)
 # Define data and global aesthetics
@@ -132,16 +141,16 @@ ggplot(diamonds, aes(x = carat, y = price, color = color)) +
   stat_smooth(color = "black", linewidth = 0.8) +
   facet_grid(cut ~ color) +
   scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000))
-  
 ```
 
-## Building a plot layer-by-layer {.smaller}
+## Building a plot layer-by-layer
 
 7.  Adding theme
 
 ```{r}
 #| echo: true
 #| eval: true
+#| code-line-numbers: "9"
 # Load library
 library(ggplot2)
 # Define data and global aesthetics
@@ -219,108 +228,472 @@ my_var_2
 :::
 :::
 
-## Geoms {.smaller}
+## Geoms
 
-Frequently used geoms[^1]
+Frequently used geoms (Explore more plot in R Graph Gallery: <https://r-graph-gallery.com>)
 
-[^1]: Explore more plot in R Graph Gallery: [https://r-graph-gallery.com](https://r-graph-gallery.com/)
-
-::: columns
-::: {.column width="25%"}
 ```{r}
 #| echo: false
 #| eval: true
-#| fig-cap: "geom_histogram()"
-ggplot(mtcars, aes(x = mpg)) +
+
+#### Histogram
+p_hist <- ggplot(mtcars, aes(x = mpg)) +
   geom_histogram(binwidth = 3,
-                 fill = "salmon",
-                 color = "black")
-```
-:::
+                 fill = viridis_pal()(1),
+                 color = "white")
 
-::: {.column width="25%"}
-```{r}
-#| echo: false
-#| eval: true
-#| fig-cap: "geom_boxplot() with geom_jitter()"
-ggplot(mtcars, aes(x=as.character(cyl), 
-                   y=disp, 
-                   fill=as.character(cyl))) +
-    geom_boxplot() +
-  geom_jitter(color="grey20", size=2.5, alpha=0.5, width = 0.2) +
+#### Box and jitter plot
+p_box_jitter <- ggplot(mtcars, 
+                       aes(x = as.character(cyl),
+                           y = disp,
+                           fill = as.character(cyl))) +
+  geom_boxplot() +
+  geom_jitter(
+    color = "grey20",
+    size = 2.5,
+    alpha = 0.5,
+    width = 0.2) +
   labs(x = "cyl", fill = "cyl") +
+  scale_fill_viridis_d() +
   theme(legend.position = "none")
-```
-:::
 
-::: {.column width="25%"}
-```{r}
-#| echo: false
-#| eval: true
-#| fig-cap: "geom_bar()"
-ggplot(mtcars, aes(x = as.factor(cyl), fill = as.factor(cyl))) +
+####  Bar plot
+p_bar <- ggplot(mtcars, 
+                aes(x = as.factor(cyl), fill = as.factor(cyl))) +
   geom_bar() +
   theme(legend.position = "none") +
-  labs(x = "cyl")
-```
-:::
+  labs(x = "cyl") +
+  scale_fill_viridis_d()
 
-::: {.column width="25%"}
-```{r}
-#| echo: false
-#| eval: true
-#| fig-cap: "geom_violin()"
-ggplot(mtcars, aes(x=as.character(cyl), 
+#### Violin plot
+p_violin <- ggplot(mtcars, aes(x=as.character(cyl), 
                    y=disp, 
                    fill=as.character(cyl))) +
   geom_violin() +
   labs(x = "cyl") +
+  theme(legend.position = "none") +
+  scale_fill_viridis_d()
+
+#### scatter plot and trend line
+p_point_smooth <- ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(color = viridis_pal()(1), size = 3, alpha = 0.5) +
+  geom_smooth(method = "lm", color = "red")
+
+#### Heat map
+dt2 <- data.frame(scale(mtcars, center = TRUE, scale = TRUE))
+p_heatmap <- dt2 %>%
+  rownames_to_column(var = "car") %>%
+  pivot_longer(!car) %>%
+  ggplot(aes(x = name, y = car, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_viridis_c() +
+  theme(axis.text.y = element_blank(),
+        legend.position = "none")
+
+
+#### Density plot
+p_density <- 
+  ggplot(iris, aes(x = Petal.Width, group = Species, fill = Species)) +
+  geom_density(adjust = 1.5, alpha = 0.7) +
+  scale_fill_viridis_d() +
   theme(legend.position = "none")
-  
+
+
+
+#### Line plot in time series
+p_line_time <- 
+  ggplot(Puromycin, aes(x = rate, y = conc, color = state, shape = state)) +
+  geom_line(linewidth = 1, color = "black") +
+  geom_point(size = 3)
 ```
-:::
-:::
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-charts
+#| fig-subcap: 
+#|   - "geom_histogram()"
+#|   - "geom_bar()"
+#|   - "geom_line() with geom_point()"
+#|   - "geom_boxplot() with geom_jitter()"
+#|   - "geom_violin()"
+#|   - "geom_density()"
+#|   - "geom_point() with geom_smooth()"
+#|   - geom_tile()
+#| layout-ncol: 4
+
+plot(p_hist)
+plot(p_bar)
+plot(p_line_time)
+plot(p_box_jitter)
+plot(p_violin)
+plot(p_density)
+plot(p_point_smooth)
+plot(p_heatmap)
+```
+
+## Position scales and axes
+
+### Numeric position scales
 
 ::: columns
-::: {.column width="25%"}
+::: {.column width="50%"}
+-   Limit
+
 ```{r}
-#| echo: false
+#| echo: true
 #| eval: true
-#| fig-cap: "geom_point() with geom_smooth()"
-ggplot(mtcars, aes(x=wt, y=mpg)) +
+#| code-line-numbers: "3-4"
+ggplot(airquality, aes(x = Wind, y = Temp)) +
   geom_point() +
-  geom_smooth(method = "lm", color = "red")
+  scale_x_continuous(limits = c(0,15)) +
+  scale_y_continuous(limits = c(60,80))
 ```
 :::
 
-::: {.column width="25%"}
+::: {.column width="50%"}
+-   Breaks
+
 ```{r}
-#| echo: false
+#| echo: true
 #| eval: true
-#| fig-cap: "geom_tile()"
-dt2 <- data.frame(scale(mtcars, center = TRUE, scale = TRUE))
-dt2 %>% 
-  rownames_to_column(var = "car") %>% 
-  pivot_longer(!car) %>% 
-  ggplot(aes(x=name, y=car, fill = value)) +
-  geom_tile() +
-  scale_fill_paletteer_c(`"ggthemes::Classic Area Red-Green"`)
+#| code-line-numbers: "3-4"
+ggplot(airquality,aes(x = Wind, y = Temp)) +
+  geom_point() +
+  scale_x_continuous(breaks = seq(from = 0, to = 20, by = 2)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 100, by = 5))
+```
+:::
+:::
 
+## Position scales and axes
 
-  
+### Numeric position scales (2)
+
+::: columns
+::: {.column width="50%"}
+-   Expand
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "6-7"
+ggplot(airquality,
+       aes(x = Temp, 
+           group = as.factor(Month), 
+           fill = as.factor(Month))) +
+  geom_density(alpha = 0.6) +
+  scale_y_continuous(expand = c(0,0)) +
+  scale_x_continuous(expand = c(0,0))
 ```
 :::
 
-::: {.column width="25%"}
+::: {.column width="50%"}
+-   log transformation
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "4"
+ggplot(diamonds,
+       aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.6) +
+  scale_y_log10()
+```
+:::
 :::
 
-::: {.column width="25%"}
+## Position scales and axes
+
+### Date-time position scale
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "3"
+ggplot(economics, aes(x = date, y = psavert)) + 
+  geom_line(na.rm = TRUE) +
+  scale_x_date(date_breaks = "15 years")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "4"
+lim <- as.Date(c("2004-01-01", "2005-01-01"))
+ggplot(economics, aes(x = date, y = psavert)) + 
+  geom_line(na.rm = TRUE) +
+  scale_x_date(limits = lim, date_labels = "%B\n%Y")
+
+```
 :::
 :::
 
-## Directory of Visualizations
+Date scales behave like numeric scales, it's ordinal, but is often more convenient to use the `date_labels` argument with the predefined formats. More available formatting strings: <https://ggplot2-book.org/scales-position.html#sec-date-labels>.
+
+## Position scales and axes
+
+### Binned position scales
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "3"
+ggplot(airquality, aes(x = Month, y = Ozone, color = Ozone)) +
+  geom_count(na.rm = TRUE) +
+  scale_y_binned(n.breaks = 10)
+```
+
+## Color scales and legends
+
+### Color blindness
+
+Available color palettes from package `colorBlindness`.
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+# Load package
+library(colorBlindness)
+displayAvailablePalette(color="white")
+```
+
+More information on R colorBlindness package: <https://cran.r-project.org/web/packages/colorBlindness/vignettes/colorBlindness.html>
+
+## Color scales and legends
+
+### Continuous color scales: `viridis` color palettes {.smaller}
+
+```{r}
+#| layout-ncol: 3
+#| fig-subcap: 
+#| - "default continuous palette"
+#| - "viridis - viridis"
+#| - "viridis - magma"
+#| - "viridis - plasma"
+#| - "viridis - rocket"
+#| - "viridis - turbo"
+erupt <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() + scale_x_continuous(NULL, expand = c(0, 0)) + scale_y_continuous(NULL, expand = c(0, 0))
+# Plot
+erupt
+erupt + scale_fill_viridis_c(option = "viridis")
+erupt + scale_fill_viridis_c(option = "magma")
+erupt + scale_fill_viridis_c(option = "plasma")
+erupt + scale_fill_viridis_c(option = "rocket")
+erupt + scale_fill_viridis_c(option = "turbo")
+```
+
+## Color scales and legends
+
+### Continuous color scales: `distiller` color palettes
+
+```{r}
+#| layout-ncol: 3
+#| fig-subcap:
+#|  - "distiller - Diverging"
+#|  - "distiller - Qualitative"
+#|  - "distiller - Sequential"
+erupt + scale_fill_distiller(palette = "RdBu")
+erupt + scale_fill_distiller(palette = "Pastel1")
+erupt + scale_fill_distiller(palette = "OrRd")
+```
+
+The distiller scales applied brewer color palettes by by smoothly interpolating 7 colors from any palette to a continuous scale. For more brewer color palettes, see <https://colorbrewer2.org>.
+
+## Color scales and legends
+
+### Continuous color scales: `ggsci` color palettes
+
+```{r}
+#| layout-ncol: 4
+#| fig-subcap: 
+#|  - "Default heatmap color"
+#|  - "ggsci - GSEA"
+#|  - "ggsci - material (red)"
+#|  - "ggsci - material (grey)"
+library(ggsci)
+dt_hm <- scale(as.matrix(mtcars)[1:10, ], center = TRUE, scale = TRUE)
+p_hm <- as.data.frame(dt_hm) %>% rownames_to_column(var = "cars") %>% 
+  pivot_longer(!cars) %>%
+  ggplot(aes(x = name, y = cars, fill = value)) +
+  geom_tile(color = "black") +
+  coord_equal() +
+  labs(x=NULL, y = NULL) +
+  theme(legend.position = "none",
+        axis.text.x = element_blank())
+
+p_hm
+p_hm + scale_fill_gsea()
+p_hm + scale_fill_material("yellow")
+p_hm + scale_fill_material("grey")
+```
+
+Discover more continuous ggsci color palette: <https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html>
+
+## Color scales and legends
+
+### More Continuous color scales: `paletteer` color palettes
+
+```{r}
+#| layout-ncol: 3
+#| fig-subcap:
+#| - "ggthemes::Green-Blue Diverging"
+#| - "ggthemes::Red-Blue-White Diverging"
+#| - "ggthemes::Temperature Diverging"
+#| - "grDevices::rainbow"
+#| - "grDevices::heat.colors"
+#| - "grDevices::Viridis"
+
+erupt + scale_fill_paletteer_c("ggthemes::Green-Blue Diverging")
+erupt + scale_fill_paletteer_c("ggthemes::Red-Blue-White Diverging")
+erupt + scale_fill_paletteer_c("ggthemes::Temperature Diverging")
+erupt + scale_fill_paletteer_c("grDevices::rainbow")
+erupt + scale_fill_paletteer_c("grDevices::heat.colors")
+erupt + scale_fill_paletteer_c("grDevices::Viridis")
+```
+
+More continuous paletteer color palettes can be found at: <https://pmassicotte.github.io/paletteer_gallery>.
+
+## Color scales and legends
+
+### Discrete color scales: default palette
+
+```{r}
+#| layout-ncol: 2
+df <- data.frame(x = c("a", "b", "c", "d","e"), y = c(3, 4, 1, 2,5))
+bars <- ggplot(df, aes(x, y, fill = x)) + 
+  geom_bar(stat = "identity", color = "black") + 
+  labs(x = NULL, y = NULL) +
+  theme(legend.position = "none")
+
+bars
+bars + scale_fill_hue()
+```
+
+## Color scales and legends
+
+### Discrete color scales: `RColorBrewer` palettes
+
+```{r}
+#| layout-ncol: 3
+#| fig-subcap: 
+#|  - "Diverging - BrBG"
+#|  - "Diverging - RdYlGn"
+#|  - "Sequential - Dark2"
+bars + scale_fill_brewer(palette = "BrBG")
+bars + scale_fill_brewer(palette = "RdYlGn")
+bars + scale_fill_brewer(palette = "Dark2")
+```
+
+Interactive RColorBrewer picker: [https://colorbrewer2.org](https://colorbrewer2.org/)
+
+## Color scales and legends
+
+### Discrete color scales: `ggsci` palettes
+
+`ggsci` offers high-quality color palettes based on color schemes used in scientific journals, data visualization libraries, and science fiction movies.
+
+```{r}
+#| layout-ncol: 4
+#| fig-subcap: 
+#|   - "Inspired by Science"
+#|   - "Inspired by Nature"
+#|   - "Inspired by NEJM"
+#|   - "Inspired by Frontiers"
+#|   - "Inspired by Rick & Morty"
+#|   - "Inspired by Flat UI design"
+#|   - "Inspired by Startrek"
+#|   - "Inspired by The Simpsons"
+#|   
+bars + scale_fill_aaas()
+bars + scale_fill_npg()
+bars + scale_fill_nejm()
+bars + scale_fill_frontiers()
+bars + scale_fill_rickandmorty()
+bars + scale_fill_flatui()
+bars + scale_fill_startrek()
+bars + scale_fill_simpsons()
+
+
+```
+
+## Color scales and legends
+
+### More discrete color scales from `paletteer`
+
+```{r}
+#| layout-ncol: 4
+#| fig-subcap:
+#|   - "awtools::bpalette"
+#|   - "basetheme::ink"
+#|   - "calecopal::kelp1"
+#|   - "fishualize::Centropyge_loricula"
+
+bars + scale_fill_paletteer_d("awtools::bpalette")
+bars + scale_fill_paletteer_d("basetheme::ink")
+bars + scale_fill_paletteer_d("calecopal::kelp1")
+bars + scale_fill_paletteer_d("fishualize::Centropyge_loricula")
+
+
+```
+
+Interactive discrete paletteer color palette: <https://emilhvitfeldt.github.io/r-color-palettes/discrete.html>
+
+## Color scales and legends
+
+#### Manual discrete color scale
+
+```{r}
+#| layout-ncol: 2
+bars + 
+  scale_fill_manual(values = c("sienna1", "sienna4", 
+                               "hotpink1", "hotpink4", "salmon"))
+bars + scale_fill_manual(values = c("a" = "#C62828", "b" = "#9C27B0",
+                                    "c" = "#2196F3", "d" = "#4CAF50",
+                                    "e" = "#FF9800"))
+```
+
+## Color scales and legends
+
+### Alpha
+
+The alpha scale maps shade transparency to a numerical value.
+
+```{r}
+#| layout-ncol: 2
+ggplot(faithfuld, aes(waiting, eruptions, alpha = density)) +
+  geom_raster(fill = "maroon") +
+  scale_x_continuous(expand = c(0, 0)) + 
+  scale_y_continuous(expand = c(0, 0))
+
+ggplot(mtcars, aes(x = disp, y = mpg)) +
+  geom_point(size = 4, alpha = 0.3, color = "blue")
+```
+
+## Color scales and legends
+
+### Legend positions
+
+```{r}
+#| layout-nrow: 2
+#| layout-valign: center
+bars + theme(legend.position = "left")
+bars + theme(legend.position = "right")
+bars + theme(legend.position = "top")
+bars + theme(legend.position = "bottom")
+bars + theme(legend.position = "none")
+```
 
 ## References
 
-::: {#refs}
-:::
+-   [ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/index.html): written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).
+
+-   [Introduction to data visualisation with ggplot2 Workshop](https://r.qcbs.ca/workshop03/book-en/): by QCBS R Workshop Series, 2023-04-24
+
+-   [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/index.html): by Claus O. Wilke, 2019

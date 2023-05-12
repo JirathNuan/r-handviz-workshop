@@ -44,7 +44,7 @@ Users can install Rtools from CRAN: <https://cran.rstudio.com/bin/windows/Rtools
 
 Rstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website <https://posit.co/download/rstudio-desktop>.
 
-> Current Rstudio Desktop version is `Released: 2023-03-16`.
+> Current Rstudio Desktop version is `Released: 2023-05-12`.
 
 ### 4. Install necessary R packages
 

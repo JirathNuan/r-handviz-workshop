@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\nTime\nTopic\nMaterials\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n\n9:00 - 9:30\nWelcome, Introduction, and Graphical Requirement for Article Submission\n📖\nPS\n\n\n\n9:30 - 10:20\nBasic R Programming\n📖\nPS, JN\nPY, KC\n\n\n10:20 - 10:30\nMorning Break\n\n\n\n\n\n10:30 - 11:15\nExploratory Data Analysis with R\n📖\nPS, JN\nPY, KC\n\n\n11:15 - 12:00\nGrammar of Graphics\n📖\nPS, JN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\n📖\nPS, JN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\n📖\nPS, JN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\n📖\nPS, JN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\n\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\n\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
+    "text": "This page contains an updated agenda for the Data Handling and Visualization in R workshop, as well as the speakers and our teaching assistants.\n📅 May 17th, 2023 📍BSc0303, BSc bldg., Faculty of Science, PSU\n\n\n\nTime\nTopic\nMaterials\nSpeaker\nTA\n\n\n\n\n8:30 - 9:00\nRegistration\n\n\n\n\n\n9:00 - 9:30\nWelcome, Introduction, and Graphical Requirement for Article Submission\n📖\nPS\n\n\n\n9:30 - 10:20\nBasic R Programming\n📖\nPS, JN\nPY, KC\n\n\n10:20 - 10:30\nMorning Break\n\n\n\n\n\n10:30 - 11:15\nExploratory Data Analysis with R\n📖\nPS, JN\nPY, KC\n\n\n11:15 - 12:00\n\nGrammar of Graphics\nDirectory of Data Visualization\n\n📖\n📖\nPS, JN\nPY, KC\n\n\n12:00 - 13:00\nLunch\n\n\n\n\n\n13:00 - 14:15\nPlotting Omics Data (1)\n📖\nPS, JN\nPY, KC\n\n\n14:15 - 14:30\nAfternoon Break\n\n\n\n\n\n14:30 - 15:30\nPlotting Omics Data (2)\n📖\nPS, JN\nPY, KC\n\n\n15:30 - 16:00\nArranging Multiple Plots and Figures\n📖\nPS, JN\nPY, KC\n\n\n16:00 - 16:15\nQ & A\n\nEveryone\nEveryone\n\n\n16:15 - 16:30\nClosing and Feedback Session\n\nEveryone\nEveryone\n\n\n\n\n📢 Speakers & TA team\n\n\n\n\n\n\n\nPS: Ponsit Sathapondecha, JN: Jiratchaya Nuanpirom, PY: Prasert Yodsawat, KC: Khunanon Chanasongkhram"
   },
   {
     "objectID": "prerequisite.html",
@@ -25,7 +25,7 @@
     "href": "prerequisite.html#software-requirements",
     "title": "Prerequisites",
     "section": "Software Requirements",
-    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/files/rtools43-5550-5548.exe\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-03-16.\n\n\n\n4. Install necessary R packages\nParticipants are required to install the following R packages from 2 sources, CRAN and Bioconductor, before the workshop day. All packages can be installed by copy and paste the following commands to RStudio console panel (in the bottom left panel of the RStudio screen), and hit the Enter key. Make sure your computer is already connected to the Internet.\n\n\n\nCopy and paste the installation commands to the console.\n\n\n4.1 Install packages from CRAN:\n\nif (!require(\"pacman\"))\n  install.packages(\"pacman\"\n  )\npacman::p_load(\n  tidyverse,\n  paletteer,\n  scales,\n  RColorBrewer,\n  ggpubr,\n  VennDiagram,\n  circlize,\n  viridis,\n  png,\n  GGally,\n  cowplot,\n  openxlsx,\n  gridExtra,\n  gtable,\n  egg,\n  ggfortify,\n  FactoMineR,\n  factoextra,\n  gridGraphics,\n  corrplot,\n  plotly,\n  agricolae,\n  ggsci\n)\n\n\n\n\nCopy and paste the installation commands to the console.\n\n\n4.2 Install packages from Bioconductor:\n\nif (!requireNamespace(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nBiocManager::install(c(\"ComplexHeatmap\", \"DESeq2\", \n                       \"pcaExplorer\", \"EnhancedVolcano\"))\n\n📧 For technical issues regarding R packages installation, please email the issues to Prasert Yodsawat (prasert.y@outlook.com).\n\n\n\n\n\n\nOptional 📖\n\n\n\nIn addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:\n\nR Programming Tutorial - Learn the Basics of Statistical Computing from freecodecamp.org\nIntroduction to R from Datacamp\nA (very) short introduction to R: The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge)."
+    "text": "Software Requirements\nBefore the workshop day, users are asked to install the following software in advance.\n\n1. Install R\nR is programming language for statistical computing and graphical visualization, and is an open-source software for computing in R language.\nUsers can download R installer from the Comprehensive R Archive Network (CRAN): https://cran.rstudio.com.\n\nThe latest R version is 4.3.0 (2023-04-21) -- \"Already Tomorrow\".\n\n\n\n2. Install Rtools (Windows users only)\nRtools is used to build and install R packages from source code. Some important tools, such as tidyverse, require Rtools to install on Windows.\nUsers can install Rtools from CRAN: https://cran.rstudio.com/bin/windows/Rtools/rtools43/files/rtools43-5550-5548.exe\n\nThe current Rtools for Windows users is Rtools 4.3, which is compatible with version R 4.3.x.\n\n\n\n3. Install Rstudio Desktop\nRstudio is an integrated development environment (IDE) for computing in R language. Users can install Rstudio Desktop from official posit website https://posit.co/download/rstudio-desktop.\n\nCurrent Rstudio Desktop version is Released: 2023-05-12.\n\n\n\n4. Install necessary R packages\nParticipants are required to install the following R packages from 2 sources, CRAN and Bioconductor, before the workshop day. All packages can be installed by copy and paste the following commands to RStudio console panel (in the bottom left panel of the RStudio screen), and hit the Enter key. Make sure your computer is already connected to the Internet.\n\n\n\nCopy and paste the installation commands to the console.\n\n\n4.1 Install packages from CRAN:\n\nif (!require(\"pacman\"))\n  install.packages(\"pacman\"\n  )\npacman::p_load(\n  tidyverse,\n  paletteer,\n  scales,\n  RColorBrewer,\n  ggpubr,\n  VennDiagram,\n  circlize,\n  viridis,\n  png,\n  GGally,\n  cowplot,\n  openxlsx,\n  gridExtra,\n  gtable,\n  egg,\n  ggfortify,\n  FactoMineR,\n  factoextra,\n  gridGraphics,\n  corrplot,\n  plotly,\n  agricolae,\n  ggsci\n)\n\n\n\n\nCopy and paste the installation commands to the console.\n\n\n4.2 Install packages from Bioconductor:\n\nif (!requireNamespace(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nBiocManager::install(c(\"ComplexHeatmap\", \"DESeq2\", \n                       \"pcaExplorer\", \"EnhancedVolcano\"))\n\n📧 For technical issues regarding R packages installation, please email the issues to Prasert Yodsawat (prasert.y@outlook.com).\n\n\n\n\n\n\nOptional 📖\n\n\n\nIn addition, users with some experience with R are beneficial. This workshop focuses on intermediate knowledge of R for managing and visualizing data. We recommend that participants familiarize themselves with the basics of R before attending this workshop. Here we also provide some online courses that would be helpful:\n\nR Programming Tutorial - Learn the Basics of Statistical Computing from freecodecamp.org\nIntroduction to R from Datacamp\nA (very) short introduction to R: The 10-page document by Torfs & Brauer with background information and exercises, plus 2 pages with a list of useful functions. Working through this document takes a couple of hours (depending on your background knowledge)."
   },
   {
     "objectID": "about.html",
@@ -331,93 +331,198 @@
   {
     "objectID": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
     "href": "lectures/04_grammar_of_graphics.html#what-is-grammar-of-graphics",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "What is Grammar of Graphics",
     "text": "What is Grammar of Graphics\n\n\n\n\n\n\n\n\n\n\n\n \n\nData: Your input data (in long format)\nAesthetics: what makes your data visible, e.g., size, line color, variables to plot, fill color, line type, transparency, etc.\nGeometry: determines the type of plot.\nStatistics: statistical transformation of continuous data\nFacets: for splitting plot into subplots.\nCoordinates: Numeric systems to limit, breakdown, transform position of geometry.\nThemes: Overall visual of plots and customization."
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nLoad data with ggplot()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-1",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-1",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdd aesthetics by aes()\n\n\n# Load library\nlibrary(ggplot2)\n# Plot diamonds\nggplot(diamonds, aes(x = carat, y = price, color = cut))"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-2",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-2",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdd geometry by geom()\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-3",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-3",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdd statistics\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-4",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-4",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdd facets\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-5",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdding coordinates\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color) +\n  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000))"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-6",
     "href": "lectures/04_grammar_of_graphics.html#building-a-plot-layer-by-layer-6",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Building a plot layer-by-layer",
     "text": "Building a plot layer-by-layer\n\nAdding theme\n\n\n# Load library\nlibrary(ggplot2)\n# Define data and global aesthetics\nggplot(diamonds, aes(x = carat, y = price, color = color)) +\n  geom_point(alpha = 0.8) +\n  stat_smooth(color = \"black\", linewidth = 0.8) +\n  facet_grid(cut ~ color) +\n  scale_y_continuous(breaks = seq(from = 0, to = 20000, by = 10000)) +\n  theme_bw()"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#aesthetics",
     "href": "lectures/04_grammar_of_graphics.html#aesthetics",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Aesthetics",
     "text": "Aesthetics\n\nAesthetics aes() describe how variables map to visual properties or aesthetics.\nThe position of data points are described by values from x and y\nshape, size, or color styles can also be specified in aes().\n\n\nCommonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Figure from Wilke (2019)"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#types-of-variables-used-in-aesthetics",
     "href": "lectures/04_grammar_of_graphics.html#types-of-variables-used-in-aesthetics",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Types of Variables Used in Aesthetics",
     "text": "Types of Variables Used in Aesthetics\n\n\nContinuous variables\n\nA variable or a set of value you can measure.\nContinuous data values are values you can arbitrarily fine intermediates.\nAge, height, BMI, date, assignment score, etc.\nSometimes, series of continuous variable can be a discrete variable.\n\n\nmy_seq <- seq(from = 0, to = 10, by = 1)\nclass(my_seq)\nsum(my_seq)\ncount(my_seq)\n\nmy_seq2 <- as.character(my_seq)\nclass(my_seq2)\nsum(my_seq2)\ncount(my_seq2)\n\n\nDiscrete variables\n\nA variable or a set of value you can count.\nGrade (A B C D), Name, Type, number of person in a room, etc.\nSometimes a vector of a discrete variable can be classified into a kind of ordinal number. That may required before time-series plotting.\n\n\nmy_var <- c(\"0_hpi\", \"12hpi\", \"Control\", \"48_hpi\", \"24_hpi\")\nmy_var\n\nmy_var_2 <- factor(my_var, \n                   levels = c(\"Control\", \"0_hpi\", \"12hpi\",\n                              \"24_hpi\", \"48_hpi\"))\nmy_var_2"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#geoms",
     "href": "lectures/04_grammar_of_graphics.html#geoms",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "Geoms",
-    "text": "Geoms\nFrequently used geoms1\n\n\n\n\n\n\n\ngeom_histogram()\n\n\n\n\n\n\n\n\n\n\ngeom_boxplot() with geom_jitter()\n\n\n\n\n\n\n\n\n\n\ngeom_bar()\n\n\n\n\n\n\n\n\n\n\ngeom_violin()\n\n\n\n\n\n\n\n\n\n\n\n\n\ngeom_point() with geom_smooth()\n\n\n\n\n\n\n\n\n\n\ngeom_tile()\n\n\n\n\n\n\n\n\n\n\nExplore more plot in R Graph Gallery: https://r-graph-gallery.com"
+    "text": "Geoms\nFrequently used geoms (Explore more plot in R Graph Gallery: https://r-graph-gallery.com)\n\n\n\n\n\n\n\n\n\nFigure 1: geom_histogram()\n\n\n\n\n\n\n\nFigure 2: geom_bar()\n\n\n\n\n\n\n\nFigure 3: geom_line() with geom_point()\n\n\n\n\n\n\n\nFigure 4: geom_boxplot() with geom_jitter()\n\n\n\n\n\n\n\n\n\nFigure 5: geom_violin()\n\n\n\n\n\n\n\nFigure 6: geom_density()\n\n\n\n\n\n\n\nFigure 7: geom_point() with geom_smooth()\n\n\n\n\n\n\n\nFigure 8: geom_tile()"
   },
   {
-    "objectID": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
-    "href": "lectures/04_grammar_of_graphics.html#directory-of-visualizations",
-    "title": "Grammar of Graphics and Directory of Visualizations",
-    "section": "Directory of Visualizations",
-    "text": "Directory of Visualizations"
+    "objectID": "lectures/04_grammar_of_graphics.html#position-scales-and-axes",
+    "href": "lectures/04_grammar_of_graphics.html#position-scales-and-axes",
+    "title": "Grammar of Graphics",
+    "section": "Position scales and axes",
+    "text": "Position scales and axes\nNumeric position scales\n\n\n\nLimit\n\n\nggplot(airquality, aes(x = Wind, y = Temp)) +\n  geom_point() +\n  scale_x_continuous(limits = c(0,15)) +\n  scale_y_continuous(limits = c(60,80))\n\n\n\n\n\n\nBreaks\n\n\nggplot(airquality,aes(x = Wind, y = Temp)) +\n  geom_point() +\n  scale_x_continuous(breaks = seq(from = 0, to = 20, by = 2)) +\n  scale_y_continuous(breaks = seq(from = 0, to = 100, by = 5))"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-1",
+    "href": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-1",
+    "title": "Grammar of Graphics",
+    "section": "Position scales and axes",
+    "text": "Position scales and axes\nNumeric position scales (2)\n\n\n\nExpand\n\n\nggplot(airquality,\n       aes(x = Temp, \n           group = as.factor(Month), \n           fill = as.factor(Month))) +\n  geom_density(alpha = 0.6) +\n  scale_y_continuous(expand = c(0,0)) +\n  scale_x_continuous(expand = c(0,0))\n\n\n\n\n\n\nlog transformation\n\n\nggplot(diamonds,\n       aes(x = carat, y = price, color = cut)) +\n  geom_point(alpha = 0.6) +\n  scale_y_log10()"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-2",
+    "href": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-2",
+    "title": "Grammar of Graphics",
+    "section": "Position scales and axes",
+    "text": "Position scales and axes\nDate-time position scale\n\n\n\nggplot(economics, aes(x = date, y = psavert)) + \n  geom_line(na.rm = TRUE) +\n  scale_x_date(date_breaks = \"15 years\")\n\n\n\n\n\n\nlim <- as.Date(c(\"2004-01-01\", \"2005-01-01\"))\nggplot(economics, aes(x = date, y = psavert)) + \n  geom_line(na.rm = TRUE) +\n  scale_x_date(limits = lim, date_labels = \"%B\\n%Y\")\n\n\n\n\n\n\nDate scales behave like numeric scales, it’s ordinal, but is often more convenient to use the date_labels argument with the predefined formats. More available formatting strings: https://ggplot2-book.org/scales-position.html#sec-date-labels."
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-3",
+    "href": "lectures/04_grammar_of_graphics.html#position-scales-and-axes-3",
+    "title": "Grammar of Graphics",
+    "section": "Position scales and axes",
+    "text": "Position scales and axes\nBinned position scales\n\nggplot(airquality, aes(x = Month, y = Ozone, color = Ozone)) +\n  geom_count(na.rm = TRUE) +\n  scale_y_binned(n.breaks = 10)"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nColor blindness\nAvailable color palettes from package colorBlindness.\n\n# Load package\nlibrary(colorBlindness)\ndisplayAvailablePalette(color=\"white\")\n\n\nMore information on R colorBlindness package: https://cran.r-project.org/web/packages/colorBlindness/vignettes/colorBlindness.html"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-1",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-1",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nContinuous color scales: viridis color palettes\n\nerupt <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +\n  geom_raster() + scale_x_continuous(NULL, expand = c(0, 0)) + scale_y_continuous(NULL, expand = c(0, 0))\n# Plot\nerupt\nerupt + scale_fill_viridis_c(option = \"viridis\")\nerupt + scale_fill_viridis_c(option = \"magma\")\nerupt + scale_fill_viridis_c(option = \"plasma\")\nerupt + scale_fill_viridis_c(option = \"rocket\")\nerupt + scale_fill_viridis_c(option = \"turbo\")\n\n\n\n\n\n\ndefault continuous palette\n\n\n\n\n\n\n\nviridis - viridis\n\n\n\n\n\n\n\nviridis - magma\n\n\n\n\n\n\n\n\n\nviridis - plasma\n\n\n\n\n\n\n\nviridis - rocket\n\n\n\n\n\n\n\nviridis - turbo"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-2",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-2",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nContinuous color scales: distiller color palettes\n\nerupt + scale_fill_distiller(palette = \"RdBu\")\nerupt + scale_fill_distiller(palette = \"Pastel1\")\nerupt + scale_fill_distiller(palette = \"OrRd\")\n\n\n\n\n\n\ndistiller - Diverging\n\n\n\n\n\n\n\ndistiller - Qualitative\n\n\n\n\n\n\n\ndistiller - Sequential\n\n\n\n\n\n\nThe distiller scales applied brewer color palettes by by smoothly interpolating 7 colors from any palette to a continuous scale. For more brewer color palettes, see https://colorbrewer2.org."
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-3",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-3",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nContinuous color scales: ggsci color palettes\n\nlibrary(ggsci)\ndt_hm <- scale(as.matrix(mtcars)[1:10, ], center = TRUE, scale = TRUE)\np_hm <- as.data.frame(dt_hm) %>% rownames_to_column(var = \"cars\") %>% \n  pivot_longer(!cars) %>%\n  ggplot(aes(x = name, y = cars, fill = value)) +\n  geom_tile(color = \"black\") +\n  coord_equal() +\n  labs(x=NULL, y = NULL) +\n  theme(legend.position = \"none\",\n        axis.text.x = element_blank())\n\np_hm\np_hm + scale_fill_gsea()\np_hm + scale_fill_material(\"yellow\")\np_hm + scale_fill_material(\"grey\")\n\n\n\n\n\n\nDefault heatmap color\n\n\n\n\n\n\n\nggsci - GSEA\n\n\n\n\n\n\n\nggsci - material (red)\n\n\n\n\n\n\n\nggsci - material (grey)\n\n\n\n\n\n\nDiscover more continuous ggsci color palette: https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-4",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-4",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nMore Continuous color scales: paletteer color palettes\n\nerupt + scale_fill_paletteer_c(\"ggthemes::Green-Blue Diverging\")\nerupt + scale_fill_paletteer_c(\"ggthemes::Red-Blue-White Diverging\")\nerupt + scale_fill_paletteer_c(\"ggthemes::Temperature Diverging\")\nerupt + scale_fill_paletteer_c(\"grDevices::rainbow\")\nerupt + scale_fill_paletteer_c(\"grDevices::heat.colors\")\nerupt + scale_fill_paletteer_c(\"grDevices::Viridis\")\n\n\n\n\n\n\nggthemes::Green-Blue Diverging\n\n\n\n\n\n\n\nggthemes::Red-Blue-White Diverging\n\n\n\n\n\n\n\nggthemes::Temperature Diverging\n\n\n\n\n\n\n\n\n\ngrDevices::rainbow\n\n\n\n\n\n\n\ngrDevices::heat.colors\n\n\n\n\n\n\n\ngrDevices::Viridis\n\n\n\n\n\n\nMore continuous paletteer color palettes can be found at: https://pmassicotte.github.io/paletteer_gallery."
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-5",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-5",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nDiscrete color scales: default palette\n\ndf <- data.frame(x = c(\"a\", \"b\", \"c\", \"d\",\"e\"), y = c(3, 4, 1, 2,5))\nbars <- ggplot(df, aes(x, y, fill = x)) + \n  geom_bar(stat = \"identity\", color = \"black\") + \n  labs(x = NULL, y = NULL) +\n  theme(legend.position = \"none\")\n\nbars\nbars + scale_fill_hue()"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-6",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-6",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nDiscrete color scales: RColorBrewer palettes\n\nbars + scale_fill_brewer(palette = \"BrBG\")\nbars + scale_fill_brewer(palette = \"RdYlGn\")\nbars + scale_fill_brewer(palette = \"Dark2\")\n\n\n\n\n\n\nDiverging - BrBG\n\n\n\n\n\n\n\nDiverging - RdYlGn\n\n\n\n\n\n\n\nSequential - Dark2\n\n\n\n\n\n\nInteractive RColorBrewer picker: https://colorbrewer2.org"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-7",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-7",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nDiscrete color scales: ggsci palettes\nggsci offers high-quality color palettes based on color schemes used in scientific journals, data visualization libraries, and science fiction movies.\n\nbars + scale_fill_aaas()\nbars + scale_fill_npg()\nbars + scale_fill_nejm()\nbars + scale_fill_frontiers()\nbars + scale_fill_rickandmorty()\nbars + scale_fill_flatui()\nbars + scale_fill_startrek()\nbars + scale_fill_simpsons()\n\n\n\n\n\n\nInspired by Science\n\n\n\n\n\n\n\nInspired by Nature\n\n\n\n\n\n\n\nInspired by NEJM\n\n\n\n\n\n\n\nInspired by Frontiers\n\n\n\n\n\n\n\n\n\nInspired by Rick & Morty\n\n\n\n\n\n\n\nInspired by Flat UI design\n\n\n\n\n\n\n\nInspired by Startrek\n\n\n\n\n\n\n\nInspired by The Simpsons"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-8",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-8",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nMore discrete color scales from paletteer\n\nbars + scale_fill_paletteer_d(\"awtools::bpalette\")\nbars + scale_fill_paletteer_d(\"basetheme::ink\")\nbars + scale_fill_paletteer_d(\"calecopal::kelp1\")\nbars + scale_fill_paletteer_d(\"fishualize::Centropyge_loricula\")\n\n\n\n\n\n\nawtools::bpalette\n\n\n\n\n\n\n\nbasetheme::ink\n\n\n\n\n\n\n\ncalecopal::kelp1\n\n\n\n\n\n\n\nfishualize::Centropyge_loricula\n\n\n\n\n\n\nInteractive discrete paletteer color palette: https://emilhvitfeldt.github.io/r-color-palettes/discrete.html"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-9",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-9",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nManual discrete color scale\n\nbars + \n  scale_fill_manual(values = c(\"sienna1\", \"sienna4\", \n                               \"hotpink1\", \"hotpink4\", \"salmon\"))\nbars + scale_fill_manual(values = c(\"a\" = \"#C62828\", \"b\" = \"#9C27B0\",\n                                    \"c\" = \"#2196F3\", \"d\" = \"#4CAF50\",\n                                    \"e\" = \"#FF9800\"))"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-10",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-10",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nAlpha\nThe alpha scale maps shade transparency to a numerical value.\n\nggplot(faithfuld, aes(waiting, eruptions, alpha = density)) +\n  geom_raster(fill = \"maroon\") +\n  scale_x_continuous(expand = c(0, 0)) + \n  scale_y_continuous(expand = c(0, 0))\nggplot(mtcars, aes(x = disp, y = mpg)) +\n  geom_point(size = 4, alpha = 0.3, color = \"blue\")"
+  },
+  {
+    "objectID": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-11",
+    "href": "lectures/04_grammar_of_graphics.html#color-scales-and-legends-11",
+    "title": "Grammar of Graphics",
+    "section": "Color scales and legends",
+    "text": "Color scales and legends\nLegend positions\n\nbars + theme(legend.position = \"left\")\nbars + theme(legend.position = \"right\")\nbars + theme(legend.position = \"top\")\nbars + theme(legend.position = \"bottom\")\nbars + theme(legend.position = \"none\")"
   },
   {
     "objectID": "lectures/04_grammar_of_graphics.html#references",
     "href": "lectures/04_grammar_of_graphics.html#references",
-    "title": "Grammar of Graphics and Directory of Visualizations",
+    "title": "Grammar of Graphics",
     "section": "References",
-    "text": "References\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/.\n\n\n\n\n\n17 May 2023"
+    "text": "References\n\nggplot2: Elegant Graphics for Data Analysis (3e): written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen (2023).\nIntroduction to data visualisation with ggplot2 Workshop: by QCBS R Workshop Series, 2023-04-24\nFundamentals of Data Visualization: by Claus O. Wilke, 2019\n\n\n\n\n17 May 2023\n\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization. https://clauswilke.com/dataviz/."
   },
   {
     "objectID": "lectures/05_plotting_omics_data.html",
