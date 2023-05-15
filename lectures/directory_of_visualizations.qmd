@@ -1,0 +1,501 @@
+---
+title: "Directory of Visualizations"
+author: "Jiratchaya Nuanpirom"
+date: "17 May 2023"
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    number-sections: true
+---
+
+In this chapter, we'll look at some of the most common plots and charts. We'll discuss how to interpret and use these visualizations to make data-driven decisions. We'll also explore how to create these plots and charts using ggplot2 and other graphic libraries.
+
+The following commands will check whether the required R libraries already installed, if not, pacman will install and load the required libraries into your environment.
+
+```{r}
+#| message: false
+#| code-annotations: hover
+# Install pacman
+if (!require("pacman"))
+  install.packages("pacman"
+  )
+
+# Use pacman p_load() to install and load other R libraries
+pacman::p_load(
+  tidyverse,       # <1>
+  viridis,         # <2>
+  ggsci,           # <3>
+  ComplexHeatmap,  # <4>
+  RColorBrewer,    # <5>
+  GGally,           # <6>
+  kableExtra       # <7>
+)
+
+```
+
+1.  For data management and visualization, with `ggplot()` inside.
+2.  Provide color palettes for continuous and discrete variables, color blindness friendly.
+3.  Provide color palettes that are inspired by scientific journals, movies, TV shows.
+4.  For visualizing heat maps and several plots beside the heat maps. Provides more comprehensive customization over the ggplot2's `geom_tile()` or base `heatmap()`.
+5.  Color palettes for continuous and discrete variables.
+6.  Extension library of ggplot2. Simplify complex plots into small command steps. For exploratory data analysis, correlation analysis in the data.
+7.  Just for render this document.
+
+## Visualizing Amounts
+
+### Bar Plots
+
+Bar plot is the most common way to visualize amounts, i.e., the number of things you have already counted. A bar plot is used to display the relationship between a numeric and a categorical variable.
+
+We will create a demo data frame containing 2 columns, name and value.
+
+```{r}
+# Create data
+data_1 <- data.frame(name = c("A", "B", "C", "D", "E"), 
+                   value = c(3, 12, 5, 18, 45))
+```
+
+```{r}
+#| echo: false
+#| tbl-cap: "Example of data_1"
+data_1 %>% 
+  kbl(format = "html", booktabs = TRUE) %>% 
+  kable_styling(full_width = FALSE)
+```
+
+#### Basic bar plot
+
+To create bar plot with ggplot2:
+
+-   always start by calling the `ggplot()` function.
+
+-   then specify the data object.
+
+-   then define aesthetics, set in the `aes()` function: set the categorical variable for the X axis, use the numeric for the Y axis, and fill color of the bar plot by each name.
+
+-   finally call `geom_bar()`. You have to specify `stat="identity"` for this kind of data set.
+
+-   In this case, use `labs()` to change the axes names, as well as legend name.
+
+```{r}
+ggplot(data_1, aes(x = name, y = value, fill = name)) +
+  geom_bar(stat = "identity") +
+  labs(x = "New name", y = "New value", fill = "New lgd name")
+```
+
+#### Horizontal bar plot
+
+To rotate the plot to another orientation, use `coord_flip()`.
+
+```{r}
+#| code-line-numbers: "4"
+ggplot(data_1, aes(x = name, y = value, fill = name)) +
+  geom_bar(stat = "identity") +
+  labs(x = "New name", y = "New value", fill = "New lgd name") +
+  coord_flip()
+```
+
+#### Bar plot with labeled text
+
+To annotate number in each bar plot, add `geom_text` into the command and specify the variable that you want to show the text in `aes()` of `geom_text`. You can adjust the position of the labels using `hjust` and `vjust` to move the labels in horizontal and vertical directions, respectively.
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(data_1, aes(x = name, y = value, fill = name)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = value), vjust = -0.2) +
+  labs(x = "New name", y = "New value", fill = "New lgd name")
+```
+
+### Grouped and Stacked Bar Plot
+
+In the previous section, we showed how to visualize quantitative amounts in a single variable. Sometimes we're interested in two categorical variables at once. For example, the mock data frame `data_plant` that collected data from multiple plant species and multiple conditions.
+
+```{r}
+# create a dataset
+set.seed(123456)
+data_plant <- data.frame(
+  species = c(rep("sorgho", 3),
+              rep("poacee", 3),
+              rep("banana", 3),
+              rep("triticum", 3)),
+  condition = rep(c("normal", "stress", "Nitrogen"), 4),
+  value = abs(rnorm(12, 0, 15)))
+```
+
+```{r}
+#| echo: false
+#| tbl-cap: "Example of data_plant"
+data_plant %>% 
+  kbl(format = "html", booktabs = TRUE) %>% 
+  kable_styling(full_width = FALSE)
+```
+
+#### Grouped bar plot
+
+In the `geom_bar()`, use argument `position="dodge"` to specified to have the bars one beside each other.
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(data_plant, aes(fill = condition, y = value, x = species)) +
+  geom_bar(position = "dodge", stat = "identity")
+```
+
+#### Small multiple bar plots
+
+use facet_wrap() to create a small multiple bar plots. Each panel will defined the name by variable specified. In facet_wrap(), we can fix x and/or y axes scales using argument `scales`.
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(data_plant, aes(fill = condition, y = value, x = species)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  facet_wrap( ~ species, scales = "free_x")
+```
+
+#### Stacked bar plot
+
+A stacked bar plot is very similar to the grouped bar plot above. The subgroups are just displayed on top of each other, not beside. The only thing to change to get this figure is to switch the position argument to stack.
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(data_plant, aes(fill = condition, y = value, x = species)) +
+  geom_bar(position = "stack", stat = "identity")
+```
+
+#### Percent stacked bar plot
+
+Once more, there is not much to do to switch to a percent stacked bar plot. Just switch to `position="fill"`. Now, the percentage of each subgroup is represented, allowing to study the evolution of their proportion in the whole.
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(data_plant, aes(fill = condition, y = value, x = species)) +
+  geom_bar(position = "fill", stat = "identity")
+```
+
+### Dot Plots
+
+One important limitation of bars is that they need to start at zero, so that the bar length is proportional to the amount shown. For some datasets, this can be impractical or may obscure key features. In this case, we can indicate amounts by placing dots at the appropriate locations along the x or y axis.
+
+#### Simple dot plot
+
+We will demonstrate a simple dot plot on the Annual Precipitation in US Cities. Load data set into R and select only top 30 most precipitated cities in the US to plot. 
+
+```{r}
+#| layout-ncol: 2
+#| fig-height: 7
+#| fig-width: 4
+# Prepare data of Annual Precipitation in US Cities
+US_precip <- data.frame(city = names(precip), precipitation = precip)
+US_precip <- US_precip %>% 
+  top_n(n = 30) %>%
+  arrange(desc(precipitation))
+
+# Plot value-ordered dot plot
+ggplot(US_precip, aes(x = precipitation, y = reorder(city, precipitation))) +
+  geom_point(size = 3,
+             alpha = 0.8,
+             color = "#31688E") +
+  labs(x = "Average annual precipitation (in.)", y = NULL) +
+  theme_bw()
+```
+
+#### Time-series
+
+We will use the `USPersonalExpenditure` data set. This data set consists of United States personal expenditures (in billions of dollars) in the categories; food and tobacco, household operation, medical and health, personal care, and private education for the years 1940, 1945, 1950, 1955 and 1960.
+
+```{r}
+# Prepare data
+US_exp <- data.frame(USPersonalExpenditure) %>% 
+  rownames_to_column(var = "Category") %>% 
+  pivot_longer(!Category) %>% 
+  mutate(name = gsub("X", "", name)) %>% 
+  rename(year = name)
+
+ggplot(US_exp, aes(x = year, y = value, group = Category, color = Category)) +
+  geom_line(linewidth = 0.7, color = "black") +
+  geom_point(size = 3) +
+  scale_color_frontiers() +
+  labs(x = "Year", y = "Amount (billions dollars)")
+```
+
+### Heatmaps
+
+As an alternative to mapping data values onto positions via bars or dots, we can map data values onto colors. Such a figure is called a heat map. Which is a graphical representation of data where the individual values contained in a matrix are represented as colors.
+
+
+#### Basic Heatmap with base R
+
+The `heatmap()` function is natively provided in R. Which required the data in a matrix format, them `heatmap()` is then run clustering algorithm and visualize the result with dendrogram. We cal use argument `scale` to normalize matrix to balance the heat colors for easy infer the trend of the data.
+
+```{r}
+#| layout-ncol: 2
+#| fig-height: 4
+#| fig-width: 7
+#| fig-subcap: 
+#|   - "Most basic heatmap"
+#|   - "Scaled value by column"
+# The mtcars dataset:
+data <- as.matrix(mtcars)
+
+# Default Heatmap
+heatmap(data)
+
+# Use 'scale' to normalize
+heatmap(data, scale="column")
+```
+
+#### Heatmap with `geom_tile()`
+
+We will use `USJudgeRatings` data set, which reports Lawyers' Ratings of State Judges in the US Superior Court.
+
+```{r}
+#| fig-height: 8
+#| fig-width: 6
+# Prepare data
+dt_USJudgeRatings <- USJudgeRatings %>% 
+  rownames_to_column(var = "company") %>% 
+  pivot_longer(!company)
+head(dt_USJudgeRatings)
+
+
+# Plot
+ggplot(dt_USJudgeRatings, aes(x = name, y = company, fill = value)) +
+  geom_tile() +
+  scale_fill_distiller(palette = "Reds") +
+  labs(x = "Features", y = NULL)
+```
+
+#### Heatmap with `Heatmap()` of ComplexHeatmap
+
+`ComplexHeatmap` visualize associations between different sources of data sets and reveal potential patterns, and provides a highly flexible way to arrange multiple heat maps and supports self-defined annotation graphics. We will use the same data set `USJudgeRatings` as above.
+
+```{r}
+#| fig-height: 8
+#| fig-width: 6
+# Prepare data
+mat_USJudgeRatings <- as.matrix(USJudgeRatings)
+
+# Plot heatmap using ComplexHeatmap
+Heatmap(mat_USJudgeRatings,
+        row_names_gp = gpar(fontsize = 8),
+        column_names_gp = gpar(fontsize = 8),
+        column_names_rot = 30)
+```
+
+## Visualizing Distribution
+
+It's common to want to know how a variable is distributed in a dataset. To get a better understanding of a variable, you can look at its distribution. This is usually done through visualizations such as histograms, boxplots, and density plots. These can help identify patterns and outliers in the data.
+
+### Histogram
+
+It is relatively straightforward to build a histogram with ggplot2 thanks to the `geom_histogram()` function. Only one numeric variable is needed in the input. Note that a warning message is triggered with this code: we need to take care of the bin width as explained in the next section.
+
+#### Basic histogram
+
+Because histograms are generated by binning the data, their exact visual appearance depends on the choice of the bin width. Most visualization programs that generate histograms will choose a bin width by default, but chances are that bin width is not the most appropriate one for any histogram you may want to make. It is therefore critical to always try different bin widths to verify that the resulting histogram reflects the underlying data accurately. In general, if the bin width is too small, then the histogram becomes overly peaky and visually busy and the main trends in the data may be obscured. On the other hand, if the bin width is too large, then smaller features in the distribution of the data, such as the dip around age 10, may disappear.
+
+
+
+```{r}
+#| layout-ncol: 2
+#| fig-subcap: 
+#|  - "bins = 30 (default)"
+#|  - "bins = 15"
+#|  - "bins = 40"
+#|  - "bins = 5"
+dt_hist <- data.frame(value = rnorm(100))
+
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_histogram(fill = "salmon", color = "black")
+
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_histogram(fill = "salmon", color = "black", bins = 15)
+
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_histogram(fill = "salmon", color = "black", bins = 40)
+
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_histogram(fill = "salmon", color = "black", bins = 5)
+```
+
+### Density Plot
+
+In a density plot, we attempt to visualize the underlying probability distribution of the data by drawing an appropriate continuous curve. This curve needs to be estimated from the data, and the most commonly used method for this estimation procedure is called kernel density estimation.
+
+#### Basic density plot
+
+```{r}
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_density(fill = "#6DCD59")
+```
+
+#### Multiple density plots
+
+```{r}
+ggplot(iris, aes(x = Petal.Length, fill = Species)) +
+  geom_density(alpha = 0.7) +
+  scale_fill_viridis_d()
+```
+
+#### Facet density plots
+
+```{r}
+ggplot(iris, aes(x = Petal.Length, fill = Species)) +
+  geom_density() +
+  scale_fill_viridis_d() +
+  facet_wrap(. ~ Species)
+```
+
+### Box Plot and Violin Plot
+
+```{r}
+#| layout-ncol: 2
+#| fig-subcap: 
+#|   - "Box plot with jitters"
+#|   - "Violin plot with jitters"
+#|   - "Box with violin plot"
+ggplot(ToothGrowth, 
+       aes(x = as.factor(dose), y = len, 
+           fill = as.factor(dose), group = as.factor(dose))) +
+  geom_boxplot() +
+  scale_fill_npg() +
+  geom_jitter(color="grey30", size=2, alpha=0.7, width = 0.2) +
+  labs(x = "Dose (mg/day)", y = "Tooth length (mm)") +
+  theme(legend.position = "none")
+
+
+ggplot(ToothGrowth, 
+       aes(x = as.factor(dose), y = len, 
+           fill = as.factor(dose), group = as.factor(dose))) +
+  geom_violin() +
+  scale_fill_npg() +
+  geom_jitter(color="grey30", size=2, alpha=0.7, width = 0.2) +
+  labs(x = "Dose (mg/day)", y = "Tooth length (mm)") +
+  theme(legend.position = "none")
+
+ggplot(ToothGrowth, 
+       aes(x = as.factor(dose), y = len, 
+           fill = as.factor(dose), group = as.factor(dose))) +
+  geom_violin() +
+  scale_fill_npg() +
+  geom_boxplot(fill = "white", width = 0.2) +
+  labs(x = "Dose (mg/day)", y = "Tooth length (mm)") +
+  theme(legend.position = "none")
+```
+
+## Visualizing Proportions
+
+### Pie and Donut Chart
+
+```{r}
+# Create Data
+data <- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2))
+
+# Basic piechart
+ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme_void() # remove background, grid, numeric labels
+
+
+# Piechart with data labels
+## Compute the position of labels
+data <- data %>% 
+  arrange(desc(group)) %>%
+  mutate(prop = value / sum(data$value) *100) %>%
+  mutate(ypos = cumsum(prop)- 0.5*prop )
+
+
+ggplot(data, aes(x="", y=prop, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme_void() + 
+  theme(legend.position="none") +
+  geom_text(aes(y = ypos, label = group), color = "white", size=6) +
+  scale_fill_brewer(palette="Set1")
+```
+
+## Visualizing x-y Relationships
+
+### Scatter Plot
+
+#### Basic scatter plot
+
+```{r}
+ggplot(iris, aes(x = Petal.Width, y = Petal.Length, color = Species)) +
+  geom_point(alpha = 0.8, size = 2) +
+  labs(x = "Petal width (cm)",
+       y = "Petal length (cm)")
+```
+
+#### Facet scatter plot
+
+```{r}
+ggplot(iris, aes(x = Petal.Width, y = Petal.Length, color = Species)) +
+  geom_point(alpha = 0.8, size = 2) +
+  labs(x = "Petal width (cm)",
+       y = "Petal length (cm)") +
+  facet_wrap(. ~ Species)
+```
+
+#### Scatter plot with trend line
+
+```{r}
+ggplot(mtcars, aes(x = disp, y = mpg)) +
+  geom_point(alpha = 0.8, size = 2) +
+  geom_smooth(method = "lm", color = "red") +
+  labs(x = "Miles/(US) gallon",
+       y = "Displacement (cu.in.)")
+```
+
+### Correlograms
+
+```{r}
+# Create data 
+data <- data.frame(mtcars)
+ 
+# Check correlation between variables
+cor(data) 
+ 
+# visualization of correlations
+ggcorr(data, method = c("everything", "pearson")) 
+ggcorr(data, method = c("everything", "pearson"), geom = "circle") 
+```
+
+### Dimension Reduction
+
+```{r}
+#| message: false
+
+# http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/
+
+library(factoextra)
+library(FactoMineR)
+
+res.pca <- prcomp(USArrests, scale = TRUE)
+
+fviz_eig(res.pca)
+
+fviz_pca_ind(res.pca,
+             col.ind = "cos2", # Color by the quality of representation
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+             )
+
+
+fviz_pca_var(res.pca,
+             col.var = "contrib", # Color by contributions to the PC
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+             )
+
+fviz_pca_biplot(res.pca, repel = TRUE,
+                col.var = "#2E9FDF", # Variables color
+                col.ind = "#696969"  # Individuals color
+                )
+
+```
