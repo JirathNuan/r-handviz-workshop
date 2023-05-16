@@ -307,51 +307,51 @@ div.csl-indent {
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-2"><code>cog_category.txt</code> is a cluster of orthologous groups (COG) dictionary. Use for look up the category names into the plot.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="2"><code>cog_category.txt</code> is a cluster of orthologous groups (COG) dictionary. Use for look up the category names into the plot.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="5" data-code-cell="annotated-cell-2">Read eggNOG-mapper result from excel file into <code>emapper_dt</code>, using <code>read.xlsx()</code> from openxlsx library. The excel is read by skipping the first 3 rows and select only 7th column.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="2" data-code-lines="5">Read eggNOG-mapper result from excel file into <code>emapper_dt</code>, using <code>read.xlsx()</code> from openxlsx library. The excel is read by skipping the first 3 rows and select only 7th column.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-2">Then, go to the next step by pipe <code>%&gt;%</code>. This step it to filter unclassified COGs <code>-</code> from the <code>COG_category</code> using dplyr <code>filter()</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="3" data-code-lines="8">Then, go to the next step by pipe <code>%&gt;%</code>. This step it to filter unclassified COGs <code>-</code> from the <code>COG_category</code> using dplyr <code>filter()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-2">Then group the data frame by <code>COG_category</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="4" data-code-lines="9">Then group the data frame by <code>COG_category</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-2">Count number of COGs presented in this eggNOG-mapper result.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="5" data-code-lines="10">Count number of COGs presented in this eggNOG-mapper result.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="11" data-code-cell="annotated-cell-2">Merge COG dictionary into the result using dplyr <code>left_join()</code>. Two data frames are merged by matching the column <code>COG_category</code> from <code>emapper_dt</code> with the column <code>category</code> of <code>COG_dict</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="6" data-code-lines="11">Merge COG dictionary into the result using dplyr <code>left_join()</code>. Two data frames are merged by matching the column <code>COG_category</code> from <code>emapper_dt</code> with the column <code>category</code> of <code>COG_dict</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-annotation="7" data-code-lines="12" data-code-cell="annotated-cell-2">Then, add new column <code>label</code> for the plot legend, by append COG category together with the category name.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="7" data-code-lines="12">Then, add new column <code>label</code> for the plot legend, by append COG category together with the category name.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-annotation="8" data-code-lines="18" data-code-cell="annotated-cell-2">Plot the result from by showing <code>COG_category</code> in x-axis, number of COGs <code>n</code> in y-axis, fill and add legend by column <code>label</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="8" data-code-lines="18">Plot the result from by showing <code>COG_category</code> in x-axis, number of COGs <code>n</code> in y-axis, fill and add legend by column <code>label</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-annotation="9" data-code-lines="19" data-code-cell="annotated-cell-2">Plot bar plot using <code>geom_bar()</code> and <code>stat = "identity"</code></span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="9" data-code-lines="19">Plot bar plot using <code>geom_bar()</code> and <code>stat = "identity"</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-annotation="10" data-code-lines="20" data-code-cell="annotated-cell-2">Set y-axis breaks</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="10" data-code-lines="20">Set y-axis breaks</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-annotation="11" data-code-lines="21" data-code-cell="annotated-cell-2">Customize label of x- and y-axis, and legend name in <code>fill</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="11" data-code-lines="21">Customize label of x- and y-axis, and legend name in <code>fill</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="12">12</dt>
 <dd>
-<span data-code-annotation="12" data-code-lines="24" data-code-cell="annotated-cell-2">Adjust size of legend using <code>theme(legend.key.size)</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="12" data-code-lines="24">Adjust size of legend using <code>theme(legend.key.size)</code>.</span>
 </dd>
 </dl>
 </div>
@@ -473,15 +473,15 @@ div.csl-indent {
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="5" data-code-cell="annotated-cell-3">Load data set into <code>cts</code> data frame, and convert to matrix.</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="5">Load data set into <code>cts</code> data frame, and convert to matrix.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="8" data-code-cell="annotated-cell-3">Removing NA. The whole row will be deleted if NA is observed.</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="2" data-code-lines="8">Removing NA. The whole row will be deleted if NA is observed.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="14" data-code-cell="annotated-cell-3">Sample metadata should show a relationship between the sample name (from the matrix column), the sample group, and other experimental design.</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="3" data-code-lines="14">Sample metadata should show a relationship between the sample name (from the matrix column), the sample group, and other experimental design.</span>
 </dd>
 </dl>
 </div>
@@ -663,15 +663,15 @@ div.csl-indent {
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-4">Create DESeq object using count matrix and sample metadata.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="2">Create DESeq object using count matrix and sample metadata.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="7" data-code-cell="annotated-cell-4">This function is from DESeq2, to perform differential expression analysis based on the Negative Binomial (a.k.a. Gamma-Poisson) distribution. The analysis started with estimating size factors, estimating dispersion, and fitting the Negative Binomial GLM model and calculate Wald statistics.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="7">This function is from DESeq2, to perform differential expression analysis based on the Negative Binomial (a.k.a. Gamma-Poisson) distribution. The analysis started with estimating size factors, estimating dispersion, and fitting the Negative Binomial GLM model and calculate Wald statistics.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="10" data-code-cell="annotated-cell-4">Create a matrix of normalized count from DESeq2 object after DE analysis.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="10">Create a matrix of normalized count from DESeq2 object after DE analysis.</span>
 </dd>
 </dl>
 </div>
@@ -778,11 +778,11 @@ div.csl-indent {
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-5">Rlog (regularized log) transforms the original count data into log2 scale by fitting a model with a term for each sample and a prior distribution on the coefficients. Use before plotting PCA.</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="2">Rlog (regularized log) transforms the original count data into log2 scale by fitting a model with a term for each sample and a prior distribution on the coefficients. Use before plotting PCA.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-5">Plot PCA</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="2" data-code-lines="3">Plot PCA</span>
 </dd>
 </dl>
 </div>
