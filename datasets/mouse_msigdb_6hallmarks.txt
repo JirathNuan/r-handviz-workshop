@@ -1,0 +1,196 @@
+G2M checkpoint	Apoptosis	DNA Repair	WNT/B-Catenin Signaling	Hedgehog Signaling	TGF_BETA_SIGNALING
+Abl1	Add1	Aaas	Adam17	Ache	Acvr1
+Amd1	Aifm3	Ada	Axin1	Adgrg1	Apc
+Arid4a	Ank	Adcy6	Axin2	Amot	Arid4b
+Atf5	Anxa1	Adrm1	Ccnd2	Cdk5r1	Bcar3
+Atrx	App	Ago4	Csnk1e	Cdk6	Bmp2
+Aurka	Atf3	Ak1	Ctnnb1	Celsr1	Bmpr1a
+Aurkb	Avpr1a	Ak3	Cul1	Cntfr	Bmpr2
+Bard1	Bax	Alyref	Dkk1	Crmp1	Cdh1
+Bcl3	Bcap31	Aprt	Dkk4	Dpysl2	Cdk9
+Birc5	Bcl10	Arl6ip1	Dll1	Ets2	Cdkn1c
+Brca2	Bcl2l1	Bcam	Dvl2	Gli1	Ctnnb1
+Bub1	Bcl2l10	Bcap31	Frat1	Hey1	Eng
+Bub3	Bcl2l11	Brf2	Fzd1	Hey2	Fkbp1a
+Casp8ap2	Bcl2l2	Cant1	Fzd8	L1cam	Fnta
+Cbx1	Bgn	Ccno	Gnai1	Ldb1	Furin
+Ccna2	Bid	Cda	Hdac11	Myh9	Hdac1
+Ccnb2	Bik	Cetn2	Hdac2	Nf1	Hipk2
+Ccnd1	Birc3	Clp1	Hdac5	Nkx6-1	Id1
+Ccnf	Bmf	Cmpk2	Hey1	Nrcam	Id2
+Ccnt1	Bmp2	Cox17	Hey2	Nrp1	Id3
+Cdc20	Bnip3l	Cstf3	Jag1	Nrp2	Ifngr2
+Cdc25a	Brca1	Dad1	Jag2	Ophn1	Junb
+Cdc25b	Btg2	Dctn4	Kat2a	Plg	Klf10
+Cdc27	Btg3	Ddb1	Lef1	Pml	Ltbp2
+Cdc45	Casp1	Ddb2	Maml1	Ptch1	Map3k7
+Cdc6	Casp2	Dgcr8	Myc	Rasa1	Ncor2
+Cdc7	Casp3	Dguok	Ncor2	Rtn1	Nog
+Cdk1	Casp4	Dut	Ncstn	Scg2	Pmepa1
+Cdk4	Casp6	Edf1	Nkd1	Shh	Ppm1a
+Cdkn1b	Casp7	Eif1b	Notch1	Slit1	Ppp1ca
+Cdkn2c	Casp8	Ell	Notch4	Thy1	Ppp1r15a
+Cdkn3	Casp9	Eloa	Numb	Tle1	Rab31
+Cenpa	Cav1	Ercc1	Ppard	Tle3	Rhoa
+Cenpe	Ccna1	Ercc2	Psen2	Unc5c	Serpine1
+Cenpf	Ccnd1	Ercc3	Ptch1	Vegfa	Ski
+Chaf1a	Ccnd2	Ercc4	Rbpj	Vldlr	Skil
+Chek1	Cd14	Ercc5	Skp2		Slc20a1
+Chmp1a	Cd2	Ercc8	Tcf7		Smad1
+Cks1b	Cd38	Fen1	Trp53		Smad3
+Cks2	Cd44	Gmpr2	Wnt1		Smad6
+Ctcf	Cd69	Gpx4	Wnt5b		Smad7
+Cul1	Cdc25b	Gsdme	Wnt6		Smurf1
+Cul3	Cdk2	Gtf2a2			Smurf2
+Cul4a	Cdkn1a	Gtf2b			Sptbn1
+Cul5	Cdkn1b	Gtf2f1			Tgfb1
+Dbf4	Cflar	Gtf2h1			Tgfbr1
+Ddx39a	Clu	Gtf2h3			Tgif1
+Dkc1	Crebbp	Gtf2h5			Thbs1
+Dmd	Cth	Gtf3c5			Tjp1
+Dr1	Ctnnb1	Guk1			Trim33
+Dtymk	Cyld	Hcls1			Ube2d3
+E2f1	Dap	Hprt			Wwtr1
+E2f2	Dap3	Impdh2			Xiap
+E2f3	Dcn	Itpa			
+E2f4	Ddit3	Lig1			
+Efna5	Dffa	Mpc2			
+Egf	Diablo	Mpg			
+Espl1	Dnaja1	Mrpl40			
+Ewsr1	Dnajc3	Ncbp2			
+Exo1	Dnm1l	Nelfb			
+Ezh2	Dpyd	Nelfcd			
+Fancc	Ebp	Nelfe			
+Fbxo5	Egr3	Nfx1			
+Foxn3	Emp1	Nme1			
+G3bp1	Eno2	Nme3			
+Gins2	Erbb2	Nme4			
+Gspt1	Erbb3	Npr2			
+H2ax	Ereg	Nt5c			
+H2az1	Etf1	Nt5c3			
+H2az2	F2	Nudt21			
+H2bc12	F2r	Nudt9			
+Hif1a	Fas	Pcna			
+Hira	Fasl	Pde4b			
+Hmga1b	Fdxr	Pde6g			
+Hmgb3	Fez1	Pnp			
+Hmmr	Gadd45a	Pola1			
+Hnrnpd	Gadd45b	Pola2			
+Hnrnpu	Gch1	Polb			
+Hoxc10	Gna15	Pold1			
+Hspa8	Gpx1	Pold3			
+Hus1	Gpx3	Pold4			
+Ilf3	Gpx4	Pole4			
+Incenp	Gsn	Polh			
+Jpt1	Gsr	Poll			
+Katna1	Gstm2	Polr1c			
+Kif11	Gucy2e	Polr1d			
+Kif15	H1f0	Polr1h			
+Kif20b	Hgf	Polr2a			
+Kif22	Hmgb2	Polr2c			
+Kif23	Hmox1	Polr2d			
+Kif2c	Hspb1	Polr2e			
+Kif4	Ier3	Polr2f			
+Kif5b	Ifitm3	Polr2g			
+Kmt5a	Ifnb1	Polr2h			
+Knl1	Ifngr1	Polr2i			
+Kpnb1	Igf2r	Polr2j			
+Lbr	Igfbp6	Polr2k			
+Lig3	Il18	Polr3c			
+Lmnb1	Il1a	Polr3gl			
+Mad2l1	Il1b	Pom121			
+Map3k20	Il6	Prim1			
+Mapk14	Irf1	Rad51			
+Marcks	Isg20	Rad52			
+Mcm2	Jun	Rae1			
+Mcm3	Krt18	Rala			
+Mcm5	Lef1	Rbx1			
+Mcm6	Lgals3	Rev3l			
+Meis1	Lmna	Rfc2			
+Meis2	Lum	Rfc3			
+Mki67	Madd	Rfc4			
+Mnat1	Mcl1	Rfc5			
+Mtf2	Mgmt	Rnmt			
+Mybl2	Mmp2	Rpa2			
+Myc	Nedd9	Rpa3			
+Nasp	Nefh	Rrm2b			
+Ncl	Pak1	Sac3d1			
+Ndc80	Pdcd4	Sdcbp			
+Nek2	Pdgfrb	Sec61a1			
+Nolc1	Pea15a	Sf3a3			
+Notch2	Plat	Smad5			
+Nsd2	Plcb2	Snapc4			
+Numa1	Plppr4	Snapc5			
+Nup50	Pmaip1	Srsf6			
+Nup98	Ppp2r5b	Ssrp1			
+Nusap1	Ppp3r1	Stx3			
+Odc1	Ppt1	Supt4a			
+Odf2	Prf1	Supt5			
+Orc5	Psen1	Surf1			
+Orc6	Psen2	Taf10			
+Pafah1b1	Ptk2	Taf12			
+Pbk	Rara	Taf13			
+Pds5b	Rela	Taf1c			
+Plk1	Retsat	Taf6			
+Plk4	Rhob	Taf9			
+Pml	Rhot2	Tarbp2			
+Pola2	Rnasel	Tk2			
+Pole	Rock1	Trp53			
+Polq	Sat1	Tsg101			
+Prc1	Satb1	Tyms			
+Prim2	Sc5d	Umps			
+Prmt5	Slc20a1	Upf3b			
+Prpf4b	Smad7	Usp11			
+Pttg1	Sod1	Vps28			
+Pura	Sod2	Vps37b			
+Racgap1	Sptan1	Vps37d			
+Rad21	Sqstm1	Xpc			
+Rad23b	Tap1	Zfp707			
+Rad54l	Tgfb2	Zwint			
+Rasal2	Tgfbr3				
+Rbl1	Timp1				
+Rpa2	Timp2				
+Rps6ka5	Timp3				
+Sap30	Tnf				
+Sfpq	Tnfrsf12a				
+Slc12a2	Tnfsf10				
+Slc38a1	Top2a				
+Slc7a1	Tspo				
+Slc7a5	Txnip				
+Smad3	Vdac2				
+Smarcc1	Wee1				
+Smc1a	Xiap				
+Smc2					
+Smc4					
+Snrpd1					
+Sqle					
+Srsf1					
+Srsf10					
+Srsf2					
+Ss18					
+Stag1					
+Stil					
+Stmn1					
+Suv39h1					
+Syncrip					
+Tacc3					
+Tent4a					
+Tfdp1					
+Tgfb1					
+Tle3					
+Tmpo					
+Tnpo2					
+Top1					
+Top2a					
+Tpx2					
+Tra2b					
+Traip					
+Troap					
+Ttk					
+Ube2c					
+Ube2s					
+Uck2					
+Upf1					
+Wrn					
+Xpo1					
+Ythdc1					

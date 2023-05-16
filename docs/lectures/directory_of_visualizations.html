@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jiratchaya Nuanpirom">
+<meta name="dcterms.date" content="2023-05-17">
+
+<title>R Workshop 2023 - Directory of Visualizations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/fav_abbl_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="R Workshop 2023 - Directory of Visualizations">
+<meta property="og:description" content="">
+<meta property="og:image" content="directory_of_visualizations_files/figure-html/unnamed-chunk-4-1.png">
+<meta property="og:site-name" content="R Workshop 2023">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/fav_abbl_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">R Workshop 2023</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../prerequisite.html" rel="" target="">
+ <span class="menu-text">Prerequisites</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/JirathNuan" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/pslabpsu" rel="" target=""><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualizing-amounts" id="toc-visualizing-amounts" class="nav-link active" data-scroll-target="#visualizing-amounts"><span class="header-section-number">1</span> Visualizing Amounts</a>
+  <ul>
+  <li><a href="#bar-plots" id="toc-bar-plots" class="nav-link" data-scroll-target="#bar-plots"><span class="header-section-number">1.1</span> Bar Plots</a>
+  <ul class="collapse">
+  <li><a href="#basic-bar-plot" id="toc-basic-bar-plot" class="nav-link" data-scroll-target="#basic-bar-plot"><span class="header-section-number">1.1.1</span> Basic bar plot</a></li>
+  <li><a href="#horizontal-bar-plot" id="toc-horizontal-bar-plot" class="nav-link" data-scroll-target="#horizontal-bar-plot"><span class="header-section-number">1.1.2</span> Horizontal bar plot</a></li>
+  <li><a href="#bar-plot-with-labeled-text" id="toc-bar-plot-with-labeled-text" class="nav-link" data-scroll-target="#bar-plot-with-labeled-text"><span class="header-section-number">1.1.3</span> Bar plot with labeled text</a></li>
+  </ul></li>
+  <li><a href="#grouped-and-stacked-bar-plot" id="toc-grouped-and-stacked-bar-plot" class="nav-link" data-scroll-target="#grouped-and-stacked-bar-plot"><span class="header-section-number">1.2</span> Grouped and Stacked Bar Plot</a>
+  <ul class="collapse">
+  <li><a href="#grouped-bar-plot" id="toc-grouped-bar-plot" class="nav-link" data-scroll-target="#grouped-bar-plot"><span class="header-section-number">1.2.1</span> Grouped bar plot</a></li>
+  <li><a href="#small-multiple-bar-plots" id="toc-small-multiple-bar-plots" class="nav-link" data-scroll-target="#small-multiple-bar-plots"><span class="header-section-number">1.2.2</span> Small multiple bar plots</a></li>
+  <li><a href="#stacked-bar-plot" id="toc-stacked-bar-plot" class="nav-link" data-scroll-target="#stacked-bar-plot"><span class="header-section-number">1.2.3</span> Stacked bar plot</a></li>
+  <li><a href="#percent-stacked-bar-plot" id="toc-percent-stacked-bar-plot" class="nav-link" data-scroll-target="#percent-stacked-bar-plot"><span class="header-section-number">1.2.4</span> Percent stacked bar plot</a></li>
+  </ul></li>
+  <li><a href="#dot-plots" id="toc-dot-plots" class="nav-link" data-scroll-target="#dot-plots"><span class="header-section-number">1.3</span> Dot Plots</a>
+  <ul class="collapse">
+  <li><a href="#simple-dot-plot" id="toc-simple-dot-plot" class="nav-link" data-scroll-target="#simple-dot-plot"><span class="header-section-number">1.3.1</span> Simple dot plot</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series"><span class="header-section-number">1.3.2</span> Time-series</a></li>
+  </ul></li>
+  <li><a href="#heatmaps" id="toc-heatmaps" class="nav-link" data-scroll-target="#heatmaps"><span class="header-section-number">1.4</span> Heatmaps</a>
+  <ul class="collapse">
+  <li><a href="#basic-heatmap-with-base-r" id="toc-basic-heatmap-with-base-r" class="nav-link" data-scroll-target="#basic-heatmap-with-base-r"><span class="header-section-number">1.4.1</span> Basic Heatmap with base R</a></li>
+  <li><a href="#heatmap-with-geom_tile" id="toc-heatmap-with-geom_tile" class="nav-link" data-scroll-target="#heatmap-with-geom_tile"><span class="header-section-number">1.4.2</span> Heatmap with <code>geom_tile()</code></a></li>
+  <li><a href="#heatmap-with-heatmap-of-complexheatmap" id="toc-heatmap-with-heatmap-of-complexheatmap" class="nav-link" data-scroll-target="#heatmap-with-heatmap-of-complexheatmap"><span class="header-section-number">1.4.3</span> Heatmap with <code>Heatmap()</code> of ComplexHeatmap</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#visualizing-distribution" id="toc-visualizing-distribution" class="nav-link" data-scroll-target="#visualizing-distribution"><span class="header-section-number">2</span> Visualizing Distribution</a>
+  <ul>
+  <li><a href="#basic-histogram" id="toc-basic-histogram" class="nav-link" data-scroll-target="#basic-histogram"><span class="header-section-number">2.0.1</span> Basic histogram</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="header-section-number">2.1</span> Density Plot</a>
+  <ul class="collapse">
+  <li><a href="#basic-density-plot" id="toc-basic-density-plot" class="nav-link" data-scroll-target="#basic-density-plot"><span class="header-section-number">2.1.1</span> Basic density plot</a></li>
+  <li><a href="#multiple-density-plots" id="toc-multiple-density-plots" class="nav-link" data-scroll-target="#multiple-density-plots"><span class="header-section-number">2.1.2</span> Multiple density plots</a></li>
+  <li><a href="#facet-density-plots" id="toc-facet-density-plots" class="nav-link" data-scroll-target="#facet-density-plots"><span class="header-section-number">2.1.3</span> Facet density plots</a></li>
+  </ul></li>
+  <li><a href="#box-plot-and-violin-plot" id="toc-box-plot-and-violin-plot" class="nav-link" data-scroll-target="#box-plot-and-violin-plot"><span class="header-section-number">2.2</span> Box Plot and Violin Plot</a>
+  <ul class="collapse">
+  <li><a href="#ridgeline-plot" id="toc-ridgeline-plot" class="nav-link" data-scroll-target="#ridgeline-plot"><span class="header-section-number">2.2.1</span> Ridgeline plot</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#visualizing-proportions" id="toc-visualizing-proportions" class="nav-link" data-scroll-target="#visualizing-proportions"><span class="header-section-number">3</span> Visualizing Proportions</a>
+  <ul>
+  <li><a href="#pie-and-donut-chart" id="toc-pie-and-donut-chart" class="nav-link" data-scroll-target="#pie-and-donut-chart"><span class="header-section-number">3.1</span> Pie and Donut Chart</a></li>
+  </ul></li>
+  <li><a href="#visualizing-x-y-relationships" id="toc-visualizing-x-y-relationships" class="nav-link" data-scroll-target="#visualizing-x-y-relationships"><span class="header-section-number">4</span> Visualizing x-y Relationships</a>
+  <ul>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">4.1</span> Scatter Plot</a>
+  <ul class="collapse">
+  <li><a href="#basic-scatter-plot" id="toc-basic-scatter-plot" class="nav-link" data-scroll-target="#basic-scatter-plot"><span class="header-section-number">4.1.1</span> Basic scatter plot</a></li>
+  <li><a href="#facet-scatter-plot" id="toc-facet-scatter-plot" class="nav-link" data-scroll-target="#facet-scatter-plot"><span class="header-section-number">4.1.2</span> Facet scatter plot</a></li>
+  <li><a href="#scatter-plot-with-trend-line" id="toc-scatter-plot-with-trend-line" class="nav-link" data-scroll-target="#scatter-plot-with-trend-line"><span class="header-section-number">4.1.3</span> Scatter plot with trend line</a></li>
+  </ul></li>
+  <li><a href="#correlograms" id="toc-correlograms" class="nav-link" data-scroll-target="#correlograms"><span class="header-section-number">4.2</span> Correlograms</a></li>
+  <li><a href="#dimension-reduction" id="toc-dimension-reduction" class="nav-link" data-scroll-target="#dimension-reduction"><span class="header-section-number">4.3</span> Dimension Reduction</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Directory of Visualizations</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jiratchaya Nuanpirom </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 17, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this chapter, we’ll look at some of the most common plots and charts. We’ll discuss how to interpret and use these visualizations to make data-driven decisions. We’ll also explore how to create these plots and charts using ggplot2 and other graphic libraries.</p>
+<p>The following commands will check whether the required R libraries already installed, if not, pacman will install and load the required libraries into your environment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="co"># Install pacman</span></span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>))</span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span></span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a>  )</span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a></span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a><span class="co"># Use pacman p_load() to install and load other R libraries</span></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8"></a>  tidyverse,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9"></a>  viridis,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10"></a>  ggsci,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11"></a>  ComplexHeatmap,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12"></a>  RColorBrewer,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-13" class="code-annotation-target"><a href="#annotated-cell-1-13"></a>  GGally,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-14" class="code-annotation-target"><a href="#annotated-cell-1-14"></a>  kableExtra,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-15" class="code-annotation-target"><a href="#annotated-cell-1-15"></a>  ggridges,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-16" class="code-annotation-target"><a href="#annotated-cell-1-16"></a>  factoextra</span>
+<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-annotation="1" data-code-lines="8" data-code-cell="annotated-cell-1">An integrated data management and visualization library.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-annotation="2" data-code-lines="9" data-code-cell="annotated-cell-1">Color palettes for continuous and discrete variables, color blind friendly.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-annotation="3" data-code-lines="10" data-code-cell="annotated-cell-1">Color palettes based on scientific journals, movies, TV shows.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-annotation="4" data-code-lines="11" data-code-cell="annotated-cell-1">For visualizing heat maps and several plots alongside the heat maps. Provides powerful customization capabilities over the ggplot2’s <code>geom_tile()</code> and base <code>heatmap()</code> functions.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-annotation="5" data-code-lines="12" data-code-cell="annotated-cell-1">Color palettes for continuous and discrete variables.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-annotation="6" data-code-lines="13" data-code-cell="annotated-cell-1">Extension library of ggplot2. Plot complex plots in small steps by simplifying the commands. For exploratory data analysis and correlation analysis.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-annotation="7" data-code-lines="14" data-code-cell="annotated-cell-1">Just for render this document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-annotation="8" data-code-lines="15" data-code-cell="annotated-cell-1">For ridgeline plot</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-annotation="9" data-code-lines="16" data-code-cell="annotated-cell-1">For principal component analysis and visualization</span>
+</dd>
+</dl>
+</div>
+</div>
+<section id="visualizing-amounts" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="visualizing-amounts"><span class="header-section-number">1</span> Visualizing Amounts</h2>
+<section id="bar-plots" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="bar-plots"><span class="header-section-number">1.1</span> Bar Plots</h3>
+<p>The bar plot is the most common way to visualize amounts, i.e., how many things you’ve already counted. Bar plots are versatile and easy to interpret. They are helpful for comparing various groupings of data. They can also be used to compare different values within the same dataset.</p>
+<p>In this demo, we will create a data frame with two columns, name and value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Create data</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>), </span>
+<span id="cb1-3"><a href="#cb1-3"></a>                   <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">18</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of data_1 </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">45</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="basic-bar-plot" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="basic-bar-plot"><span class="header-section-number">1.1.1</span> Basic bar plot</h4>
+<p>To create bar plot with ggplot2:</p>
+<ul>
+<li><p>Call <code>ggplot()</code>.</p></li>
+<li><p>Specify the data object.</p></li>
+<li><p>Make the aesthetics function: use a categorical variable <code>name</code> for X axis and numeric <code>value</code> for Y axis, and fill the bar plot with color by the names of the categories <code>name</code>.</p></li>
+<li><p>finally call <code>geom_bar()</code>. You have to specify <code>stat="identity"</code> for this kind of data set.</p></li>
+<li><p>In this case, use <code>labs()</code> to change the axes names, as well as legend name.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(data_1, <span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> value, <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"New name"</span>, <span class="at">y =</span> <span class="st">"New value"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="horizontal-bar-plot" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="horizontal-bar-plot"><span class="header-section-number">1.1.2</span> Horizontal bar plot</h4>
+<p>To rotate the plot to another orientation, use <code>coord_flip()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(data_1, <span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> value, <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"New name"</span>, <span class="at">y =</span> <span class="st">"New value"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="bar-plot-with-labeled-text" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="bar-plot-with-labeled-text"><span class="header-section-number">1.1.3</span> Bar plot with labeled text</h4>
+<p>To annotate the number in each bar plot, add <code>geom_text</code> to the command. Specify the variable you want to show the text in <code>aes()</code> of <code>geom_text</code>. You can adjust the labels’ position using <code>hjust</code> and <code>vjust</code> to move them in horizontal and vertical directions, respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(data_1, <span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> value, <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"New name"</span>, <span class="at">y =</span> <span class="st">"New value"</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="grouped-and-stacked-bar-plot" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="grouped-and-stacked-bar-plot"><span class="header-section-number">1.2</span> Grouped and Stacked Bar Plot</h3>
+<p>We showed how to visualize quantitative amounts in a single variable in the previous section. Sometimes we’re interested in two categorical variables at once. For example, the mock data frame <code>data_plant</code> that collects data from multiple plant species and multiple conditions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># create a dataset</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">set.seed</span>(<span class="dv">123456</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>data_plant <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="at">species =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"sorgho"</span>, <span class="dv">3</span>),</span>
+<span id="cb5-5"><a href="#cb5-5"></a>              <span class="fu">rep</span>(<span class="st">"poacee"</span>, <span class="dv">3</span>),</span>
+<span id="cb5-6"><a href="#cb5-6"></a>              <span class="fu">rep</span>(<span class="st">"banana"</span>, <span class="dv">3</span>),</span>
+<span id="cb5-7"><a href="#cb5-7"></a>              <span class="fu">rep</span>(<span class="st">"triticum"</span>, <span class="dv">3</span>)),</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="at">condition =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"normal"</span>, <span class="st">"stress"</span>, <span class="st">"Nitrogen"</span>), <span class="dv">4</span>),</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="at">value =</span> <span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="dv">0</span>, <span class="dv">15</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of data_plant </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">condition</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sorgho</td>
+<td style="text-align: left;">normal</td>
+<td style="text-align: right;">12.505998</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sorgho</td>
+<td style="text-align: left;">stress</td>
+<td style="text-align: right;">4.140717</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sorgho</td>
+<td style="text-align: left;">Nitrogen</td>
+<td style="text-align: right;">5.325028</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">poacee</td>
+<td style="text-align: left;">normal</td>
+<td style="text-align: right;">1.312311</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">poacee</td>
+<td style="text-align: left;">stress</td>
+<td style="text-align: right;">33.783836</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">poacee</td>
+<td style="text-align: left;">Nitrogen</td>
+<td style="text-align: right;">12.516902</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="grouped-bar-plot" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="grouped-bar-plot"><span class="header-section-number">1.2.1</span> Grouped bar plot</h4>
+<p>In the <code>geom_bar()</code>, use the argument <code>position="dodge"</code> to position the bars next to each other.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(data_plant, <span class="fu">aes</span>(<span class="at">fill =</span> condition, <span class="at">y =</span> value, <span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">stat =</span> <span class="st">"identity"</span>)<span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="small-multiple-bar-plots" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="small-multiple-bar-plots"><span class="header-section-number">1.2.2</span> Small multiple bar plots</h4>
+<p>To make multiple bar plots, use <code>facet_wrap()</code>. Each panel will have its name defined by the variable specified. <code>facet_wrap()</code> fixes x and/or y axes scales using the argument <code>scales</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(data_plant, <span class="fu">aes</span>(<span class="at">fill =</span> condition, <span class="at">y =</span> value, <span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span> species, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="stacked-bar-plot" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="stacked-bar-plot"><span class="header-section-number">1.2.3</span> Stacked bar plot</h4>
+<p>Stack bar plots display subgroups on top of each other. The only thing to change to get this figure is to switch the position argument to stack by adding <code>position = "stack"</code> to the <code>geom_bar()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(data_plant, <span class="fu">aes</span>(<span class="at">fill =</span> condition, <span class="at">y =</span> value, <span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="percent-stacked-bar-plot" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="percent-stacked-bar-plot"><span class="header-section-number">1.2.4</span> Percent stacked bar plot</h4>
+<p>Change the position of the percent stacked bar plot to “fill”. We can now study the evolution of each subgroup’s proportion in the overall sample by looking at the percentage of each subgroup.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(data_plant, <span class="fu">aes</span>(<span class="at">fill =</span> condition, <span class="at">y =</span> value, <span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="dot-plots" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="dot-plots"><span class="header-section-number">1.3</span> Dot Plots</h3>
+<p>Bars have a limitation that they need to start at zero, so the length is proportional to the amount. Your plot would be vague. We can indicate amounts by placing dots along the x or y axis.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+dot plot vs scatter plot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A dot plot is a graph that uses dots to indicate the frequency or <em>amount of a certain value</em>. This makes it easier to compare values, as the dots line up along a continuous axis. A scatter plot, on the other hand, uses points to represent two different variables. This makes it easier to identify the <em>relationship between the two variables</em>.</p>
+</div>
+</div>
+<section id="simple-dot-plot" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="simple-dot-plot"><span class="header-section-number">1.3.1</span> Simple dot plot</h4>
+<p>We’ll show you a simple dot plot on US precipitation. Start by loading the data into R and selecting the 30 most precipitated cities in the US.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Prepare data of Annual Precipitation in US Cities</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>US_precip <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">city =</span> <span class="fu">names</span>(precip), <span class="at">precipitation =</span> precip)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>US_precip <span class="ot">&lt;-</span> US_precip <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">top_n</span>(<span class="at">n =</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(precipitation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Selecting by precipitation</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of US_precip data </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">city</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">precipitation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mobile</td>
+<td style="text-align: right;">67.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Miami</td>
+<td style="text-align: right;">59.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">San Juan</td>
+<td style="text-align: right;">59.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Orleans</td>
+<td style="text-align: right;">56.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Juneau</td>
+<td style="text-align: right;">54.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jacksonville</td>
+<td style="text-align: right;">54.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jackson</td>
+<td style="text-align: right;">49.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memphis</td>
+<td style="text-align: right;">49.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Little Rock</td>
+<td style="text-align: right;">48.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atlanta</td>
+<td style="text-align: right;">48.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Houston</td>
+<td style="text-align: right;">48.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Columbia</td>
+<td style="text-align: right;">46.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nashville</td>
+<td style="text-align: right;">46.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atlantic City</td>
+<td style="text-align: right;">45.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Norfolk</td>
+<td style="text-align: right;">44.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hartford</td>
+<td style="text-align: right;">43.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Louisville</td>
+<td style="text-align: right;">43.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Providence</td>
+<td style="text-align: right;">42.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charlotte</td>
+<td style="text-align: right;">42.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Richmond</td>
+<td style="text-align: right;">42.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Boston</td>
+<td style="text-align: right;">42.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Raleigh</td>
+<td style="text-align: right;">42.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Baltimore</td>
+<td style="text-align: right;">41.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Portland</td>
+<td style="text-align: right;">40.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charleston</td>
+<td style="text-align: right;">40.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wilmington</td>
+<td style="text-align: right;">40.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York</td>
+<td style="text-align: right;">40.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Philadelphia</td>
+<td style="text-align: right;">39.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cincinnati</td>
+<td style="text-align: right;">39.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Washington</td>
+<td style="text-align: right;">38.9</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>The plot will be a value-ordered dot plot. Basically, ggplot2 will arrange the data alphabetically or ascendingly arranged. It won’t work if you order the data frame before defining <code>ggplot()</code>. Instead, you can arrange the data using <code>reorder(variable_to_order, variable_to_rely_on)</code> during aesthetics mapping as follows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Plot value-ordered dot plot</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">ggplot</span>(US_precip, <span class="fu">aes</span>(<span class="at">x =</span> precipitation, <span class="at">y =</span> <span class="fu">reorder</span>(city, precipitation))) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>             <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>             <span class="at">color =</span> <span class="st">"#D51317"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average annual precipitation (in.)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+</section>
+<section id="time-series" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="time-series"><span class="header-section-number">1.3.2</span> Time-series</h4>
+<p>Time can be considered as one of the variables, and it is in an inherent order. Line graphs help us visualize this temporal order. Line graphs can be used to show trends over time, allowing us to compare values at different points in time. They are useful for highlighting changes in data ove</p>
+<p>We will use the <code>USPersonalExpenditure</code> data set. This data set consists of United States personal expenditures (in billions of dollars) in the categories; food and tobacco, household operation, medical and health, personal care, and private education for the years 1940, 1945, 1950, 1955 and 1960.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Prepare data</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>US_exp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(USPersonalExpenditure) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"Category"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>Category) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">gsub</span>(<span class="st">"X"</span>, <span class="st">""</span>, name)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">rename</span>(<span class="at">year =</span> name)</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="fu">ggplot</span>(US_exp, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">group =</span> Category, <span class="at">color =</span> Category)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">scale_color_frontiers</span>() <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Amount (billions dollars)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="heatmaps" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="heatmaps"><span class="header-section-number">1.4</span> Heatmaps</h3>
+<p>As an alternative to mapping data values onto positions via bars or dots, we can map data values onto colors. Such a figure is called a heat map. Which is a graphical representation of data where the individual values contained in a matrix are represented as colors.</p>
+<section id="basic-heatmap-with-base-r" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="basic-heatmap-with-base-r"><span class="header-section-number">1.4.1</span> Basic Heatmap with base R</h4>
+<p>The <code>heatmap()</code> function is natively provided in R. Which required the data in a matrix format, them <code>heatmap()</code> is then run clustering algorithm and visualize the result with dendrogram. We cal use argument <code>scale</code> to normalize matrix to balance the heat colors for easy infer the trend of the data.</p>
+<div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># The mtcars dataset:</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>data <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(mtcars)</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># Default Heatmap</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="fu">heatmap</span>(data)</span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Use 'scale' to normalize</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="fu">heatmap</span>(data, <span class="at">scale=</span><span class="st">"column"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Most basic heatmap</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Scaled value by column</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="heatmap-with-geom_tile" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="heatmap-with-geom_tile"><span class="header-section-number">1.4.2</span> Heatmap with <code>geom_tile()</code></h4>
+<p>We will use <code>USJudgeRatings</code> data set, which reports Lawyers’ Ratings of State Judges in the US Superior Court.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Prepare data</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>dt_USJudgeRatings <span class="ot">&lt;-</span> USJudgeRatings <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"company"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>company)</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">head</span>(dt_USJudgeRatings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  company       name  value
+  &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt;
+1 AARONSON,L.H. CONT    5.7
+2 AARONSON,L.H. INTG    7.9
+3 AARONSON,L.H. DMNR    7.7
+4 AARONSON,L.H. DILG    7.3
+5 AARONSON,L.H. CFMG    7.1
+6 AARONSON,L.H. DECI    7.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Plot</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">ggplot</span>(dt_USJudgeRatings, <span class="fu">aes</span>(<span class="at">x =</span> name, <span class="at">y =</span> company, <span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"Reds"</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Features"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+<section id="heatmap-with-heatmap-of-complexheatmap" class="level4" data-number="1.4.3">
+<h4 data-number="1.4.3" class="anchored" data-anchor-id="heatmap-with-heatmap-of-complexheatmap"><span class="header-section-number">1.4.3</span> Heatmap with <code>Heatmap()</code> of ComplexHeatmap</h4>
+<p>With <code>ComplexHeatmap</code> you’re able to visualize associations between different data sources, reveal patterns, and arrange multiple heat maps in a way that’s highly flexible. In this analysis, we’ll use the same data set as above, <code>USJudgeRatings</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Prepare data</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>mat_USJudgeRatings <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(USJudgeRatings)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># Plot heatmap using ComplexHeatmap</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">Heatmap</span>(mat_USJudgeRatings,</span>
+<span id="cb18-6"><a href="#cb18-6"></a>        <span class="at">row_names_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">8</span>),</span>
+<span id="cb18-7"><a href="#cb18-7"></a>        <span class="at">column_names_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">8</span>),</span>
+<span id="cb18-8"><a href="#cb18-8"></a>        <span class="at">column_names_rot =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="visualizing-distribution" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="visualizing-distribution"><span class="header-section-number">2</span> Visualizing Distribution</h2>
+<p>In a dataset, you might want to know how a variable is distributed. You can look at the distribution of a variable to get a better idea. Visualizations like histograms, boxplots, and density plots help with this. Data patterns and outliers can be identified this way. This can help you understand the data better, and draw conclusions from it. It can also help you decide which type of analysis to use. ### Histogram</p>
+<p>A histogram can be easily built with ggplot2’s <code>geom_histogram()</code> function. The input only needs one numerical variable. You might get a warning message during the plot regarding the bin width or stratification as explained in the next section.</p>
+<section id="basic-histogram" class="level4" data-number="2.0.1">
+<h4 data-number="2.0.1" class="anchored" data-anchor-id="basic-histogram"><span class="header-section-number">2.0.1</span> Basic histogram</h4>
+<p>A histogram is created by binning data, or stratifying data into ranges of frequency, so how they look depends on the bin width. Bin widths are usually chosen by default in visualization programs.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>users may have to pick the appropriate bin width by hand. The histogram gets too peaky and busy if the bin width is too small. There might be a lot of noise in the data. In contrast, too wide a bin width can blur smaller features in the data distribution, like the dip around age 10.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>dt_hist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"salmon"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"bin width = 30 (default)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"salmon"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"bin width = 15"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"salmon"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"bin width = 40"</span>)</span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"salmon"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"bin width = 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-20-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-20-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-20-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="density-plot" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">2.1</span> Density Plot</h3>
+<p>The density plot shows the underlying probability distribution of the data by drawing a continuous curve. An estimation procedure called kernel density estimation is commonly used to estimate this curve from the data. This estimation procedure is used to estimate the probability of the data falling within a particular range. The resulting curve is then plotted on a graph, allowing for easier comparison and analysis.</p>
+<section id="basic-density-plot" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="basic-density-plot"><span class="header-section-number">2.1.1</span> Basic density plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"grey80"</span>) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="multiple-density-plots" class="level4" data-number="2.1.2">
+<h4 data-number="2.1.2" class="anchored" data-anchor-id="multiple-density-plots"><span class="header-section-number">2.1.2</span> Multiple density plots</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="facet-density-plots" class="level4" data-number="2.1.3">
+<h4 data-number="2.1.3" class="anchored" data-anchor-id="facet-density-plots"><span class="header-section-number">2.1.3</span> Facet density plots</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> Species) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="box-plot-and-violin-plot" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="box-plot-and-violin-plot"><span class="header-section-number">2.2</span> Box Plot and Violin Plot</h3>
+<p>A box plot gives a nice summary of one or more numeric variables. A boxplot is composed of several elements:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lsc.studysixsigma.com/wp-content/uploads/sites/6/2015/12/1435.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Anatomy of box plot. Image from https://www.leansigmacorporation.com/box-plot-with-minitab</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>A median is a line that divides the box into two parts. If the median is 10, it means there are the same number of data points above and below the line.</p></li>
+<li><p>There are two quartiles at the ends of the box, the upper (Q3) and lower (Q1). A third quartile of 15 indicates that 75% of observations are below that level.</p></li>
+<li><p>The difference between Quartiles 1 and 3 is called the interquartile range (IQR)</p></li>
+<li><p>The extreme line shows Q3+1.5 x IQR to Q1-1.5 x IQR (the highest and lowest value excluding outliers). Dots (or other markers) beyond the extreme line shows potential outliers.</p></li>
+</ul>
+<p>However, you should keep in mind that data distribution is hidden behind each box. Normal distributions could look exactly like bimodal distributions. It is recommended to consider a violin plot or a ridgline chart instead.</p>
+<p>We will demonstrate on <code>ToothGrowth</code> data set. The data set showed the Effect of Vitamin C on Tooth Growth in Guinea Pigs.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of ToothGrowth data set </caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">len</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">supp</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4.2</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7.3</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.4</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10.0</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11.2</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11.2</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.2</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.0</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15.2</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17.3</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17.3</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13.6</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18.8</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15.5</td>
+<td style="text-align: left;">VC</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">ggplot</span>(ToothGrowth, </span>
+<span id="cb26-2"><a href="#cb26-2"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(dose), <span class="at">y =</span> len, </span>
+<span id="cb26-3"><a href="#cb26-3"></a>           <span class="at">fill =</span> <span class="fu">as.factor</span>(dose), <span class="at">group =</span> <span class="fu">as.factor</span>(dose))) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="fu">geom_jitter</span>(<span class="at">color=</span><span class="st">"grey30"</span>, <span class="at">size=</span><span class="dv">2</span>, <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Dose (mg/day)"</span>, <span class="at">y =</span> <span class="st">"Tooth length (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb26-9"><a href="#cb26-9"></a></span>
+<span id="cb26-10"><a href="#cb26-10"></a></span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="fu">ggplot</span>(ToothGrowth, </span>
+<span id="cb26-12"><a href="#cb26-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(dose), <span class="at">y =</span> len, </span>
+<span id="cb26-13"><a href="#cb26-13"></a>           <span class="at">fill =</span> <span class="fu">as.factor</span>(dose), <span class="at">group =</span> <span class="fu">as.factor</span>(dose))) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb26-16"><a href="#cb26-16"></a>  <span class="fu">geom_jitter</span>(<span class="at">color=</span><span class="st">"grey30"</span>, <span class="at">size=</span><span class="dv">2</span>, <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Dose (mg/day)"</span>, <span class="at">y =</span> <span class="st">"Tooth length (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb26-18"><a href="#cb26-18"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb26-19"><a href="#cb26-19"></a></span>
+<span id="cb26-20"><a href="#cb26-20"></a><span class="fu">ggplot</span>(ToothGrowth, </span>
+<span id="cb26-21"><a href="#cb26-21"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(dose), <span class="at">y =</span> len, </span>
+<span id="cb26-22"><a href="#cb26-22"></a>           <span class="at">fill =</span> <span class="fu">as.factor</span>(dose), <span class="at">group =</span> <span class="fu">as.factor</span>(dose))) <span class="sc">+</span></span>
+<span id="cb26-23"><a href="#cb26-23"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb26-24"><a href="#cb26-24"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb26-25"><a href="#cb26-25"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb26-26"><a href="#cb26-26"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Dose (mg/day)"</span>, <span class="at">y =</span> <span class="st">"Tooth length (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb26-27"><a href="#cb26-27"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Box plot with jitters</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-25-2.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Violin plot with jitters</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-25-3.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Box with violin plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="ridgeline-plot" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="ridgeline-plot"><span class="header-section-number">2.2.1</span> Ridgeline plot</h4>
+<p>Previous section showed how to visualize the distribution stack horizontally with histograms and density plots. To expand on this idea, we’ll stagger the distribution plots vertically. Ridgeline plots look like mountain ridgelines, so they’re called that. The ridgeline plot is a good way to show trends in distributions. This example checks the distribution of diamond prices based on their quality.</p>
+<p>This graph is made using the <code>ggridges</code> library, which is a ggplot2 extension and compatible with the syntax of the ggplot2. For the X axis, we specify the <code>price</code> column, and for the Y axis, we specify the <code>cut</code> column. By adding <code>'fill=cut'</code>, we can use one color per category and display them separately.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span> cut, <span class="at">fill =</span> cut)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Picking joint bandwidth of 458</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="visualizing-proportions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="visualizing-proportions"><span class="header-section-number">3</span> Visualizing Proportions</h2>
+<p>In many cases, we want to show how something breaks down into parts that each represent a portion of the whole. Among data scientists, pie charts are often maligned because they are ubiquitous in business presentations.</p>
+<section id="pie-and-donut-chart" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="pie-and-donut-chart"><span class="header-section-number">3.1</span> Pie and Donut Chart</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create Data</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="at">group=</span>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>],</span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="at">value=</span><span class="fu">c</span>(<span class="dv">13</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">21</span>,<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of ToothGrowth data set </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Basic piechart</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> value, <span class="at">fill =</span> group)) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb30-4"><a href="#cb30-4"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
+<span id="cb30-5"><a href="#cb30-5"></a>           <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">scale_fill_npg</span>() <span class="sc">+</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">theme_void</span>() <span class="co"># remove background, grid, numeric labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>To create pie chart with data label</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Piechart with data labels</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="do">## Compute the position of labels</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>data_2 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(group)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> value <span class="sc">/</span> <span class="fu">sum</span>(data<span class="sc">$</span>value) <span class="sc">*</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">mutate</span>(<span class="at">ypos =</span> <span class="fu">cumsum</span>(prop)<span class="sc">-</span> <span class="fl">0.5</span><span class="sc">*</span>prop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of ToothGrowth data set </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">prop</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ypos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3.846154</td>
+<td style="text-align: right;">1.923077</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">40.384615</td>
+<td style="text-align: right;">24.038462</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">17.307692</td>
+<td style="text-align: right;">52.884615</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">13.461538</td>
+<td style="text-align: right;">68.269231</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">25.000000</td>
+<td style="text-align: right;">87.500000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Plot</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">ggplot</span>(data_2, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>prop, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> ypos, <span class="at">label =</span> group), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size=</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">scale_fill_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For accurate representation of data, alternative plots like percent stacked bar charts or streamlined plots should be considered instead of pie charts. Pie charts can make it hard to compare fractions since the relative sizes are hard to see. So if you want a more accurate representation of the data, you should use another type of chart.</p>
+</section>
+</section>
+<section id="visualizing-x-y-relationships" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="visualizing-x-y-relationships"><span class="header-section-number">4</span> Visualizing x-y Relationships</h2>
+<p>A dataset may contain two or more quantitative variables, and we might be interested in how they relate. In order to plot just the relationship between two variables, such as height and weight, we use a scatter plot. The bubble chart, scatter plot matrix, or correlogram are all good options if we want to show more than two variables at once. Further, principal component analysis is great for high-dimensional datasets, i.e., observing multiple variables at once.</p>
+<section id="scatter-plot" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">4.1</span> Scatter Plot</h3>
+<p>In a scatterplot, two variables are plotted along two axes. It shows how they’re related, eventually revealing a correlation. Here the relationship between Petal width and Petal length in <code>iris</code> data set will demonstrated.</p>
+<section id="basic-scatter-plot" class="level4" data-number="4.1.1">
+<h4 data-number="4.1.1" class="anchored" data-anchor-id="basic-scatter-plot"><span class="header-section-number">4.1.1</span> Basic scatter plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Petal width (cm)"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4"></a>       <span class="at">y =</span> <span class="st">"Petal length (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>  <span class="fu">scale_color_npg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="facet-scatter-plot" class="level4" data-number="4.1.2">
+<h4 data-number="4.1.2" class="anchored" data-anchor-id="facet-scatter-plot"><span class="header-section-number">4.1.2</span> Facet scatter plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Petal width (cm)"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4"></a>       <span class="at">y =</span> <span class="st">"Petal length (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">scale_color_npg</span>() <span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="scatter-plot-with-trend-line" class="level4" data-number="4.1.3">
+<h4 data-number="4.1.3" class="anchored" data-anchor-id="scatter-plot-with-trend-line"><span class="header-section-number">4.1.3</span> Scatter plot with trend line</h4>
+<p>Adding a linear trend to a scatter plot helps the reader identify patterns. The linear trend also helps to identify outliers, as points that are far from the trend are easily visible. It can also be used to make predictions about future values based on current data. <code>geom_smooth()</code> in ggplot2 allows you to add the linear trend and confidence interval around it by using <code>"se = TRUE"</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Miles/(US) gallon"</span>,</span>
+<span id="cb35-5"><a href="#cb35-5"></a>       <span class="at">y =</span> <span class="st">"Displacement (cu.in.)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="correlograms" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="correlograms"><span class="header-section-number">4.2</span> Correlograms</h3>
+<p>When we have more than three or four variables, all-against-all scatter plots get a little complicated. Rather than presenting raw data, it’s better to quantify the amount of association between pairs of variables. Correlation coefficients are a common way to do this.</p>
+<p>The correlation coefficient r measures how much two variables correlate between -1 and 1. A value of r = 0 means there is no association whatsoever, and a value of 1 or -1 indicates an ideal association. There are two kinds of correlation coefficients: correlated (larger values in one variable coincide with larger values in the other) or anticorrelated (larger values in one variable coincide with smaller values in the other).</p>
+<p>Here’s a quick demonstration of all-against-all correlation analysis and a correlogram plotted using the <code>mtcars</code> data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Create data </span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(mtcars)</span>
+<span id="cb37-3"><a href="#cb37-3"></a> </span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="co"># Check correlation between variables, default uses Pearson</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>cor_mtcars <span class="ot">&lt;-</span> <span class="fu">cor</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Example of all-against-all correlation coefficient in mtcars data </caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mpg</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">cyl</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">disp</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">hp</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">drat</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">wt</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">qsec</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">vs</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">am</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">gear</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">mpg</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">-0.8521620</td>
+<td style="text-align: right;">-0.8475514</td>
+<td style="text-align: right;">-0.7761684</td>
+<td style="text-align: right;">0.6811719</td>
+<td style="text-align: right;">-0.8676594</td>
+<td style="text-align: right;">0.4186840</td>
+<td style="text-align: right;">0.6640389</td>
+<td style="text-align: right;">0.5998324</td>
+<td style="text-align: right;">0.4802848</td>
+<td style="text-align: right;">-0.5509251</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cyl</td>
+<td style="text-align: right;">-0.8521620</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.9020329</td>
+<td style="text-align: right;">0.8324475</td>
+<td style="text-align: right;">-0.6999381</td>
+<td style="text-align: right;">0.7824958</td>
+<td style="text-align: right;">-0.5912421</td>
+<td style="text-align: right;">-0.8108118</td>
+<td style="text-align: right;">-0.5226070</td>
+<td style="text-align: right;">-0.4926866</td>
+<td style="text-align: right;">0.5269883</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">disp</td>
+<td style="text-align: right;">-0.8475514</td>
+<td style="text-align: right;">0.9020329</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.7909486</td>
+<td style="text-align: right;">-0.7102139</td>
+<td style="text-align: right;">0.8879799</td>
+<td style="text-align: right;">-0.4336979</td>
+<td style="text-align: right;">-0.7104159</td>
+<td style="text-align: right;">-0.5912270</td>
+<td style="text-align: right;">-0.5555692</td>
+<td style="text-align: right;">0.3949769</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hp</td>
+<td style="text-align: right;">-0.7761684</td>
+<td style="text-align: right;">0.8324475</td>
+<td style="text-align: right;">0.7909486</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">-0.4487591</td>
+<td style="text-align: right;">0.6587479</td>
+<td style="text-align: right;">-0.7082234</td>
+<td style="text-align: right;">-0.7230967</td>
+<td style="text-align: right;">-0.2432043</td>
+<td style="text-align: right;">-0.1257043</td>
+<td style="text-align: right;">0.7498125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">drat</td>
+<td style="text-align: right;">0.6811719</td>
+<td style="text-align: right;">-0.6999381</td>
+<td style="text-align: right;">-0.7102139</td>
+<td style="text-align: right;">-0.4487591</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">-0.7124406</td>
+<td style="text-align: right;">0.0912048</td>
+<td style="text-align: right;">0.4402785</td>
+<td style="text-align: right;">0.7127111</td>
+<td style="text-align: right;">0.6996101</td>
+<td style="text-align: right;">-0.0907898</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wt</td>
+<td style="text-align: right;">-0.8676594</td>
+<td style="text-align: right;">0.7824958</td>
+<td style="text-align: right;">0.8879799</td>
+<td style="text-align: right;">0.6587479</td>
+<td style="text-align: right;">-0.7124406</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">-0.1747159</td>
+<td style="text-align: right;">-0.5549157</td>
+<td style="text-align: right;">-0.6924953</td>
+<td style="text-align: right;">-0.5832870</td>
+<td style="text-align: right;">0.4276059</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">qsec</td>
+<td style="text-align: right;">0.4186840</td>
+<td style="text-align: right;">-0.5912421</td>
+<td style="text-align: right;">-0.4336979</td>
+<td style="text-align: right;">-0.7082234</td>
+<td style="text-align: right;">0.0912048</td>
+<td style="text-align: right;">-0.1747159</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.7445354</td>
+<td style="text-align: right;">-0.2298609</td>
+<td style="text-align: right;">-0.2126822</td>
+<td style="text-align: right;">-0.6562492</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vs</td>
+<td style="text-align: right;">0.6640389</td>
+<td style="text-align: right;">-0.8108118</td>
+<td style="text-align: right;">-0.7104159</td>
+<td style="text-align: right;">-0.7230967</td>
+<td style="text-align: right;">0.4402785</td>
+<td style="text-align: right;">-0.5549157</td>
+<td style="text-align: right;">0.7445354</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.1683451</td>
+<td style="text-align: right;">0.2060233</td>
+<td style="text-align: right;">-0.5696071</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">am</td>
+<td style="text-align: right;">0.5998324</td>
+<td style="text-align: right;">-0.5226070</td>
+<td style="text-align: right;">-0.5912270</td>
+<td style="text-align: right;">-0.2432043</td>
+<td style="text-align: right;">0.7127111</td>
+<td style="text-align: right;">-0.6924953</td>
+<td style="text-align: right;">-0.2298609</td>
+<td style="text-align: right;">0.1683451</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.7940588</td>
+<td style="text-align: right;">0.0575344</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gear</td>
+<td style="text-align: right;">0.4802848</td>
+<td style="text-align: right;">-0.4926866</td>
+<td style="text-align: right;">-0.5555692</td>
+<td style="text-align: right;">-0.1257043</td>
+<td style="text-align: right;">0.6996101</td>
+<td style="text-align: right;">-0.5832870</td>
+<td style="text-align: right;">-0.2126822</td>
+<td style="text-align: right;">0.2060233</td>
+<td style="text-align: right;">0.7940588</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">0.2740728</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carb</td>
+<td style="text-align: right;">-0.5509251</td>
+<td style="text-align: right;">0.5269883</td>
+<td style="text-align: right;">0.3949769</td>
+<td style="text-align: right;">0.7498125</td>
+<td style="text-align: right;">-0.0907898</td>
+<td style="text-align: right;">0.4276059</td>
+<td style="text-align: right;">-0.6562492</td>
+<td style="text-align: right;">-0.5696071</td>
+<td style="text-align: right;">0.0575344</td>
+<td style="text-align: right;">0.2740728</td>
+<td style="text-align: right;">1.0000000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># visualization of correlations</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="do">## Squared correlogram</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">ggcorr</span>(data, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">"everything"</span>, <span class="st">"pearson"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="do">## Circle correlogram</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">ggcorr</span>(data, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">"everything"</span>, <span class="st">"pearson"</span>), </span>
+<span id="cb39-3"><a href="#cb39-3"></a>       <span class="at">geom =</span> <span class="st">"circle"</span>,</span>
+<span id="cb39-4"><a href="#cb39-4"></a>       <span class="at">min_size =</span> <span class="dv">5</span>,</span>
+<span id="cb39-5"><a href="#cb39-5"></a>       <span class="at">max_size =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-38-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="dimension-reduction" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="dimension-reduction"><span class="header-section-number">4.3</span> Dimension Reduction</h3>
+<p>High-dimensional datasets commonly have multiple correlated variables that convey overlapping information, so dimension reduction relies on that. A smaller number of key dimensions can be reduced without losing data characteristics.</p>
+<p>There are many dimension reduction techniques. But, the most widely used method is principal components analysis (PCA) for exploring the data. PCA introduces an additional set of variables (called principal components, PCs) by linear combination of the original variables in the data, standardized to zero mean and unit variance. PCs are chosen to be uncorrelated, and they are ordered so the first component captures the most variation in the data, and each subsequent component captures less and less. In most cases, you can see the key features of data from the first two or three PCs.</p>
+<p>We’ll show you how to compute and visualize PCA in R using the <code>prcomp()</code> function and the factoextra package. To show PCA, the factoextra’s built-in data, a <code>Decathlon2.active</code>, will be used.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Prepare data</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">data</span>(decathlon2)</span>
+<span id="cb40-3"><a href="#cb40-3"></a>decathlon2.active <span class="ot">&lt;-</span> decathlon2[<span class="dv">1</span><span class="sc">:</span><span class="dv">23</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">X100m</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Long.jump</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Shot.put</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">High.jump</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">X400m</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">X110m.hurdle</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Discus</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pole.vault</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Javeline</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">X1500m</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SEBRLE</td>
+<td style="text-align: right;">11.04</td>
+<td style="text-align: right;">7.58</td>
+<td style="text-align: right;">14.83</td>
+<td style="text-align: right;">2.07</td>
+<td style="text-align: right;">49.81</td>
+<td style="text-align: right;">14.69</td>
+<td style="text-align: right;">43.75</td>
+<td style="text-align: right;">5.02</td>
+<td style="text-align: right;">63.19</td>
+<td style="text-align: right;">291.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLAY</td>
+<td style="text-align: right;">10.76</td>
+<td style="text-align: right;">7.40</td>
+<td style="text-align: right;">14.26</td>
+<td style="text-align: right;">1.86</td>
+<td style="text-align: right;">49.37</td>
+<td style="text-align: right;">14.05</td>
+<td style="text-align: right;">50.72</td>
+<td style="text-align: right;">4.92</td>
+<td style="text-align: right;">60.15</td>
+<td style="text-align: right;">301.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BERNARD</td>
+<td style="text-align: right;">11.02</td>
+<td style="text-align: right;">7.23</td>
+<td style="text-align: right;">14.25</td>
+<td style="text-align: right;">1.92</td>
+<td style="text-align: right;">48.93</td>
+<td style="text-align: right;">14.99</td>
+<td style="text-align: right;">40.87</td>
+<td style="text-align: right;">5.32</td>
+<td style="text-align: right;">62.77</td>
+<td style="text-align: right;">280.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YURKOV</td>
+<td style="text-align: right;">11.34</td>
+<td style="text-align: right;">7.09</td>
+<td style="text-align: right;">15.19</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">50.42</td>
+<td style="text-align: right;">15.31</td>
+<td style="text-align: right;">46.26</td>
+<td style="text-align: right;">4.72</td>
+<td style="text-align: right;">63.44</td>
+<td style="text-align: right;">276.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ZSIVOCZKY</td>
+<td style="text-align: right;">11.13</td>
+<td style="text-align: right;">7.30</td>
+<td style="text-align: right;">13.48</td>
+<td style="text-align: right;">2.01</td>
+<td style="text-align: right;">48.62</td>
+<td style="text-align: right;">14.17</td>
+<td style="text-align: right;">45.67</td>
+<td style="text-align: right;">4.42</td>
+<td style="text-align: right;">55.37</td>
+<td style="text-align: right;">268.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McMULLEN</td>
+<td style="text-align: right;">10.83</td>
+<td style="text-align: right;">7.31</td>
+<td style="text-align: right;">13.76</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">49.91</td>
+<td style="text-align: right;">14.38</td>
+<td style="text-align: right;">44.41</td>
+<td style="text-align: right;">4.42</td>
+<td style="text-align: right;">56.37</td>
+<td style="text-align: right;">285.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MARTINEAU</td>
+<td style="text-align: right;">11.64</td>
+<td style="text-align: right;">6.81</td>
+<td style="text-align: right;">14.57</td>
+<td style="text-align: right;">1.95</td>
+<td style="text-align: right;">50.14</td>
+<td style="text-align: right;">14.93</td>
+<td style="text-align: right;">47.60</td>
+<td style="text-align: right;">4.92</td>
+<td style="text-align: right;">52.33</td>
+<td style="text-align: right;">262.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HERNU</td>
+<td style="text-align: right;">11.37</td>
+<td style="text-align: right;">7.56</td>
+<td style="text-align: right;">14.41</td>
+<td style="text-align: right;">1.86</td>
+<td style="text-align: right;">51.10</td>
+<td style="text-align: right;">15.06</td>
+<td style="text-align: right;">44.99</td>
+<td style="text-align: right;">4.82</td>
+<td style="text-align: right;">57.19</td>
+<td style="text-align: right;">285.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BARRAS</td>
+<td style="text-align: right;">11.33</td>
+<td style="text-align: right;">6.97</td>
+<td style="text-align: right;">14.09</td>
+<td style="text-align: right;">1.95</td>
+<td style="text-align: right;">49.48</td>
+<td style="text-align: right;">14.48</td>
+<td style="text-align: right;">42.10</td>
+<td style="text-align: right;">4.72</td>
+<td style="text-align: right;">55.40</td>
+<td style="text-align: right;">282.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NOOL</td>
+<td style="text-align: right;">11.33</td>
+<td style="text-align: right;">7.27</td>
+<td style="text-align: right;">12.68</td>
+<td style="text-align: right;">1.98</td>
+<td style="text-align: right;">49.20</td>
+<td style="text-align: right;">15.29</td>
+<td style="text-align: right;">37.92</td>
+<td style="text-align: right;">4.62</td>
+<td style="text-align: right;">57.44</td>
+<td style="text-align: right;">266.6</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Calculate principal components</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>res.pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(decathlon2.active, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="co"># Summarize PCA</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="fu">summary</span>(res.pca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Importance of components:
+                          PC1    PC2    PC3     PC4     PC5     PC6     PC7
+Standard deviation     2.0308 1.3559 1.1132 0.90523 0.83759 0.65029 0.55007
+Proportion of Variance 0.4124 0.1839 0.1239 0.08194 0.07016 0.04229 0.03026
+Cumulative Proportion  0.4124 0.5963 0.7202 0.80213 0.87229 0.91458 0.94483
+                           PC8     PC9   PC10
+Standard deviation     0.52390 0.39398 0.3492
+Proportion of Variance 0.02745 0.01552 0.0122
+Cumulative Proportion  0.97228 0.98780 1.0000</code></pre>
+</div>
+</div>
+<p>Show the percentage of variance explained by each principal component using eigenvalues (scree plot).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Visualizing scree plot</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">fviz_eig</span>(res.pca) <span class="sc">+</span> <span class="fu">theme_grey</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Visualize graph of individuals. Individuals with a similar profile are grouped together.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Individual PCA</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">fviz_pca_ind</span>(res.pca,</span>
+<span id="cb44-3"><a href="#cb44-3"></a>             <span class="at">col.ind =</span> <span class="st">"cos2"</span>, <span class="co"># Color by the quality of representation</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>             <span class="at">gradient.cols =</span> <span class="fu">c</span>(<span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span>),</span>
+<span id="cb44-5"><a href="#cb44-5"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>     <span class="co"># Avoid text overlapping</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Graph of variables. Positive correlated variables point to the same side of the plot. Negative correlated variables point to opposite sides of the graph.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Variable PCA</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">fviz_pca_var</span>(res.pca,</span>
+<span id="cb45-3"><a href="#cb45-3"></a>             <span class="at">col.var =</span> <span class="st">"contrib"</span>, <span class="co"># Color by contributions to the PC</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>             <span class="at">gradient.cols =</span> <span class="fu">c</span>(<span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span>),</span>
+<span id="cb45-5"><a href="#cb45-5"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>     <span class="co"># Avoid text overlapping</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Biplot of individuals and variables</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Biplot</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">fviz_pca_biplot</span>(res.pca, <span class="at">repel =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb46-3"><a href="#cb46-3"></a>                <span class="at">col.var =</span> <span class="st">"#FC4E07"</span>, <span class="co"># Variables color</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>                <span class="at">col.ind =</span> <span class="st">"#696969"</span>  <span class="co"># Individuals color</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>                )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="directory_of_visualizations_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="references"><span class="header-section-number">5</span> References</h2>
+<ul>
+<li><p><a href="https://clauswilke.com/dataviz/index.html">Fundamentals of Data Visualization</a>: by Claus O. Wilke, 2019</p></li>
+<li><p><a href="https://r-graphics.org/">R Graphics Cookbook, 2nd edition</a>. Winston Chang, 2023.</p></li>
+<li><p><a href="http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/">Principal Component Analysis in R: prcomp vs princomp</a> from STHDA, 2017.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Jiratchaya Nuanpirom</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -15,19 +15,6 @@ execute:
 bibliography: references.bib
 ---
 
-Load R pakcages
-
-```{r}
-pacman::p_load(
-  'tidyverse',
-  'openxlsx',
-  'kableExtra',
-  'DESeq2',
-  'pcaExplorer',
-  'ComplexHeatmap',
-  'RColorBrewer'
-  )
-```
 
 ## Plotting Abundance of Representative Terms
 
@@ -35,16 +22,18 @@ pacman::p_load(
 #| tbl-cap: "First 10 lines of the number of COG category results."
 
 # Load libraries
-library(tidyverse)
-library(kableExtra)
-library(openxlsx)
+pacman::p_load(
+  "tidyverse",
+  "kableExtra",
+  "openxlsx"
+)
 
 
 # Load COG dictionary
-COG_dict <- read_delim("../datasets/cog_category.txt")          # <1>
+COG_dict <- read_delim("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/cog_category.txt")   # <1>
 
 # Load eggNOG-mapper result
-emapper_dt <- read.xlsx("../datasets/Dme_chr4.emapper.annotations.xlsx",    # <2>
+emapper_dt <- read.xlsx("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/Dme_chr4.emapper.annotations.xlsx",    # <2>
                         startRow = 3, 
                         cols = 7) %>% 
   filter(COG_category != "-") %>%                               # <3>
@@ -98,8 +87,19 @@ We will demonstrate PCA on a *pasilla* data set [@brooks2010]. This data set was
 ```{r}
 #| fig-width: 6
 #| fig-height: 4
+
+# Load libraries
+pacman::p_load(
+  "tidyverse",
+  "DESeq2",
+  "kableExtra",
+  "pcaExplorer",
+  "factoextra",
+  "ggsci"
+)
+
 # Load data set
-cts <- read_delim("../datasets/cts.tsv")
+cts <- read_delim("https://raw.githubusercontent.com/JirathNuan/r-handviz-workshop/main/datasets/cts.tsv")
 
 # Prepare DESeq input, which is expecting a matrix of integers.
 de_input <- as.matrix(cts[,-1])
@@ -130,9 +130,12 @@ dds <- DESeq(dds)
 cts_norm <- counts(dds, normalized = TRUE)
 
 # Show how the data looks like
+head(cts_norm) %>% kbl()
 ```
 
 ```{r}
+#| fig-width: 7
+#| fig-height: 4.5
 # Plot PCA With pcaExplorer
 rld_dds <- rlogTransformation(dds)
 pca_dds <- pcaplot(rld_dds, 
@@ -145,11 +148,18 @@ pca_dds
 
 
 ```{r}
+#| fig-width: 7
+#| fig-height: 4.5
 # Scree plot
 pcaobj_dds <- prcomp(t(assay(rld_dds)))
 
-pcascree(pcaobj_dds, type = "pev",
-         title = "Proportion of explained proportion of variance - cts data set")
+# Visualizing scree plot
+fviz_eig(pcaobj_dds, 
+         addlabels = TRUE, 
+         barfill = pal_npg()(1),
+         barcolor = "black",
+         title = "Proportion of explained proportion of variance - cts data set",
+         ggtheme = theme_gray())
 ```
 Extracting the top principal components
 
@@ -160,14 +170,11 @@ top100_pc <- hi_loadings(pcaobj_dds,
                          exprTable = counts(dds))
 
 # Show how experimental data looks like
-top100_pc %>% kbl() %>% kable_styling(full_width = FALSE)
+head(top100_pc) %>% kbl() %>% kable_styling(full_width = FALSE)
 
-
-# or alternatively plot the values
-hi_loadings(pcaobj_dds, topN = 20)
 ```
 
-Biplot and map individuals using `genespca()`
+Biplot using `genespca()`
 
 `genespca()` computes and plots the principal components of the genes, eventually displaying the samples as in a typical biplot visualization. This is the function in action for the Genes View tab.
 
@@ -183,17 +190,25 @@ genespca(
   choices = c(1, 2),
   arrowColors = cols_cts,
   groupNames = groups_cts,
-  alpha = 0.2,
   useRownamesAsLabels = FALSE,
-  varname.size = 5
+  varname.size = 5,
+  biplot = TRUE,
+  alpha = 0.5,
+  point_size = 2.5
 )
+
 ```
 Plots the distribution of expression values, either with density lines, boxplots or violin plots.
 
 ```{r}
 #| layout-ncol: 3
-distro_expr(rld_dds, plot_type = "violin")
-distro_expr(rld_dds, plot_type = "boxplot")
+distro_expr(rld_dds, plot_type = "violin") + 
+  scale_fill_npg() + 
+  scale_color_npg()
+
+distro_expr(rld_dds, plot_type = "boxplot") + 
+  scale_fill_npg() + 
+  scale_color_npg()
 ```
 
 
@@ -208,12 +223,23 @@ annot_column <- data.frame(sample = colnames(top100_pc),
   column_to_rownames(var = "sample")
 
 annot_column %>% kbl()
+
+# Create a list of annotation color
+sample_pal <- pal_npg()(2)
+annot_colors <- list(group = c(treated = sample_pal[1],
+                               untreated = sample_pal[2]))
 ```
 
 
 ```{r}
 #| fig-width: 3
 #| fig-height: 5
+# Load libraries
+pacman::p_load(
+  "ComplexHeatmap",
+  "RColorBrewer"
+)
+
 # Heatmap of the top 100 principal components
 hm_top100pc <- pheatmap(
   top100_pc,
@@ -224,7 +250,11 @@ hm_top100pc <- pheatmap(
   clustering_distance_rows = "euclidean",
   clustering_distance_cols = "euclidean",
   clustering_method = "complete",
-  annotation_col = annot_column
+  annotation_col = annot_column,
+  annotation_names_col = FALSE,
+  annotation_colors = annot_colors,
+  cutree_rows = 3,
+  annotation_legend = FALSE
 )
 hm_top100pc
 ```
@@ -242,6 +272,8 @@ dds_result <- results(object = dds,
 Filter DEG, we'll use absolute log2FC > 1 and FDR < 0.05
 
 ```{r}
+#| fig-width: 3
+#| fig-height: 5
 dds_result_deg <- dds_result %>% 
   filter(padj < 0.05 & abs(log2FoldChange) > 1)
 
@@ -258,7 +290,12 @@ hm_deg <- pheatmap(
   name = "Normalized count",
   clustering_distance_rows = "euclidean",
   clustering_distance_cols = "euclidean",
-  clustering_method = "complete")
+  clustering_method = "complete",
+  annotation_col = annot_column,
+  annotation_names_col = FALSE,
+  annotation_colors = annot_colors,
+  cutree_rows = 2,
+  annotation_legend = FALSE)
 hm_deg
 ```
 
@@ -266,7 +303,9 @@ hm_deg
 ## Volcano Plot
 
 ```{r}
-library(EnhancedVolcano)
+pacman::p_load(
+  "EnhancedVolcano"
+)
 
 volcano_deg <- dds_result %>% 
   mutate(Expression = case_when(
@@ -304,14 +343,14 @@ p_volcano
 
 ## Venn Diagram and Upset Plot
 
-Venn: venndiagram
+### Plotting venn diagram with `ggvenn`
 
 ```{r}
 # Load library
-library(VennDiagram)
+pacman::p_load("ggvenn", "ggsci")
 
 # Load data
-mouse_hallmarks <- read_delim("../datasets/mouse_msigdb_4hallmarks.txt")
+mouse_hallmarks <- read_delim("../datasets/mouse_msigdb_6hallmarks.txt")
 
 # Split into list
 lst_mouse_hallmark <- as.list(mouse_hallmarks)
@@ -319,37 +358,269 @@ lst_mouse_hallmark <- as.list(mouse_hallmarks)
 lst_mouse_hallmark <- lapply(lst_mouse_hallmark, na.omit)
 
 # Chart
-display_venn(
-  lst_mouse_hallmark,
-  category.names = names(lst_mouse_hallmark),
-  fill = c("#999999", "#E69F00", "#56B4E9", "#009E73")
+ggvenn(
+  lst_mouse_hallmark, 
+  fill_color = pal_npg()(6),
+  stroke_size = 0.5, 
+  set_name_size = 3
   )
 
 ```
 
-upset: complexheatmap
+### Venn diagram alternative: Upset Plot
 
 ```{r}
-library(ComplexHeatmap)
+# Load libraries
+pacman::p_load("ComplexHeatmap")
+
 set.seed(123)
-lt = list(a = sample(letters, 5),
-          b = sample(letters, 10),
-          c = sample(letters, 15))
-m1 = make_comb_mat(lt)
-UpSet(m1)
+
+# Make present-absent matrix of data list
+mouse_hm_mat01 <- list_to_matrix(lst_mouse_hallmark)
+# Show how the combination matrix looks like
+head(mouse_hm_mat01) %>% kbl()
+
+# Make the combination matrix
+comb_mat <- make_comb_mat(lst_mouse_hallmark)
+comb_mat
 ```
 
-## Plotting Diversity Indices
+The default mode of combination matrix is 'distinct'.
+blah
 
-ggpubr
 
-## Plotting Individual Gene Expression
+```{r}
+pal_upset <- pal_npg()(4)
+# Plot upset following the default upset mode.
+upset_mouse_hm <-
+  UpSet(
+    comb_mat,
+    comb_col = pal_upset[1],
+    row_names_gp = gpar(fontsize = 10),
+    right_annotation = upset_right_annotation(
+      comb_mat,
+      gp = gpar(fill = pal_upset[2]),
+      add_numbers = TRUE
+    ),
+    top_annotation = upset_top_annotation(
+      comb_mat,
+      gp = gpar(fill = pal_upset[1]),
+      add_numbers = TRUE
+    )
+  )
+upset_mouse_hm
+```
 
-ggpubr
 
-## Circos plot
 
-## 
+
+
+## ggplot2 Based Publication Ready Plots with `ggpubr`
+
+```{r}
+pacman::p_load(
+  "ggpubr",
+  "ggsci",
+  "kableExtra"
+)
+
+# Load dataset
+mouseLiver_ctg <- read_csv("../datasets/mouseLiver_data_ClinicalTraits.csv")
+
+# Inspect the data
+head(mouseLiver_ctg) %>% kbl()
+
+```
+
+### Histogram
+
+```{r}
+gghistogram(
+  mouseLiver_ctg,
+  x = "weight_g",
+  add = "mean",
+  rug = TRUE,
+  color = "sex",
+  fill = "sex",
+  bins = 30,
+  palette = "npg",
+  xlab = "Weight (g)",
+  ylab = "Frequency"
+)
+```
+### Density plot 
+
+```{r}
+ggdensity(
+  mouseLiver_ctg,
+  x = "weight_g",
+  add = "mean",
+  rug = TRUE,
+  color = "sex",
+  fill = "sex",
+  palette = "npg",
+  xlab = "Weight (g)",
+  ylab = "Frequency"
+)
+```
+
+### Simple box plot
+
+```{r}
+p_boxplot <- ggboxplot(ToothGrowth, x = "supp", y = "len",
+          color = "supp", palette = "npg",
+          add = "jitter",
+          xlab = "Supplement type",
+          ylab = "Tooth length")
+p_boxplot
+```
+
+Adding statistical significance to the plot
+
+- Pairwise comparison
+
+```{r}
+#| layout-ncol: 2
+# Try to calculate stat first
+compare_means(len ~ supp, data = ToothGrowth, method = "anova")
+compare_means(len ~ supp, data = ToothGrowth, method = "wilcox.test")
+
+# Plot box plot with significance
+p_boxplot + stat_compare_means(method = "anova")
+p_boxplot + stat_compare_means(method = "wilcox.test")
+
+# Change style of singnificance notation
+p_boxplot + stat_compare_means(method = "anova",
+                               aes(label = ..p.signif..),
+                               label.x = 1.5,
+                               label.y = 40)
+
+p_boxplot + stat_compare_means(method = "wilcox.test",
+                               aes(label = "p.signif"),
+                               label.x = 1.5,
+                               label.y = 40)
+```
+
+
+- Compare more than two groups
+
+```{r}
+#| layout-ncol: 2
+# Global test
+compare_means(len ~ dose,  data = ToothGrowth, method = "anova")
+
+# Default method = "kruskal.test" for multiple groups
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          fill = "dose", palette = "npg")+
+  stat_compare_means()
+
+# Change method to anova
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          fill = "dose", palette = "npg")+
+  stat_compare_means(method = "anova")
+```
+```{r}
+# Perorm pairwise comparisons
+compare_means(len ~ dose,  data = ToothGrowth)
+
+# Visualize: Specify the comparisons you want
+my_comparisons <- list(c("0.5", "1"), c("1", "2"), c("0.5", "2"))
+
+ggboxplot(
+  ToothGrowth,
+  x = "dose",
+  y = "len",
+  fill = "dose",
+  palette = "npg") +
+  stat_compare_means(comparisons = my_comparisons) + # Add pairwise comparisons p-value
+  stat_compare_means(label.y = 50)     # Add global p-value
+```
+
+- Multiple pairwise tests against a reference group
+
+```{r}
+# Pairwise comparison against reference
+compare_means(len ~ dose,
+              data = ToothGrowth,
+              ref.group = "0.5",
+              method = "t.test")
+
+# Visualize
+ggboxplot(
+  ToothGrowth,
+  x = "dose",
+  y = "len",
+  fill = "dose",
+  palette = "npg") +
+  stat_compare_means(method = "anova", label.y = 40) +      # Add global p-value
+  stat_compare_means(label = "p.signif",
+                     method = "t.test",
+                     ref.group = "0.5")                    # Pairwise comparison against reference
+```
+
+Multiple grouping variables
+
+```{r}
+compare_means(len ~ supp, data = ToothGrowth, group.by = "dose")
+
+# Box plot facetted by "dose"
+p_box <- ggboxplot(
+  ToothGrowth,
+  x = "supp",
+  y = "len",
+  color = "supp",
+  palette = "jco",
+  add = "jitter",
+  facet.by = "dose",
+  short.panel.labs = FALSE
+)
+# Use only p.format as label. Remove method name.
+p_box + stat_compare_means(label = "p.format")
+```
+
+### Bar and line plots (one grouping variable):
+
+```{r}
+#| layout-ncol: 2
+ggbarplot(
+  ToothGrowth,
+  x = "dose",
+  y = "len",
+  add = "mean_se",
+  fill = "supp",
+  palette = "npg",
+  color = "black",
+  position = position_dodge(0.8)) +
+  stat_compare_means(aes(group = supp), label = "p.signif", label.y = 29)
+
+ggline(
+  ToothGrowth,
+  x = "dose",
+  y = "len",
+  add = "mean_se",
+  color = "supp",
+  palette = "npg") +
+  stat_compare_means(aes(group = supp),
+                     label = "p.signif",
+                     label.y = c(16, 25, 29))
+```
+
+### Scatter plot
+
+```{r}
+p4 <- ggscatter(
+  mtcars,
+  x = "wt",
+  y = "mpg",
+  fill = "mpg",
+  size = 4,
+  shape = 21) +
+  gradient_fill(c("blue", "white", "red"))
+p4
+
+```
+
+
 
 ## Session info
 

@@ -10,7 +10,7 @@ project:
     - 'lectures/exploratory_data_analysis.qmd'
     - 'lectures/grammar_of_graphics.qmd'
     - 'lectures/directory_of_visualizations.qmd'
-    # - 'lectures/plotting_omics_data.qmd'
+    - 'lectures/plotting_omics_data.qmd'
     - 'lectures/arranging_plots.qmd'
     
     
