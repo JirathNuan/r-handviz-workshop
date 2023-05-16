@@ -53,6 +53,35 @@ bibliography: references.bib
 
 ![](img/r_versatility.png)
 
+## Loading R libraries (1)
+
+Common way to load library
+
+```{r}
+#| echo: true
+#| eval: false
+library(tidyverse)
+```
+
+## Loading R libraries (2)
+
+More efficient way to load multiple libraries at once with `pacman`:
+
+```{r}
+if (!require("pacman"))
+  install.packages("pacman"
+  )
+pacman::p_load(
+  "tidyverse", "paletteer", "scales",
+  "RColorBrewer", "ggpubr", "VennDiagram",
+  "circlize", "viridis", "png",
+  "GGally", "cowplot", "openxlsx",
+  "gridExtra", "gtable", "egg",
+  "ggfortify", "FactoMineR", "factoextra",
+  "gridGraphics", "corrplot", "plotly",
+  "agricolae", "ggsci", "colorBlindness")
+```
+
 ## Accessing Help & Documentation in RStudio
 
 ::: columns
@@ -508,13 +537,13 @@ dt_vsc_renamed <- mutate(dt_vsc_renamed,
                          Len_Diff = SL - PL)
 ```
 
--   Then, use function `summary()` to see the distribution of the values using the column \_\_\_\_\_\_\_\_\_\_\_.
+-   Then, use function `summary()` to see the distribution of the values using the column `Len_Diff`.
 
 ```{r}
 #| echo: true
 #| eval: false
 # Rough summarize the difference of sepal length and petal length 
-summary(dt_vsc_renamed$________)
+summary(dt_vsc_renamed$Len_Diff)
 ```
 
 Expected result:
@@ -590,9 +619,9 @@ dt2_iris <- datasets::iris %>%
   group_by(Species) %>%
   summarise(
     num_flowers = n(),
-    Mean_PL = ______________,
-    SD_PL = ______________) %>% 
-  mutate(SEM_PL = ______________)
+    Mean_PL = mean(Petal.Length),
+    SD_PL = sd(Petal.Length)) %>% 
+  mutate(SEM_PL = SD_PL/sqrt(num_flowers))
 ```
 :::
 

@@ -687,12 +687,20 @@ Jiratchaya Nuanpirom
 <aside><ol class="aside-footnotes"><li id="fn1"><p>GGally: Extension to ggplot2 (<a href="https://ggobi.github.io/ggally" class="uri">https://ggobi.github.io/ggally</a>)</p></li></ol></aside></section>
 <section id="practice" class="slide level2">
 <h2>Practice</h2>
-<p>Perform EDA on BLASTN result.</p>
-<p>Jump to qmd html.</p>
+<p>We’ll perform the EDA approach to initially explore the characteristics of the data set from <span class="citation" data-cites="ghazalpour2006">Ghazalpour et al. (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span>. The data set describes several physiological quantitative traits of female mice of a specific F2 intercross.</p>
+<p>First load the data into R environment:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>liverMice <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/mouseLiver_data_ClinicalTraits.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>📓 First, let’s try to explore overall aspects of the data using <code>ggpairs()</code> from <strong>GGally</strong> library. Are there any interesting variables to dig deeper ?</p>
+<p>📓 Given the data set, what type of visualization would be appropriate. And why ?</p>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-ghazalpour2006" class="csl-entry" role="listitem">
+Ghazalpour, Anatole, Sudheer Doss, Bin Zhang, Susanna Wang, Christopher Plaisier, Ruth Castellanos, Alec Brozell, et al. 2006. <span>“Integrating Genetic and Network Analysis to Characterize Genes Related to Mouse Weight.”</span> Edited by Greg Gibson. <em>PLoS Genetics</em> 2 (8): e130. <a href="https://doi.org/10.1371/journal.pgen.0020130">https://doi.org/10.1371/journal.pgen.0020130</a>.
+</div>
 <div id="ref-peng2020" class="csl-entry" role="listitem">
 Peng, Roger D. 2020. <em>Exploratory Data Analysis with r</em>. <a href="https://bookdown.org/rdpeng/exdata/">https://bookdown.org/rdpeng/exdata/</a>.
 </div>

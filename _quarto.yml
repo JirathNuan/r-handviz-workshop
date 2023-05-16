@@ -43,7 +43,7 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/JirathNuan
+        href: https://github.com/JirathNuan/r-handviz-workshop
       - icon: facebook
         href: https://www.facebook.com/pslabpsu
 

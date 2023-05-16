@@ -339,9 +339,21 @@ ggsave("mortality_rate_overview.png", p_mortality_overview,
 
 ## Practice
 
-Perform EDA on BLASTN result.
+We'll perform the EDA approach to initially explore the characteristics of the data set from @ghazalpour2006. The data set describes several physiological quantitative traits of female mice of a specific F2 intercross.
 
-Jump to qmd html.
+First load the data into R environment:
+
+```{r}
+#| echo: true
+#| eval: false
+liverMice <- read_csv("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/mouseLiver_data_ClinicalTraits.csv")
+```
+
+📓 First, let's try to explore overall aspects of the data using `ggpairs()` from **GGally** library. Are there any interesting variables to dig deeper ?
+
+📓 Given the data set, what type of visualization would be appropriate. And why ?
+
+
 
 ## References
 

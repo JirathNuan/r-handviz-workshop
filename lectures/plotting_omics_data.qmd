@@ -1,12 +1,15 @@
 ---
 title: "Plotting Omics Data"
-author: "Jiratchaya Nuanpirom"
+author: 
+  - "Jiratchaya Nuanpirom"
+  - "Prasert Yodsawat"
+  - "Khunanon Chanasongkram"
 date: "17 May 2023"
 format:
   html:
     toc: true
     number-sections: true
-    number-depth: 3
+    number-depth: 4
     code-annotations: hover
 execute: 
   eval: true
@@ -15,31 +18,41 @@ execute:
 bibliography: references.bib
 ---
 
+## Load libraries
+
+```{r}
+pacman::p_load(
+  "tidyverse",
+  "kableExtra",
+  "openxlsx",
+  "DESeq2",
+  "pcaExplorer",
+  "factoextra",
+  "ggsci",
+  "ComplexHeatmap",
+  "RColorBrewer",
+  "EnhancedVolcano",
+  "ggvenn", 
+  "ggpubr",
+  "kableExtra"
+  )
+```
 
 ## Plotting Abundance of Representative Terms
 
 ```{r, fig.height=5, fig.width=7}
 #| tbl-cap: "First 10 lines of the number of COG category results."
-
-# Load libraries
-pacman::p_load(
-  "tidyverse",
-  "kableExtra",
-  "openxlsx"
-)
-
-
 # Load COG dictionary
 COG_dict <- read_delim("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/cog_category.txt")   # <1>
 
 # Load eggNOG-mapper result
-emapper_dt <- read.xlsx("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/Dme_chr4.emapper.annotations.xlsx",    # <2>
+emapper_dt <- read.xlsx("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/Dme_chr4.emapper.annotations.xlsx",                   # <2>
                         startRow = 3, 
                         cols = 7) %>% 
   filter(COG_category != "-") %>%                               # <3>
   group_by(COG_category) %>%                                    # <4>
-  summarize(n = n()) %>%                                                   # <5>
-  left_join(COG_dict, by = c("COG_category" = "category")) %>%     # <6>
+  summarize(n = n()) %>%                                        # <5>
+  left_join(COG_dict, by = c("COG_category" = "category")) %>%  # <6>
   mutate(label = paste0(COG_category, ": ", category_name))     # <7>
 
 # Show first 10 lines of data frame
@@ -47,12 +60,12 @@ head(emapper_dt, 10) %>% kbl() %>% kable_styling(full_width = FALSE)
   
 # Plot
 ggplot(emapper_dt, aes(x = COG_category, y = n, fill = label)) +  # <8>
-  geom_bar(stat = "identity") +                                 # <9>
-  scale_y_continuous(breaks = seq(0, 100, 10)) +                # <10>
-  labs(x = "COG category",                                      # <11>
+  geom_bar(stat = "identity") +                                   # <9>
+  scale_y_continuous(breaks = seq(0, 100, 10)) +                  # <10>
+  labs(x = "COG category",                                        # <11>
        y = "Number of sequences", 
        fill = "COG category") +
-  theme(legend.key.size = unit(0.5, 'cm'))                      # <12>
+  theme(legend.key.size = unit(0.5, 'cm'))                        # <12>
 ```
 
 1.  `cog_category.txt` is a cluster of orthologous groups (COG) dictionary. Use for look up the category names into the plot.
@@ -81,71 +94,110 @@ ggplot(emapper_dt, aes(x = COG_category, y = n, fill = label)) +  # <8>
 
 ## Principal Component Analysis
 
-We will demonstrate PCA on a *pasilla* data set [@brooks2010]. This data set was obtained from an experiment on *Drosophila melanogaster* cell cultures that investigated the effects of knocking down the splicing factor *pasilla* using RNAi.
+Typically, PCA is used for dimensionality reduction to get lower-dimensional data while keeping the most variation possible by taking only the first few principal components. In principle, SVD (singlular value decomposition) or eigenvalues of the data covariance matrix can be used to evaluate the principal components.
 
+From [datacamp](https://www.datacamp.com/tutorial/pca-analysis-r), The PCA can be more easily computed by following these five steps:
+
+1.  Normalize data: As these data have different scales, performing PCA on them will result in a biased result. In order to ensure that each attribute contributes equally and to prevent one variable from dominating others, the data set needs to be normalized.
+
+2.  Computing the covariable matrix from the normalized data. This is a symmetric matrix, and each element (i, j) corresponds to the covariance between variables i and j.
+
+3.  Get Eigenvectors and eigenvalues: The term eigenvector refers to a direction in mathematics, such as "vertical" or "90 degrees". By contrast, an eigenvalue represents how much variance there is in a given direction in the data. Therefore, each eigenvector has a corresponding eigenvalue.
+
+4.  Select the principal components: It's about choosing the eigenvector with the highest eigenvalue that corresponds to the first principal component. The second principal component is the eigenvector with the second highest eigenvalue, etc.
+
+5.  Transforming data into a new form: A new subspace is defined by the principal components, so the original data is re-oriented by multiplying it by the previously computed eigenvectors. As a result of this transformation, the original data doesn't change, but instead provides a new perspective to better represent it.
+
+We will demonstrate PCA on a *pasilla* data set [@brooks2010]. This data set was obtained from an experiment on *Drosophila melanogaster* cell cultures that investigated the effects of knocking down the splicing factor *pasilla* using RNAi.
 
 ```{r}
 #| fig-width: 6
 #| fig-height: 4
-
-# Load libraries
-pacman::p_load(
-  "tidyverse",
-  "DESeq2",
-  "kableExtra",
-  "pcaExplorer",
-  "factoextra",
-  "ggsci"
-)
+#| tbl-subcap: 
+#|   - "First 10 rows of de_input"
+#|   - "Example of coldata"
 
 # Load data set
 cts <- read_delim("https://raw.githubusercontent.com/JirathNuan/r-handviz-workshop/main/datasets/cts.tsv")
 
 # Prepare DESeq input, which is expecting a matrix of integers.
-de_input <- as.matrix(cts[,-1])
+de_input <- as.matrix(cts[,-1])                                            # <1>
 row.names(de_input)<- cts$transcript_name
 # Remove NAs
-de_input <- de_input[complete.cases(de_input), ]
+de_input <- de_input[complete.cases(de_input), ]                           # <2>
 
 # Show first 10 rows of the matrix
-head(de_input, 10) %>% kbl() %>% kable_styling(full_width = FALSE)
+kbl(head(de_input, 10))
 
-# Create an experimenta design data frame
-coldata <- data.frame(sample = colnames(de_input),
+# Create sample metadata     
+coldata <- data.frame(sample = colnames(de_input),                         # <3>
                       sample_group = gsub("[0-9]", "", colnames(de_input)))
 
+
 # Show how experimental data looks like
-coldata %>% kbl() %>% kable_styling(full_width = FALSE)
+kbl(coldata)
+```
 
+1.  Load data set into `cts` data frame, and convert to matrix.
 
+2.  Removing NA. The whole row will be deleted if NA is observed.
+
+3.  Sample metadata should show a relationship between the sample name (from the matrix column), the sample group, and other experimental design.
+
+This workshop will demonstrate data normalization using `DESeq2` library.
+
+```{r}
 # Create DESeq object by load matrix and experimental design
-dds <- DESeqDataSetFromMatrix(countData = de_input,
+dds <- DESeqDataSetFromMatrix(countData = de_input,                         # <1>
                               colData = coldata,
                               design= ~ sample_group)
 
 # Perform differential expression analysis
-dds <- DESeq(dds)
+dds <- DESeq(dds)                                                          # <2>
 
 # Create a normalized matrix of cts data set
-cts_norm <- counts(dds, normalized = TRUE)
+cts_norm <- counts(dds, normalized = TRUE)                                 # <3>
 
 # Show how the data looks like
 head(cts_norm) %>% kbl()
 ```
 
+1.  Create DESeq object using count matrix and sample metadata.
+
+2.  This function is from DESeq2, to perform differential expression analysis based on the Negative Binomial (a.k.a. Gamma-Poisson) distribution. The analysis started with estimating size factors, estimating dispersion, and fitting the Negative Binomial GLM model and calculate Wald statistics.
+
+3.  Create a matrix of normalized count from DESeq2 object after DE analysis.
+
+This step is to transform the count matrix through Rlog (regularized log) transforms. Which transform the original count data into log2 scale by fitting a model with a term for each sample and a prior distribution on the coefficients. Use before plotting PCA.
+
 ```{r}
 #| fig-width: 7
 #| fig-height: 4.5
 # Plot PCA With pcaExplorer
-rld_dds <- rlogTransformation(dds)
-pca_dds <- pcaplot(rld_dds, 
-                     intgroup = "sample_group", 
-                     ntop = Inf,
-                     pcX = 1,
-                     pcY = 2)
+rld_dds <- rlogTransformation(dds)                                 # <1>
+pca_dds <- pcaplot(                                                # <2>
+  rld_dds,
+  intgroup = "sample_group",
+  ntop = Inf,
+  pcX = 1,
+  pcY = 2,
+  title = "",
+  text_labels = TRUE
+) +
+  scale_fill_npg() +
+  scale_color_npg() +
+  theme(legend.position = "bottom") +
+  coord_flip()
 pca_dds
 ```
 
+1.  Rlog (regularized log) transforms the original count data into log2 scale by fitting a model with a term for each sample and a prior distribution on the coefficients. Use before plotting PCA.
+
+2.  Plot PCA
+
+This step is to examine the principal components and visualizing eigenvalues as a scree plot. A scree plot is used to determine the number of significant principal components in a set of data. It is a line graph that shows the eigenvalues of each component in descending order. This helps to identify which components are most important and which can be discarded.
+
+We'll demonstrate a scree plot using `fviz_eig()` function from `factoextra` library.
 
 ```{r}
 #| fig-width: 7
@@ -161,7 +213,8 @@ fviz_eig(pcaobj_dds,
          title = "Proportion of explained proportion of variance - cts data set",
          ggtheme = theme_gray())
 ```
-Extracting the top principal components
+
+Then, extract genes that are mostly contributed in the principal components. By extracting genes that are primarily responsible for the principal components, it becomes easier to understand the underlying structure of the data and identify potential observations that are associated with certain variables.
 
 ```{r}
 # extract the table of the genes with high loadings
@@ -174,9 +227,7 @@ head(top100_pc) %>% kbl() %>% kable_styling(full_width = FALSE)
 
 ```
 
-Biplot using `genespca()`
-
-`genespca()` computes and plots the principal components of the genes, eventually displaying the samples as in a typical biplot visualization. This is the function in action for the Genes View tab.
+Then, plot PCA biplot`genespca()` by compute the principal components of the genes, eventually displaying the samples as in a typical biplot visualization.
 
 ```{r}
 groups_cts <- colData(dds)$sample_group
@@ -198,6 +249,7 @@ genespca(
 )
 
 ```
+
 Plots the distribution of expression values, either with density lines, boxplots or violin plots.
 
 ```{r}
@@ -211,10 +263,13 @@ distro_expr(rld_dds, plot_type = "boxplot") +
   scale_color_npg()
 ```
 
+> See more usage of **pcaExplorer**: <https://federicomarini.github.io/pcaExplorer/articles/pcaExplorer.html#functions-exported-by-the-package-for-standalone-usage>
 
 ## Hierarchical Clustering Analysis (Heat maps)
 
-We'll demonstrate on the same data set. 
+Hierarchical clustering is an unsupervised machine learning algorithm. It is used to group data points into clusters based on their similarity. The algorithm gradually merges or splits clusters after creating a hierarchy. As a result, a dendrogram shows which points are in each cluster and how similar they are.
+
+We'll demonstrate the hierarchical clustering and plot heat map using `pheatmap()`.
 
 ```{r}
 # Create annotation column
@@ -230,16 +285,11 @@ annot_colors <- list(group = c(treated = sample_pal[1],
                                untreated = sample_pal[2]))
 ```
 
+-   Heat map of Top 100 genes that are mostly contributed in the principal components above.
 
 ```{r}
-#| fig-width: 3
-#| fig-height: 5
-# Load libraries
-pacman::p_load(
-  "ComplexHeatmap",
-  "RColorBrewer"
-)
-
+#| fig-width: 5
+#| fig-height: 7
 # Heatmap of the top 100 principal components
 hm_top100pc <- pheatmap(
   top100_pc,
@@ -259,7 +309,7 @@ hm_top100pc <- pheatmap(
 hm_top100pc
 ```
 
-Heatmap of differentially expressed genes
+-   Heat map of differentially expressed genes.
 
 ```{r}
 # Identify differentially expressed genes
@@ -269,11 +319,11 @@ dds_result <- results(object = dds,
                       pAdjustMethod = "fdr")
 ```
 
-Filter DEG, we'll use absolute log2FC > 1 and FDR < 0.05
+Filter DEG, we'll use absolute log2FC \> 1 and FDR \< 0.05
 
 ```{r}
-#| fig-width: 3
-#| fig-height: 5
+#| fig-width: 5
+#| fig-height: 7
 dds_result_deg <- dds_result %>% 
   filter(padj < 0.05 & abs(log2FoldChange) > 1)
 
@@ -299,14 +349,11 @@ hm_deg <- pheatmap(
 hm_deg
 ```
 
+> See more `pheatmap()` usage: <https://www.reneshbedre.com/blog/heatmap-with-pheatmap-package-r.html>
 
 ## Volcano Plot
 
 ```{r}
-pacman::p_load(
-  "EnhancedVolcano"
-)
-
 volcano_deg <- dds_result %>% 
   mutate(Expression = case_when(
       log2FoldChange >= 1 & padj <= 0.05 ~ "Upregulated",
@@ -340,17 +387,15 @@ p_volcano <- EnhancedVolcano(
 p_volcano
 ```
 
+> See more `EnhancedVolcano()` usage: <https://bioconductor.org/packages/devel/bioc/vignettes/EnhancedVolcano/inst/doc/EnhancedVolcano.html>
 
 ## Venn Diagram and Upset Plot
 
-### Plotting venn diagram with `ggvenn`
+### Plotting Venn diagram with `ggvenn`
 
 ```{r}
-# Load library
-pacman::p_load("ggvenn", "ggsci")
-
 # Load data
-mouse_hallmarks <- read_delim("../datasets/mouse_msigdb_6hallmarks.txt")
+mouse_hallmarks <- read_delim("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/mouse_msigdb_6hallmarks.txt")
 
 # Split into list
 lst_mouse_hallmark <- as.list(mouse_hallmarks)
@@ -367,12 +412,19 @@ ggvenn(
 
 ```
 
+::: {.callout-caution appearance="simple"}
+## Venn diagram limitation
+
+Venn diagrams are simple and easy to interpret, however, ggvenn only allows the visualization of four features at a time. As a result, an alternative of Venn diagram has been developed.
+:::
+
 ### Venn diagram alternative: Upset Plot
 
-```{r}
-# Load libraries
-pacman::p_load("ComplexHeatmap")
+UpSet plots are more efficient than Venn Diagrams at visualizing intersections of multiple sets. They are particularly useful when analyzing large datasets with many variables. They help to identify patterns and relationships between different sets more quickly and easily than other visualizations.
 
+There are 3 different modes of upset plot, distinct (default), intersect, and union. Here we'll only demonstrate the default mode.
+
+```{r}
 set.seed(123)
 
 # Make present-absent matrix of data list
@@ -380,14 +432,17 @@ mouse_hm_mat01 <- list_to_matrix(lst_mouse_hallmark)
 # Show how the combination matrix looks like
 head(mouse_hm_mat01) %>% kbl()
 
+
 # Make the combination matrix
 comb_mat <- make_comb_mat(lst_mouse_hallmark)
 comb_mat
 ```
 
-The default mode of combination matrix is 'distinct'.
-blah
+[Referred from]{.underline} a full guide of complexHeatmap: The UpSet plot visualizes the **size** of each combination set. With the binary code of each combination set, we can calculate the size. There are three modes.
 
+![Figure from: <https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.html#upset-plot>](https://jokergoo.github.io/ComplexHeatmap-reference/book/08-upset_files/figure-html/unnamed-chunk-7-1.png){fig-align="center" width="50%"}
+
+Plot upset plot
 
 ```{r}
 pal_upset <- pal_npg()(4)
@@ -411,21 +466,13 @@ upset_mouse_hm <-
 upset_mouse_hm
 ```
 
-
-
-
+> See more `UpSet()` usage from a complete reference of complexHeatmap: <https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.html#upset-plot>
 
 ## ggplot2 Based Publication Ready Plots with `ggpubr`
 
 ```{r}
-pacman::p_load(
-  "ggpubr",
-  "ggsci",
-  "kableExtra"
-)
-
 # Load dataset
-mouseLiver_ctg <- read_csv("../datasets/mouseLiver_data_ClinicalTraits.csv")
+mouseLiver_ctg <- read_csv("https://github.com/JirathNuan/r-handviz-workshop/raw/main/datasets/mouseLiver_data_ClinicalTraits.csv")
 
 # Inspect the data
 head(mouseLiver_ctg) %>% kbl()
@@ -448,7 +495,8 @@ gghistogram(
   ylab = "Frequency"
 )
 ```
-### Density plot 
+
+### Density plot
 
 ```{r}
 ggdensity(
@@ -477,7 +525,7 @@ p_boxplot
 
 Adding statistical significance to the plot
 
-- Pairwise comparison
+-   Pairwise comparison
 
 ```{r}
 #| layout-ncol: 2
@@ -501,8 +549,7 @@ p_boxplot + stat_compare_means(method = "wilcox.test",
                                label.y = 40)
 ```
 
-
-- Compare more than two groups
+-   Compare more than two groups
 
 ```{r}
 #| layout-ncol: 2
@@ -519,6 +566,7 @@ ggboxplot(ToothGrowth, x = "dose", y = "len",
           fill = "dose", palette = "npg")+
   stat_compare_means(method = "anova")
 ```
+
 ```{r}
 # Perorm pairwise comparisons
 compare_means(len ~ dose,  data = ToothGrowth)
@@ -536,7 +584,7 @@ ggboxplot(
   stat_compare_means(label.y = 50)     # Add global p-value
 ```
 
-- Multiple pairwise tests against a reference group
+-   Multiple pairwise tests against a reference group
 
 ```{r}
 # Pairwise comparison against reference
@@ -620,7 +668,7 @@ p4
 
 ```
 
-
+> More usage of ggpubr: <http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/>.
 
 ## Session info
 

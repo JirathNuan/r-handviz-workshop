@@ -478,15 +478,26 @@ Jiratchaya Nuanpirom
 <h2>R: <em>versatility</em></h2>
 
 <img data-src="img/r_versatility.png" class="r-stretch"></section>
+<section id="loading-r-libraries-1" class="slide level2">
+<h2>Loading R libraries (1)</h2>
+<p>Common way to load library</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-r-libraries-2" class="slide level2">
+<h2>Loading R libraries (2)</h2>
+<p>More efficient way to load multiple libraries at once with <code>pacman</code>:</p>
+</section>
 <section id="accessing-help-documentation-in-rstudio" class="slide level2">
 <h2>Accessing Help &amp; Documentation in RStudio</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>RStudio provides built-in documentation of all functions you have installed from libraries. For example, you would like to access documentation page of function <code>aov</code>, simply type in the console as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">help</span>(aov)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># or </span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>?aov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">help</span>(aov)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># or </span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>?aov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can access this documentation from the Help pane. The documentation includes an explanation of the arguments, background theorem, and references for the function <code>aov</code>.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -516,8 +527,8 @@ Jiratchaya Nuanpirom
 <li><strong>Character</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"May"</span>, <span class="st">"June"</span>, <span class="st">"July"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">class</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"May"</span>, <span class="st">"June"</span>, <span class="st">"July"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">class</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -526,8 +537,8 @@ Jiratchaya Nuanpirom
 <li><strong>Numeric</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.25</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="dv">0</span>, <span class="fl">1.0</span>, <span class="fl">2.75</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">class</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.25</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="dv">0</span>, <span class="fl">1.0</span>, <span class="fl">2.75</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">class</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
@@ -536,12 +547,12 @@ Jiratchaya Nuanpirom
 <li><strong>Integer</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>c <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(b)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>c <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(b)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -2 -1  0  1  2  0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">class</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">class</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
@@ -550,8 +561,8 @@ Jiratchaya Nuanpirom
 <ul>
 <li><p><strong>Logical</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">class</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">class</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
@@ -559,8 +570,8 @@ Jiratchaya Nuanpirom
 <li><p><strong>Complex</strong></p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>e <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>4i</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>e <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>4i</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">class</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "complex"</code></pre>
 </div>
@@ -593,31 +604,31 @@ Jiratchaya Nuanpirom
 <li><p><strong>Vectors</strong></p>
 <p>is a row of strings (can be numbers, characters, logicals , or mix of it), and also known as a 1-dimensional array. R uses function <code>c</code> to declare vectors:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># Inspect vector</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="co"># Inspect vector</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1  4  6  8 10</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Access element in vector</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>x[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Access element in vector</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>x[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Calculating vector</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Calculating vector</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Add another vector</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="fl">0.5</span>)</span>
-<span id="cb20-3"><a href="#cb20-3"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Add another vector</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="fl">0.5</span>)</span>
+<span id="cb21-3"><a href="#cb21-3"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  2.0 -2.0  4.0  9.0  0.5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Calculating vector</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
-<span id="cb22-3"><a href="#cb22-3"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Calculating vector</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb23-3"><a href="#cb23-3"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  3.0  2.0 10.0 17.0 10.5</code></pre>
 </div>
@@ -628,31 +639,31 @@ Jiratchaya Nuanpirom
 <li><p><strong>Matrices</strong></p>
 <p>is a 2-dimensional array, we use the function <code>matrix</code> to declare matrix in R as follow.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="co"># Inspecting matrix</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># Inspecting matrix</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
 [1,]    9    4
 [2,]    2    5
 [3,]    3    6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Accessing element in 1st row, 2nd column of the matrix</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>mat[<span class="dv">1</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Accessing element in 1st row, 2nd column of the matrix</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>mat[<span class="dv">1</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Multiply matrix by 10</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>mat<span class="sc">*</span><span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Multiply matrix by 10</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>mat<span class="sc">*</span><span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
 [1,]   90   40
 [2,]   20   50
 [3,]   30   60</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Replace value in 3rd row, 1st column of the matrix to 20</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>mat[<span class="dv">3</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Replace value in 3rd row, 1st column of the matrix to 20</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>mat[<span class="dv">3</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
 [1,]    9    4
@@ -672,24 +683,24 @@ Jiratchaya Nuanpirom
 <li><p><strong>Data frames</strong></p>
 <p>A data frame is a matrix in which rows and columns are named. A data frame is more flexible and compatible for further data manipulation and export as a spreadsheet. Also, data frame can be calculated like matrix.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>t <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"gene1"</span>, <span class="st">"gene2"</span>, <span class="st">"gene3"</span>, <span class="st">"gene4"</span>),</span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="at">cond_1 =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="at">cond_2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">120</span>)</span>
-<span id="cb32-6"><a href="#cb32-6"></a>)</span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="co"># Access element in data frame</span></span>
-<span id="cb32-8"><a href="#cb32-8"></a>t[<span class="dv">4</span>, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>t <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"gene1"</span>, <span class="st">"gene2"</span>, <span class="st">"gene3"</span>, <span class="st">"gene4"</span>),</span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="at">cond_1 =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb33-5"><a href="#cb33-5"></a>  <span class="at">cond_2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">120</span>)</span>
+<span id="cb33-6"><a href="#cb33-6"></a>)</span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="co"># Access element in data frame</span></span>
+<span id="cb33-8"><a href="#cb33-8"></a>t[<span class="dv">4</span>, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 120</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># See how many rows and columns in the data frame</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">dim</span>(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># See how many rows and columns in the data frame</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">dim</span>(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># See what type of data format in each column</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">str</span>(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># See what type of data format in each column</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">str</span>(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   4 obs. of  3 variables:
  $ name  : chr  "gene1" "gene2" "gene3" "gene4"
@@ -703,11 +714,11 @@ Jiratchaya Nuanpirom
 <li><p><strong>Lists</strong></p>
 <p>List is a complex object that can store all data types and structures, even list within list!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>L1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">one =</span> <span class="dv">1</span>,</span>
-<span id="cb38-2"><a href="#cb38-2"></a>           <span class="at">two =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
-<span id="cb38-3"><a href="#cb38-3"></a>           <span class="at">five =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length =</span> <span class="dv">5</span>))</span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="co"># Inspect the list</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>L1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>L1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">one =</span> <span class="dv">1</span>,</span>
+<span id="cb39-2"><a href="#cb39-2"></a>           <span class="at">two =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb39-3"><a href="#cb39-3"></a>           <span class="at">five =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length =</span> <span class="dv">5</span>))</span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="co"># Inspect the list</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>L1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$one
 [1] 1
@@ -718,19 +729,19 @@ $two
 $five
 [1] 0.00 0.25 0.50 0.75 1.00</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Access the 3rd structure in a list</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>L1[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Access the 3rd structure in a list</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>L1[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$five
 [1] 0.00 0.25 0.50 0.75 1.00</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="do">## Access the 2nd child element of the 3rd structure of the list</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>L1[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="do">## Access the 2nd child element of the 3rd structure of the list</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>L1[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Calculating the list</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a>L1<span class="sc">$</span>five <span class="sc">*</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Calculating the list</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>L1<span class="sc">$</span>five <span class="sc">*</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  0.0  2.5  5.0  7.5 10.0</code></pre>
 </div>
@@ -756,9 +767,9 @@ $five
 <div class="column" style="width:50%;">
 <p><strong>Wide format</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>dt_wide <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="co"># Show how the data looks like</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">head</span>(dt_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>dt_wide <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="fu">head</span>(dt_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -838,10 +849,10 @@ $five
 </div><div class="column" style="width:50%;">
 <p><strong>Long format</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>dt_long <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(Day, Month))</span>
-<span id="cb47-3"><a href="#cb47-3"></a><span class="co"># Show how the data looks like</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a><span class="fu">head</span>(dt_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>dt_long <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(Day, Month))</span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="fu">head</span>(dt_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -931,13 +942,13 @@ $five
 </ol>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Load dplyr library</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb48-3"><a href="#cb48-3"></a><span class="co"># Load airquality dataset</span></span>
-<span id="cb48-4"><a href="#cb48-4"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
-<span id="cb48-5"><a href="#cb48-5"></a>dt_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt, Solar.R <span class="sc">&gt;</span> <span class="dv">300</span>)</span>
-<span id="cb48-6"><a href="#cb48-6"></a><span class="co"># Show how the data looks like</span></span>
-<span id="cb48-7"><a href="#cb48-7"></a><span class="fu">head</span>(dt_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># Load dplyr library</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="co"># Load airquality dataset</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>airquality</span>
+<span id="cb49-5"><a href="#cb49-5"></a>dt_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt, Solar.R <span class="sc">&gt;</span> <span class="dv">300</span>)</span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="co"># Show how the data looks like</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="fu">head</span>(dt_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Ozone Solar.R Wind Temp Month Day
 1    18     313 11.5   62     5   4
@@ -955,15 +966,15 @@ $five
 <li>Create new variable <code>dt_iris</code> that stored the data set “iris”.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Load dataset 'iris'</span></span>
-<span id="cb50-2"><a href="#cb50-2"></a>dt_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># Load dataset 'iris'</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>dt_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Glimpse the data set in <code>dt_iris</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># glimpse data</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">glimpse</span>(dt_iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># glimpse data</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">glimpse</span>(dt_iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="https://www.embedded-robotics.com/wp-content/uploads/2022/01/Iris-Dataset-Classification.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Three species of iris flowers in this data set: setosa, versicolor, and virginica. Figure from <a href="https://www.embedded-robotics.com/iris-dataset-classificationhttps://www.embedded-robotics.com/iris-dataset-classification/">https://www.embedded-robotics.com/iris-dataset-classification</a>.</p></section>
@@ -973,15 +984,15 @@ $five
 <li>We already have data frame <code>dt_iris</code> from earlier practice. Now we will select columns name <code>Species</code>, and <code>Petal.Width</code> from <code>dt</code> and store in new variable: <code>dt_sel</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Select columns Petal.Width and Species from dt, keep in dt_sel</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>dt_sel <span class="ot">&lt;-</span> <span class="fu">select</span>(dt_iris, Species, Petal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Select columns Petal.Width and Species from dt, keep in dt_sel</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>dt_sel <span class="ot">&lt;-</span> <span class="fu">select</span>(dt_iris, Species, Petal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The glimpse the result.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Check the result by glimpse</span></span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">glimpse</span>(dt_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Check the result by glimpse</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">glimpse</span>(dt_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyrfilter" class="slide level2">
@@ -992,24 +1003,24 @@ $five
 <li>Now we will filter Species ‘versicolor’.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Filter versicolor species in dt_iris</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a>dt_versicolor <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_iris, Species <span class="sc">==</span> <span class="st">"versicolor"</span>)</span>
-<span id="cb54-3"><a href="#cb54-3"></a><span class="co"># Glimpse the result</span></span>
-<span id="cb54-4"><a href="#cb54-4"></a><span class="fu">glimpse</span>(dt_versicolor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Filter versicolor species in dt_iris</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>dt_versicolor <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_iris, Species <span class="sc">==</span> <span class="st">"versicolor"</span>)</span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># Glimpse the result</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="fu">glimpse</span>(dt_versicolor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>From <code>dt_versicolor</code>, filter the flowers that the <code>Sepal.Length</code> longer than or equal to 6</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Filter the versicolor iris that the sepal length longer than or equal to 6</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a>dt_vsc_filt <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_versicolor, Sepal.Length <span class="sc">&gt;=</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Filter the versicolor iris that the sepal length longer than or equal to 6</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>dt_vsc_filt <span class="ot">&lt;-</span> <span class="fu">filter</span>(dt_versicolor, Sepal.Length <span class="sc">&gt;=</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Then glimpse the result</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Glimpse the result</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">glimpse</span>(dt_vsc_filt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Glimpse the result</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a><span class="fu">glimpse</span>(dt_vsc_filt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyrarrange" class="slide level2">
@@ -1019,21 +1030,21 @@ $five
 <li>In our filtered data frame <code>dt_vsc_filt</code>, sort the <code>Sepal.Length</code> column.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Sort data frame dt_vsc_filt by sepal length column (ascendingly)</span></span>
-<span id="cb57-2"><a href="#cb57-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># Sort data frame dt_vsc_filt by sepal length column (ascendingly)</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Then, sort the <code>Petal.Length</code> descendingly.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># Sort data frame dt_vsc_filt descendingly by petal length column</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, <span class="fu">desc</span>(Petal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># Sort data frame dt_vsc_filt descendingly by petal length column</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>dt_vsc_filt_srt <span class="ot">&lt;-</span> <span class="fu">arrange</span>(dt_vsc_filt, <span class="fu">desc</span>(Petal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Glimpse the result</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">glimpse</span>(dt_vsc_filt_srt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">glimpse</span>(dt_vsc_filt_srt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyrrename" class="slide level2">
@@ -1043,10 +1054,10 @@ $five
 <li>From sorted and filtered data frame <code>dt_vsc_filt_srt</code>, we will rename 2 columns, from <code>Sepal.Length</code> and <code>Petal.Length</code>, to <code>SL</code> and <code>PL</code>, respectively. Then save to the new data frame <code>dt_vsc_renamed</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># Rename column from Sepal.Length to SL, and Petal.Length to PL, then save to the new data frame dt_vsc_renamed</span></span>
-<span id="cb60-2"><a href="#cb60-2"></a>dt_vsc_renamed <span class="ot">&lt;-</span> <span class="fu">rename</span>(dt_vsc_filt_srt, </span>
-<span id="cb60-3"><a href="#cb60-3"></a>                         <span class="at">SL =</span> Sepal.Length,</span>
-<span id="cb60-4"><a href="#cb60-4"></a>                         <span class="at">PL =</span> Petal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># Rename column from Sepal.Length to SL, and Petal.Length to PL, then save to the new data frame dt_vsc_renamed</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>dt_vsc_renamed <span class="ot">&lt;-</span> <span class="fu">rename</span>(dt_vsc_filt_srt, </span>
+<span id="cb61-3"><a href="#cb61-3"></a>                         <span class="at">SL =</span> Sepal.Length,</span>
+<span id="cb61-4"><a href="#cb61-4"></a>                         <span class="at">PL =</span> Petal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyrmutate" class="slide level2">
@@ -1056,16 +1067,16 @@ $five
 <li>From the previous data frame <code>dt_vsc_renamed</code>, we’ll calculate the difference between sepal length <code>SL</code> and petal length <code>PL</code> to the new column <code>Len_Diff</code>. This can be done with the <code>mutate()</code> function as follow.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># Calculate difference of sepal length and petal length, add to the new column Len_Diff</span></span>
-<span id="cb61-2"><a href="#cb61-2"></a>dt_vsc_renamed <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dt_vsc_renamed,</span>
-<span id="cb61-3"><a href="#cb61-3"></a>                         <span class="at">Len_Diff =</span> SL <span class="sc">-</span> PL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># Calculate difference of sepal length and petal length, add to the new column Len_Diff</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a>dt_vsc_renamed <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dt_vsc_renamed,</span>
+<span id="cb62-3"><a href="#cb62-3"></a>                         <span class="at">Len_Diff =</span> SL <span class="sc">-</span> PL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Then, use function <code>summary()</code> to see the distribution of the values using the column ___________.</li>
+<li>Then, use function <code>summary()</code> to see the distribution of the values using the column <code>Len_Diff</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># Rough summarize the difference of sepal length and petal length </span></span>
-<span id="cb62-2"><a href="#cb62-2"></a><span class="fu">summary</span>(dt_vsc_renamed<span class="sc">$</span>________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co"># Rough summarize the difference of sepal length and petal length </span></span>
+<span id="cb63-2"><a href="#cb63-2"></a><span class="fu">summary</span>(dt_vsc_renamed<span class="sc">$</span>Len_Diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Expected result:</p>
 <div class="cell">
@@ -1082,13 +1093,13 @@ $five
 <li>Instead of using <code>dplyr</code> verbs and storing the new variables line by line, we can bundle them and use <code>%&gt;%</code>. All operations associated with <code>%&gt;%</code> are stored in one variable.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>iris_df <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris <span class="sc">%&gt;%</span> </span>
-<span id="cb64-2"><a href="#cb64-2"></a>  <span class="fu">rename</span>(<span class="at">SL =</span> Sepal.Length,</span>
-<span id="cb64-3"><a href="#cb64-3"></a>         <span class="at">SW =</span> Sepal.Width,</span>
-<span id="cb64-4"><a href="#cb64-4"></a>         <span class="at">PL =</span> Petal.Length,</span>
-<span id="cb64-5"><a href="#cb64-5"></a>         <span class="at">PW =</span> Petal.Width) <span class="sc">%&gt;%</span> </span>
-<span id="cb64-6"><a href="#cb64-6"></a>  <span class="fu">mutate</span>(<span class="at">Len_Diff =</span> SL <span class="sc">-</span> PL) <span class="sc">%&gt;%</span> </span>
-<span id="cb64-7"><a href="#cb64-7"></a>  <span class="fu">filter</span>(Len_Diff <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>iris_df <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="#cb65-2"></a>  <span class="fu">rename</span>(<span class="at">SL =</span> Sepal.Length,</span>
+<span id="cb65-3"><a href="#cb65-3"></a>         <span class="at">SW =</span> Sepal.Width,</span>
+<span id="cb65-4"><a href="#cb65-4"></a>         <span class="at">PL =</span> Petal.Length,</span>
+<span id="cb65-5"><a href="#cb65-5"></a>         <span class="at">PW =</span> Petal.Width) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-6"><a href="#cb65-6"></a>  <span class="fu">mutate</span>(<span class="at">Len_Diff =</span> SL <span class="sc">-</span> PL) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-7"><a href="#cb65-7"></a>  <span class="fu">filter</span>(Len_Diff <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>From the syntax above:</p>
 <ol type="1">
@@ -1106,10 +1117,10 @@ $five
 <li>We’ll load original <code>datasets::iris</code> to the new data frame <code>dt2_iris</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># Load iris dataset</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a>dt2_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span>
-<span id="cb65-3"><a href="#cb65-3"></a><span class="co"># glimpse data</span></span>
-<span id="cb65-4"><a href="#cb65-4"></a><span class="fu">glimpse</span>(dt2_iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># Load iris dataset</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a>dt2_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span>
+<span id="cb66-3"><a href="#cb66-3"></a><span class="co"># glimpse data</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a><span class="fu">glimpse</span>(dt2_iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Of these 3 species, calculate mean and standard deviation of petal length using <code>mean()</code> and <code>sd()</code>, respectively. Then calculate the standard deviation of mean (SEM) of the petal length.</li>
@@ -1120,13 +1131,13 @@ SEM = \frac{SD}{\sqrt{n}}
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>dt2_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris <span class="sc">%&gt;%</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb66-3"><a href="#cb66-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb66-4"><a href="#cb66-4"></a>    <span class="at">num_flowers =</span> <span class="fu">n</span>(),</span>
-<span id="cb66-5"><a href="#cb66-5"></a>    <span class="at">Mean_PL =</span> ______________,</span>
-<span id="cb66-6"><a href="#cb66-6"></a>    <span class="at">SD_PL =</span> ______________) <span class="sc">%&gt;%</span> </span>
-<span id="cb66-7"><a href="#cb66-7"></a>  <span class="fu">mutate</span>(<span class="at">SEM_PL =</span> ______________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>dt2_iris <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris <span class="sc">%&gt;%</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb67-3"><a href="#cb67-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb67-4"><a href="#cb67-4"></a>    <span class="at">num_flowers =</span> <span class="fu">n</span>(),</span>
+<span id="cb67-5"><a href="#cb67-5"></a>    <span class="at">Mean_PL =</span> <span class="fu">mean</span>(Petal.Length),</span>
+<span id="cb67-6"><a href="#cb67-6"></a>    <span class="at">SD_PL =</span> <span class="fu">sd</span>(Petal.Length)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-7"><a href="#cb67-7"></a>  <span class="fu">mutate</span>(<span class="at">SEM_PL =</span> SD_PL<span class="sc">/</span><span class="fu">sqrt</span>(num_flowers))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
@@ -1191,17 +1202,17 @@ SEM = \frac{SD}{\sqrt{n}}
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-37-1.png" width="960"></p>
 </div>
 </div>
 <p>This is a scatter plot showing 100 random numbers. Each red point indicates a data point.</p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
 </div>
 </div>
 <p>Another simple plot to show the pattern of the data is histogram.</p>
@@ -1212,49 +1223,49 @@ SEM = \frac{SD}{\sqrt{n}}
 <h2>Base graphics (2)</h2>
 <p>The following lines create a plot from data frame <code>t</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Creating a data frame</span></span>
-<span id="cb69-2"><a href="#cb69-2"></a>t <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">14</span>), </span>
-<span id="cb69-3"><a href="#cb69-3"></a>                <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">21</span>), </span>
-<span id="cb69-4"><a href="#cb69-4"></a>                <span class="at">z =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">7</span>))</span>
-<span id="cb69-5"><a href="#cb69-5"></a><span class="co"># Creating a new plot</span></span>
-<span id="cb69-6"><a href="#cb69-6"></a><span class="fu">plot</span>(t<span class="sc">$</span>x, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">ylim =</span> <span class="fu">range</span>(t), <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb69-7"><a href="#cb69-7"></a><span class="co"># Adding new graphic to the plot</span></span>
-<span id="cb69-8"><a href="#cb69-8"></a><span class="fu">lines</span>(t<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">"s"</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb69-9"><a href="#cb69-9"></a><span class="co"># Adding another graphic to the plot</span></span>
-<span id="cb69-10"><a href="#cb69-10"></a><span class="fu">points</span>(t<span class="sc">$</span>z, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Creating a data frame</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>t <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">14</span>), </span>
+<span id="cb70-3"><a href="#cb70-3"></a>                <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">21</span>), </span>
+<span id="cb70-4"><a href="#cb70-4"></a>                <span class="at">z =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">7</span>))</span>
+<span id="cb70-5"><a href="#cb70-5"></a><span class="co"># Creating a new plot</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="fu">plot</span>(t<span class="sc">$</span>x, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">ylim =</span> <span class="fu">range</span>(t), <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb70-7"><a href="#cb70-7"></a><span class="co"># Adding new graphic to the plot</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a><span class="fu">lines</span>(t<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">"s"</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb70-9"><a href="#cb70-9"></a><span class="co"># Adding another graphic to the plot</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a><span class="fu">points</span>(t<span class="sc">$</span>z, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="basic_R_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
+<img data-src="basic_R_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"></section>
 <section id="lattice-graphic" class="slide level2">
 <h2>Lattice graphic</h2>
 <p>Attempts to improve R’s basic graphs by providing better presets and the ability to display multivariate relationships. In particular, the package supports the creation of grid graphs - graphs that show a variable or the relationship between variables as a function of one or more other variables.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Load package</span></span>
-<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">library</span>(lattice)</span>
-<span id="cb70-3"><a href="#cb70-3"></a></span>
-<span id="cb70-4"><a href="#cb70-4"></a><span class="co"># Load Toothgrowth data set</span></span>
-<span id="cb70-5"><a href="#cb70-5"></a>ToothGrowth <span class="ot">&lt;-</span> datasets<span class="sc">::</span>ToothGrowth</span>
-<span id="cb70-6"><a href="#cb70-6"></a><span class="co"># Density plot</span></span>
-<span id="cb70-7"><a href="#cb70-7"></a><span class="fu">densityplot</span>(<span class="sc">~</span> len, <span class="at">groups =</span> dose, <span class="at">data =</span> ToothGrowth,</span>
-<span id="cb70-8"><a href="#cb70-8"></a>            <span class="at">plot.points =</span> <span class="cn">FALSE</span>, <span class="at">auto.key =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Load package</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="fu">library</span>(lattice)</span>
+<span id="cb71-3"><a href="#cb71-3"></a></span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="co"># Load Toothgrowth data set</span></span>
+<span id="cb71-5"><a href="#cb71-5"></a>ToothGrowth <span class="ot">&lt;-</span> datasets<span class="sc">::</span>ToothGrowth</span>
+<span id="cb71-6"><a href="#cb71-6"></a><span class="co"># Density plot</span></span>
+<span id="cb71-7"><a href="#cb71-7"></a><span class="fu">densityplot</span>(<span class="sc">~</span> len, <span class="at">groups =</span> dose, <span class="at">data =</span> ToothGrowth,</span>
+<span id="cb71-8"><a href="#cb71-8"></a>            <span class="at">plot.points =</span> <span class="cn">FALSE</span>, <span class="at">auto.key =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Load iris data set</span></span>
-<span id="cb71-2"><a href="#cb71-2"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span>
-<span id="cb71-3"><a href="#cb71-3"></a><span class="co"># Plot scatter plot</span></span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="fu">xyplot</span>(Sepal.Length <span class="sc">~</span> Petal.Length <span class="sc">|</span> Species,</span>
-<span id="cb71-5"><a href="#cb71-5"></a>       <span class="at">group =</span> Species,</span>
-<span id="cb71-6"><a href="#cb71-6"></a>       <span class="at">data =</span> dt,</span>
-<span id="cb71-7"><a href="#cb71-7"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"smooth"</span>),</span>
-<span id="cb71-8"><a href="#cb71-8"></a>       <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># Load iris data set</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a>dt <span class="ot">&lt;-</span> datasets<span class="sc">::</span>iris</span>
+<span id="cb72-3"><a href="#cb72-3"></a><span class="co"># Plot scatter plot</span></span>
+<span id="cb72-4"><a href="#cb72-4"></a><span class="fu">xyplot</span>(Sepal.Length <span class="sc">~</span> Petal.Length <span class="sc">|</span> Species,</span>
+<span id="cb72-5"><a href="#cb72-5"></a>       <span class="at">group =</span> Species,</span>
+<span id="cb72-6"><a href="#cb72-6"></a>       <span class="at">data =</span> dt,</span>
+<span id="cb72-7"><a href="#cb72-7"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"smooth"</span>),</span>
+<span id="cb72-8"><a href="#cb72-8"></a>       <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1266,26 +1277,26 @@ SEM = \frac{SD}{\sqrt{n}}
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co"># Load package</span></span>
-<span id="cb72-2"><a href="#cb72-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb72-3"><a href="#cb72-3"></a><span class="co"># create scatterplot of carat vs. price, </span></span>
-<span id="cb72-4"><a href="#cb72-4"></a><span class="co"># using cut as color variable</span></span>
-<span id="cb72-5"><a href="#cb72-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
-<span id="cb72-6"><a href="#cb72-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
-<span id="cb72-7"><a href="#cb72-7"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># Load package</span></span>
+<span id="cb73-2"><a href="#cb73-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb73-3"><a href="#cb73-3"></a><span class="co"># create scatterplot of carat vs. price, </span></span>
+<span id="cb73-4"><a href="#cb73-4"></a><span class="co"># using cut as color variable</span></span>
+<span id="cb73-5"><a href="#cb73-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
+<span id="cb73-6"><a href="#cb73-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
+<span id="cb73-7"><a href="#cb73-7"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-42-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># Create scatterplot of price, grouped by cut</span></span>
-<span id="cb73-2"><a href="#cb73-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
-<span id="cb73-3"><a href="#cb73-3"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span> </span>
-<span id="cb73-4"><a href="#cb73-4"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"firebrick"</span>) <span class="sc">+</span></span>
-<span id="cb73-5"><a href="#cb73-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># Create scatterplot of price, grouped by cut</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
+<span id="cb74-3"><a href="#cb74-3"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span> </span>
+<span id="cb74-4"><a href="#cb74-4"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"firebrick"</span>) <span class="sc">+</span></span>
+<span id="cb74-5"><a href="#cb74-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
+<p><img data-src="basic_R_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1299,8 +1310,8 @@ SEM = \frac{SD}{\sqrt{n}}
 <p>Tidyverse is a collection of R packages for data science. All Tidyverse packages share the same design philosophy, grammar, and data structures. The core of Tidyverse includes packages that you will use in your daily data analysis.</p>
 <p>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># Load tidyverse</span></span>
-<span id="cb74-2"><a href="#cb74-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="co"># Load tidyverse</span></span>
+<span id="cb75-2"><a href="#cb75-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
