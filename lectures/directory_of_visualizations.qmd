@@ -6,7 +6,6 @@ format:
   html:
     toc: true
     toc-depth: 4
-    toc-location: left
     number-sections: true
     code-line-numbers: true
 execute: 
@@ -234,7 +233,7 @@ ggplot(US_precip, aes(x = precipitation, y = reorder(city, precipitation))) +
 
 #### Time-series
 
-Time can be considered as one of the variables, and it is in an inherent order.  Line graphs help us visualize this temporal order. Line graphs can be used to show trends over time, allowing us to compare values at different points in time. They are useful for highlighting changes in data ove
+Time can be considered as one of the variables, and it is in an inherent order. Line graphs help us visualize this temporal order. Line graphs can be used to show trends over time, allowing us to compare values at different points in time. They are useful for highlighting changes in data ove
 
 We will use the `USPersonalExpenditure` data set. This data set consists of United States personal expenditures (in billions of dollars) in the categories; food and tobacco, household operation, medical and health, personal care, and private education for the years 1940, 1945, 1950, 1955 and 1960.
 
@@ -318,23 +317,17 @@ Heatmap(mat_USJudgeRatings,
 
 ## Visualizing Distribution
 
-In a dataset, you might want to know how a variable is distributed. You can look at the distribution of a variable to get a better idea. Visualizations like histograms, boxplots, and density plots help with this. Data patterns and outliers can be identified this way. This can help you understand the data better, and draw conclusions from it. It can also help you decide which type of analysis to use.
-### Histogram
+In a dataset, you might want to know how a variable is distributed. You can look at the distribution of a variable to get a better idea. Visualizations like histograms, boxplots, and density plots help with this. Data patterns and outliers can be identified this way. This can help you understand the data better, and draw conclusions from it. It can also help you decide which type of analysis to use. \### Histogram
 
 A histogram can be easily built with ggplot2's `geom_histogram()` function. The input only needs one numerical variable. You might get a warning message during the plot regarding the bin width or stratification as explained in the next section.
 
-
 #### Basic histogram
 
-A histogram is created by binning data, or stratifying data into ranges of frequency, so how they look depends on the bin width. Bin widths are usually chosen by default in visualization programs. 
+A histogram is created by binning data, or stratifying data into ranges of frequency, so how they look depends on the bin width. Bin widths are usually chosen by default in visualization programs.
 
 ::: {.callout-note appearance="simple"}
-
 users may have to pick the appropriate bin width by hand. The histogram gets too peaky and busy if the bin width is too small. There might be a lot of noise in the data. In contrast, too wide a bin width can blur smaller features in the data distribution, like the dip around age 10.
-
 :::
-
-
 
 ```{r}
 #| layout-ncol: 2
@@ -393,7 +386,7 @@ A box plot gives a nice summary of one or more numeric variables. A boxplot is c
 
 ![Anatomy of box plot. Image from https://www.leansigmacorporation.com/box-plot-with-minitab](https://lsc.studysixsigma.com/wp-content/uploads/sites/6/2015/12/1435.png)
 
--   A median is a line that divides the box into two parts. If the median is 10, it means there are the same number of data points above and below the line. 
+-   A median is a line that divides the box into two parts. If the median is 10, it means there are the same number of data points above and below the line.
 
 -   There are two quartiles at the ends of the box, the upper (Q3) and lower (Q1). A third quartile of 15 indicates that 75% of observations are below that level.
 
@@ -403,7 +396,7 @@ A box plot gives a nice summary of one or more numeric variables. A boxplot is c
 
 However, you should keep in mind that data distribution is hidden behind each box. Normal distributions could look exactly like bimodal distributions. It is recommended to consider a violin plot or a ridgline chart instead.
 
-We will demonstrate on `ToothGrowth` data set. The data set showed the Effect of Vitamin C on Tooth Growth in Guinea Pigs. 
+We will demonstrate on `ToothGrowth` data set. The data set showed the Effect of Vitamin C on Tooth Growth in Guinea Pigs.
 
 ```{r}
 #| echo: false
@@ -412,7 +405,6 @@ head(datasets::ToothGrowth, 20) %>%
   kbl(format = "html", booktabs = TRUE) %>% 
   kable_styling(full_width = FALSE)
 ```
-
 
 ```{r}
 #| layout-ncol: 2
@@ -451,7 +443,7 @@ ggplot(ToothGrowth,
 
 #### Ridgeline plot
 
-Previous section showed how to visualize the distribution stack horizontally with histograms and density plots. To expand on this idea, we'll stagger the distribution plots vertically. Ridgeline plots look like mountain ridgelines, so they're called that. The ridgeline plot is a good way to show trends in distributions. This example checks the distribution of diamond prices based on their quality. 
+Previous section showed how to visualize the distribution stack horizontally with histograms and density plots. To expand on this idea, we'll stagger the distribution plots vertically. Ridgeline plots look like mountain ridgelines, so they're called that. The ridgeline plot is a good way to show trends in distributions. This example checks the distribution of diamond prices based on their quality.
 
 This graph is made using the `ggridges` library, which is a ggplot2 extension and compatible with the syntax of the ggplot2. For the X axis, we specify the `price` column, and for the Y axis, we specify the `cut` column. By adding `'fill=cut'`, we can use one color per category and display them separately.
 
@@ -463,8 +455,7 @@ ggplot(diamonds, aes(x = price, y = cut, fill = cut)) +
 
 ## Visualizing Proportions
 
-In many cases, we want to show how something breaks down into parts that each represent a portion of the whole. Among data scientists, pie charts are often maligned because they are ubiquitous in business presentations. 
-
+In many cases, we want to show how something breaks down into parts that each represent a portion of the whole. Among data scientists, pie charts are often maligned because they are ubiquitous in business presentations.
 
 ### Pie and Donut Chart
 
@@ -474,8 +465,6 @@ data <- data.frame(
   group=LETTERS[1:5],
   value=c(13,7,9,21,2))
 ```
-
-
 
 ```{r}
 #| echo: false
@@ -526,13 +515,11 @@ ggplot(data_2, aes(x="", y=prop, fill=group)) +
   scale_fill_npg()
 ```
 
-For accurate representation of data, alternative plots like percent stacked bar charts or streamlined plots should be considered instead of pie charts. Pie charts can make it hard to compare fractions since the relative sizes are hard to see. So if you want a more accurate representation of the data, you should use another type of chart. 
-
-
+For accurate representation of data, alternative plots like percent stacked bar charts or streamlined plots should be considered instead of pie charts. Pie charts can make it hard to compare fractions since the relative sizes are hard to see. So if you want a more accurate representation of the data, you should use another type of chart.
 
 ## Visualizing x-y Relationships
 
-A dataset may contain two or more quantitative variables, and we might be interested in how they relate.  In order to plot just the relationship between two variables, such as height and weight, we use a scatter plot. The bubble chart, scatter plot matrix, or correlogram are all good options if we want to show more than two variables at once. Further, principal component analysis is great for high-dimensional datasets, i.e., observing multiple variables at once.
+A dataset may contain two or more quantitative variables, and we might be interested in how they relate. In order to plot just the relationship between two variables, such as height and weight, we use a scatter plot. The bubble chart, scatter plot matrix, or correlogram are all good options if we want to show more than two variables at once. Further, principal component analysis is great for high-dimensional datasets, i.e., observing multiple variables at once.
 
 ### Scatter Plot
 
@@ -563,7 +550,6 @@ ggplot(iris, aes(x = Petal.Width, y = Petal.Length, color = Species)) +
 
 Adding a linear trend to a scatter plot helps the reader identify patterns. The linear trend also helps to identify outliers, as points that are far from the trend are easily visible. It can also be used to make predictions about future values based on current data. `geom_smooth()` in ggplot2 allows you to add the linear trend and confidence interval around it by using `"se = TRUE"`
 
-
 ```{r}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(alpha = 0.8, size = 2) +
@@ -574,9 +560,9 @@ ggplot(mtcars, aes(x = disp, y = mpg)) +
 
 ### Correlograms
 
-When we have more than three or four variables, all-against-all scatter plots get a little complicated. Rather than presenting raw data, it's better to quantify the amount of association between pairs of variables. Correlation coefficients are a common way to do this. 
+When we have more than three or four variables, all-against-all scatter plots get a little complicated. Rather than presenting raw data, it's better to quantify the amount of association between pairs of variables. Correlation coefficients are a common way to do this.
 
-The correlation coefficient r measures how much two variables correlate between -1 and 1. A value of r = 0 means there is no association whatsoever, and a value of 1 or -1 indicates an ideal association. There are two kinds of correlation coefficients: correlated (larger values in one variable coincide with larger values in the other) or anticorrelated (larger values in one variable coincide with smaller values in the other). 
+The correlation coefficient r measures how much two variables correlate between -1 and 1. A value of r = 0 means there is no association whatsoever, and a value of 1 or -1 indicates an ideal association. There are two kinds of correlation coefficients: correlated (larger values in one variable coincide with larger values in the other) or anticorrelated (larger values in one variable coincide with smaller values in the other).
 
 Here's a quick demonstration of all-against-all correlation analysis and a correlogram plotted using the `mtcars` data set.
 

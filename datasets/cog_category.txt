@@ -1,0 +1,26 @@
+category	category_name
+A	RNA processing and modification
+B	Chromatin Structure and dynamics
+C	Energy production and conversion
+D	Cell cycle control and mitosis
+E	Amino Acid metabolis and transport
+F	Nucleotide metabolism and transport
+G	Carbohydrate metabolism and transport
+H	Coenzyme metabolis
+I	Lipid metabolism
+J	Tranlsation
+K	Transcription
+L	Replication and repair
+M	Cell wall/membrane/envelop biogenesis
+N	Cell motility
+O	Post-translational modification, protein turnover, chaperone functions
+P	Inorganic ion transport and metabolism
+Q	Secondary Structure
+R	General Functional Prediction only
+S	Function Unknown
+T	Signal Transduction
+U	Intracellular trafficing and secretion
+V	Defense mechanisms
+W	Extracellular structures
+Y	Nuclear structure
+Z	Cytoskeleton

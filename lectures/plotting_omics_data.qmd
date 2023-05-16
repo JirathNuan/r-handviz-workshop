@@ -7,91 +7,323 @@ format:
     toc: true
     number-sections: true
     number-depth: 3
+    code-annotations: hover
 execute: 
   eval: true
   echo: true
   warning: false
+bibliography: references.bib
 ---
 
 Load R pakcages
 
 ```{r}
-library(tidyverse)
-library(paletteer)
-library(scales)
-library(RColorBrewer)
-library(ggpubr)
-library(VennDiagram)
-library(circlize)
-library(viridis)
-library(png)
-library(GGally)
-library(cowplot)
-library(openxlsx)
-library(gridExtra)
-library(gtable)
-library(egg)
-library(ggfortify)
-library(FactoMineR)
-library(factoextra)
-library(gridGraphics)
-library(corrplot)
-library(plotly)
-library(agricolae)
-library(ComplexHeatmap)
-library(DESeq2)
-library(pcaExplorer)
-library(EnhancedVolcano)
+pacman::p_load(
+  'tidyverse',
+  'openxlsx',
+  'kableExtra',
+  'DESeq2',
+  'pcaExplorer',
+  'ComplexHeatmap',
+  'RColorBrewer'
+  )
 ```
 
-## Plotting Abundance of Features
+## Plotting Abundance of Representative Terms
 
-### Abundance of Representative Terms
+```{r, fig.height=5, fig.width=7}
+#| tbl-cap: "First 10 lines of the number of COG category results."
 
-### Relative abundance
+# Load libraries
+library(tidyverse)
+library(kableExtra)
+library(openxlsx)
+
+
+# Load COG dictionary
+COG_dict <- read_delim("../datasets/cog_category.txt")          # <1>
+
+# Load eggNOG-mapper result
+emapper_dt <- read.xlsx("../datasets/Dme_chr4.emapper.annotations.xlsx",    # <2>
+                        startRow = 3, 
+                        cols = 7) %>% 
+  filter(COG_category != "-") %>%                               # <3>
+  group_by(COG_category) %>%                                    # <4>
+  summarize(n = n()) %>%                                                   # <5>
+  left_join(COG_dict, by = c("COG_category" = "category")) %>%     # <6>
+  mutate(label = paste0(COG_category, ": ", category_name))     # <7>
+
+# Show first 10 lines of data frame
+head(emapper_dt, 10) %>% kbl() %>% kable_styling(full_width = FALSE)
+  
+# Plot
+ggplot(emapper_dt, aes(x = COG_category, y = n, fill = label)) +  # <8>
+  geom_bar(stat = "identity") +                                 # <9>
+  scale_y_continuous(breaks = seq(0, 100, 10)) +                # <10>
+  labs(x = "COG category",                                      # <11>
+       y = "Number of sequences", 
+       fill = "COG category") +
+  theme(legend.key.size = unit(0.5, 'cm'))                      # <12>
+```
+
+1.  `cog_category.txt` is a cluster of orthologous groups (COG) dictionary. Use for look up the category names into the plot.
+
+2.  Read eggNOG-mapper result from excel file into `emapper_dt`, using `read.xlsx()` from openxlsx library. The excel is read by skipping the first 3 rows and select only 7th column.
+
+3.  Then, go to the next step by pipe `%>%`. This step it to filter unclassified COGs `-` from the `COG_category` using dplyr `filter()`.
+
+4.  Then group the data frame by `COG_category`.
+
+5.  Count number of COGs presented in this eggNOG-mapper result.
+
+6.  Merge COG dictionary into the result using dplyr `left_join()`. Two data frames are merged by matching the column `COG_category` from `emapper_dt` with the column `category` of `COG_dict`.
+
+7.  Then, add new column `label` for the plot legend, by append COG category together with the category name.
+
+8.  Plot the result from by showing `COG_category` in x-axis, number of COGs `n` in y-axis, fill and add legend by column `label`.
+
+9.  Plot bar plot using `geom_bar()` and `stat = "identity"`
+
+10. Set y-axis breaks
+
+11. Customize label of x- and y-axis, and legend name in `fill`.
+
+12. Adjust size of legend using `theme(legend.key.size)`.
 
 ## Principal Component Analysis
 
-Way 1: prcomp & normal scatter plot
+We will demonstrate PCA on a *pasilla* data set [@brooks2010]. This data set was obtained from an experiment on *Drosophila melanogaster* cell cultures that investigated the effects of knocking down the splicing factor *pasilla* using RNAi.
 
-Way 2: rlogtransform & pcaexplorer
-
-## Hierarchical Clustering Analysis (Heatmap)
 
 ```{r}
-set.seed(123)
-nr1 = 4; nr2 = 8; nr3 = 6; nr = nr1 + nr2 + nr3
-nc1 = 6; nc2 = 8; nc3 = 10; nc = nc1 + nc2 + nc3
-mat = cbind(rbind(matrix(rnorm(nr1*nc1, mean = 1,   sd = 0.5), nr = nr1),
-          matrix(rnorm(nr2*nc1, mean = 0,   sd = 0.5), nr = nr2),
-          matrix(rnorm(nr3*nc1, mean = 0,   sd = 0.5), nr = nr3)),
-    rbind(matrix(rnorm(nr1*nc2, mean = 0,   sd = 0.5), nr = nr1),
-          matrix(rnorm(nr2*nc2, mean = 1,   sd = 0.5), nr = nr2),
-          matrix(rnorm(nr3*nc2, mean = 0,   sd = 0.5), nr = nr3)),
-    rbind(matrix(rnorm(nr1*nc3, mean = 0.5, sd = 0.5), nr = nr1),
-          matrix(rnorm(nr2*nc3, mean = 0.5, sd = 0.5), nr = nr2),
-          matrix(rnorm(nr3*nc3, mean = 1,   sd = 0.5), nr = nr3))
-   )
-mat = mat[sample(nr, nr), sample(nc, nc)] # random shuffle rows and columns
-rownames(mat) = paste0("row", seq_len(nr))
-colnames(mat) = paste0("column", seq_len(nc))
+#| fig-width: 6
+#| fig-height: 4
+# Load data set
+cts <- read_delim("../datasets/cts.tsv")
 
-library(circlize)
-col_fun = colorRamp2(c(-2, 0, 2), c("green", "white", "red"))
-col_fun(seq(-3, 3))
+# Prepare DESeq input, which is expecting a matrix of integers.
+de_input <- as.matrix(cts[,-1])
+row.names(de_input)<- cts$transcript_name
+# Remove NAs
+de_input <- de_input[complete.cases(de_input), ]
 
-Heatmap(mat, name = "mat", col = col_fun)
+# Show first 10 rows of the matrix
+head(de_input, 10) %>% kbl() %>% kable_styling(full_width = FALSE)
+
+# Create an experimenta design data frame
+coldata <- data.frame(sample = colnames(de_input),
+                      sample_group = gsub("[0-9]", "", colnames(de_input)))
+
+# Show how experimental data looks like
+coldata %>% kbl() %>% kable_styling(full_width = FALSE)
+
+
+# Create DESeq object by load matrix and experimental design
+dds <- DESeqDataSetFromMatrix(countData = de_input,
+                              colData = coldata,
+                              design= ~ sample_group)
+
+# Perform differential expression analysis
+dds <- DESeq(dds)
+
+# Create a normalized matrix of cts data set
+cts_norm <- counts(dds, normalized = TRUE)
+
+# Show how the data looks like
 ```
+
+```{r}
+# Plot PCA With pcaExplorer
+rld_dds <- rlogTransformation(dds)
+pca_dds <- pcaplot(rld_dds, 
+                     intgroup = "sample_group", 
+                     ntop = Inf,
+                     pcX = 1,
+                     pcY = 2)
+pca_dds
+```
+
+
+```{r}
+# Scree plot
+pcaobj_dds <- prcomp(t(assay(rld_dds)))
+
+pcascree(pcaobj_dds, type = "pev",
+         title = "Proportion of explained proportion of variance - cts data set")
+```
+Extracting the top principal components
+
+```{r}
+# extract the table of the genes with high loadings
+top100_pc <- hi_loadings(pcaobj_dds,
+                         topN = 100,
+                         exprTable = counts(dds))
+
+# Show how experimental data looks like
+top100_pc %>% kbl() %>% kable_styling(full_width = FALSE)
+
+
+# or alternatively plot the values
+hi_loadings(pcaobj_dds, topN = 20)
+```
+
+Biplot and map individuals using `genespca()`
+
+`genespca()` computes and plots the principal components of the genes, eventually displaying the samples as in a typical biplot visualization. This is the function in action for the Genes View tab.
+
+```{r}
+groups_cts <- colData(dds)$sample_group
+
+cols_cts <- scales::hue_pal()(2)[groups_cts]
+
+# with many genes, do not plot the labels of the genes
+genespca(
+  rld_dds,
+  ntop = 100,
+  choices = c(1, 2),
+  arrowColors = cols_cts,
+  groupNames = groups_cts,
+  alpha = 0.2,
+  useRownamesAsLabels = FALSE,
+  varname.size = 5
+)
+```
+Plots the distribution of expression values, either with density lines, boxplots or violin plots.
+
+```{r}
+#| layout-ncol: 3
+distro_expr(rld_dds, plot_type = "violin")
+distro_expr(rld_dds, plot_type = "boxplot")
+```
+
+
+## Hierarchical Clustering Analysis (Heat maps)
+
+We'll demonstrate on the same data set. 
+
+```{r}
+# Create annotation column
+annot_column <- data.frame(sample = colnames(top100_pc),
+                           group = gsub("[0-9]", "", colnames(top100_pc))) %>% 
+  column_to_rownames(var = "sample")
+
+annot_column %>% kbl()
+```
+
+
+```{r}
+#| fig-width: 3
+#| fig-height: 5
+# Heatmap of the top 100 principal components
+hm_top100pc <- pheatmap(
+  top100_pc,
+  scale = "row",
+  color = colorRampPalette(rev(brewer.pal(n = 7, name = "RdBu")))(100),
+  show_rownames = FALSE,
+  name = "Normalized count",
+  clustering_distance_rows = "euclidean",
+  clustering_distance_cols = "euclidean",
+  clustering_method = "complete",
+  annotation_col = annot_column
+)
+hm_top100pc
+```
+
+Heatmap of differentially expressed genes
+
+```{r}
+# Identify differentially expressed genes
+dds_result <- results(object = dds,
+                      contrast = c("sample_group", "untreated", "treated"),
+                      tidy = TRUE,
+                      pAdjustMethod = "fdr")
+```
+
+Filter DEG, we'll use absolute log2FC > 1 and FDR < 0.05
+
+```{r}
+dds_result_deg <- dds_result %>% 
+  filter(padj < 0.05 & abs(log2FoldChange) > 1)
+
+# Extract count matrix of DEGenes
+deg_norm_count <- cts_norm[rownames(cts_norm) %in% dds_result_deg$row, ]
+
+# Plot heatmap of DEGs
+# Heatmap of the top 100 principal components
+hm_deg <- pheatmap(
+  deg_norm_count,
+  scale = "row",
+  color = colorRampPalette(rev(brewer.pal(n = 7, name = "RdBu")))(100),
+  show_rownames = FALSE,
+  name = "Normalized count",
+  clustering_distance_rows = "euclidean",
+  clustering_distance_cols = "euclidean",
+  clustering_method = "complete")
+hm_deg
+```
+
 
 ## Volcano Plot
 
-Enhancedvolcano
+```{r}
+library(EnhancedVolcano)
+
+volcano_deg <- dds_result %>% 
+  mutate(Expression = case_when(
+      log2FoldChange >= 1 & padj <= 0.05 ~ "Upregulated",
+      log2FoldChange <= -1 & padj <= 0.05 ~ "Downregulated",
+      TRUE ~ "Unchanged"))
+
+p_volcano <- EnhancedVolcano(
+  volcano_deg,
+  lab = volcano_deg$row,
+  x = 'log2FoldChange',
+  y = 'padj',
+  xlim = c(-5,5),
+  ylab = bquote( ~ -Log[10] ~ italic(FDR)),
+  title = NULL,
+  caption = NULL,
+  subtitle = NULL,
+  pCutoff = 0.05,
+  pointSize = 3,
+  labSize = 3,
+  col = c("grey50", "dodgerblue3", "dodgerblue3", "firebrick2"),
+  legendLabels = c("NS", 
+                   expression(abs(log[2] ~ FC) > 1),
+                   "FDR < 0.05",
+                   expression(Pvalue < 0.05 ~ and ~ abs(log[2] ~ FC) > 1))) +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        panel.border = element_rect(fill = NA, color = "black"),
+        panel.grid = element_blank())
+
+
+p_volcano
+```
+
 
 ## Venn Diagram and Upset Plot
 
 Venn: venndiagram
 
 ```{r}
+# Load library
+library(VennDiagram)
+
+# Load data
+mouse_hallmarks <- read_delim("../datasets/mouse_msigdb_4hallmarks.txt")
+
+# Split into list
+lst_mouse_hallmark <- as.list(mouse_hallmarks)
+# remove NAs
+lst_mouse_hallmark <- lapply(lst_mouse_hallmark, na.omit)
+
+# Chart
+display_venn(
+  lst_mouse_hallmark,
+  category.names = names(lst_mouse_hallmark),
+  fill = c("#999999", "#E69F00", "#56B4E9", "#009E73")
+  )
 
 ```
 
